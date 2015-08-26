@@ -17,9 +17,9 @@ If you do wish to replace the build.sh file with your own build script(s), pleas
 
 ## Testing your game in the Live environment
 
-We recommend that you test the game works correctly when embedded on a CBBC/Cbeebies webpage, at the earliest opportunity. This will indicate any issues and allow time for fixes e.g. we have previously seen pressing the space bar scroll the webpage instead of react in game.
+While we provide Playpen as an area to test games, we recommend that you test your game works correctly when embedded on a CBBC/CBeebies webpage at the earliest opportunity. This will indicate any issues and allow time for fixes e.g. we have previously seen issues with the game gaining focus resulting in problems such as keyboard controls not responding in game.
 
-To do this, we have created a bookmarklet, to be used on this [live game testing page](http://www.bbc.co.uk/cbbc/games/embed-test-v1). It essentially replaces the source of the current (non-existent) game with your own:
+To help facilitate this, we have created a bookmarklet, to be used on this [live game testing page](http://www.bbc.co.uk/cbbc/games/embed-test-v1). It essentially replaces the source of the current (non-existent) game with your own:
 
 ```javascript
 javascript:(function () {
