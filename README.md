@@ -3,7 +3,7 @@ Table of Contents
 
   * [Automated builds](../automated-builds.md#automated-builds)
 
-  * [Testing your game in the Live environment](../testing-in-live.md#testing-your-game-in-the-live-environment)
+  * [Testing your game in the Live environment](../testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
 
   * [Tech Review Tool](../tech-review-tool.md#tech-review-tool)
     * [Installation](../tech-review-tool.md#installation)

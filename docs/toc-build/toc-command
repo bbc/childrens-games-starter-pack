@@ -17,6 +17,6 @@ file:
 
 ./gh-md-toc --serial \
 ../automated-builds.md \
-../testing-in-live.md \
+../testing-on-cbbc-page.md \
 ../tech-review-tool.md \
 ../updating-starter-pack.md
