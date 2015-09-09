@@ -1,15 +1,15 @@
 Table of Contents
 =================
 
-  * [Automated builds](../automated-builds.md#automated-builds)
+  * [Automated builds](docs/automated-builds.md#automated-builds)
 
-  * [Testing your game in the Live environment](../testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
+  * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
 
-  * [Tech Review Tool](../tech-review-tool.md#tech-review-tool)
-    * [Installation](../tech-review-tool.md#installation)
-    * [Using the Extension](../tech-review-tool.md#using-the-extension)
+  * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
+    * [Installation](docs/tech-review-tool.md#installation)
+    * [Using the Extension](docs/tech-review-tool.md#using-the-extension)
 
-  * [Updating your pack](../updating-starter-pack.md#updating-your-pack)
+  * [Updating your pack](docs/updating-starter-pack.md#updating-your-pack)
 
 # Children's Starter Pack
 
