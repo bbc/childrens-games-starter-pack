@@ -6,8 +6,8 @@ called gh-md-tod, version 0.4.1 for Mac (https://github
 .com/ekalinin/github-markdown-toc.go).
 
 It reads the .md files in order and produces a TOC. Update this command when
-new .md files are added, run the command from this directory and copy/paste the
-new TOC into README.md.
+new .md files are added, run the command from this *root* directory and
+copy/paste the new TOC into README.md.
 
 Also remember to include a link back to the README at the bottom of each .md
 file:
@@ -15,8 +15,8 @@ file:
 [Home](../README.md)
 
 
-./gh-md-toc --serial \
-../automated-builds.md \
-../testing-on-cbbc-page.md \
-../tech-review-tool.md \
-../updating-starter-pack.md
+docs/toc-build/gh-md-toc --serial \
+docs/automated-builds.md \
+docs/testing-on-cbbc-page.md \
+docs/tech-review-tool.md \
+docs/updating-starter-pack.md
