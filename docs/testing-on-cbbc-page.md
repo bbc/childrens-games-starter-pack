@@ -7,9 +7,8 @@ e.g. we have previously seen issues with the game gaining focus resulting in
 problems such as keyboard controls not responding in game.
 
 To help facilitate this, we have created a bookmarklet, to be used on this
-[live game testing page](http://www.bbc.co.uk/cbbc/games/embed-test-v1). It
-essentially replaces the source of the current (non-existent) game with your
-own:
+[live game testing page]. It essentially replaces the source of the current 
+(non-existent) game with your own:
 
 ```javascript
 javascript:(function () {
@@ -32,3 +31,5 @@ javascript:(function () {
 - click your new bookmark
 
 [Home](../README.md)
+
+[live game testing page]: http://www.bbc.co.uk/cbbc/games/embed-test-v1

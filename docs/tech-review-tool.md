@@ -11,7 +11,8 @@ means less back and forth when it comes to getting the game live.
 
 ## Installation
 
-Install the [BBC Digital Children's Games Tech Review Tool](https://chrome.google.com/webstore/detail/bbc-digital-childrens-gam/obhojgkahkhapohjnijhehgfkpceogcb) from the Google Web Store.
+Install the [BBC Digital Children's Games Tech Review Tool] from the Google 
+Web Store.
 
 
 ## Using the Extension
@@ -28,3 +29,5 @@ For accurate results:
 utilising results
 
 [Home](../README.md)
+
+[BBC Digital Children's Games Tech Review Tool]: https://chrome.google.com/webstore/detail/bbc-digital-childrens-gam/obhojgkahkhapohjnijhehgfkpceogcb
