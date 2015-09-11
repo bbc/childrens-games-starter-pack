@@ -23,8 +23,7 @@ Web Store.
 For accurate results:
 
 * ensure cache 'Disable cache' is not ticked on the Network tab 
-* right click the reload button and choose 'Empty Cache and Hard Reload' 
-(developer tools must be open for this option to exist)
+* click the reload button within the tool to empty the cache & hard reload the page
 * click run as often as you like, but wait for the game to fully load before 
 utilising results
 
