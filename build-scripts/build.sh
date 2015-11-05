@@ -11,7 +11,7 @@
 cat <<EOT >> output/main.js
 (function()
 {
-	var container = document.getElementById('og-game-holder');
+	var container = document.getElementById(og.gameContainerId);
 	var content = document.createElement("span");
 	content.style.color = "white";
 	content.innerHTML = "Hello World! Edit me and commit to Git to see the automated build pipeline in action!";
