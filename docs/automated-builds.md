@@ -4,7 +4,7 @@ Our automated build pipeline automatically runs the /build-scripts/build.sh file
 everytime you push changes to the repo. Therefore this file is a convenient
 location to place all the steps your game needs to compile.
 
-You'll see that right now it simply outputs a "Hello World!" gettingstarted.txt
+You'll see that right now it simply outputs a "Hello World!" main.js
 file - feel free to edit and push to see your changes work their way through our
 pipeline to our Test environment (your BBC TPM can show you where to find this
 file if you don't know where it can be viewed).
