@@ -21,30 +21,30 @@ window.og = {
 
 ## Data fields
 
-###### og.embedVars
+##### og.embedVars
 Contains the JavaScript object that was entered as JSON in the "Set-up Data"
 field in the GamesGrid CMS.
 
-###### og.environment
+##### og.environment
 Returns the environment name that the game is being served from.
 
-###### og.exitGameUrl
+##### og.exitGameUrl
 The game's exit button should navigate to the URL provided by this field. The
 embedding game page typically sets this to be its own URL, but this may be
 overridden by the "Exit Game URL" field in the GamesGrid CMS.
 
-###### og.gameContainerId
+##### og.gameContainerId
 Specifies the ID of the HTML div that your game should fill.
 (Only relevant to JavaScript games).
 
-###### og.gameUrl
+##### og.gameUrl
 The URL of your main game file as entered into the GamesGrid CMS.
 
-###### og.gameDir
+##### og.gameDir
 The URL of the directory containing your main game file. This is convenient for
 converting relative asset paths into absolute ones.
 
-###### og.isFullScreen
+##### og.isFullScreen
 The game should use this flag to decide whether to show the exit button
 (and potentially other full-screen-related functionality) rather than detecting
 full screen status itself. This flag will be false if the game is currently
@@ -52,7 +52,7 @@ embedded in an iframe or true if the page has been redirected to the Playpen.
 
 ### Functions
 
-###### og.resizeFrame(width, height)
+##### og.resizeFrame(width, height)
 Allows the game to change the size of its containing iframe when the game needs
 more space. This will have no effect if the game is running full screen, where
 there is no iframe. A falsey value for width or height will be ignored,
@@ -61,7 +61,7 @@ function as the Playpen will maintain the aspect ratio of the iframe
 automatically. This function is intended for games that change their aspect
 ratio dynamically.
 
-###### og.goFullScreen()
+##### og.goFullScreen()
 Directs the browser to load the playpen page directly, resulting in the game
 reloading and filling the browser window. This is only useful if the game is
 currently embedded in an iframe.
