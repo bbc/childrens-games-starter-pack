@@ -1,4 +1,4 @@
-# Definition of Done
+# Definition of Done and Delivery Definitions
 
 A game isn't defined as "done" unless it meets all of the following criteria (where applicable):
 
@@ -60,14 +60,19 @@ RC version of the Software for the Deliverables (including Source Code and Objec
 Gold version of the Software for the Deliverables (including Source Code and Object Code)
 
 * Release Candidate with no P1, P2 or P3 issues as identified in QA Certification
-* BBC Tech Review to take place at this stage
 * This should meet the detailed specification set out in Schedule 1
 * Delivered with full regression on primary, secondary and tertiary devices
 
 ##Post release
 
-All game code, assets and documentation should be submitted following the RC version delivery (see checklist). The game and docs should be compile-ready as is possible, with complete documentation.
-Issue Prioritization
+All game code, assets and documentation should be submitted following the RC 
+version delivery (see checklist). The game and docs should be compile-ready 
+as is possible, with complete documentation. 
+
+This is captured as part of the [deliverable review](deliverable-review.md).
+
+
+### Issue Prioritization
 
 To enable us to provide the agreed quality gates between releases, please use the following guidelines for identifying issue priority:
 
@@ -108,3 +113,5 @@ To enable us to provide the agreed quality gates between releases, please use th
 * Missing version numbers
 
 ** Issues outside the scope of BBC / dev control include iOS / Android / Browser limitations that are caused by the software vendor and may or may not be addressed in future releases. This also covers hardware limitations of devices.
+
+[Home](../README.md)

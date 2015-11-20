@@ -1,14 +1,23 @@
 # Deliverable Review
 
-This brief guide outlines our requirements for post-release delivery of game code and assets. This isn't an exhaustive list, and not all points are applicable to all games. The objective is to ensure our game deliveries are in the best and most future-proof state possible: we don't dictate how agencies should structure their projects but we do need them to be in a state where another developer can pick it up easily.
+This brief guide outlines our requirements for post-release delivery of game 
+code and assets. This isn't an exhaustive list, and not all points are 
+applicable to all games. The objective is to ensure our game deliveries are 
+in the best and most future-proof state possible: we don't dictate how 
+agencies should structure their projects but we do need them to be in a state
+ where another developer can pick it up easily.
 
-For further info on what we consider "finished", please see: Definition of Done and Delivery Definitions for Childrens Games
+For further info on what we consider "finished", please see: [Definition of 
+Done and Delivery Definitions](definition-of-done.md).
 
-Points marked in bold are what we consider blockers to acceptance, and must be rectified before final delivery.
+Points marked in bold are what we consider blockers to acceptance, and must 
+be rectified before final delivery.
 
 ## Documentation
 
-* **The project must contain a readme or instructional file** containing detailed instructions and all information necessary for a new developer to compile the project
+* **The project must contain a readme or instructional file** containing 
+detailed instructions and all information necessary for a new developer to 
+compile the project
 * **The documentation should be environment agnostic** i.e the compilation instructions should not require a particular platform, IDE or program
 * **There should not be any names (of people or companies) in in-line documentation**
 * The documentation should indicate how to run the game for debug/testing and then for release
