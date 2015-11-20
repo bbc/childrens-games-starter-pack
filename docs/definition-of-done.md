@@ -1,8 +1,7 @@
 # Definition of Done and Delivery Definitions
 
-A game isn't defined as "done" unless it meets all of the following criteria (where applicable):
-
-# Delivery definitions
+A game isn't defined as "done" unless it meets all of the following criteria 
+(where applicable).
 
 [Tech reviews](tech-review.md) take place at Alpha, Beta and Release Candidate 
 stages. Feedback should be acted upon for the next delivery as all checks 
