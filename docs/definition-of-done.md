@@ -3,6 +3,11 @@
 A game isn't defined as "done" unless it meets all of the following criteria (where applicable):
 
 # Delivery definitions
+
+[Tech reviews](tech-review.md) take place at Alpha, Beta and Release Candidate 
+stages. Feedback should be acted upon for the next delivery as all checks 
+must pass. 
+
 ##Alpha
 
 Alpha version of the Software for the Deliverables (including Source Code and Object Code) Core GamePlay Prototype for technical and user performance testing
