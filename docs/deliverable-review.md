@@ -14,26 +14,30 @@ Points marked in bold are what we consider blockers to acceptance, and must
 be rectified before final delivery.
 
 During a deliverable review, the same checks from the [Tech Review](tech-review.md)  
-are now performed against the source code (instead of the release files). In 
-addition, the following are also checked:
+are now performed against the source code (instead of the release files) with
+ some slight differences (in *italics*) and additions listed below:
 
 ## Documentation
 
-The project should include documentation in the form of a README, which should:
-* outline the project structure to aid with future maintenance
-* indicate how to run the game locally
-** including how to enable debugging/testing
-* describe the build steps in build.sh if they are complex and not already 
+* **README**: The project should include documentation in the form of a README, 
+which should:
+  * outline the project structure to aid with future maintenance
+  * indicate how to run the game locally
+    * including how to enable debugging/testing
+  * describe the build steps in build.sh if they are complex and not already 
 inline
-* describe any other build scripts
-* describe any data that is saved by the game locally or otherwise
+  * describe any other build scripts
+  * describe any data that is saved by the game locally or otherwise
 
 ## Project Structure
 
-* **The project must not contain any none-essential files.** This extends to versioned or arbitrarily-named files, i.e. "boy_v2_final.fla" or "assets_dan.swc"
-* **All paths everywhere in the project must be relative:** the project should compile on any machine without having to change paths
-* **If based on an existing framework (a templated game for example), the project must absolutely not contain any 'old' assets** - assets from another game/brand, config referencing old games etc.
-* The project shouldn't contain any hidden files (DS_STORE's or similar), with the exception of things like required FlashBuilder project files which should be documented
+* **No _none-essential_ files or backups**: it is acceptable to include files
+ in the source that are unused in the release such as level builders. Other 
+ unused files and backups are not allowed as described in the [Tech Review](tech-review.md).
+
+* **No hidden files _with an exception_**: The project should contain no 
+hidden files as in the [Tech Review](tech-review.md), with the *exception* of
+ things like required FlashBuilder project files which should be documented.
 
 ## Assets
 

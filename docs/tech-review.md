@@ -17,8 +17,19 @@ The game should not contain commented out code or TODOs.
   * source files: odd lines acceptable. Longer blocks allowed if it is helpful 
 for debugging in the future
 
-* **No unused files or backups**:
-e.g. dummy_game.js, loading.js.BU
+* **Relative paths**: All paths everywhere in the project must be relative so
+ that the project compiles on any machine.
+
+* **No unused files or backups** 
+  * unused files e.g. 'test_level.js'
+  * backups e.g. 'loading.js.BU'
+  * versioned files e.g. 'boy_v2_final.png'
+  * arbitrarily-named files e.g. "assets_dan.json"
+  * hangover files i.e. if the game is based on an existing framework (such as
+ BBC IVOR), no 'old' assets or config should remain
+ 
+* **No hidden files**: The project shouldn't contain any hidden files 
+(DS_STORE's or similar).
 
 * **Minification**:
 Ideally, release files should be minified (though it is optional) but source 
@@ -32,7 +43,7 @@ the following should be used:
   * og.exitGameUrl
   * og.environment
   * og.gameDir
-
+ 
 
 ## Web browser checks
 
