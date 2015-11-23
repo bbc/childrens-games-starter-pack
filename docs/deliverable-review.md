@@ -13,17 +13,20 @@ Done and Delivery Definitions](definition-of-done.md).
 Points marked in bold are what we consider blockers to acceptance, and must 
 be rectified before final delivery.
 
+During a deliverable review, the same checks from the [Tech Review](tech-review.md)  
+are now performed against the source code (instead of the release files). In 
+addition, the following are also checked:
+
 ## Documentation
 
-* **The project must contain a readme or instructional file** containing 
-detailed instructions and all information necessary for a new developer to 
-compile the project
-* **The documentation should be environment agnostic** i.e the compilation instructions should not require a particular platform, IDE or program
-* **There should not be any names (of people or companies) in in-line documentation**
-* The documentation should indicate how to run the game for debug/testing and then for release
-* The documentation should outline the project structure and workflow to aid with future maintenance and deployments
-* The compile/build step should be documented including an explanation of each build script and an outline of the build process i.e. on fresh build an audiosprite is generated via audio.json config and output to /compiledaudio
-* The documentation should describe any data that is saved by the game locally or otherwise
+The project should include documentation in the form of a README, which should:
+* outline the project structure to aid with future maintenance
+* indicate how to run the game locally
+** including how to enable debugging/testing
+* describe the build steps in build.sh if they are complex and not already 
+inline
+* describe any other build scripts
+* describe any data that is saved by the game locally or otherwise
 
 ## Project Structure
 

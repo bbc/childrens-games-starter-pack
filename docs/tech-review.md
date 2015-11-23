@@ -9,6 +9,7 @@ Beta and Release Candidate stages.
   * no inappropriate language such as swear words
   * no advertising including
     * links to products in software licenses
+  * no names of people or companies
    
 * **No commented out code**:
 The game should not contain commented out code or TODOs.
