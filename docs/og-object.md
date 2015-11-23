@@ -5,37 +5,25 @@ The og object is used to access globally available data and functions.
 It is accessible from the window.og object and are therefore easily accessible from JavaScript.
 If you are using Unity you can use the Application.ExternalCall() function or in Flash use ExternalInterface.call().
 
-The typical structure of the og object is as follows:
-
-````
-window.og = {
-    "embedVars": {},
-    "exitGameUrl": "",
-    "gameContainerId": "og-game-holder",
-    "gameUrl": "http://play.test.bbc.co.uk/play/game/.../mygame/main.js",
-    "gameDir": "http://play.test.bbc.co.uk/play/game/.../mygame/",
-    "resizeFrame": (function),
-    "goFullScreen": (function)
-}
-````
-
 ## Data fields
 
 ##### og.embedVars
-Contains the JavaScript object that was entered as JSON in the "Set-up Data"
+Contains the JavaScript object that was entered as JSON in the 'Set-up Data'
 field in the GamesGrid CMS.
 
 ##### og.environment
-Returns the environment name that the game is being served from.
+Returns the environment name that the game is being served from. This will be
+ "test" or "live".
 
 ##### og.exitGameUrl
 The game's exit button should navigate to the URL provided by this field. The
-embedding game page typically sets this to be its own URL, but this may be
-overridden by the "Exit Game URL" field in the GamesGrid CMS.
+ URL can be provided by setting the 'Exit Game URL' field in the GamesGrid 
+ CMS or as an escaped query string on the games URL. The exit URL is usually set
+  to the game page where the game is embedded.
 
 ##### og.gameContainerId
-Specifies the ID of the HTML div that your game should fill.
-(Only relevant to JavaScript games).
+Specifies the ID of the HTML div that your game should fill (only relevant 
+to JavaScript games).
 
 ##### og.gameUrl
 The URL of your main game file as entered into the GamesGrid CMS.
@@ -62,7 +50,7 @@ automatically. This function is intended for games that change their aspect
 ratio dynamically.
 
 ##### og.goFullScreen()
-Directs the browser to load the playpen page directly, resulting in the game
+Directs the browser to load the Playpen page directly, resulting in the game
 reloading and filling the browser window. This is only useful if the game is
 currently embedded in an iframe.
 
@@ -72,12 +60,11 @@ Your game should fill the HTML element with the ID specified in
 requirements these should be specified in the GamesGrid CMS so that this
 element is automatically sized appropriately.
 
-Your main script
-(specified in the GamesGrid CMS) will be loaded by RequireJS, but this does not
-mean that you have to use RequireJS in your implementation. If you do, you can
-define a module that returns an object containing an init function and this will
-be called to start your game, passing og as a parameter. Otherwise just start
-your game in your main script.
+Your main script (path specified in the GamesGrid CMS) will be loaded by 
+RequireJS, but this does not mean that you have to use RequireJS in your 
+implementation. If you do, you can define a module that returns an object 
+containing an init function and this will be called to start your game, 
+passing og as a parameter. Otherwise just start your game in your main script.
 
 ### RequireJS Example
 ````
