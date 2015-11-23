@@ -13,9 +13,10 @@ Done and Delivery Definitions](definition-of-done.md).
 Points marked in bold are what we consider blockers to acceptance, and must 
 be rectified before final delivery.
 
-During a deliverable review, the same checks from the [Tech Review](tech-review.md)  
-are now performed against the source code (instead of the release files) with
- some slight differences (in *italics*) and additions listed below:
+During a deliverable review, the same checks from the **Code section** of the
+ [Tech Review](tech-review.md) are now performed against the source code 
+ (instead of the release files) with some slight differences (in *italics*) 
+ and additions listed below:
 
 ## Documentation
 
@@ -41,10 +42,14 @@ hidden files as in the [Tech Review](tech-review.md), with the *exception* of
 
 ## Assets
 
-* **The project must contain all assets required to compile and run the game** - all paths used during build should be relative
-* Assets should live in a sensible, organised location not scattered around the project
-* Filenames need to be in lower-case: "myfile.swf" and not "MyFile.swf" - this is an apache restriction on some BBC servers
-* Asset names should clearly indicate their function: "confirmscreenclosebutton.png" and not "button38.png"
+* **Organisation**: Assets should live in a sensible, organised location not 
+scattered around the project
+  * SD and HD assets should live in different directories
+  * Original and compressed/processed assets should live in different 
+  directories
+
+* **Sensible naming**: Asset names should clearly indicate their function e.g. 
+"confirmscreenclosebutton.png" and not "button38.png".
 
 ## Code
 

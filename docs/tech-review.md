@@ -12,7 +12,7 @@ Beta and Release Candidate stages.
   * no names of people or companies
    
 * **No commented out code**:
-The game should not contain commented out code or TODOs.
+he game should not contain commented out code or TODOs.
   * release files: none
   * source files: odd lines acceptable. Longer blocks allowed if it is helpful 
 for debugging in the future
