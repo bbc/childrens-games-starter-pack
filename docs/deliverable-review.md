@@ -1,22 +1,17 @@
 # Deliverable Review
 
-This brief guide outlines our requirements for post-release delivery of game 
-code and assets. This isn't an exhaustive list, and not all points are 
-applicable to all games. The objective is to ensure our game deliveries are 
-in the best and most future-proof state possible: we don't dictate how 
-agencies should structure their projects but we do need them to be in a state
- where another developer can pick it up easily.
-
-For further info on what we consider "finished", please see: [Definition of 
-Done and Delivery Definitions](definition-of-done.md).
-
-Points marked in bold are what we consider blockers to acceptance, and must 
-be rectified before final delivery.
+A deliverable review is carried out after the game is released, on the final 
+game source code and assets. For further info on what we consider "finished",
+ please see: [Definition of Done and Delivery Definitions](definition-of-done.md).
 
 During a deliverable review, the same checks from the **release files 
-section** of the [Tech Review](tech-review.md) are now performed against the 
+section** of the [Tech Review](tech-review.md) are performed against the 
 source code (instead of the release files) with some slight differences (in 
-*italics*) and additions listed below:
+*italics*) and additions listed below.
+
+This isn't an exhaustive list, and not all points are applicable to all games
+. The objective is to ensure our game deliveries are in the best and most 
+future-proof state possible.
 
 ## Documentation
 
@@ -27,10 +22,12 @@ which should:
   * indicate how to run the game locally
     * including how to enable debugging/testing
   * describe the build steps in build.sh if they are complex and not already 
-inline
+  commented inline
   * describe any other build scripts
   * describe any data that is saved by the game locally or otherwise
   * list library versions (if not indicated by e.g. a 'project.json') 
+  * text that has been hard coded in game code or assets instead of in 
+  configuration files, and why
 
 ## Project Structure
 
@@ -57,7 +54,7 @@ scattered around the project
 ## Code
 
 * **Understandable**:
-We don't mind how you structure the project at all, but a new developer must 
+We don't mind how you structure the project, but a new developer must 
 be able to pick up the project and work on it without days of exploration.
   * Comment everything that isn't immediately clear to new developers. We 
   understand that theoretically "good code is self-documenting", in practice 
