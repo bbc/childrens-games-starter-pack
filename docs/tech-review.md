@@ -3,7 +3,7 @@
 The tech review is carried out on release files (not source files) at Alpha, 
 Beta and Release Candidate stages. 
 
-## Code checks
+## Checks on release files
 
 * **No defamatory code**
   * no inappropriate language such as swear words
@@ -11,11 +11,10 @@ Beta and Release Candidate stages.
     * links to products in software licenses
   * no names of people or companies
    
-* **No commented out code**:
-he game should not contain commented out code or TODOs.
-  * release files: none
-  * source files: odd lines acceptable. Longer blocks allowed if it is helpful 
-for debugging in the future
+* **No commented out code**: The game should not contain commented out code 
+or TODOs. If something is marked as "TODO" then it either legitimately needs 
+doing in which case the project isn't finished, or it's none-essential and 
+should be removed
 
 * **Relative paths**: All paths everywhere in the project must be relative so
  that the project compiles on any machine.
@@ -43,8 +42,20 @@ the following should be used:
   * og.exitGameUrl
   * og.environment
   * og.gameDir
+  * og.gameContainerId
  
+* **Assets should not contain text**:
+Assets containing text/sentences/paragraphs should be avoided except for 
+cases where single characters or digits are e.g. used for titles.
 
+* **Library versions**:
+  * Libraries used should be versioned and not modified by the agency. If 
+modified, the base version and changes made must be documented before the 
+[Deliverable Review](deliverable-review.md)
+  * Either an unminfied or a minified library should be included at release, 
+  but not both
+
+ 
 ## Web browser checks
 
 When gathering statistics, make sure to do a hard reload and ensure 'disable 
