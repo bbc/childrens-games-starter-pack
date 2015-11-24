@@ -11,24 +11,24 @@ create, a [Box] account.
 The guidelines, to which the game **must** adhere, consist of the 
 following documents:
 
-### **GamesGEL**
+##### **GamesGEL**
 details the game screens, how they should be linked and the elements they should contain.
 
-### **Accessibility**
+##### **Accessibility**
 specifies what is required and what is recommended to make the game accessible.
 
-### **GEL Icon Asset Pack**
+##### **GEL Icon Asset Pack**
 provides the icons which must be used; they may be skinned but the pictorial 
 shape and size must remain.  
 
 ## Toolkit 
 
-### **Toolkit**
+##### **Toolkit**
 explains the process of evaluating the quality of the game in relation to the
  target audience. Evaluations are performed throughout the project by the BBC
   which may inform changes for the agency to respond to.
 
-### **Personas**
+##### **Personas**
 are to be used as part of the evaluation process.
 
 [GEL Guidelines for Games]: https://myshare.app.box.com/s/50s30ol589xf4lmd9xomucjxwrnu54e3
