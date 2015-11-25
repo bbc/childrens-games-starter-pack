@@ -6,15 +6,14 @@
 # When you commit the following code, you can check the pipeline is working by checking the main.js file on the Test environment or by
 # viewing the play.test page for your project (get the URLs from the TPM)
 
+# 'build' the src files to output directory
+cp ../src/* output
 
-# The following code outputs a short script to output/main.js that adds a hello world message to the DOM on load
-cat <<EOT >> output/main.js
-(function()
-{
-	var container = document.getElementById(og.gameContainerId);
-	var content = document.createElement("span");
-	content.style.color = "white";
-	content.innerHTML = "Hello World! Edit me and commit to Git to see the automated build pipeline in action!";
-	container.appendChild(content);
-}());
-EOT
+helloWorldFunc="function appendHelloWorld() { \
+	var content = document.createElement('div'); \
+	content.innerHTML = 'Hello World! Edit me in build.sh and commit to Git to see the automated build pipeline in action!'; \
+	container.appendChild(content); \
+}"
+
+# replace the appendHelloWorld function in main.js with the one above
+sed "s/function appendHelloWorld() {}/$helloWorldFunc/g" output/main.js > output/main.tmp && mv output/main.tmp output/main.js
