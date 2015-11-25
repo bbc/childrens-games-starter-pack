@@ -15,6 +15,10 @@ define(['echo-stats', 'config'], function(echoStats, config) {
 	var echoActions = echoStats.create(config.statsAppName, config.statsCounterName);
 
 	appendTitle("Echo Stats Example");
+	appendParagraph("Open");
+	appendLink(" iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga");
+	appendParagraph(" or see network calls prefixed with 'sa.bbc.co.uk' and" +
+		" click the button to fire a stat");
 	appendBtn("Log Action Event (Button Clicked)", function(event) { echoActions.buttonClicked(event); });
 	appendHorizontalRule();
 
@@ -26,8 +30,23 @@ define(['echo-stats', 'config'], function(echoStats, config) {
 	}
 
 	function appendTitle(title) {
+		var div = document.createElement("div");
 		var titleEl = document.createTextNode(title);
-		container.appendChild(titleEl);
+		div.appendChild(titleEl);
+		container.appendChild(div);
+	}
+
+	function appendParagraph(text) {
+		var paragraph = document.createElement("span");
+		paragraph.innerHTML = text;
+		container.appendChild(paragraph)
+	}
+
+	function appendLink(linkText, link) {
+		var a = document.createElement('a');
+		a.innerHTML =linkText;
+		a.href = link;
+		container.appendChild(a);
 	}
 
 	function appendBtn(label, onClick) {
