@@ -108,7 +108,7 @@ The game must send 'action_name=game_loaded' once, when the game is loaded.
 * **Initial download size and file sizes**:
 The download size is used as an early indicator for how long the game will take
  to download. To help identidy large files, files over 500KB are listed. The 
- statisitc to fail the tech review is the initial download speed.
+ statistics to fail the tech review is the initial download speed.
  
 [Home](../README.md)
 
