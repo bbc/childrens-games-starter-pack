@@ -9,11 +9,12 @@
 # 'build' the src files to output directory
 cp ../src/* output
 
+# edit the string below and commit to see your changes reflected
 helloWorldFunc="function appendHelloWorld() { \
 	var content = document.createElement('div'); \
 	content.innerHTML = 'Hello World! Edit me in build.sh and commit to Git to see the automated build pipeline in action!'; \
 	container.appendChild(content); \
 }"
 
-# replace the appendHelloWorld function in main.js with the one above
+# replacea the appendHelloWorld function in main.js with the one above
 sed "s/function appendHelloWorld() {}/$helloWorldFunc/g" output/main.js > output/main.tmp && mv output/main.tmp output/main.js

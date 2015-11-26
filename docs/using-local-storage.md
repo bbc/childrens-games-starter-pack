@@ -37,16 +37,18 @@ Together, this could create a helper function:
 ````
     function cookiesAreAllowed() {
         // NOTE: Always allows saving data if not within a BBC Barlesque or Playpen page:
-        return !window.bbccookies || window.bbccookies.isAllowed("ckps_whatever");
+        return !window.bbccookies || window.bbccookies.isAllowed("ckps_a_func_cookie");
     }
 ````
 
 ### Example 
-A [local storage demo](http://play.test.bbc.co.uk/play/pen/gv6bhxfqz4) has 
-been created using the code above (see the [source code](http://play.test.bbc.co.uk/play/game/childrens/tests/local-storage-demo.js)).
+A [local storage example](../src/local-storage.js) has been created using the 
+code above. Build the project (see [build.sh](./build-scripts/build.sh)) to 
+see the code running. 
 
 Change your preferences at [Manage Cookie Settings (TEST)] to see the demo 
-behave differently.
+behave differently. Specifically note that data will not be saved if the 
+'Functionality' cookie is disabled.
 
 
 [Manage Cookie Settings (TEST)]: http://www.test.bbc.co.uk/privacy/cookies/managing/cookie-settings

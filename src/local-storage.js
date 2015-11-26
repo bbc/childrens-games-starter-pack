@@ -47,7 +47,7 @@ define(function(){
 
     function cookiesAreAllowed() {
         // NOTE: Always allows saving data if not within a BBC Barlesque or Playpen page:
-        return !window.bbccookies || window.bbccookies.isAllowed("ckps_a_performance_cookie");
+        return !window.bbccookies || window.bbccookies.isAllowed("ckps_a_func_cookie");
     }
 
     return {
