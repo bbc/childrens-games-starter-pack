@@ -43,7 +43,7 @@ function cookiesAreAllowed() {
 
 ### Example 
 A [local storage example](../src/local-storage.js) has been created using the 
-code above. Build the project (see [build.sh](./build-scripts/build.sh)) to 
+code above. Build the project (see [build.sh](../build-scripts/build.sh)) to 
 see the code running. 
 
 Change your preferences at [Manage Cookie Settings (TEST)] to see the demo 

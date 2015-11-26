@@ -63,7 +63,7 @@ be able to pick up the project and work on it without days of exploration.
 * **Externally configurable**:
   * The game must be entirely externally configurable, including localisation
   details. An example of an external configuration file is [config.js](../src/config.js)
-  which can be seen being utilised used when the project is built (see [build.sh](./build-scripts/build.sh)).
+  which can be seen being utilised used when the project is built (see [build.sh](../build-scripts/build.sh)).
   * In addition, no game text must be kept in the code or assets (checked 
   during [Tech Review](tech-review.md)) unless absolutely unavoidable (in 
   which case, document it). 

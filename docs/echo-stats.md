@@ -53,5 +53,5 @@ where ````actionName```` is the key, ````actionType```` is the value and
 
 ### Example 
 An [echo stats example](../src/echo-stats.js) has been created using the 
-code above. Build the project (see [build.sh](./build-scripts/build.sh)) to 
+code above. Build the project (see [build.sh](../build-scripts/build.sh)) to 
 see the code running. 
