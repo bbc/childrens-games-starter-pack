@@ -6,6 +6,11 @@
 # When you commit the following code, you can check the pipeline is working by checking the main.js file on the Test environment or by
 # viewing the play.test page for your project (get the URLs from the TPM)
 
+# Make a change to this file (the hello world string) and commit it to kick
+# off the automated build pipline. The resulting page on TEST shows
+# examples of using echo stats and local storage with an external configuration
+# file (from src/*).
+
 # 'build' the src files to output directory
 cp ../src/* output
 
@@ -16,5 +21,5 @@ helloWorldFunc="function appendHelloWorld() { \
 	container.appendChild(content); \
 }"
 
-# replacea the appendHelloWorld function in main.js with the one above
+# replaces the appendHelloWorld function in main.js with the one above
 sed "s/function appendHelloWorld() {}/$helloWorldFunc/g" output/main.js > output/main.tmp && mv output/main.tmp output/main.js

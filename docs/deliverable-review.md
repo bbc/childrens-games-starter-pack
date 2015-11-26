@@ -61,10 +61,12 @@ be able to pick up the project and work on it without days of exploration.
   we'd rather you explain things clearly in words if the code is complex.
  
 * **Externally configurable**:
-The game must be entirely externally configurable, including localisation 
-details. No game text must be kept in the code or assets (checked during  
-[Tech Review](tech-review.md)) unless absolutely unavoidable (in which case, 
-document it).
+  * The game must be entirely externally configurable, including localisation
+  details. An example of an external configuration file is [config.js](../src/config.js)
+  which can be seen being utilised used when the project is built (see [build.sh](./build-scripts/build.sh)).
+  * In addition, no game text must be kept in the code or assets (checked 
+  during [Tech Review](tech-review.md)) unless absolutely unavoidable (in 
+  which case, document it). 
 
 * **_Minimal_ commented out code**:
   * Odd lines (1-2) are acceptable
