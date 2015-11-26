@@ -1,16 +1,8 @@
 Table of Contents
 =================
 
-  * [Automated builds](docs/automated-builds.md#automated-builds)
-
-  * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
-
-  * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
-    * [Installation](docs/tech-review-tool.md#installation)
-    * [Using the Extension](docs/tech-review-tool.md#using-the-extension)
-
+# Process
   * [Definition of Done and Delivery Definitions](docs/definition-of-done.md#definition-of-done-and-delivery-definitions)
-  * [Delivery definitions](docs/definition-of-done.md#delivery-definitions)
     * [Alpha](docs/definition-of-done.md#alpha)
       * [Testing Deliverables](docs/definition-of-done.md#testing-deliverables)
     * [Beta](docs/definition-of-done.md#beta)
@@ -25,7 +17,7 @@ Table of Contents
       * [P3 Issues:](docs/definition-of-done.md#p3-issues)
 
   * [Tech Review](docs/tech-review.md#tech-review)
-    * [Code checks](docs/tech-review.md#code-checks)
+    * [Checks on release files](docs/tech-review.md#checks-on-release-files)
     * [Web browser checks](docs/tech-review.md#web-browser-checks)
       * [Tech Review Tool](docs/tech-review.md#tech-review-tool)
 
@@ -34,6 +26,24 @@ Table of Contents
     * [Project Structure](docs/deliverable-review.md#project-structure)
     * [Assets](docs/deliverable-review.md#assets)
     * [Code](docs/deliverable-review.md#code)
+    
+# Development
+  * [Automated builds](docs/automated-builds.md#automated-builds)
+
+  * [GEL Guidelines, Accessibility and Icon Assets](docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets)
+    * [Guidelines](docs/gel-guidelines.md#guidelines)
+    * [Toolkit](docs/gel-guidelines.md#toolkit)
+
+  * [Echo Stats](docs/echo-stats.md#echo-stats)
+    * [Implementing Echo](docs/echo-stats.md#implementing-echo)
+      * [Initialisation](docs/echo-stats.md#initialisation)
+      * [Sending Statistics](docs/echo-stats.md#sending-statistics)
+      * [Example](docs/echo-stats.md#example)
+
+  * [Using Local Storage/Cookies](docs/local-storage.md#using-local-storagecookies)
+    * [Opting In](docs/local-storage.md#opting-in)
+    * [Abiding by Local Storage/Cookie Settings](docs/local-storage.md#abiding-by-local-storagecookie-settings)
+      * [Example](docs/local-storage.md#example)
 
   * [og Object](docs/og-object.md#og-object)
     * [Data fields](docs/og-object.md#data-fields)
@@ -50,8 +60,17 @@ Table of Contents
     * [JavaScript Games](docs/og-object.md#javascript-games)
       * [RequireJS Example](docs/og-object.md#requirejs-example)
       * [Plain JS Example](docs/og-object.md#plain-js-example)
+      
+# Testing
+  * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
+    * [Installation](docs/tech-review-tool.md#installation)
+    * [Using the Extension](docs/tech-review-tool.md#using-the-extension)
 
-  * [Updating your pack](docs/updating-starter-pack.md#updating-your-pack)
+  * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
+  
+# Other
+* [Updating your pack](#updating-your-pack)
+
 
 # Children's Starter Pack
 

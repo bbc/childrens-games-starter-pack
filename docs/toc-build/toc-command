@@ -14,13 +14,25 @@ file:
 
 [Home](../README.md)
 
-
+Process:
 docs/toc-build/gh-md-toc --serial \
-docs/automated-builds.md \
-docs/testing-on-cbbc-page.md \
-docs/tech-review-tool.md \
 docs/definition-of-done.md \
 docs/tech-review.md \
-docs/deliverable-review.md \
-docs/og-object.md \
+docs/deliverable-review.md
+
+Development:
+docs/toc-build/gh-md-toc --serial \
+docs/automated-builds.md \
+docs/gel-guidelines.md \
+docs/echo-stats.md \
+docs/local-storage.md \
+docs/og-object.md
+
+Testing:
+docs/toc-build/gh-md-toc --serial \
+docs/tech-review-tool.md \
+docs/testing-on-cbbc-page.md
+
+Other:
+docs/toc-build/gh-md-toc --serial \
 docs/updating-starter-pack.md
