@@ -1,4 +1,4 @@
-define(['echo-stats', 'config'], function(echoStats, config) {
+define(['echo-stats', 'local-storage', 'config'], function(echoStats, localStorage, config) {
 	"use strict";
 
 	var container = document.getElementById(og.gameContainerId);
@@ -22,6 +22,16 @@ define(['echo-stats', 'config'], function(echoStats, config) {
 	appendBtn("Log Action Event (Button Clicked)", function(event) { echoActions.buttonClicked(event); });
 	appendHorizontalRule();
 
+	// ---------- Local Storage Example----------
+
+	appendTitle("Local Storage Example");
+	appendParagraph("Cookies allowed?: " + localStorage.cookiesAreAllowed());
+	var preEl = document.createElement("pre");
+	appendBtn("Save", function() { localStorage.onSaveButton(preEl); });
+	appendBtn("Load", function() { localStorage.onLoadButton(preEl); });
+	appendBtn("Clear", function() { localStorage.onClearButton(preEl); });
+	container.appendChild(preEl);
+
 
 	// ---------- Helper Funcs ----------
 	function appendHorizontalRule() {
@@ -31,7 +41,9 @@ define(['echo-stats', 'config'], function(echoStats, config) {
 
 	function appendTitle(title) {
 		var div = document.createElement("div");
-		var titleEl = document.createTextNode(title);
+		var titleEl = document.createElement("h3");
+		titleEl.innerHTML = title;
+		titleEl.style.fontSize = "200%";
 		div.appendChild(titleEl);
 		container.appendChild(div);
 	}
@@ -46,14 +58,17 @@ define(['echo-stats', 'config'], function(echoStats, config) {
 		var a = document.createElement('a');
 		a.innerHTML =linkText;
 		a.href = link;
+		a.style.color = "white";
 		container.appendChild(a);
 	}
 
 	function appendBtn(label, onClick) {
-		var btnEl = document.createElement("BUTTON");
+		var div = document.createElement("div");
+		var btnEl = document.createElement("button");
 		btnEl.innerHTML = label;
 		btnEl.onclick = onClick;
-		container.appendChild(btnEl);
+		div.appendChild(btnEl);
+		container.appendChild(div);
 	}
 
 	function appendHelloWorld() {}
