@@ -19,7 +19,7 @@ where ````echoConf```` sets the following properties:
 
 ````
 Echo.ConfigKeys.COMSCORE.URL = "http://sa.bbc.co.uk/bbc/{env}/s"
-echoConf[ConfigKeys.RUM.ENABLED] = disabled
+Echo.ConfigKeys.RUM.ENABLED = disabled
 ````
 Comscore is the primary analytics service where statistics should be sent. 
 RUM is the BBC's internal analytics service which is no longer 
