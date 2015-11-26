@@ -1,7 +1,12 @@
-Table of Contents
-=================
+# Children's Starter Pack
 
-# Process
+This is the Starter Pack for Children's games which contains some helpful bits
+and pieces a games developer might need to start building a HTML5 game for
+Children's.
+
+## Table of Contents
+
+### Process
   * [Definition of Done and Delivery Definitions](docs/definition-of-done.md#definition-of-done-and-delivery-definitions)
     * [Alpha](docs/definition-of-done.md#alpha)
       * [Testing Deliverables](docs/definition-of-done.md#testing-deliverables)
@@ -27,18 +32,17 @@ Table of Contents
     * [Assets](docs/deliverable-review.md#assets)
     * [Code](docs/deliverable-review.md#code)
     
-# Development
+### Development
   * [Automated builds](docs/automated-builds.md#automated-builds)
 
   * [GEL Guidelines, Accessibility and Icon Assets](docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets)
     * [Guidelines](docs/gel-guidelines.md#guidelines)
     * [Toolkit](docs/gel-guidelines.md#toolkit)
 
-  * [Echo Stats](docs/echo-stats.md#echo-stats)
-    * [Implementing Echo](docs/echo-stats.md#implementing-echo)
-      * [Initialisation](docs/echo-stats.md#initialisation)
-      * [Sending Statistics](docs/echo-stats.md#sending-statistics)
-      * [Example](docs/echo-stats.md#example)
+  * [Echo Stats](#echo-stats)
+    * [Initialisation](#initialisation)
+    * [Sending Statistics](#sending-statistics)
+    * [Example](#example)
 
   * [Using Local Storage/Cookies](docs/local-storage.md#using-local-storagecookies)
     * [Opting In](docs/local-storage.md#opting-in)
@@ -61,19 +65,13 @@ Table of Contents
       * [RequireJS Example](docs/og-object.md#requirejs-example)
       * [Plain JS Example](docs/og-object.md#plain-js-example)
       
-# Testing
+### Testing
   * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
     * [Installation](docs/tech-review-tool.md#installation)
     * [Using the Extension](docs/tech-review-tool.md#using-the-extension)
 
   * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
   
-# Other
+### Other
 * [Updating your pack](#updating-your-pack)
 
-
-# Children's Starter Pack
-
-This is the Starter Pack for Children's games which contains some helpful bits
-and pieces a games developer might need to start building a HTML5 game for
-Children's.
