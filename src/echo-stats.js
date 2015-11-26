@@ -8,9 +8,6 @@ define(function(require) {
         var echo = initEcho(appName);
         var numBtnClicks = 0;
 
-        // custom label to be sent with every subsequent event
-        echo.addLabel("starter_pack", "echo_example");
-
         // Send the initial View event for the game "page".
         // (Subsequent calls to logAction are for events occurring while on
         // this page.):

@@ -26,14 +26,10 @@ used and therefore must be disabled in the version of Echo being used.
 ## Sending Statistics
 
 Statistics consist of key-value pairs called labels that are sent on 
-certain events. To send a label with all echo calls: 
+certain events.
 
-````
-echo.addLabel("starter_pack", "echo_example");
-````
-
-Similarly, sending an initial page view event with the game's countername will
- add a label of ````name:countername```` to all echo calls:
+Sending an initial page view event with the game's countername will add a 
+label of ````name:countername```` to all echo calls:
 
 ````
 echo.viewEvent(counterName);
