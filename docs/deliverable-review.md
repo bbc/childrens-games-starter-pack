@@ -81,3 +81,5 @@ be able to pick up the project and work on it without days of exploration.
   * As stated in the [Tech Review](tech-review.md), any changes to libraries 
   should be documented
   * If minified, the unminified source should be included in a dev directory
+  
+[Home](../README.md)

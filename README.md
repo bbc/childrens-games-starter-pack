@@ -39,10 +39,10 @@ Children's.
     * [Guidelines](docs/gel-guidelines.md#guidelines)
     * [Toolkit](docs/gel-guidelines.md#toolkit)
 
-  * [Echo Stats](#echo-stats)
-    * [Initialisation](#initialisation)
-    * [Sending Statistics](#sending-statistics)
-    * [Example](#example)
+  * [Echo Stats](docs/echo-stats.md#echo-stats)
+    * [Initialisation](docs/echo-stats.md#initialisation)
+    * [Sending Statistics](docs/echo-stats.md#sending-statistics)
+    * [Example](docs/echo-stats.md#example)
 
   * [Using Local Storage/Cookies](docs/local-storage.md#using-local-storagecookies)
     * [Opting In](docs/local-storage.md#opting-in)
