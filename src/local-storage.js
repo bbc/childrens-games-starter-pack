@@ -1,48 +1,28 @@
 define(function(){
 
-    // Application: ---------------------------------------------------------
-    //
-    //var container = document.getElementById(og.gameContainerId);
-    //
-    //container.innerHTML = (
-    //'<div style="width:100%; height:100%; padding:1em; background-color:moccasin;">'
-    //+   '<p>Cookies allowed? ' + cookiesAreAllowed() + '</p>'
-    //+   '<p><button id="save">Save</button></p>'
-    //+   '<p><button id="load">Load</button></p>'
-    //+   '<p><button id="clear">Clear</button></p>'
-    //+   '<pre id="output" style="font-family: monospace;"></pre>'
-    //+'</div>');
-    //
-    //document.getElementById("save").addEventListener("click", onSaveButton);
-    //document.getElementById("load").addEventListener("click", onLoadButton);
-    //document.getElementById("clear").addEventListener("click", onClearButton);
-    //var output = document.getElementById("output");
-    //setTimeout(onLoadButton, 0);
-    //
-    function onSaveButton(preEl) {
+
+    // ---------- Application ----------
+    function onSaveButton(pre) {
         var data = {
-            title: "local storage test",
+            title: "local storage example",
             time: new Date().toISOString()
         };
         saveData(data);
-        preEl.innerHTML = "saving:\n" + JSON.stringify(data, null, 4);
+        pre.innerHTML = "saving:\n" + JSON.stringify(data, null, 4);
     }
 
-    function onLoadButton(preEl) {
+    function onLoadButton(pre) {
         var data = loadData();
-        preEl.innerHTML = "loaded:\n" + JSON.stringify(data, null, 4);
+        pre.innerHTML = "loaded:\n" + JSON.stringify(data, null, 4);
     }
 
-    function onClearButton(preEl) {
+    function onClearButton(pre) {
         clearData();
-        preEl.innerHTML = "cleared";
+        pre.innerHTML = "cleared";
     }
-    //
-    //
-    //
-    //// Implementation: ------------------------------------------------------
-    //
-    var MY_LOCAL_STORAGE_KEY = "childrens-my-game";
+
+    // ---------- Implementation ----------
+    var MY_LOCAL_STORAGE_KEY = "starter-pack-example";
 
     function saveData(data) {
         if (cookiesAreAllowed()) {
@@ -67,7 +47,7 @@ define(function(){
 
     function cookiesAreAllowed() {
         // NOTE: Always allows saving data if not within a BBC Barlesque or Playpen page:
-        return !window.bbccookies || window.bbccookies.isAllowed("ckps_whatever");
+        return !window.bbccookies || window.bbccookies.isAllowed("ckps_a_performance_cookie");
     }
 
     return {

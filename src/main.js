@@ -26,25 +26,27 @@ define(['echo-stats', 'local-storage', 'config'], function(echoStats, localStora
 
 	appendTitle("Local Storage Example");
 	appendParagraph("Cookies allowed?: " + localStorage.cookiesAreAllowed());
-	var preEl = document.createElement("pre");
-	appendBtn("Save", function() { localStorage.onSaveButton(preEl); });
-	appendBtn("Load", function() { localStorage.onLoadButton(preEl); });
-	appendBtn("Clear", function() { localStorage.onClearButton(preEl); });
-	container.appendChild(preEl);
+	var pre = document.createElement("pre");
+	appendBtn("Save", function() { localStorage.onSaveButton(pre); });
+	appendBtn("Load", function() { localStorage.onLoadButton(pre); });
+	appendBtn("Clear", function() { localStorage.onClearButton(pre); });
+	container.appendChild(pre);
 
 
 	// ---------- Helper Funcs ----------
 	function appendHorizontalRule() {
+		var br = document.createElement("br");
+		container.appendChild(br);
 		var hr = document.createElement("hr");
 		container.appendChild(hr);
 	}
 
-	function appendTitle(title) {
+	function appendTitle(titleStr) {
 		var div = document.createElement("div");
-		var titleEl = document.createElement("h3");
-		titleEl.innerHTML = title;
-		titleEl.style.fontSize = "200%";
-		div.appendChild(titleEl);
+		var title = document.createElement("h3");
+		title.innerHTML = titleStr;
+		title.style.fontSize = "200%";
+		div.appendChild(title);
 		container.appendChild(div);
 	}
 
@@ -64,10 +66,10 @@ define(['echo-stats', 'local-storage', 'config'], function(echoStats, localStora
 
 	function appendBtn(label, onClick) {
 		var div = document.createElement("div");
-		var btnEl = document.createElement("button");
-		btnEl.innerHTML = label;
-		btnEl.onclick = onClick;
-		div.appendChild(btnEl);
+		var btn = document.createElement("button");
+		btn.innerHTML = label;
+		btn.onclick = onClick;
+		div.appendChild(btn);
 		container.appendChild(div);
 	}
 
