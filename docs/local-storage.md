@@ -35,10 +35,10 @@ window.bbccookies.isAllowed("ckps_a_func_cookie");
 Together, this could create a helper function: 
 
 ````
-    function cookiesAreAllowed() {
-        // NOTE: Always allows saving data if not within a BBC Barlesque or Playpen page:
-        return !window.bbccookies || window.bbccookies.isAllowed("ckps_a_func_cookie");
-    }
+function cookiesAreAllowed() {
+    // NOTE: Always allows saving data if not within a BBC Barlesque or Playpen page:
+    return !window.bbccookies || window.bbccookies.isAllowed("ckps_a_func_cookie");
+}
 ````
 
 ### Example 
