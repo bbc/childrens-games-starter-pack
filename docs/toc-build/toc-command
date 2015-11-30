@@ -16,7 +16,7 @@ file:
 
 Process:
 docs/toc-build/gh-md-toc --serial \
-docs/definition-of-done.md \
+docs/game-delivery-definitions.md \
 docs/tech-review.md \
 docs/deliverable-review.md
 
