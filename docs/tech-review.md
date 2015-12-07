@@ -24,8 +24,8 @@ should be removed
   * backups e.g. 'loading.js.BU'
   * versioned files e.g. 'boy_v2_final.png'
   * arbitrarily-named files e.g. "assets_dan.json"
-  * hangover files i.e. if the game is based on an existing framework (such as
- BBC IVOR), no 'old' assets or config should remain
+  * hangover files i.e. if the game is based on an existing framework, 
+  no 'old' assets or config should remain
  
 * **No hidden files**: The project shouldn't contain any hidden files 
 (DS_STORE's or similar).

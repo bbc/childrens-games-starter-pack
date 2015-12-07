@@ -85,7 +85,6 @@ Certification and Technical Testing.
 ### Release Candidate version of the Software for the Deliverables (including Source Code and Object Code)
 
   * Gameplay and core functionality complete, with full end-to-end play
- 
   * All final assets in place 
   * All BBC supplied game statistics integrated
   * Game meets the detailed specification set out in Schedule 1

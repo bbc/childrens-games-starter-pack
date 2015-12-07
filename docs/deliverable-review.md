@@ -1,16 +1,16 @@
 # Deliverable Review
 
 A deliverable review is carried out after the game is released, on the final 
-game source code and assets. For further info on what we consider "finished",
- please see: [Definition of Done and Delivery Definitions](definition-of-done.md).
+game source code and assets. For further info on what we consider "finished", 
+please see: [Delivery Definitions](game-delivery-definitions.md).
 
 During a deliverable review, the same checks from the **release files 
 section** of the [Tech Review](tech-review.md) are performed against the 
 source code (instead of the release files) with some slight differences (in 
 *italics*) and additions listed below.
 
-This isn't an exhaustive list, and not all points are applicable to all games
-. The objective is to ensure our game deliveries are in the best and most 
+This isn't an exhaustive list, and not all points are applicable to all games. 
+The objective is to ensure our game deliveries are in the best and most 
 future-proof state possible.
 
 ## Documentation
@@ -31,9 +31,10 @@ which should:
 
 ## Project Structure
 
-* **No _none-essential_ files or backups**: it is acceptable to include files
+* **No _non-essential_ files or backups**: it is acceptable to include files
  in the source that are unused in the release such as level builders. Other 
- unused files and backups are not allowed as described in the [Tech Review](tech-review.md).
+ unused files and backups are not allowed as described in the 
+ [Tech Review](tech-review.md).
 
 * **No hidden files _with an exception_**: The project should contain no 
 hidden files as in the [Tech Review](tech-review.md), with the *exception* of
@@ -44,8 +45,10 @@ hidden files as in the [Tech Review](tech-review.md), with the *exception* of
 * **Organisation**: Assets should live in a sensible, organised location not 
 scattered around the project
   * SD and HD assets should live in different directories
-  * Original and compressed/processed assets should live in different 
-  directories
+  
+* **Raw assets**: Raw assets such as large PSDs are currently not suitable for 
+saving to Github and should be stored in the appropriate Box project and linked 
+to in the documentation.
 
 * **Sensible naming**: Asset names should clearly indicate their function e.g. 
 "confirmscreenclosebutton.png" and not "button38.png".
@@ -54,11 +57,10 @@ scattered around the project
 ## Code
 
 * **Understandable**:
-We don't mind how you structure the project, but a new developer must 
-be able to pick up the project and work on it without days of exploration.
-  * Comment everything that isn't immediately clear to new developers. We 
-  understand that theoretically "good code is self-documenting", in practice 
-  we'd rather you explain things clearly in words if the code is complex.
+  * We would expect a logical structure that would be quick for a new developer to 
+  grasp and navigate.
+  * Make appropriate use of in-line comments, particularly for any configurable 
+  or particularly complex code. 
  
 * **Externally configurable**:
   * The game must be entirely externally configurable, including localisation
@@ -67,6 +69,8 @@ be able to pick up the project and work on it without days of exploration.
   * In addition, no game text must be kept in the code or assets (checked 
   during [Tech Review](tech-review.md)) unless absolutely unavoidable (in 
   which case, document it). 
+  * The deliverable is expected to be ready for Live environment or at least 
+  include relevant documentation/instructions to get the game Live-ready.
 
 * **_Minimal_ commented out code**:
   * Odd lines (1-2) are acceptable
