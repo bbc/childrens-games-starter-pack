@@ -73,9 +73,7 @@ Children's.
       
 ### Testing
   * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
-    * [Installation](docs/tech-review-tool.md#installation)
-    * [Using the Extension](docs/tech-review-tool.md#using-the-extension)
-
+  
   * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
   
 ### Other
