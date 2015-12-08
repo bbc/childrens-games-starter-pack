@@ -1,32 +1,17 @@
 # Tech Review Tool
 
-The Tech Review tool is a Chrome Extension that appears as a tab in Developer
-Tools. It contains automated checks to analyse performance and source files
-for CBBC and CBeebies games.
+The [BBC Digital Children's Games Tech Review Tool][tech review tool web store] 
+is a Chrome Extension that appears as a tab in Developer Tools. It 
+contains automated checks to analyse performance and release files for CBBC 
+and CBeebies games.
   
-Please run the tool to ensure everything is to the standard we need it. We 
-also run the tool, so getting all checks passing early 
-means less back and forth when it comes to getting the game live.
+Please run the tool to ensure everything is to the standard we need it, as 
+failing tests may delay the game's release.
 
-
-## Installation
-
-Install the [BBC Digital Children's Games Tech Review Tool] from the Google 
-Web Store.
-
-
-## Using the Extension
-
-* Visit a game webpage that requires a technical review (such as http://play.test.bbc.co.uk/play/pen/{GID})
-* Open developer tools and click on Tech Review tab
-
-For accurate results:
-
-* ensure cache 'Disable cache' is not ticked on the Network tab 
-* click the reload button within the tool to empty the cache & hard reload the page
-* click run as often as you like, but wait for the game to fully load before 
-utilising results
+See [Tech Review Tool on Github][tech review tool github] for installation 
+and usage instructions.
 
 [Home](../README.md)
 
-[BBC Digital Children's Games Tech Review Tool]: https://chrome.google.com/webstore/detail/bbc-digital-childrens-gam/obhojgkahkhapohjnijhehgfkpceogcb
+[tech review tool github]: https://github.com/bbc/childrens-game-tech-review-tool 
+[tech review tool web store]: https://chrome.google.com/webstore/detail/bbc-digital-childrens-gam/obhojgkahkhapohjnijhehgfkpceogcb
