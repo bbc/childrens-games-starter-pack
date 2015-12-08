@@ -46,9 +46,13 @@ hidden files as in the [Tech Review](tech-review.md), with the *exception* of
 scattered around the project
   * SD and HD assets should live in different directories
   
-* **Raw assets**: Raw assets such as large PSDs are currently not suitable for 
-saving to Github and should be stored in the appropriate Box project and linked 
-to in the documentation.
+* **Raw assets**: 
+  * Any raw assets that are not processed during the build should not be 
+  saved in Github
+    * Instead, they should be saved in the appropriate Box folder and 
+    referenced in the documentation
+  * Any raw assets that are required during the build step should live in 
+  their own directory
 
 * **Sensible naming**: Asset names should clearly indicate their function e.g. 
 "confirmscreenclosebutton.png" and not "button38.png".
