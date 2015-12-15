@@ -12,7 +12,8 @@
 # file (from src/*).
 
 # 'build' the src files to output directory
-cp ../src/* output
+mkdir ../output
+cp ../src/* ../output
 
 # edit the string below and commit to see your changes reflected
 helloWorldFunc="function appendHelloWorld() { \
@@ -22,4 +23,4 @@ helloWorldFunc="function appendHelloWorld() { \
 }"
 
 # replaces the appendHelloWorld function in main.js with the one above
-sed "s/function appendHelloWorld() {}/$helloWorldFunc/g" output/main.js > output/main.tmp && mv output/main.tmp output/main.js
+sed "s/function appendHelloWorld() {}/$helloWorldFunc/g" ../output/main.js > ../output/main.tmp && mv ../output/main.tmp ../output/main.js
