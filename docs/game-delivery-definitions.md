@@ -4,6 +4,12 @@
 stages. Feedback should be acted upon for the next delivery as all checks 
 must pass. 
 
+> The BBC has a contractual right to evaluate and test each Deliverable in 
+accordance with the Acceptance Tests (to be agreed with the supplier and based 
+on the Game Delivery Definitions outlined below) to determine whether 
+Acceptance can be given, which may trigger any payment due in relation 
+to the tested Deliverable.
+
 ## Prototype
 
 > A working Prototype game delivery has functional gameplay elements and 
