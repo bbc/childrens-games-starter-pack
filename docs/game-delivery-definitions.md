@@ -42,8 +42,8 @@ issues, small bugs and early game balancing.
   * **Initial** game download size **MUST BE** under 15MB
   * **Total** zipped game file size **MUST BE** under 50MB
   * BBC Games GEL compliant UI and full end-to-end screen flow implemented including transitions and pre-loaders
-  * BBC Games GEL compliant game breakpoints implemented
-  * BBC Games GEL compliant layout for settings screen implemented across game breakpoints
+  * BBC Games GEL compliant layout across two breakpoints implemented
+  * BBC Games GEL compliant layout for settings screen implemented across two breakpoints
   * BBC Digital Children's Accessibility Guidelines compliant Tabbing and Alt Text implemented 
   * Initial BBC supplied standardised game stats event implemented: game_loaded
   * Deployed on CBBC or CBeebies platform using BBC GitHub build process
