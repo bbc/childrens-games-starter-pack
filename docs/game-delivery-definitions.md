@@ -7,12 +7,13 @@ must pass.
 ## Prototype
 
 > A working Prototype game delivery has functional gameplay elements and 
-representative assets which are used to demonstrate if a game, part of a game
- or a technology is feasible or not.
+representative assets which are used to demonstrate if a game, part of a game 
+or a technology is feasible or not.
 
 ### Prototype delivery of the Software for the Deliverables (including Source Code and Object Code)
 
 Dependant on game, but may include key features such as:
+  * Wireframes
   * Gameplay mechanic
   * Gameplay controls
   * Game engine technology
@@ -28,54 +29,61 @@ issues, small bugs and early game balancing.
 
 ### Alpha delivery of the Software for the Deliverables (including Source Code and Object Code)
 
-  * Complete user journey through menus, help screens etc including any 
-  transitions and pre-loaders
-  * Core functionality for gameplay
+  * Core functionality for gameplay in place
   * Early game balancing in place
   * Graphics may be placeholders
-  * Initial standardised game statistics integrated (e.g. game_loaded, 
-  game_first_click, game_level)
-  * Full download weight of assets (including audio and graphical elements)
+  * Full download weight of assets implemented (including audio and graphical elements)
+  * **Initial** game download size **MUST BE** under 15MB
+  * **Total** zipped game file size **MUST BE** under 50MB
+  * BBC Games GEL compliant UI and full end-to-end screen flow implemented including transitions and pre-loaders
+  * BBC Games GEL compliant game breakpoints implemented (Mobile < 599px wide & Tablet & Desktop: >600px wide)
+  * BBC Games GEL compliant layout for settings screen implemented across game breakpoints
+  * BBC Digital Children's Accessibility Guidelines compliant Tabbing and Alt Text implemented 
+  * Initial BBC supplied standardised game stats event implemented: game_loaded
   * Deployed on CBBC or CBeebies platform using BBC GitHub build process
-  * Hosted on http://play.test.bbc.co.uk/play/pen/**GID**
-  * Initial functionality for any agreed integrated systems in place (e.g. 
-  sign in, high-scores etc)
-  * Adheres to BBC Digital Children's Accessibility Guidelines
-  * **Agency** tested game against primary devices and browsers P1/P2/P3 issues 
-  identified and accepted 
+  * Hosted on http://**play.test**.bbc.co.uk/play/pen/**GID**
+  * Initial functionality for any agreed integrated systems in place (e.g. sign in, high-scores etc)
+  * **Agreed** User Testing outcomes from Prototype addressed
+  * **Agency** tested game against primary devices and browsers
+  * P1/P2/P3 issues identified and accepted 
+  
+### Certification Deliverables
 
-### Testing Deliverables
+  * Evidence of testing across P1, P2 and P3 devices and browsers with known issues identified
 
-  * Test plan (including scope of devices and browsers the developers will 
-  be using for testing)
-  * Draft test script
 
 ## Beta
 
 > A working Beta game delivery has full game functionality, structure and 
-assets in place and is ready to go into thorough Certification, Technical and
- User Testing to aid final gameplay balancing and bug identification.
+assets in place and is ready to go into thorough Certification, Technical and 
+User Testing to aid final gameplay balancing and bug identification.
 
 ### Beta version of the Software for the Deliverables (including Source Code and Object Code)
 
   * Gameplay and core functionality complete, with full end-to-end play 
   * All final assets in place
-  * All BBC supplied game statistics integrated 
+  * **Initial** game download size **MUST BE** under 15MB
+  * **Total** zipped game file size **MUST BE** under 50MB
+  * **Full** implementation of the BBC Games Messaging Interface
+  * Game fully tested in App Test harness via Hockey app (iOS, Android ARM, Android X86)
+  * Visual design skin applied to GEL UI that matches our guidance and appropriate to the game art style
+  * Fully adheres to BBC Games GEL, including App compliance specifically Audio toggling and Settings panel
+  * Fully adheres to BBC Digital Children's Accessibility Guidelines (e.g. Tabbing, Alt Text, Subtitling, Motion On/Off)
+  * All BBC supplied standardised game stats events implemented: game_loaded, game_first_click, game_level, etc
   * Localisation functionality integrated and tested (if required)
   * Deployed on CBBC or CBeebies platform using BBC GitHub build process
-  * Hosted on http://play.test.bbc.co.uk/play/pen/**GID**
-  * Full functionality for any agreed integrated systems in place (e.g. sign 
-  in, high-scores etc)
-  * Fully adheres to BBC Digital Children's Accessibility Guidelines
+  * Hosted on http://**play.test**.bbc.co.uk/play/pen/**GID**
+  * Full functionality for any agreed integrated systems in place (e.g. sign in, high-scores etc)
+  * **Agreed** User Testing outcomes from Alpha addressed
   * **Agency** tested game against primary, secondary and tertiary devices/browsers
   * No P1 issues
   * Limited P2 issues identified and accepted by BBC
   * Limited P3 issues identified and accepted by BBC
 
-### Testing Deliverables
+### Certification Deliverables
 
-  * Test results with a full list of all issues discovered so far
-  * Any updates to the test plan and test script
+  * No P1 issues
+  * P2 and P3 test results with a full list of identified issues
 
 ## Release Candidate
 
@@ -85,27 +93,34 @@ Certification and Technical Testing.
 ### Release Candidate version of the Software for the Deliverables (including Source Code and Object Code)
 
   * Gameplay and core functionality complete, with full end-to-end play
-  * All final assets in place 
+  * All final assets in place
+  * **Initial** game download size **MUST BE** under 15MB
+  * **Total** zipped game file size **MUST BE** under 50MB
+  * **Full** implementation of the BBC Games Messaging Interface
+  * Game fully tested in App Test harness via Hockey app (iOS, Android ARM, Android X86)
+  * Visual design skin applied to GEL UI that matches our guidance and appropriate to the game art style
+  * Fully adheres to BBC Games GEL, including App compliance specifically Audio toggling and Settings panel
+  * Fully adheres to BBC Digital Children's Accessibility Guidelines (e.g. Tabbing, Alt Text, Subtitling, Motion On/Off)
   * All BBC supplied game statistics integrated
   * Game meets the detailed specification set out in Schedule 1
   * Deployed on BBC Live server
-  * Hosted on http://play.bbc.co.uk/play/pen/**GID**
-  * Game located on a BBC Live Preview link
-  * Full functionality for any agreed integrated systems in place (e.g. sign 
-  in, high-scores etc)
-  * Fully adheres to BBC Digital Children's Accessibility Guidelines
-  * BBC Certification ready 
+  * Hosted on http://**play.bbc**.co.uk/play/pen/**GID**
+  * Game located on BBC Live Preview link
+  * Full functionality for any agreed integrated systems in place (e.g. sign in, high-scores etc)
+  * **Agreed** User Testing outcomes from Beta addressed
+  * Passed testing with BBC Children's Games Tech Review Tool (Chrome plug-in)
   * No P1 issues
   * No or limited P2 issues with an agreed fix schedule
   * No or limited P3 issues with and agreed fix schedule
 
-### Testing Deliverables
+### Certification Deliverables
 
   * Test results with a full list of all open issues
 
 ## Gold Master
 
-> A working Gold Master game delivery is the final fully Certified build ready for live.
+> A working Gold Master game delivery is the final fully Certified build ready 
+for live.
 
 ### Gold Master version of the Software for the Deliverables (including Source Code and Object Code)
 
@@ -120,11 +135,12 @@ All final game code, assets and documentation should be submitted following
 the Gold Master delivery for [Deliverable Review](deliverable-review.md).
 
 This should include, but not limited to:
-  * Game source files including Source and Object Code
-  * Configuration files and scripts
+  * Final game source
   * Build scripts
   * Build notes
-  * Fonts and any licenses
+  * Configuration files and scripts
+  * Asset source files (e.g PSDs, AIs, animations, sound files, fonts etc)
+  * Any licenses associated with assets for use by the BBC across all media
 
 
 ### Issue Prioritization
@@ -164,16 +180,16 @@ To enable us to provide the agreed quality gates between releases, please use
 ### P3 Issues:
 
   * Issues on Secondary devices that are OUTSIDE the scope of BBC / developer
-   controls\*
+   controls\**
   * Issues on Tertiary devices that are OUTSIDE the scope of BBC / developer 
-  control\*
+  control\**
   * Occasional audio / video glitches
   * Minor UX tweaks
   * Missing version numbers
 
-\* Issues outside the scope of BBC / dev control include iOS / Android / 
-Browser limitations that are caused by the software vendor and may or may not
-be addressed in future releases. This also covers hardware limitations of 
-devices.
+\** Issues outside the scope of BBC / dev control include 
+iOS / Android / Browser limitations that are caused by the software vendor and 
+may or may not be addressed in future releases. This also covers hardware 
+limitations of devices.
 
 [Home](../README.md)
