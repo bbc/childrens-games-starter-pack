@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
 # You should place all your build steps in this script which will be run by our automated build pipeline
 # This script is run from the project root - you can cd around as you need to
 # Your build steps should build your game to a root-level output folder as demonstrated below, this folder is then uploaded to our servers
