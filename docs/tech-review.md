@@ -66,9 +66,7 @@ The game should request SD/HD assets appropriately based on device.
 
 * **Initial download speed**:
 The game must load in under 15 seconds when emulating the average 3G 
-connection. The throttling values should be set to: 
-Throughput: 5120Kb/s (=5Mb/s)
-Latency: 64ms
+connection. The throttling values should be set to: Throughput: 5120Kb/s (=5Mb/s), Latency: 64ms.
 
 * **No asset loading errors**
   * no assets should fail to load
