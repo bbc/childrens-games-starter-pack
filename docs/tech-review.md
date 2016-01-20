@@ -4,12 +4,6 @@ The tech review is carried out on release files (not source files) at Alpha,
 Beta and Release Candidate stages. 
 
 ## Checks on release files
-
-* **No defamatory code**
-  * no inappropriate language such as swear words
-  * no advertising including
-    * links to products in software licenses
-  * no names of people or companies
    
 * **No commented out code**: The game should not contain commented out code 
 or TODOs. If something is marked as "TODO" then it either legitimately needs 
@@ -66,7 +60,8 @@ The game should request SD/HD assets appropriately based on device.
 
 * **Initial download speed**:
 The game must load in under 15 seconds when emulating the average 3G 
-connection. The throttling values should be set to: Throughput: 5120Kb/s (=5Mb/s), Latency: 64ms.
+connection with custom 3G emulation. The throttling values should be set to:
+ Throughput: 5120Kb/s (=5Mb/s), Latency: 64ms.
 
 * **No asset loading errors**
   * no assets should fail to load
@@ -105,7 +100,15 @@ release files are minfiied and the og. variable has been obscured.
 * **iStats calls**:
 The game must send 'action_name=game_loaded' once, when the game is loaded.
 
- 
+* **Language use**
+Automated check will check source code against a list of disallowed words and 
+flag up lines and words used. A manual check of code should be used in case unlisted
+words are present.
+  * no inappropriate language such as swear words
+  * no advertising including
+    * links to products in software licenses
+  * (check manually) no names of people or companies
+
 [Home](../README.md)
 
 
