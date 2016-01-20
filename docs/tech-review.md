@@ -65,8 +65,10 @@ cache' is not ticked in dev tools if it is open.
 The game should request SD/HD assets appropriately based on device.
 
 * **Initial download speed**:
-Ideally, the game should load in under 15 seconds when emulating a Good 3G 
-connection.
+The game must load in under 15 seconds when emulating the average 3G 
+connection. The throttling values should be set to: 
+Throughput: 5120Kb/s (=5Mb/s)
+Latency: 64ms
 
 * **No asset loading errors**
   * no assets should fail to load
@@ -105,10 +107,6 @@ release files are minfiied and the og. variable has been obscured.
 * **iStats calls**:
 The game must send 'action_name=game_loaded' once, when the game is loaded.
 
-* **Initial download size and file sizes**:
-The download size is used as an early indicator for how long the game will take
- to download. To help identidy large files, files over 500KB are listed. The 
- statistics to fail the tech review is the initial download speed.
  
 [Home](../README.md)
 
