@@ -56,6 +56,7 @@ issues, small bugs and early game balancing.
 ### Certification Deliverables
 
   * Evidence of testing across P1, P2 and P3 devices and browsers with known issues identified
+  * Evidence of tech review tool testing completed without any issues on completed functionality 
 
 
 ## Beta
@@ -90,6 +91,7 @@ User Testing to aid final gameplay balancing and bug identification.
 
   * No P1 issues
   * P2 and P3 test results with a full list of identified issues
+  * Evidence of tech review tool testing completed without any issues on completed functionality
 
 ## Release Candidate
 
@@ -121,7 +123,10 @@ Certification and Technical Testing.
 
 ### Certification Deliverables
 
-  * Test results with a full list of all open issues
+  * Evidence of testing across P1, P2 and P3 devices and browsers with known issues identified and accepted by BBC TPM
+  * Completion of relevant certification test cases against listed devices within Certification sheet 
+  * Evidence of Completed tech review tool testing, without any failing tests outstanding
+  * Final game assets without any outstanding planned/in-development changes.  
 
 ## Gold Master
 
