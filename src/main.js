@@ -1,4 +1,4 @@
-define(['gmi-platform', 'storage', 'config'], function(gmi_platform, storage, config) {
+define(['gmi-platform', 'storage'], function(gmi_platform, storage) {
 	"use strict";
 
     // create a gmi object using getGMI. If window.getGMI has already been defined i.e we have already got the gmi

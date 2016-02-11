@@ -62,7 +62,7 @@ Children's.
         * [gmi\.exitGameUrl](docs/gmi.md#gmiexitgameurl)
         * [gmi\.gameContainerId](docs/gmi.md#gmigamecontainerid)
         * [gmi\.gameUrl](docs/gmi.md#gmigameurl)
-        * [gmi\.shouldShowExitButton](docs/gmi.md#gmishouldShowExitButton)
+        * [gmi\.shouldShowExitButton](docs/gmi.md#gmishouldshowexitbutton)
     * [Example](docs/gmi.md#example)
 
   * [Stats](docs/stats.md#stats)
