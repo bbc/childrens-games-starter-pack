@@ -37,7 +37,7 @@ Children's.
     * [Project Structure](docs/deliverable-review.md#project-structure)
     * [Assets](docs/deliverable-review.md#assets)
     * [Code](docs/deliverable-review.md#code)
-    
+
 ### Development
   * [Automated builds](docs/automated-builds.md#automated-builds)
 
@@ -45,15 +45,25 @@ Children's.
     * [Guidelines](docs/gel-guidelines.md#guidelines)
     * [Toolkit](docs/gel-guidelines.md#toolkit)
 
-  * [Echo Stats](docs/echo-stats.md#echo-stats)
-    * [Initialisation](docs/echo-stats.md#initialisation)
-    * [Sending Statistics](docs/echo-stats.md#sending-statistics)
-    * [Example](docs/echo-stats.md#example)
+  * [GMI](docs/gmi.md#gmi)
+    * [GMI Functionality](docs/gmi.md#gmi-functionality)
+        * [Stats](docs/gmi.md#stats)
+        * [Global game settings](docs/gmi.md#global-game-settings)
+        * [Saving and Loading data](docs/gmi.md#saving-and-loading-data)
+        * [Debug Messages](docs/gmi.md#debug-messages)
+        * [Exiting the game](docs/gmi.md#exiting-the-game)
+    * [Loading the GMI](docs/gmi.md#gmi-loading-the-gmi)
+    * [Example](docs/gmi.md#example)
 
-  * [Using Local Storage/Cookies](docs/local-storage.md#using-local-storagecookies)
-    * [Opting In](docs/local-storage.md#opting-in)
-    * [Abiding by Local Storage/Cookie Settings](docs/local-storage.md#abiding-by-local-storagecookie-settings)
-      * [Example](docs/local-storage.md#example)
+  * [Stats](docs/stats.md#stats)
+    * [Sending Statistics](docs/stats.md#sending-statistics)
+    * [Example](docs/stats.md#example)
+
+  * [Using Local Storage/Cookies](docs/data-storage.md#using-local-storagecookies)
+    * [Opting In](docs/data-storage.md#opting-in)
+    * [Saving data](docs/data-storage.md#saving-data)
+    * [Loading data](docs/data-storage.md#loading-data)
+    * [Example](docs/local-storage.md#example)
 
   * [og Object](docs/og-object.md#og-object)
     * [Data fields](docs/og-object.md#data-fields)
@@ -70,12 +80,11 @@ Children's.
     * [JavaScript Games](docs/og-object.md#javascript-games)
       * [RequireJS Example](docs/og-object.md#requirejs-example)
       * [Plain JS Example](docs/og-object.md#plain-js-example)
-      
+
 ### Testing
   * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
-  
+
   * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
-  
+
 ### Other
 * [Updating your pack](#updating-your-pack)
-

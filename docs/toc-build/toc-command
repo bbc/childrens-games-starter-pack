@@ -24,8 +24,9 @@ Development:
 docs/toc-build/gh-md-toc --serial \
 docs/automated-builds.md \
 docs/gel-guidelines.md \
-docs/echo-stats.md \
-docs/local-storage.md \
+docs/gmi.md \
+docs/stats.md \
+docs/data-storage.md \
 docs/og-object.md
 
 Testing:
