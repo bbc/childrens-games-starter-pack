@@ -26,7 +26,7 @@ To save game data using the GMI, use the
 gmi.setGameData(key, value);
 ````
 
-function.
+function. This stores a JSON key-value pair that can then be pulled out as described in the next section.
 
 The exceptions to this are the global settings: muted, subtitles, and motion. These
 settings persist between games, and as such have their own setters:
