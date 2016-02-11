@@ -161,14 +161,14 @@ The game's exit button should navigate to the URL provided by this field. The
 Specifies the ID of the HTML div that your game should fill (only relevant
 to JavaScript games).
 
-##### gmi.gameUrl
+#### gmi.gameUrl
 The URL of your main game file as entered into the GamesGrid CMS.
 
-##### gmi.gameDir
+#### gmi.gameDir
 The URL of the directory containing your main game file. This is convenient for
 converting relative asset paths into absolute ones.
 
-##### gmi.shouldShowExitButton
+#### gmi.shouldShowExitButton
 The game should use this flag to decide whether to show the exit button
 (and potentially other full-screen-related functionality) rather than detecting
 full screen status itself. This flag will be false if the game is currently
