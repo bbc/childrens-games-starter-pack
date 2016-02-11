@@ -52,7 +52,7 @@ Children's.
         * [Saving and Loading data](docs/gmi.md#saving-and-loading-data)
         * [Debug Messages](docs/gmi.md#debug-messages)
         * [Exiting the game](docs/gmi.md#exiting-the-game)
-    * [Loading the GMI](docs/gmi.md#gmi-loading-the-gmi)
+    * [Loading the GMI](docs/gmi.md#loading-the-gmi)
     * [Example](docs/gmi.md#example)
 
   * [Stats](docs/stats.md#stats)
@@ -63,7 +63,7 @@ Children's.
     * [Opting In](docs/data-storage.md#opting-in)
     * [Saving data](docs/data-storage.md#saving-data)
     * [Loading data](docs/data-storage.md#loading-data)
-    * [Example](docs/local-storage.md#example)
+    * [Example](docs/data-storage.md#example)
 
   * [og Object](docs/og-object.md#og-object)
     * [Data fields](docs/og-object.md#data-fields)
