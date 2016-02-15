@@ -75,11 +75,6 @@ Children's.
     * [Loading data](docs/data-storage.md#loading-data)
     * [Example](docs/data-storage.md#example)
 
-  * [og Object](docs/og-object.md#og-object)
-      * [Functions](docs/og-object.md#functions)
-          * [og\.resizeFrame(width, height)](docs/og-object.md#ogresizeframewidth-height)
-          * [og\.goFullScreen()](docs/og-object.md#oggofullscreen)
-
 ### Testing
   * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
 
