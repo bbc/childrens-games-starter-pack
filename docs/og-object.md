@@ -4,7 +4,6 @@ The og object used to be used to access globally available data and functions.
 
 This is no longer the case- these values are now read-only properties in the [GMI](gmi.md#variables).
 
-Some functions are accessible from the window.og object and are therefore easily accessible from JavaScript.
 If you are using Unity you can use the Application.ExternalCall() function or in Flash use ExternalInterface.call().
 
 ### Functions

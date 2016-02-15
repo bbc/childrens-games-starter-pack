@@ -26,10 +26,11 @@ define(['gmi-platform', 'storage'], function(gmi_platform, storage) {
 	// ---------- GMI Storage Example----------
 
 	appendTitle("GMI Storage Example");
-	var pre = document.createElement("pre");
-	appendBtn("Save", function() { storage.onSaveButton(gmi, pre); });
-	appendBtn("Load", function() { storage.onLoadButton(gmi, pre); });
-	container.appendChild(pre);
+    var outputText = document.createElement("pre");
+    outputText.id = "save-load-text";
+	appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); });
+	appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
+	container.appendChild(outputText);
     appendHorizontalRule();
 
 
@@ -44,7 +45,6 @@ define(['gmi-platform', 'storage'], function(gmi_platform, storage) {
         gmi.setMuted(!gmi.getAllSettings().muted);
         document.getElementById("mute-label").innerHTML = gmi.getAllSettings().muted;
     });
-	container.appendChild(pre);
     appendHorizontalRule();
 
 

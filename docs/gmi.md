@@ -9,9 +9,9 @@ below.
 ## Loading the GMI
 
 To be used in your game, the GMI must be loaded upon game initialization, and
-passed throughout the game game to wherever it is used.
+passed throughout the game to wherever it is used.
 
-Only one instance of the GMI should be created- if multiple instances are created
+Only one instance of the GMI should be created - if multiple instances are created
 then a warning will be written to the console which will fail game certification.
 
 To initialize the GMI, you can require the local gmi .js file, and use it to call
@@ -156,6 +156,7 @@ The game's exit button should navigate to the URL provided by this field. The
  URL can be provided by setting the 'Exit Game URL' field in the GamesGrid
  CMS or as an escaped query string on the games URL. The exit URL is usually set
   to the game page where the game is embedded.
+If the Exit Game URL is set in GamesGrid, this takes precedence over the others.
 
 #### gmi.gameContainerId
 Specifies the ID of the HTML div that your game should fill (only relevant

@@ -2,18 +2,18 @@ define(function(){
 
 
     // ---------- Application ----------
-    function onSaveButton(gmi, pre) {
+    function onSaveButton(gmi, outputTextDiv) {
         var data = {
             title: "local storage example",
             time: new Date().toISOString()
         };
         saveData(gmi, data);
-        pre.innerHTML = "saving:\n" + JSON.stringify(data, null, 4);
+        outputTextDiv.innerHTML = "saving:\n" + JSON.stringify(data, null, 4);
     }
 
-    function onLoadButton(gmi, pre) {
+    function onLoadButton(gmi, outputTextDiv) {
         var data = loadData(gmi);
-        pre.innerHTML = "loaded:\n" + JSON.stringify(data, null, 4);
+        outputTextDiv.innerHTML = "loaded:\n" + JSON.stringify(data, null, 4);
     }
 
     // ---------- Implementation ----------
