@@ -26,8 +26,7 @@ docs/automated-builds.md \
 docs/gel-guidelines.md \
 docs/gmi.md \
 docs/stats.md \
-docs/data-storage.md \
-docs/og-object.md
+docs/data-storage.md
 
 Testing:
 docs/toc-build/gh-md-toc --serial \
