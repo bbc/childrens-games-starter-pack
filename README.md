@@ -37,7 +37,7 @@ Children's.
     * [Project Structure](docs/deliverable-review.md#project-structure)
     * [Assets](docs/deliverable-review.md#assets)
     * [Code](docs/deliverable-review.md#code)
-    
+
 ### Development
   * [Automated builds](docs/automated-builds.md#automated-builds)
 
@@ -45,37 +45,40 @@ Children's.
     * [Guidelines](docs/gel-guidelines.md#guidelines)
     * [Toolkit](docs/gel-guidelines.md#toolkit)
 
-  * [Echo Stats](docs/echo-stats.md#echo-stats)
-    * [Initialisation](docs/echo-stats.md#initialisation)
-    * [Sending Statistics](docs/echo-stats.md#sending-statistics)
-    * [Example](docs/echo-stats.md#example)
+  * [GMI](docs/gmi.md#gmi)
+    * [Loading the GMI](docs/gmi.md#loading-the-gmi)
+    * [JavaScript Games](docs/gmi.md#javascript-games)
+      * [RequireJS Example](docs/gmi.md#requirejs-example)
+      * [Plain JS Example](docs/gmi.md#plain-js-example)
+    * [GMI Functionality](docs/gmi.md#gmi-functionality)
+        * [Stats](docs/gmi.md#stats)
+        * [Global game settings](docs/gmi.md#global-game-settings)
+        * [Saving and Loading data](docs/gmi.md#saving-and-loading-data)
+        * [Debug Messages](docs/gmi.md#debug-messages)
+        * [Exiting the game](docs/gmi.md#exiting-the-game)
+    * [Data fields](docs/gmi.md#data-fields)
+        * [gmi\.embedVars](docs/gmi.md#gmiembedvars)
+        * [gmi\.environment](docs/gmi.md#gmienvironment)
+        * [gmi\.exitGameUrl](docs/gmi.md#gmiexitgameurl)
+        * [gmi\.gameContainerId](docs/gmi.md#gmigamecontainerid)
+        * [gmi\.gameUrl](docs/gmi.md#gmigameurl)
+        * [gmi\.shouldShowExitButton](docs/gmi.md#gmishouldshowexitbutton)
+    * [Example](docs/gmi.md#example)
 
-  * [Using Local Storage/Cookies](docs/local-storage.md#using-local-storagecookies)
-    * [Opting In](docs/local-storage.md#opting-in)
-    * [Abiding by Local Storage/Cookie Settings](docs/local-storage.md#abiding-by-local-storagecookie-settings)
-      * [Example](docs/local-storage.md#example)
+  * [Stats](docs/stats.md#stats)
+    * [Sending Statistics](docs/stats.md#sending-statistics)
+    * [Example](docs/stats.md#example)
 
-  * [og Object](docs/og-object.md#og-object)
-    * [Data fields](docs/og-object.md#data-fields)
-          * [og\.embedVars](docs/og-object.md#ogembedvars)
-          * [og\.environment](docs/og-object.md#ogenvironment)
-          * [og\.exitGameUrl](docs/og-object.md#ogexitgameurl)
-          * [og\.gameContainerId](docs/og-object.md#oggamecontainerid)
-          * [og\.gameUrl](docs/og-object.md#oggameurl)
-          * [og\.gameDir](docs/og-object.md#oggamedir)
-          * [og\.isFullScreen](docs/og-object.md#ogisfullscreen)
-      * [Functions](docs/og-object.md#functions)
-          * [og\.resizeFrame(width, height)](docs/og-object.md#ogresizeframewidth-height)
-          * [og\.goFullScreen()](docs/og-object.md#oggofullscreen)
-    * [JavaScript Games](docs/og-object.md#javascript-games)
-      * [RequireJS Example](docs/og-object.md#requirejs-example)
-      * [Plain JS Example](docs/og-object.md#plain-js-example)
-      
+  * [Using Local Storage/Cookies](docs/data-storage.md#using-local-storagecookies)
+    * [Opting In](docs/data-storage.md#opting-in)
+    * [Saving data](docs/data-storage.md#saving-data)
+    * [Loading data](docs/data-storage.md#loading-data)
+    * [Example](docs/data-storage.md#example)
+
 ### Testing
   * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
-  
+
   * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
-  
+
 ### Other
 * [Updating your pack](#updating-your-pack)
-

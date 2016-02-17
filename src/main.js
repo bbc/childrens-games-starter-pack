@@ -1,42 +1,67 @@
-define(['echo-stats', 'local-storage', 'config'], function(echoStats, localStorage, config) {
+define(['gmi-platform', 'storage'], function(gmi_platform, storage) {
 	"use strict";
 
-	var container = document.getElementById(og.gameContainerId);
+    // create a gmi object using getGMI. If window.getGMI has already been defined i.e we have already got the gmi
+    // library from the server, then this will be used over the local one
+    var gmi = gmi_platform.getGMI();
+    var numberOfStatsButtonClicks = 0;
+
+	var container = document.getElementById(gmi.gameContainerId);
 	container.style.color = "white";
 
-	// ---------- Hello World ----------
-	appendHelloWorld();
-	appendHorizontalRule();
+	// ---------- GMI Stats Example----------
 
-
-	// ---------- Echo Stats Example----------
-
-	// create echo stats using values from external configuration
-	var echoActions = echoStats.create(config.statsAppName, config.statsCounterName);
-
-	appendTitle("Echo Stats Example");
-	appendParagraph("Open");
+    appendTitle("GMI Stats Example");
+	appendSpan("Open");
 	appendLink(" iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga");
-	appendParagraph(" or see network calls prefixed with 'sa.bbc.co.uk' and" +
+	appendSpan(" or see network calls prefixed with 'sa.bbc.co.uk' and" +
 		" click the button to fire a stat");
-	appendBtn("Log Action Event (Button Clicked)", function(event) { echoActions.buttonClicked(event); });
+	appendBtn("Log Action Event (Button Clicked)", function(event) {
+        numberOfStatsButtonClicks++;
+        gmi.sendStatsEvent("button_click", event.srcElement.innerHTML, {"num_btn_clicks": numberOfStatsButtonClicks});
+    });
 	appendHorizontalRule();
 
-	// ---------- Local Storage Example----------
 
-	appendTitle("Local Storage Example");
-	appendParagraph("Cookies allowed?: " + localStorage.cookiesAreAllowed());
-	var pre = document.createElement("pre");
-	appendBtn("Save", function() { localStorage.onSaveButton(pre); });
-	appendBtn("Load", function() { localStorage.onLoadButton(pre); });
-	appendBtn("Clear", function() { localStorage.onClearButton(pre); });
-	container.appendChild(pre);
+	// ---------- GMI Storage Example----------
+
+	appendTitle("GMI Storage Example");
+    var outputText = document.createElement("pre");
+    outputText.id = "save-load-text";
+	appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); });
+	appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
+	container.appendChild(outputText);
+    appendHorizontalRule();
 
 
-	// ---------- Helper Funcs ----------
+    // ---------- GMI Set mute ----------
+    appendTitle("GMI Mute Example");
+    appendSpan("Game muted value: ");
+	var muteLabel = document.createElement("span");
+    muteLabel.innerHTML = gmi.getAllSettings().muted;
+    muteLabel.id = "mute-label";
+    container.appendChild(muteLabel);
+	appendBtn("Toggle mute", function() {
+        gmi.setMuted(!gmi.getAllSettings().muted);
+        document.getElementById("mute-label").innerHTML = gmi.getAllSettings().muted;
+    });
+    appendHorizontalRule();
+
+
+    // ---------- GMI Exit ----------
+    appendTitle("GMI Exit Example");
+    appendBtn("Exit game", function() { gmi.exit(); });
+    appendHorizontalRule();
+
+    // ---------- GMI Debug ----------
+    appendTitle("GMI Debug Example");
+    appendParagraph("The message input in the box below will be sent to gmi.debug when the submit button is hit");
+    appendTextInput("debug-input");
+    appendBtn("Submit", function() { gmi.debug(document.getElementById("debug-input").value); });
+
+
+	// ---------- Helper Functions ----------
 	function appendHorizontalRule() {
-		var br = document.createElement("br");
-		container.appendChild(br);
 		var hr = document.createElement("hr");
 		container.appendChild(hr);
 	}
@@ -45,15 +70,21 @@ define(['echo-stats', 'local-storage', 'config'], function(echoStats, localStora
 		var div = document.createElement("div");
 		var title = document.createElement("h3");
 		title.innerHTML = titleStr;
-		title.style.fontSize = "200%";
+		title.style.fontSize = "150%";
 		div.appendChild(title);
 		container.appendChild(div);
 	}
 
 	function appendParagraph(text) {
-		var paragraph = document.createElement("span");
+		var paragraph = document.createElement("p");
 		paragraph.innerHTML = text;
-		container.appendChild(paragraph)
+		container.appendChild(paragraph);
+	}
+
+    function appendSpan(text) {
+		var span = document.createElement("span");
+		span.innerHTML = text;
+		container.appendChild(span);
 	}
 
 	function appendLink(linkText, link) {
@@ -73,7 +104,10 @@ define(['echo-stats', 'local-storage', 'config'], function(echoStats, localStora
 		container.appendChild(div);
 	}
 
-	function appendHelloWorld() {}
-
-
+    function appendTextInput(elementID) {
+        var input = document.createElement("input");
+        input.type = "text";
+        input.id = elementID;
+        container.appendChild(input);
+    }
 });
