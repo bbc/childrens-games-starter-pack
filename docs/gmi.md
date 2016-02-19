@@ -108,7 +108,7 @@ Further information can be found [here](data-storage.md#saving-data).
 Saving and loading data should use the gmi functions:
 
 ````
-gmi.setData(key, value);
+gmi.setGameData(key, value);
 gmi.getAllSettings().gameData;
 ````
 
@@ -151,13 +151,6 @@ field in the GamesGrid CMS.
 Returns the environment name that the game is being served from. This will be
  "test" or "live".
 
-#### gmi.exitGameUrl
-The game's exit button should navigate to the URL provided by this field. The
- URL can be provided by setting the 'Exit Game URL' field in the GamesGrid
- CMS or as an escaped query string on the games URL. The exit URL is usually set
-  to the game page where the game is embedded.
-If the Exit Game URL is set in GamesGrid, this takes precedence over the others.
-
 #### gmi.gameContainerId
 Specifies the ID of the HTML div that your game should fill (only relevant
 to JavaScript games).
@@ -169,11 +162,25 @@ The URL of your main game file as entered into the GamesGrid CMS.
 The URL of the directory containing your main game file. This is convenient for
 converting relative asset paths into absolute ones.
 
+#### gmi.shouldDisplayMuteButton
+
+A boolean that indicates whether or not the mute button should be displayed.
+
+Note: Hardcoded to false for the mobile app and true to web platform.
+
+#### gmi.shouldLongPressForSettings
+
+A boolean that indicates whether or not the user has to press and hold for the settings menu.
+
+Note: Hardcoded to true for the mobile app and false to web platform.
+
 #### gmi.shouldShowExitButton
 The game should use this flag to decide whether to show the exit button
 (and potentially other full-screen-related functionality) rather than detecting
 full screen status itself. This flag will be false if the game is currently
 embedded in an iframe or true if the page has been redirected to the Playpen.
+
+Note: Hardcoded to true for the mobile app, and the web platform on mobile devices - and false on desktop.
 
 
 ## Example
