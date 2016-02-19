@@ -59,9 +59,10 @@ Children's.
     * [Data fields](docs/gmi.md#data-fields)
         * [gmi\.embedVars](docs/gmi.md#gmiembedvars)
         * [gmi\.environment](docs/gmi.md#gmienvironment)
-        * [gmi\.exitGameUrl](docs/gmi.md#gmiexitgameurl)
         * [gmi\.gameContainerId](docs/gmi.md#gmigamecontainerid)
         * [gmi\.gameUrl](docs/gmi.md#gmigameurl)
+        * [gmi\.shouldDisplayMuteButton](docs/gmi.md#gmishoulddisplaymutebutton)
+        * [gmi\.shouldLongPressForSettings](docs/gmi.md#gmishouldlongpressforsettings)
         * [gmi\.shouldShowExitButton](docs/gmi.md#gmishouldshowexitbutton)
     * [Example](docs/gmi.md#example)
 
