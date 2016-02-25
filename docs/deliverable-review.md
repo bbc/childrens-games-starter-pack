@@ -13,13 +13,17 @@ This isn't an exhaustive list, and not all points are applicable to all games.
 The objective is to ensure our game deliveries are in the best and most 
 future-proof state possible.
 
+## Build
+Each game should include all necessary files and steps to be hosted locally, 
+in the form of instructions and/or build scripts.
+
 ## Documentation
 
 * **README**: The project should include documentation in the form of a README, 
 which should:
   * outline the project structure to aid with future maintenance
-  * explain any configuration files
-  * indicate how to run the game locally
+  * document the use of configuration files in case they need updating
+  * include instructions or scripts to run the game locally
     * including how to enable debugging/testing
   * describe the build steps in build.sh if they are complex and not already 
   commented inline
@@ -68,8 +72,8 @@ scattered around the project
  
 * **Externally configurable**:
   * The game must be entirely externally configurable, including localisation
-  details. An example of an external configuration file is [config.js](../src/config.js)
-  which can be seen being utilised used when the project is built (see [build.sh](../build-scripts/build.sh)).
+  details.
+  * Configuration files should live in obvious places or have their locations documented
   * In addition, no game text must be kept in the code or assets (checked 
   during [Tech Review](tech-review.md)) unless absolutely unavoidable (in 
   which case, document it). 
@@ -86,8 +90,7 @@ scattered around the project
 * **Library versions**:
   * All library versions should be documented or easily identifiable from e.g.
    a 'project.json'
-  * As stated in the [Tech Review](tech-review.md), any changes to libraries 
-  should be documented
+  * Any modified libraries should be documented
   * If minified, the unminified source should be included in a dev directory
   
 [Home](../README.md)
