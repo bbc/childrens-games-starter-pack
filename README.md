@@ -59,4 +59,4 @@ ___
   * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
 
 ### Other
-* [Updating your pack](#updating-your-pack)
+* [Updating your pack](docs/updating-starter-pack.md)
