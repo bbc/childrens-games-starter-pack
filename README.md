@@ -4,10 +4,16 @@ This is the Starter Pack for Children's games which contains some helpful bits
 and pieces a games developer might need to start building a HTML5 game for
 Children's.
 
+## Important Links
 
+| Context | URL | Description |
+|---------|-----|-------------|
+| Test Playpen | http://play.test.bbc.co.uk/play/pen/GID | Pipeline automatically pushes new builds to this location |
+| Version on Test | Link to version.txt on Test | You can use this link to see what version of your game is currently on Test |
+| Internal Jira ticket | https://jira.dev.bbc.co.uk/browse/GAMESSTREAM-xxxx | For BBC use |
+| Build job | Enter Jenkins URL | For BBC use |
 
-## Documentation
-
+___
 ## Table of Contents
 
 ### Process
