@@ -166,7 +166,7 @@ converting relative asset paths into absolute ones.
 
 A boolean that indicates whether or not the mute button should be displayed.
 
-Note: Hardcoded to false for the mobile app and true to web platform.
+Note: Hardcoded to true for both the mobile app the web platform.
 
 #### gmi.shouldLongPressForSettings
 
