@@ -82,9 +82,9 @@ The automated [Tech Review Tool](tech-review-tool.md) is run against the game
  on play.test and helps to identify: 
  
 * **No unauthorised network requests**:
-All dependencies should be relative to the project or part of the BBC's 
-offerings (via Barlesque for example). BBC libraries such as Echo, Bump, etc.
- must be loaded from the Live environment
+All network requests made by the game must be within the game's root
+directory. No requests to other domains, or other top-level directories are
+allowed. This is to enable the game to function offline in the Pick&Mix app.
 
 * **No cachebusting**:
 No assets should be cachebusted in released files.
@@ -94,8 +94,8 @@ Assests and release files must be lowercase and only contain alphanumerical
 characters, underscores ( _ ) and dashes ( - ).
 
 * **og. usage**:
-An automated check to compliment the manual code check. It may fail if the 
-release files are minfiied and the og. variable has been obscured.
+A somewhat obsolete check that effectively just confirms that gmi-platform.js
+has been incorporated.
 
 * **iStats calls**:
 The game must send 'action_name=game_loaded' once, when the game is loaded.
