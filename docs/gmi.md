@@ -1,5 +1,14 @@
 # GMI
 
+In order to allow for relatively painless integration of HTML5 games into both a mobile app and responsive website, an interface layer known as the Game Messaging Interface (GMI) has been developed. The GMI is a JavaScript module which abstracts away platform differences and sits alongside each game to be integrated into the platform which the game is running on. The GMI defines functions which can be used both for platform-side as well as game-side communication.
+
+There are different implementations of the interface for different platforms (and OS's for mobile app) so you are able to integrate the GMI into a HTML5 game regardless of the target platform.
+
+![GMI Diagram](http://play.test.bbc.co.uk/play/game/children/apps/picknmix/GMI.png)
+
+## Web Platform
+The game configuration and setting details come from [Games Grid](https://confluence.dev.bbc.co.uk/display/gamesgrid/Games+Grid+for+Noobs) and are injected into the playpen.
+
 The GMI (game messaging interface) is a class that abstracts shared functionality
 from the web and mobile apps so that games can run on both with minimal code changes.
 
@@ -187,5 +196,105 @@ Note: Hardcoded to true for the mobile app, and the web platform on mobile devic
 An [example](../src/main.js) has been created using the
 code above. Build the project (see [build.sh](../build-scripts/build.sh)) to
 see the code running.
+
+## Mobile App
+The configuration data from Games grid will also be supplied to agencies in a configuration.json file, which should be manually zipped up with the game assets and JavaScript code.  The app then uses a local index.html which requires the gmi-mobile.js and injects the configuration.json into the local index.html. These files which are local to the app are known as the app playpen bundle, and will be used across all the games.
+
+![GMI Diagram](http://play.test.bbc.co.uk/play/game/children/apps/picknmix/playpen-bundle.png)
+
+***
+
+##### Note
+This GMI will replace the existing use of the Open Games or 'og' object for games which wish to work across both web and mobile app platforms.  For more reference on the existing structure for web see here:
+
+https://confluence.dev.bbc.co.uk/display/OGP/HOWTO+-+Develop+a+Game+for+the+Playpen
+
+1. The following functions and data fields are deprecated, and all calls should use the Game Messaging Interface 
+
+    * og.exitGameUrl
+    * og.isFullScreen
+    * og.resizeFrame(width, height)
+    * og.goFullScreen()
+
+2. There can be no absolute URLS (including from the BBC domain), all assets must be retrieved using gmi.gameDir including for any libraries being required.
+3. No sign in or use of Games Grid.
+4. Use of local storage is not advised, and persist handlers from the GMI should be used instead.
+5. No hardcoded use of the "og-game-holder" div, all div references must be retrieved using gmi.gameContainerId.
+
+Intergration Guide
+
+### Getting started
+
+`var gmi = getGMI()`
+
+To get started first call getGMI().  As the library has already been required you are able to call `getGMI()` to get the GMI for your current platform. 
+
+Once you have loaded the page and have an instance of a GMI you can start using the functions and properties documented in the [[API Reference]].
+
+You can try this out running the game locally using the test-game-mobile-app example.
+
+### Web
+
+In order to use GMI you must first require the gmi-platform.js file into your game. You can then create a variable using the following:
+
+`var gmi = gmi_require.getGMI();`
+
+Note that getGMI() should only be called once by the game, and the resulting gmi instance variable passed throughout the game as needed. Though the gmi isn't technically a singleton, it will post a warning to the console if getGMI() is called more than once- this warning will cause the game to fail certification.
+
+Echo/stats are now handled by the gmi. All stat calls should be done via the gmi's functions. The game will have to supply an echo path in the require config, as gmi expects to be able to use `require("echo");`.
+
+Console.log and other such methods of debugging should no longer be used. The gmi provides a `gmi.debug(message);` function that will write to the console on web, but write to the debugger on the app making debug messages universal.
+
+Storing of data is now handled exclusively by the gmi. The current gmi implementation uses web browser local storage- if local storage is not available then data storage calls fail silently- the game will have to handle the setting of defaults that are used in this case. The exception to this is the global settings (muted, subtitles, motion) that are given defaults by the gmi. It is worth noting that the gmi caches the values in local storage while the game is running- if you manually delete the local storage entries while debugging, then you will have to open the game in another tab (and hence initialize the gmi again) to prevent the cached values from being written back.
+
+### Mobile
+
+To run a game the app will use a app specific Playpen Bundle locally on the device.  This bundle will contain an index.html, require.js and gmi-mobile.js in a library folder.  On game launch the mobile device injects the global settings variables into the DOM, and includes the game configuration.json found in the root.
+
+To test your game working in the app you will need to to do the following:
+
+* Download the PickNMix App in Test Mode here (You will need to request access via your BBC TPM):
+
+[PickNMix Game Test Build (iOS)](https://rink.hockeyapp.net/manage/apps/245563)
+
+[PickNMix Game Test Build (Android ARM)](https://rink.hockeyapp.net/manage/apps/245567)
+
+[PickNMix Game Test Build (Android x86)](https://rink.hockeyapp.net/manage/apps/245568)
+
+* Zip your game folder with a configuration.json file at the root with the game folder as in the example game in test-game-mobile-app.
+
+`zip -r test_game.gdz -Z store . --exclude=*.sh* --exclude=*.svn* --exclude=*.git* --exclude=*.DS_Store* `
+
+_Note: In future, this step will be handled by an automated step in our deployment process.  A script will be added to this repo as soon as it's available. In the interim you will need to manually Zip and upload your game (as described above) to your chosen host in order to test.
+
+* Run the app and click on the 'Add Game' button; enter the url where you've hosted the gdz file and click play. eg http://tinyurl.com/gst6k99
+
+_Note: To enable debugging on Apple (and also available on Android but not required) `window.gameSettings.debugEndable` should be set to true._
+
+#### Configuration.json
+
+This is the file that contains the values needed for the game to initialise.  It needs to be bundled with the game in the root.  There is an example with the test-game-mobile-app config here:
+```javascript
+{
+    "embedVars" : {
+        "statsAppName" : "",
+        "statsCounterName" : "",
+        "version" : ""
+    },
+    "environment" : "",
+    "gameContainerId" : "childrens-bbc-game-holder",
+    "gameUrl" : "js/test.js",
+    "gameDir" : "test-game-mobile-app"
+}
+```
+* **gameContainerId:** used to reference the div for the game holder, please use this variable rather than hard coding div values.
+
+* **gameUrl:** path to the main javascript file relative to the root of the folder (e.g. js/main.js)
+
+* **gameDir:** path to the game directory relative to the configuration.json (e.g. ./game-directory/)
+
+
+
+
 
 [Home](../README.md)
