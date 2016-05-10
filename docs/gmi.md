@@ -86,6 +86,15 @@ container.innerHTML = (
 
 The GMI provides functionality for the following:
 
+### Game Loaded
+
+PickNMix will require games to call this method once the initial 
+loading sequence has finished, this notifies the app that the game is ready.
+
+````
+gmi.gameLoaded();
+````
+
 ### Stats
 
 The sending of stats is now handled by GMI. A simple call can be used:
