@@ -119,6 +119,15 @@ define(function(require) {
                 return !bbccookies || bbccookies.isAllowed("ckps_whatever");
             }
 
+            function parseLocalStorage(key) {
+                var data = window.localStorage.getItem(key);
+                try {
+                    return JSON.parse(data);
+                }
+                catch(e) {}
+                return undefined;
+            }
+
 
             function loadLocalData() {
                 function getDefaultSettings() {
@@ -129,9 +138,16 @@ define(function(require) {
                     return defaults;
                 }
 
+                function ensureGlobalSettingsAreBools() {
+                    globalSettings.muted = !!globalSettings.muted;
+                    globalSettings.subtitles = !!globalSettings.subtitles;
+                    globalSettings.motion = !globalSettings.hasOwnProperty("motion") || globalSettings.motion;
+                }
+
                 if (areCookiesAllowed()) {
-                    globalSettings = JSON.parse(window.localStorage.getItem(GMI_LOCAL_STORAGE_KEY)) || getDefaultSettings();
-                    gameSettings = JSON.parse(window.localStorage.getItem(GMI_GAME_STORAGE_KEY)) || {};
+                    globalSettings = parseLocalStorage(GMI_LOCAL_STORAGE_KEY) || getDefaultSettings();
+                    ensureGlobalSettingsAreBools();
+                    gameSettings = parseLocalStorage(GMI_GAME_STORAGE_KEY) || {};
                 }
                 else {
                     return getDefaultSettings();
@@ -202,6 +218,10 @@ define(function(require) {
 
             GMI.prototype.debug = function (message) {
                 console.log(message);
+            };
+
+            GMI.prototype.gameLoaded = function() {
+
             };
 
 
