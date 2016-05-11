@@ -50,7 +50,7 @@ You can also see our hosted [GMI Test App](http://play.test.bbc.co.uk/play/pen/g
 
 The GMI provides the following functions:
 
-### Game Loaded
+#### Game Loaded
 
 BBC mobile apps will require games to call this method once the initial 
 loading sequence has finished, this notifies the app that the game is ready.
@@ -59,7 +59,7 @@ loading sequence has finished, this notifies the app that the game is ready.
 gmi.gameLoaded();
 ````
 
-### Stats
+#### Stats
 
 The sending of stats is now handled by GMI. A simple call can be used:
 
@@ -69,7 +69,7 @@ gmi.sendStatsEvent(actionName, actionType, additionalLabels);
 
 More information can be found [here](stats.md#stats).
 
-### Global game settings
+#### Global game settings
 
 Saving and loading global settings should use the gmi functions:
 
@@ -85,7 +85,7 @@ gmi.getAllSettings().motion;
 
 Further information can be found [here](data-storage.md#saving-data).
 
-### Saving and Loading data
+#### Saving and Loading data
 
 Saving and loading data should use the gmi functions:
 
@@ -97,7 +97,7 @@ gmi.getAllSettings().gameData;
 Further information can be found [here](data-storage.md#saving-data).
 
 
-### Debug messages
+#### Debug messages
 
 When writing debug messages, the following should be used:
 
@@ -108,7 +108,7 @@ gmi.debug(message);
 This allows the debug message to be displayed regardless of platform, unlike
 e.g. console.log.
 
-### Exiting the game
+#### Exiting the game
 
 When exiting the game, the function
 

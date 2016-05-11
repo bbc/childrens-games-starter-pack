@@ -33,9 +33,8 @@ ___
   * [GEL Guidelines, Toolkit, Accessibility and Icon Assets](docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets)
   * [GMI](docs/gmi.md#gmi)
     * [Loading the GMI](docs/gmi.md#loading-the-gmi)
-    * [GMI Functionality](docs/gmi.md#gmi-api-reference)
+    * [GMI API Reference](docs/gmi.md#gmi-api-reference)
     * [Demo](docs/gmi.md#demo)
-
   * [Stats](docs/stats.md#stats)
   * [Using Local Storage/Cookies](docs/data-storage.md#using-local-storagecookies)
 

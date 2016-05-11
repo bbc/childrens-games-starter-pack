@@ -4,7 +4,7 @@ To test your game working in the app you will need to to do the following:
 
 1. Host your .gdz file
 
-   If you have enabled [automated builds](build-pipeline#building-for-apps) 
+   If you have enabled [automated builds](build-pipeline.md#building-for-apps) 
    of your .gdz file your .gdz should be hosted on our servers. You should find 
    the location [here](../README.md#important-links). 
 
