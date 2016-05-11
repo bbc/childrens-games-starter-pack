@@ -26,22 +26,25 @@ To automate the production of a .gdz file to be downloaded into the app, your
 build steps should include a zip command that zips up the contents of the 'output' folder:
 ````
 cd 'output'
-zip -r starterPack.gdz -Z store . --exclude=*.sh* --exclude=*.svn* --exclude=*.git* --exclude=*.DS_Store* --exclude=*.idea*
+zip -r starterPack.gdz -Z store . --exclude=*.sh* --exclude=*.svn* --exclude=*.git* --exclude=*.DS_Store*
 ````
 
 This command can also be run locally to manually generate a .gdz file for local development.
 
+See [Testing your game in PickNMix](testing-in-picknmix.md#testing-in-picknmix)
+page to see how to test your game in an app.
+
 #### Configuration.json
 
-This is the file that contains the values needed for the game to initialise in an app environment.  
-It needs to be bundled with the game in the root. We've included an [example file](../src/configuration.json) for reference.
-
-Required fields:
+This file is required to initialise your game in an app environment. It should 
+be placed in the root directory and include the following fields:
 
 * gameUrl: path to the main js file
 * embedVars: this should equal the embedVars stored in our CMS
 
-#### Build jobs
+We've included an [example file](../src/configuration.json) for reference.
+
+### Build Complete
 
 You will get email notifications with status reports on success/failure of any automated
 builds. In the event of a failure you should get an error report with debug information. 
