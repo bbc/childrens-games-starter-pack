@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <LINK href="http://static.test.bbci.co.uk/playpen/1.2.3/style/style.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background-image: none;">
+    <div id="og-game-holder"></div>
+
+    <script src="http://static.test.bbci.co.uk/playpen/1.2.3/script/require/require.js"></script>
+    <script>
+
+        (function(){
+            window.og = {
+                gid: "countdown-test",
+                gameDir: "",
+                gameContainerId: "og-game-holder",
+                isFullScreen: window.self === window.top,
+                exitGameUrl: "http://bbc.co.uk/",
+                environment: "test",
+                embedVars: {
+                    statsCounterName: "testCounterName",
+                    statsAppName: "TestAppName"
+                }
+            };
+
+            console.warn("Using mocked bbccookies");
+            bbccookies = {
+                isAllowed: function() {
+                    return true;
+                },
+
+                cookiesEnabled: function() {
+                    return true;
+                },
+
+                set: function() {
+                },
+
+                get: function() {
+                    return "";
+                    // set this to force audience segment
+                    // return "ckns_mandolin_setSegments={'hiScores':'yes'};";
+                }
+            };
+
+            requirejs.config({
+                paths: {
+                    "Game": "main",
+                    "echo": "http://static.bbci.co.uk/nkdata/echoclient/2.0.0/sharedmodules/echo"
+                }
+            });
+
+            require(["Game"], function(game) {
+                if (game && typeof(game.init) === 'function') {
+                    game.init(window.og);
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+#Build Pipeline
+
+## Automated builds
+
+This section outlines how you can get your game building to BBC Test servers for 
+testing and delivery. This covers both game code and .gdz files for use with mobile apps. 
+
+### Building your game
+
+Our automated build pipeline automatically runs the [build.sh](../build-scripts/build.sh) file
+every time you push changes to the Git repo. You should place all your necessary 
+compilation steps in here. 
+
+The build script should put all necessary files into a top level 'output' folder for 
+uploading to our servers once the script has finished running.
+
+Please provide your BBC Technical Contact with any details of special software or
+plugins that are required to build your game in the event our servers don't 
+already have them.
+
+### Building for apps
+
+This section is only relevant if your game is going to be part of a BBC mobile app.
+
+To automate the production of a .gdz file to be downloaded into the app, your 
+build steps should include a zip command that zips up the contents of the 'output' folder:
+````
+cd 'output'
+zip -r starterPack.gdz -Z store . --exclude=*.sh* --exclude=*.svn* --exclude=*.git* --exclude=*.DS_Store* --exclude=*.idea*
+````
+
+This command can also be run locally to manually generate a .gdz file for local development.
+
+#### Configuration.json
+
+This is the file that contains the values needed for the game to initialise in an app environment.  
+It needs to be bundled with the game in the root. We've included an [example file](../src/configuration.json) for reference.
+
+Required fields:
+
+* gameUrl: path to the main js file
+* embedVars: this should equal the embedVars stored in our CMS
+
+#### Build jobs
+
+You will get email notifications with status reports on success/failure of any automated
+builds. In the event of a failure you should get an error report with debug information. 
+
+On success your game code should now be on our servers and a .gdz file available for download.
+The locations for these should be recorded in your individual Git repo's [Home README](../README.md)
+
+[Home](../README.md)

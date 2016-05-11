@@ -13,3 +13,9 @@ set -e
 mkdir output
 cp src/* output
 
+# The following steps for are building a .gdz file for use in PickNMix, these can
+# be ignored if your game is not going into the app.
+
+#cd output
+#zip -r starterPack.gdz -Z store . --exclude=*.sh* --exclude=*.svn* --exclude=*.git* --exclude=*.DS_Store**
+

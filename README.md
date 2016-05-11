@@ -9,6 +9,7 @@ Children's.
 | Context | URL | Description |
 |---------|-----|-------------|
 | Test Playpen | [Playpen](http://play.test.bbc.co.uk/play/pen/GID) | Pipeline automatically pushes new builds to this location |
+| GDZ location | Link to .gdz location on Test | Pipeline automatically pushes new .gdz build to this location (app-only) |
 | Version Info | Link to version.txt on Test | See what version of your game is currently on Test |
 | Jira ticket | [Gamestream](https://jira.dev.bbc.co.uk/browse/GAMESSTREAM-xxxx) | For BBC use |
 | Build job | Enter Jenkins URL | For BBC use |
@@ -18,18 +19,7 @@ ___
 
 ### Process
   * [Game Delivery Definitions](docs/game-delivery-definitions.md#game-delivery-definitions)
-    * [Prototype](docs/game-delivery-definitions.md#prototype)
-    * [Alpha](docs/game-delivery-definitions.md#alpha)
-    * [Beta](docs/game-delivery-definitions.md#beta)
-    * [Release Candidate](docs/game-delivery-definitions.md#release-candidate)
-    * [Gold Master](docs/game-delivery-definitions.md#gold-master)
-    * [Post release](docs/game-delivery-definitions.md#post-release)
-    
   * [Issue Prioritization](docs/game-delivery-definitions.md#issue-prioritization)
-    * [P1 Issues:](docs/game-delivery-definitions.md#p1-issues)
-    * [P2 Issues:](docs/game-delivery-definitions.md#p2-issues)
-    * [P3 Issues:](docs/game-delivery-definitions.md#p3-issues)
-
   * [Tech Review](docs/tech-review.md#tech-review)
     * [Checks on release files](docs/tech-review.md#checks-on-release-files)
     * [Web browser checks](docs/tech-review.md#web-browser-checks)
@@ -39,7 +29,6 @@ ___
 
 ### Development
   * [Automated builds](docs/automated-builds.md#automated-builds)
-
   * [GEL Guidelines, Accessibility and Icon Assets](docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets)
     * [Guidelines](docs/gel-guidelines.md#guidelines)
     * [Toolkit](docs/gel-guidelines.md#toolkit)
