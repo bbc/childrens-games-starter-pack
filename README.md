@@ -24,21 +24,17 @@ ___
     * [Checks on release files](docs/tech-review.md#checks-on-release-files)
     * [Web browser checks](docs/tech-review.md#web-browser-checks)
     * [Tech Review Tool](docs/tech-review.md#tech-review-tool)
-
   * [Deliverable Review](docs/deliverable-review.md#deliverable-review)
 
 ### Development
-  * [Automated builds](docs/automated-builds.md#automated-builds)
-  * [GEL Guidelines, Accessibility and Icon Assets](docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets)
-    * [Guidelines](docs/gel-guidelines.md#guidelines)
-    * [Toolkit](docs/gel-guidelines.md#toolkit)
-
+  * [Build pipeline](docs/build-pipeline.md)
+    * [Building your game](docs/build-pipeline.md#building-your-game)
+    * [Building for apps](docs/build-pipeline.md#building-for-apps)
+  * [GEL Guidelines, Toolkit, Accessibility and Icon Assets](docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets)
   * [GMI](docs/gmi.md#gmi)
     * [Loading the GMI](docs/gmi.md#loading-the-gmi)
-    * [JavaScript Games](docs/gmi.md#javascript-games)
-    * [GMI Functionality](docs/gmi.md#gmi-functionality)
-    * [Data fields](docs/gmi.md#data-fields)
-    * [Example](docs/gmi.md#example)
+    * [GMI Functionality](docs/gmi.md#gmi-api-reference)
+    * [Demo](docs/gmi.md#demo)
 
   * [Stats](docs/stats.md#stats)
   * [Using Local Storage/Cookies](docs/data-storage.md#using-local-storagecookies)
@@ -46,6 +42,7 @@ ___
 ### Testing
   * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
   * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
+  * [Testing your game in PickNMix](docs/testing-in-picknmix.md#testing-in-picknmix)
 
 ### Other
 * [Updating your pack](docs/updating-starter-pack.md)
