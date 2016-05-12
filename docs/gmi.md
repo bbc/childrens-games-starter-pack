@@ -124,11 +124,10 @@ GMI exposes several read-only properties.
 
 #### gmi.embedVars
 This exposes any custom settings you want to save in our CMS and expose via GMI 
-i.e. if your game is multi-lingual your TPM can add a language param that can be
-accessed with:
+i.e.
 
 ````
-gmi.embedVars.language
+gmi.embedVars.customSetting
 ````
 
 #### gmi.environment
