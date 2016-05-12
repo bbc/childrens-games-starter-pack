@@ -4,7 +4,7 @@ The GMI (game messaging interface) is a class that abstracts shared functionalit
 from the web and mobile apps so that one code base can run on both platforms.
 
 The BBC provides two versions of GMI: platform (web) and mobile (apps). You will
-find the latest version of [gmi-platform[(../src/gmi-platform.js) in this Starter Pack, gmi-mobile will be
+find the latest version of [gmi-platform](../src/gmi-platform.js) in this Starter Pack, gmi-mobile will be
 part of the app environment.
 
 ## Loading the GMI
