@@ -1,0 +1,7 @@
+{
+    "gameUrl": "main",
+    "embedVars": {
+        "statsAppName":"cbbc",
+        "statsCounterName":"tempcounter"
+    }
+}

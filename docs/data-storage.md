@@ -14,7 +14,6 @@ page. Alternatively, the user can set their preferences at:
 Legally, opting in/out of cookies consequently means opting in/out of local
 storage.
 
-
 ## Saving data
 
 Saving data requires the GMI. The [GMI should be required into the game upon loading](gmi.md#gmi),
