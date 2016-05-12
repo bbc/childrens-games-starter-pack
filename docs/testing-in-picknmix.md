@@ -21,6 +21,6 @@ To test your game working in the app you will need to to do the following:
 3. Run the app and click on the 'Add Game' button; enter the url for your .gdz file 
 and click download. Once it has finished downloading you can press play.
 
-   _Note: To enable debugging on Apple (and also available on Android but not required) `window.gameSettings.debugEndable` should be set to true._
+   _Note: To enable debugging on Apple (and also available on Android but not required) `window.gameSettings.debugEnable` should be set to true._
 
 [Home](../README.md)
