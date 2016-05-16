@@ -67,7 +67,7 @@ The sending of stats is now handled by GMI. A simple call can be used:
 gmi.sendStatsEvent(actionName, actionType, additionalLabels);
 ````
 
-More information can be found [here](stats.md#stats).
+See here for more information on [sending stats](stats.md#stats).
 
 #### Global game settings
 
@@ -83,7 +83,7 @@ gmi.getAllSettings().subtitles;
 gmi.getAllSettings().motion;
 ````
 
-Further information can be found [here](data-storage.md#saving-data).
+See here for more information on [data storage](data-storage.md#saving-data).
 
 #### Saving and Loading data
 
@@ -94,7 +94,7 @@ gmi.setGameData(key, value);
 gmi.getAllSettings().gameData;
 ````
 
-Further information can be found [here](data-storage.md#saving-data).
+See here for more information on [data storage](data-storage.md#saving-data).
 
 
 #### Debug messages
