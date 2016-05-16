@@ -66,9 +66,8 @@ This object will contain all of the properties that have previously been set for
 
 
 ## Example
-A [local storage example](../src/storage.js) has been created using the
-code above. Build the project (see [build.sh](../build-scripts/build.sh)) to
-see the code running.
+You can see an example of using stats in our [code demo](../src/main.js). 
+Open the accompanying index.html to see it in action.
 
 Change your preferences at [Manage Cookie Settings (TEST)] to see the demo
 behave differently. Specifically note that data will not be saved if the
