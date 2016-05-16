@@ -22,8 +22,7 @@ where ````actionName```` is the key, ````actionType```` is the value and
 
 
 ## Example
-A [stats example](../src/stats.js) has been created using the
-code above. Build the project (see [build.sh](../build-scripts/build.sh)) to
-see the code running.
+You can see an example of using stats in our [code demo](../src/main.js). 
+Open the accompanying index.html to see it in action.
 
 [Home](../README.md)
