@@ -52,8 +52,11 @@ The GMI provides the following functions:
 
 #### Game Loaded
 
-BBC mobile apps will require games to call this method once the initial 
-loading sequence has finished, this notifies the app that the game is ready.
+BBC mobile apps will display their own native loading screen on initial boot up of any games, 
+this will generally overlay your initial in-game loading screen. This function tells the 
+app that your game has finished loading and the native loading screem can be hidden.
+You should call this method on initial start up of your game after the initial load has 
+completed and your loading screen is no longer visible.
 
 ````
 gmi.gameLoaded();
