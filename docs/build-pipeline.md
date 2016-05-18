@@ -40,7 +40,9 @@ This file is required to initialise your game in an app environment. It should
 be placed in the root directory and include the following fields:
 
 * gameUrl: path to the main js file
-* embedVars: this should equal the embedVars stored in our CMS
+* embedVars: this should equal the embedVars stored in our CMS, this must contain as a minimum:
+  * statsAppName: cbeebies/cbbc as appropriate
+  * statsCounterName: your TPM can provide you this value
 
 We've included an [example file](../src/configuration.json) for reference.
 
