@@ -39,10 +39,6 @@ var require = {
 };
 ````
 
-### In-game audio for devices
-
-The ringer/silent switch (iOS) or mute (Android) on a device should not silence in-game audio. Therefore audio should play regardless of whether the device is silenced/muted. This follows guidelines from Android and iOS.
-
 ## Demo
 We've included [demo GMI usage](../src/main.js) with this Starter Pack, you can view
 this code in action by opening the included index.html in your browser. The index.html
