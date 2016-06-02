@@ -20,7 +20,8 @@ the game accessible.
 **GEL Icon Asset Pack** provides the icons which must be used; they may be 
 skinned but the pictorial shape and size must remain.  
 
-**In-game audio for devices** the ringer/silent switch (iOS) or mute (Android) on a device should not silence in-game audio. Therefore audio should play regardless of whether the device is silenced/muted. This follows guidelines from Android and iOS.
+### In-game audio for devices 
+The ringer/silent switch (iOS) or mute (Android) on a device should not silence in-game audio. Therefore audio should play regardless of whether the device is silenced/muted. This follows guidelines from Android and iOS.
 
 ## Toolkit 
 
