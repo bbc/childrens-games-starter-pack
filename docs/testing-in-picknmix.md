@@ -14,9 +14,7 @@ To test your game working in the app you will need to to do the following:
    ````
 2. Download the PickNMix App in Test Mode here (You will need to request access via your BBC TPM):
 
-   * [iOS Build](https://rink.hockeyapp.net/manage/apps/245563)
-   * [Android ARM Build](https://rink.hockeyapp.net/manage/apps/245567)
-   * [Android x86 Build](https://rink.hockeyapp.net/manage/apps/245568)
+   * [Hockeyapp](https://rink.hockeyapp.net/manage/dashboard)
 
 3. Run the app and click on the 'Add Game' button; enter the url for your .gdz file 
 and click download. Once it has finished downloading you can press play.
