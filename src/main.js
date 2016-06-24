@@ -1,4 +1,4 @@
-define(['gmi-platform', 'storage'], function(gmi_platform, storage) {
+define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim) {
 	"use strict";
 
     // create a gmi object using getGMI. If window.getGMI has already been defined i.e we have already got the gmi
@@ -8,6 +8,15 @@ define(['gmi-platform', 'storage'], function(gmi_platform, storage) {
 
 	var container = document.getElementById(gmi.gameContainerId);
 	container.style.color = "white";
+
+
+    // --------- Brim Usage Example ---------
+
+    var brimElement = null;
+
+    if (!brimElement) {
+        brimElement = brim.create(gmi.gameContainerId, "This text will be displayed when Brim appears");
+    };
 
 	// ---------- GMI Stats Example----------
 

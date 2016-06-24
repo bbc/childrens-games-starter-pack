@@ -37,6 +37,7 @@ ___
     * [Demo](docs/gmi.md#demo)
   * [Stats](docs/stats.md#stats)
   * [Using Local Storage/Cookies](docs/data-storage.md#using-local-storagecookies)
+  * [Brim](docs/brim.md#brim)
 
 ### Testing
   * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
