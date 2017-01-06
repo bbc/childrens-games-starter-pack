@@ -27,8 +27,8 @@ and click download. Once it has finished downloading you can press play.
 
 1. *Testing/Debugging in iOS*
 Unfortunately there is no way to debug problems within the iOS app due to 
-restrictions/limitations in the Apple development ecosystem. Debugging on 
-Android using Chrome is very easy and hopefully (in conjunction with testing 
+restrictions/limitations in the Apple development ecosystem. [Debugging on 
+Android using Chrome][1] is very easy and hopefully (in conjunction with testing 
 on the Web), we will catch most problems that would also effect iOS. 
 
 2. *Status Codes in Android*
@@ -43,3 +43,5 @@ play sidestepping the mp3 problems.
 
 
 [Home](../README.md)
+
+[1]: https://developers.google.com/web/tools/chrome-devtools/remote-debugging/
