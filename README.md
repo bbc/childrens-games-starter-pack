@@ -2,7 +2,7 @@
 
 This is the Starter Pack for Children's games which contains some helpful bits
 and pieces a games developer might need to start building a HTML5 game for
-Children's.
+Children's BBC.
 
 ## Important Links
 
@@ -42,7 +42,7 @@ ___
 ### Testing
   * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
   * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
-  * [Testing your game in PickNMix](docs/testing-in-picknmix.md#testing-in-picknmix)
+  * [Testing your game in a mobile app](docs/testing-in-a-mobile-app.md#testing-in-a-mobile-app)
 
 ### Other
 * [Updating your pack](docs/updating-starter-pack.md)
