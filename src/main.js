@@ -16,7 +16,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
     if (!brimElement) {
         brimElement = brim.create(gmi.gameContainerId, "This text will be displayed when Brim appears");
-    };
+    }
 
 	// ---------- GMI Stats Example----------
 
@@ -27,7 +27,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 		" click the button to fire a stat");
 	appendBtn("Log Action Event (Button Clicked)", function(event) {
         numberOfStatsButtonClicks++;
-        gmi.sendStatsEvent("button_click", event.originalTarget.innerHTML, {"num_btn_clicks": numberOfStatsButtonClicks});
+        gmi.sendStatsEvent("button_click", event.srcElement.innerHTML, {"num_btn_clicks": numberOfStatsButtonClicks});
     });
 	appendHorizontalRule();
 
