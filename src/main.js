@@ -27,7 +27,6 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 		" click the button to fire a stat");
 	appendBtn("Log Action Event (Button Clicked)", function(event) {
         numberOfStatsButtonClicks++;
-		console.log(event);
         gmi.sendStatsEvent("button_click", event.target.innerHTML, {"num_btn_clicks": numberOfStatsButtonClicks});
     });
 	appendHorizontalRule();
