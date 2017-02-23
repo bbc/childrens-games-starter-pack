@@ -35,6 +35,7 @@ ___
     * [Loading the GMI](docs/gmi.md#loading-the-gmi)
     * [GMI API Reference](docs/gmi.md#gmi-api-reference)
     * [Demo](docs/gmi.md#demo)
+  * [Main.js Structure](docs/main.md)
   * [Stats](docs/stats.md#stats)
   * [Using Local Storage/Cookies](docs/data-storage.md#using-local-storagecookies)
   * [Brim](docs/brim.md#brim)
