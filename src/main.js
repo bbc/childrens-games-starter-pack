@@ -102,10 +102,14 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 	}
 
 	function appendTitle(titleStr) {
+		var div = document.createElement("div");
 		var title = document.createElement("h3");
 		title.innerHTML = titleStr;
 		title.style.font = "25px normal arial, sans-serif";
-		container.appendChild(title);
+		title.style.margin = "5px 0";
+		title.style.padding = "5px 0";
+		div.appendChild(title);
+		container.appendChild(div);
 	}
 
 	function appendParagraph(text) {
