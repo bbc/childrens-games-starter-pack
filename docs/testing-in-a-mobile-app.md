@@ -18,7 +18,7 @@ To test your game in a mobile app you will need to to do the following:
 
    On OSX, a server can be started from any local folder by navigating to it and running:
 
-   `python -m SimpleHTTPServer 8000`
+   ````python -m SimpleHTTPServer 8000````
 
    Alternatively, the [http-server](https://www.npmjs.com/package/http-server) npm package can be used.
 
@@ -43,19 +43,25 @@ Go to Chrome, and bring up the developer tools (View > Developer > Developer Too
 Click the three small dots at the top right of the tools window and go to More Tools >
 Remote Devices.
 
+
 ![Remote Devices](images/remote-devices.jpg)
+
 
 Ensure the app is running, then select your device under 'Devices' in the Chrome
 'Remote Devices' panel, select the app (in this case 'Cbeebies Playtime Island')
 and click the 'Inspect' button. Accept any security pop-ups that appear on the device.
 
+
 ![Devices](images/devices.jpg)
+
 
 This will bring up Developer Tools for the app. You can now type in the location of the
 .gdz into the app for debugging. Any errors will appear in the 'Console' window of
 the developer tools.
 
+
 ![App Developer Tools](images/app-developer-tools.jpg)
+
 
 More information on [Remote Debugging Android Devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/).
 
