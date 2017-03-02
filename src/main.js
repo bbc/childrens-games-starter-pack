@@ -12,12 +12,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     // --------- Debug Mode Example ---------
 
     appendTitle("Is Debug Mode Enabled?");
-    if (gmi.isDebugMode) {
-        appendSpan("True");
-    } 
-    else {
-        appendSpan("False");
-    }
+    gmi.isDebugMode ? appendSpan("True") : appendSpan("False");
     appendHorizontalRule();
 
     // --------- Brim Usage Example ---------
