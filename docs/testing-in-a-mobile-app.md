@@ -18,7 +18,9 @@ To test your game in a mobile app you will need to to do the following:
 
    On OSX, a server can be started from any local folder by navigating to it and running:
 
-   ````python -m SimpleHTTPServer 8000````
+   ````
+   python -m SimpleHTTPServer 8000
+   ````
 
    Alternatively, the [http-server](https://www.npmjs.com/package/http-server) npm package can be used.
 
