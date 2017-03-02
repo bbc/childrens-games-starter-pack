@@ -9,6 +9,16 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 	var container = document.getElementById(gmi.gameContainerId);
 	container.style.color = "white";
 
+    // --------- Debug Mode Example ---------
+
+    appendTitle("Is Debug Mode Enabled?");
+    if (gmi.isDebugMode) {
+        appendSpan("True");
+    } 
+    else {
+        appendSpan("False");
+    }
+    appendHorizontalRule();
 
     // --------- Brim Usage Example ---------
 

@@ -81,6 +81,12 @@ define(function(require) {
                 }
             });
 
+            Object.defineProperty(GMI.prototype, 'isDebugMode', {
+                get: function () {
+                    return !!embedVars.isDebugMode;
+                }
+            });
+
             Object.defineProperty(GMI.prototype, 'shouldShowExitButton', {
                 get: function() {
                     return window.og.isFullScreen;
@@ -221,7 +227,7 @@ define(function(require) {
             };
 
             GMI.prototype.gameLoaded = function() {
-
+                
             };
 
 
