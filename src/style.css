@@ -1,0 +1,16 @@
+* { overflow:hidden; }
+html, body { height:100%; }
+body { font:1rem arial, sans-serif; }
+
+h3 { margin:0.5rem 0; padding:0.5rem 0; font:1.5rem normal arial, sans-serif; }
+p { padding: 1rem 0 1rem; }
+a { color:#aaf9ff; }
+button { display:inline-block; margin:1rem 1rem 1rem 0; padding:1.1rem; font:1rem bold arial, sans-serif; appearance:button; -moz-appearance:button; -webkit-appearance:button; }
+input { padding:0.5rem; font:1.3rem bold arial, sans-serif; }
+hr { border:inset 0.1rem; }
+
+#og-game-holder { position:relative; width:50%; height:calc(88% - 1rem); margin:1rem auto 0; overflow:hidden; border:0.3rem solid #aaf9ff; }
+#inner { position:relative; height:calc(100% - 2rem); padding:1rem 2rem; color:#fff; background-color:#606875; overflow:auto; }
+
+#save-load-text { margin:0.2rem 0; display:none; font-size:1.5rem; }
+#mute-label { font:1.5rem normal arial, sans-serif; color:#aaf9ff; }

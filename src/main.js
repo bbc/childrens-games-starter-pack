@@ -1,13 +1,19 @@
 define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim) {
 	"use strict";
 
+    addStylesheet();
+
     // create a gmi object using getGMI. If window.getGMI has already been defined i.e we have already got the gmi
     // library from the server, then this will be used over the local one
     var gmi = gmi_platform.getGMI();
     var numberOfStatsButtonClicks = 0;
 
+    // ----- Set up container for the example --------
+
 	var container = document.getElementById(gmi.gameContainerId);
-	setContainerStyles(container);
+    var inner = document.createElement("div");
+    inner.id = "inner";
+    container.appendChild(inner);
 
 	// --------- Allow Debugging ---------
 
@@ -40,9 +46,9 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 	appendTitle("GMI Storage Example");
     var outputText = document.createElement("pre");
     outputText.id = "save-load-text";
-	appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); });
+	inner.appendChild(outputText);
+    appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); });
 	appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
-	container.appendChild(outputText);
     appendHorizontalRule();
 
 
@@ -50,7 +56,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
     appendTitle("GMI Mute Example");
     appendSpan("Game muted value: ");
-    container.appendChild(createMuteLabel());
+    inner.appendChild(createMuteLabel());
 	appendSpacer();
 	appendBtn("Toggle mute", function() {
         gmi.setMuted(!gmi.getAllSettings().muted);
@@ -81,84 +87,69 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
 	// ---------- Helper Functions ----------
 
-	function setContainerStyles(container) {
-		container.style.color = "white";
-		container.style.backgroundColor = "#606875";
-		container.style.font = "16px arial, sans-serif";
-		container.style.width = "50%";
-		container.style.margin = "20px auto";
-		container.style.padding = "20px";
-		container.style.border = "3px solid #aaf9ff";
-	}
+    function addStylesheet() {
+        var link  = document.createElement('link');
+        link.rel  = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'style.css';
+        link.media = 'all';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
 
 	function appendHorizontalRule() {
 		var hr = document.createElement("hr");
-		container.appendChild(hr);
+		inner.appendChild(hr);
 	}
 
 	function appendSpacer() {
 		var div = document.createElement("div");
-		container.appendChild(div);
+		inner.appendChild(div);
 	}
 
 	function appendTitle(titleStr) {
 		var div = document.createElement("div");
 		var title = document.createElement("h3");
 		title.innerHTML = titleStr;
-		title.style.font = "25px normal arial, sans-serif";
-		title.style.margin = "5px 0";
-		title.style.padding = "5px 0";
 		div.appendChild(title);
-		container.appendChild(div);
+		inner.appendChild(div);
 	}
 
 	function appendParagraph(text) {
 		var paragraph = document.createElement("p");
 		paragraph.innerHTML = text;
-		paragraph.style.padding = "5px 0";
-		container.appendChild(paragraph);
+		inner.appendChild(paragraph);
 	}
 
     function appendSpan(text) {
 		var span = document.createElement("span");
 		span.innerHTML = text;
-		container.appendChild(span);
+		inner.appendChild(span);
 	}
 
 	function appendLink(linkText, link) {
 		var a = document.createElement('a');
 		a.innerHTML = linkText;
 		a.href = link;
-		a.style.color = "#aaf9ff";
-		container.appendChild(a);
+		inner.appendChild(a);
 	}
 
 	function appendBtn(label, onClick) {
 		var btn = document.createElement("button");
 		btn.innerHTML = label;
 		btn.onclick = onClick;
-		btn.style.appearance = "button";
-		btn.style.display = "inline-block";
-		btn.style.font = "14px bold arial, sans-serif";
-		btn.style.margin = "10px 10px 10px 0";
-		btn.style.padding = "10px";
-		container.appendChild(btn);
+		inner.appendChild(btn);
 	}
 
     function appendTextInput(elementID) {
         var input = document.createElement("input");
         input.type = "text";
         input.id = elementID;
-		input.style.font = "14px bold arial, sans-serif";
-		input.style.padding = "10px";
-        container.appendChild(input);
+        inner.appendChild(input);
     }
 
 	function createMuteLabel() {
 		var muteLabel = document.createElement("span");
 	    muteLabel.innerHTML = gmi.getAllSettings().muted;
-	    muteLabel.style.font = "22px normal arial, sans-serif";
-		muteLabel.style.color = "#aaf9ff";
 		muteLabel.id = "mute-label";
 		return muteLabel;
 	}
