@@ -64,6 +64,9 @@ the developer tools.
 
 ![App Developer Tools](images/app-developer-tools.jpg)
 
+If you are having issues loading the .gdz into the app, ensure that your device
+is on the same network as the host machine, and try accessing the .gdz from the
+device's browser to check that it's available.
 
 More information on [Remote Debugging Android Devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/).
 
