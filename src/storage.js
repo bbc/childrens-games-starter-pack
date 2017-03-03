@@ -8,11 +8,13 @@ define(function(){
         };
         saveData(gmi, data);
         outputTextDiv.innerHTML = "saving:\n" + JSON.stringify(data, null, 4);
+        outputTextDiv.style.display = "block";
     }
 
     function onLoadButton(gmi, outputTextDiv) {
         var data = loadData(gmi);
         outputTextDiv.innerHTML = "loaded:\n" + JSON.stringify(data, null, 4);
+        outputTextDiv.style.display = "block";
     }
 
     // ---------- Implementation ----------
