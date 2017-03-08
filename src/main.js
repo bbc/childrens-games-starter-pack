@@ -96,7 +96,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         var link  = document.createElement('link');
         link.rel  = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'style.css';
+        link.href = './style.css';
         link.media = 'all';
         document.getElementsByTagName('head')[0].appendChild(link);
     }
@@ -114,7 +114,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     function appendTitle(titleStr) {
         var bbcLogo = document.createElement("img");
         var title = document.createElement("h1");
-        bbcLogo.src = "bbc-logo.svg";
+        bbcLogo.src = "./bbc-logo.svg";
         bbcLogo.className = "bbc-logo";
         bbcLogo.alt = "BBC Logo";
         wrapper.appendChild(bbcLogo);

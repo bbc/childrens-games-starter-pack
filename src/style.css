@@ -38,14 +38,11 @@ button {
     display: inline-block;
     position: relative;
     font-size: 0.875rem;
-    padding-top: 16px;
-    padding-right: 32px;
-    padding-bottom: 16px;
-    padding-left: 32px;
-    border: 0;
+    padding: 16px 32px 16px 32px;
     margin:0 10px 0 0;
     line-height: 1.125rem;
     background-color: #404040;
+    border: 0;
     border: 1px solid #404040;
     -webkit-transition: background-color 0.2s ease;
     -moz-transition: background-color 0.2s ease;
@@ -61,6 +58,7 @@ button {
     text-decoration: none;
     font-weight:bold;
 }
+
 button:hover {
     text-decoration: underline;
     background-color: #121212;
@@ -112,6 +110,7 @@ button:hover {
     font-size:1.2rem;
     color:#848484;
     font-weight:normal;
+    border:1px solid #dcdcdc;
 }
 
 #debug-input.strong-text {
