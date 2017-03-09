@@ -31,10 +31,14 @@ To test your game in a mobile app you will need to to do the following:
    * [Hockeyapp](https://rink.hockeyapp.net/manage/dashboard)
 
 3. Run the app and click on the 'Add Game' button; enter the url for your .gdz file
-and click download. Once it has finished downloading you can press play.
+and click download. Once it has finished downloading you can press play to test the .gdz.
 
-   _Note: To enable debugging on Apple (and also available on Android but not
-   required) `window.gameSettings.debugEnable` should be set to true._
+To enable debugging (primarily for Apple devices): `window.gameSettings.debugEnabled`
+should be set to true in the game code. When this setting is enabled, it should pass on
+any `console.log()` messages generated in the game code to the native app. To view them,
+go to the app, and there should be a button visible in the top right, which should give
+you the option of viewing and emailing the logs.
+
 
 ## Debugging for Android
 

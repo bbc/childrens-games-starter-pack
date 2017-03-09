@@ -21,7 +21,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
 	// --------- Allow Debugging ---------
 
-	window.gameSettings = { debugEnable: true };
+	window.gameSettings = { debugEnabled: true };
 
     // --------- Brim Usage Example ---------
 
