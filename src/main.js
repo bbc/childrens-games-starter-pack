@@ -67,6 +67,20 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     appendParagraph("The message input in the box below will be sent to gmi.debug when the submit button is hit");
     appendTextInput("debug-input");
     appendBtn("Submit", function() { gmi.debug(document.getElementById("debug-input").value); });
+    appendHorizontalRule();
+
+    // --------- Call Settings Function --------------
+
+    appendTitle("Show Settings");
+    var settingsLabel = document.createElement("span");
+    settingsLabel.innerHTML = "";
+    settingsLabel.id = "settings-label";
+    container.appendChild(settingsLabel);
+    appendBtn("Settings", function() {
+      gmi.showSettings();
+      document.getElementById("settings-label").innerHTML = "Show Settings Function Called";
+    });
+    appendHorizontalRule();
 
 
 	// ---------- Helper Functions ----------
