@@ -111,6 +111,14 @@ gmi.debug(message);
 This allows the debug message to be displayed regardless of platform, unlike
 e.g. console.log.
 
+#### Settings Screen
+
+````
+showSettings (settingsConfig, onSettingsClosed):
+````
+
+Accepts a settings config object and a settings closed callback. This function displays either the game's own setting screen or the BBC platform's settings screen. It returns false if the game's own setting screen should be displayed. Currently a stub implementation which always returns false.
+
 #### Exiting the game
 
 When exiting the game, the function
