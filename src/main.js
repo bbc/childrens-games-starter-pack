@@ -1,12 +1,12 @@
 define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim) {
 	"use strict";
 
-    addStylesheet();
-
     // create a gmi object using getGMI. If window.getGMI has already been defined i.e we have already got the gmi
     // library from the server, then this will be used over the local one
     var gmi = gmi_platform.getGMI();
     var numberOfStatsButtonClicks = 0;
+
+    addStylesheet();
 
     // ----- Set up container for the example --------
 
@@ -96,7 +96,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         var link  = document.createElement('link');
         link.rel  = 'stylesheet';
         link.type = 'text/css';
-        link.href = './style.css';
+        link.href = gmi.gameDir + 'style.css';
         link.media = 'all';
         document.getElementsByTagName('head')[0].appendChild(link);
     }
@@ -114,7 +114,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     function appendTitle(titleStr) {
         var bbcLogo = document.createElement("img");
         var title = document.createElement("h1");
-        bbcLogo.src = "./bbc-logo.svg";
+        bbcLogo.src = gmi.gameDir + "bbc-blocks-dark.png";
         bbcLogo.className = "bbc-logo";
         bbcLogo.alt = "BBC Logo";
         wrapper.appendChild(bbcLogo);
