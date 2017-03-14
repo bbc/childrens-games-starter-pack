@@ -111,14 +111,6 @@ gmi.debug(message);
 This allows the debug message to be displayed regardless of platform, unlike
 e.g. console.log.
 
-#### Exiting the game
-
-When exiting the game, the function
-
-````
-gmi.exit();
-````
-
 #### Pausing
 
 ````
@@ -127,6 +119,13 @@ gmi.pauseGame()
 
 Inform the app that the game has been paused and bring up the pause screen. Currently a stub implementation which always returns false.
 
+#### Exiting the game
+
+When exiting the game, the function
+
+````
+gmi.exit();
+````
 
 should be used. This will return the user to the appropriate place.
 
