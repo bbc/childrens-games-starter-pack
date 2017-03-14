@@ -119,6 +119,15 @@ When exiting the game, the function
 gmi.exit();
 ````
 
+#### Pausing
+
+````
+gmi.pauseGame()
+````
+
+Inform the app that the game has been paused and bring up the pause screen. Currently a stub implementation which always returns false.
+
+
 should be used. This will return the user to the appropriate place.
 
 ## Data fields
@@ -164,6 +173,5 @@ full screen status itself. This flag will be false if the game is currently
 embedded in an iframe or true if the page has been redirected to the Playpen.
 
 Note: Hardcoded to true for the mobile app, and the web platform on mobile devices - and false on desktop.
-
 
 [Home](../README.md)

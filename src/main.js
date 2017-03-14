@@ -9,7 +9,6 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 	var container = document.getElementById(gmi.gameContainerId);
 	container.style.color = "white";
 
-
     // --------- Brim Usage Example ---------
 
     var brimElement = null;
@@ -67,6 +66,20 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     appendParagraph("The message input in the box below will be sent to gmi.debug when the submit button is hit");
     appendTextInput("debug-input");
     appendBtn("Submit", function() { gmi.debug(document.getElementById("debug-input").value); });
+    appendHorizontalRule();
+
+    // --------- Pause Button --------------
+
+    appendTitle("Pause Button");
+    var pauseLabel = document.createElement("span");
+    pauseLabel.innerHTML = "";
+    pauseLabel.id = "pause-label";
+    container.appendChild(pauseLabel);
+    appendBtn("Pause", function() {
+      gmi.pauseGame();
+      document.getElementById("pause-label").innerHTML = "Pause Function Called";
+    });
+    appendHorizontalRule();
 
 
 	// ---------- Helper Functions ----------

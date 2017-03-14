@@ -204,6 +204,10 @@ define(function(require) {
                 saveGlobalSettings();
             };
 
+            GMI.prototype.pauseGame = function () {
+                return false;
+            }
+
 
             GMI.prototype.sendStatsEvent = function (name, type, params) {
                 this.stats.userActionEvent(type, name, params || {});
