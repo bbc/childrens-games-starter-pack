@@ -3,10 +3,9 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <LINK href="http://static.bbci.co.uk/playpen/1.2.3/style/style.css" rel="stylesheet" type="text/css">
     <LINK href="brim.css" rel="stylesheet" type="text/css">
 </head>
-<body style="background-image: none;">
+<body>
     <div id="og-game-holder"></div>
 
     <script src="http://static.bbci.co.uk/playpen/1.2.3/script/require/require.js"></script>
@@ -52,12 +51,8 @@
                     "echo": "http://static.bbci.co.uk/nkdata/echoclient/2.0.0/sharedmodules/echo"
                 }
             });
+            require(["Game"], function() {});
 
-            require(["Game"], function(game) {
-                if (game && typeof(game.init) === 'function') {
-                    game.init(window.og);
-                }
-            });
         })();
     </script>
 </body>
