@@ -111,13 +111,13 @@ gmi.debug(message);
 This allows the debug message to be displayed regardless of platform, unlike
 e.g. console.log.
 
-#### Pausing
+#### Display app prompt
 
 ````
-gmi.pauseGame()
+gmi.showPrompt(resumeGame)
 ````
 
-Inform the app that the game has been paused and bring up the pause screen. Currently a stub implementation which always returns false.
+Inform the app that it should display its prompt/interstitial screen. Takes a resumeGame callback. Currently a stub implementation which always returns false.
 
 #### Exiting the game
 
