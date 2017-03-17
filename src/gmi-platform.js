@@ -211,6 +211,7 @@ define(function(require) {
             };
 
             GMI.prototype.showPrompt = function (resumeGame) {
+                resumeGame();
                 return false;
             }
 

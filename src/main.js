@@ -81,7 +81,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     appendHorizontalRule();
 
 
-    // --------- Pause Button --------------
+    // --------- Prompt Button --------------
 
     appendTitle("Pause/Prompt Button");
     var pauseLabel = document.createElement("span");
@@ -89,8 +89,8 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     pauseLabel.id = "pause-label";
     container.appendChild(pauseLabel);
     appendBtn("Pause", function() {
-      gmi.pauseGame();
-      document.getElementById("pause-label").innerHTML = "Prompt Function Called";
+      gmi.showPrompt(function(){});
+      document.getElementById("pause-label").innerHTML = "Prompt Function Called ";
     });
     appendHorizontalRule();
 
@@ -103,7 +103,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     container.appendChild(settingsLabel);
     appendBtn("Settings", function() {
       gmi.showSettings();
-      document.getElementById("settings-label").innerHTML = "Show Settings Function Called";
+      document.getElementById("settings-label").innerHTML = "Show Settings Function Called ";
     });
     appendHorizontalRule();
 
