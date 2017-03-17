@@ -1,6 +1,5 @@
 define(function(){
 
-
     // ---------- Application ----------
     function onSaveButton(gmi, outputTextDiv) {
         var data = {
@@ -27,9 +26,7 @@ define(function(){
         if (dataString) {
             return JSON.parse(dataString);
         }
-        else {
-            return {};
-        }
+        return {};
     }
 
     return {
