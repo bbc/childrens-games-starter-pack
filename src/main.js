@@ -71,6 +71,20 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     appendTextInput("debug-input");
 	appendSpacer();
     appendBtn("Submit", function() { gmi.debug(document.getElementById("debug-input").value); });
+    appendHorizontalRule();
+
+    // --------- Call Settings Function --------------
+
+    appendTitle("Show Settings");
+    var settingsLabel = document.createElement("span");
+    settingsLabel.innerHTML = "";
+    settingsLabel.id = "settings-label";
+    container.appendChild(settingsLabel);
+    appendBtn("Settings", function() {
+      gmi.showSettings();
+      document.getElementById("settings-label").innerHTML = "Show Settings Function Called";
+    });
+    appendHorizontalRule();
 
 
 	// ---------- Notify App That Game Has Loaded And Send Stats ----------
