@@ -9,6 +9,12 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 	var container = document.getElementById(gmi.gameContainerId);
 	setContainerStyles(container);
 
+    // --------- Debug Mode Example ---------
+
+    appendTitle("Is Debug Mode Enabled?");
+    gmi.isDebugMode ? appendSpan("True") : appendSpan("False");
+    appendHorizontalRule();
+
 	// --------- Allow Debugging ---------
 
 	window.gameSettings = { debugEnable: true };

@@ -171,6 +171,9 @@ The game should use this flag to decide whether to show the exit button
 full screen status itself. This flag will be false if the game is currently
 embedded in an iframe or true if the page has been redirected to the Playpen.
 
+### gmi.isDebugMode
+A boolean that indicates if the game should be in debug mode or not. If true, all levels should be unlocked for testing purposes.
+
 Note: Hardcoded to true for the mobile app, and the web platform on mobile devices - and false on desktop.
 
 
