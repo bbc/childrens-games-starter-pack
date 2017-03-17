@@ -81,6 +81,12 @@ define(function(require) {
                 }
             });
 
+            Object.defineProperty(GMI.prototype, 'isDebugMode', {
+                get: function () {
+                    return !!embedVars.isDebugMode;
+                }
+            });
+
             Object.defineProperty(GMI.prototype, 'shouldShowExitButton', {
                 get: function() {
                     return window.og.isFullScreen;
@@ -208,6 +214,10 @@ define(function(require) {
                 return false;
             }
 
+            GMI.prototype.showSettings = function(settingsConfig, onSettingsClosed) {
+              return false;
+            };
+
             GMI.prototype.sendStatsEvent = function (name, type, params) {
                 this.stats.userActionEvent(type, name, params || {});
             };
@@ -224,7 +234,7 @@ define(function(require) {
             };
 
             GMI.prototype.gameLoaded = function() {
-
+                
             };
 
 

@@ -111,6 +111,7 @@ gmi.debug(message);
 This allows the debug message to be displayed regardless of platform, unlike
 e.g. console.log.
 
+
 #### Display app prompt
 
 ````
@@ -118,6 +119,14 @@ gmi.showPrompt(resumeGame)
 ````
 
 Inform the app that it should display its prompt/interstitial screen. Takes a resumeGame callback. Currently a stub implementation which always returns false.
+
+#### Settings Screen
+
+````
+showSettings (settingsConfig, onSettingsClosed):
+````
+
+Accepts a settings config object and a settings closed callback. This function displays either the game's own setting screen or the BBC platform's settings screen. It returns false if the game's own setting screen should be displayed. Currently a stub implementation which always returns false.
 
 #### Exiting the game
 
@@ -170,6 +179,9 @@ The game should use this flag to decide whether to show the exit button
 (and potentially other full-screen-related functionality) rather than detecting
 full screen status itself. This flag will be false if the game is currently
 embedded in an iframe or true if the page has been redirected to the Playpen.
+
+### gmi.isDebugMode
+A boolean that indicates if the game should be in debug mode or not. If true, all levels should be unlocked for testing purposes.
 
 Note: Hardcoded to true for the mobile app, and the web platform on mobile devices - and false on desktop.
 
