@@ -8,7 +8,9 @@ To test your game in a mobile app you will need to to do the following:
    of your .gdz file, your .gdz should be hosted on our servers. You should find
    the location [here](../README.md#important-links).
 
-   Alternatively you can package the .gdz manually and host it yourself for local debugging:
+   Alternatively you can package the .gdz manually and host it yourself for local debugging.
+   You will first need to build (and ideally minify) the game using the same process
+   as in your build.sh file. Then run the following command to create a .gdz:
 
    ````
    zip -r starterpack.gdz -Z store . --exclude=*.sh* --exclude=*.svn* --exclude=*.git* --exclude=*.DS_Store*
@@ -31,10 +33,14 @@ To test your game in a mobile app you will need to to do the following:
    * [Hockeyapp](https://rink.hockeyapp.net/manage/dashboard)
 
 3. Run the app and click on the 'Add Game' button; enter the url for your .gdz file
-and click download. Once it has finished downloading you can press play.
+and click download. Once it has finished downloading you can press play to test the .gdz.
 
-   _Note: To enable debugging on Apple (and also available on Android but not
-   required) `window.gameSettings.debugEnable` should be set to true._
+To enable debugging (primarily for Apple devices): `window.gameSettings.debugEnabled`
+should be set to true in the game code. When this setting is enabled, it should pass on
+any `console.log()` messages generated in the game code to the native app. To view them,
+go to the app, and there should be a button visible in the top right, which should give
+you the option of viewing and emailing the logs.
+
 
 ## Debugging for Android
 
@@ -64,6 +70,9 @@ the developer tools.
 
 ![App Developer Tools](images/app-developer-tools.jpg)
 
+If you are having issues loading the .gdz into the app, ensure that your device
+is on the same network as the host machine, and try accessing the .gdz from the
+device's browser to check that it's available.
 
 More information on [Remote Debugging Android Devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/).
 

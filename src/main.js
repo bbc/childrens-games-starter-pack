@@ -6,8 +6,18 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     var gmi = gmi_platform.getGMI();
     var numberOfStatsButtonClicks = 0;
 
+    addStylesheet();
+
+    // ----- Set up container for the example --------
+
 	var container = document.getElementById(gmi.gameContainerId);
-	setContainerStyles(container);
+    var wrapper = document.createElement("div");
+    var inner = document.createElement("div");
+    wrapper.className = "wrapper";
+    inner.className = "inner";
+    appendTitle("Games Messaging Interface Examples");
+    container.appendChild(wrapper);
+    wrapper.appendChild(inner);
 
     // --------- Debug Mode Example ---------
 
@@ -17,22 +27,20 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
 	// --------- Allow Debugging ---------
 
-	window.gameSettings = { debugEnable: true };
+	window.gameSettings = { debugEnabled: true };
 
     // --------- Brim Usage Example ---------
 
-    var brimElement = null;
-
-    if (!brimElement) {
-        brimElement = brim.create(gmi.gameContainerId, "This text will be displayed when Brim appears");
-    }
+    brim.create(gmi.gameContainerId, "This text will be displayed when Brim appears");
 
 	// ---------- GMI Stats Example----------
 
-    appendTitle("GMI Stats Example");
-	appendSpan("Open ");
-	appendLink("iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga");
-	appendSpan(" or see network calls prefixed with 'sa.bbc.co.uk' and" + " click the button to fire a stat.");
+    appendSubtitle("GMI Stats Example");
+    var gmiStatsParagraph = appendParagraph();
+
+    appendSpan("Open ", gmiStatsParagraph);
+	appendLink("iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga", gmiStatsParagraph);
+	appendSpan(" or see network calls prefixed with 'sa.bbc.co.uk' and" + " click the button to fire a stat.", gmiStatsParagraph);
 	appendSpacer();
 	appendBtn("Log Action Event (Button Clicked)", function(event) {
         numberOfStatsButtonClicks++;
@@ -43,20 +51,23 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
 	// ---------- GMI Storage Example----------
 
-	appendTitle("GMI Storage Example");
+	appendSubtitle("GMI Storage Example");
     var outputText = document.createElement("pre");
     outputText.id = "save-load-text";
-	appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); });
+	inner.appendChild(outputText);
+    appendSpacer();
+    appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); });
 	appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
-	container.appendChild(outputText);
     appendHorizontalRule();
 
 
     // --------- GMI Set Mute Example ---------
 
-    appendTitle("GMI Mute Example");
-    appendSpan("Game muted value: ");
-    container.appendChild(createMuteLabel());
+    appendSubtitle("GMI Mute Example");
+    var muteParagraph = appendParagraph();
+
+    appendSpan("Game muted value: ", muteParagraph);
+    muteParagraph.appendChild(createMuteLabel());
 	appendSpacer();
 	appendBtn("Toggle mute", function() {
         gmi.setMuted(!gmi.getAllSettings().muted);
@@ -66,13 +77,13 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
 
     // ---------- GMI Exit Example -----------
-    appendTitle("GMI Exit Example");
+    appendSubtitle("GMI Exit Example");
     appendBtn("Exit game", function() { gmi.exit(); });
     appendHorizontalRule();
 
     // ---------- GMI Debug Example ----------
 
-    appendTitle("GMI Debug Example");
+    appendSubtitle("GMI Debug Example");
     appendParagraph("The message input in the box below will be sent to gmi.debug when the submit button is hit.");
     appendTextInput("debug-input");
 	appendSpacer();
@@ -101,84 +112,108 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
 	// ---------- Helper Functions ----------
 
-	function setContainerStyles(container) {
-		container.style.color = "white";
-		container.style.backgroundColor = "#606875";
-		container.style.font = "16px arial, sans-serif";
-		container.style.width = "50%";
-		container.style.margin = "20px auto";
-		container.style.padding = "20px";
-		container.style.border = "3px solid #aaf9ff";
-	}
+    function addStylesheet() {
+        var link  = document.createElement('link');
+        link.rel  = 'stylesheet';
+        link.type = 'text/css';
+        link.href = gmi.gameDir + 'style.css';
+        link.media = 'all';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
 
 	function appendHorizontalRule() {
 		var hr = document.createElement("hr");
-		container.appendChild(hr);
+		inner.appendChild(hr);
 	}
 
 	function appendSpacer() {
 		var div = document.createElement("div");
-		container.appendChild(div);
+		inner.appendChild(div);
 	}
 
-	function appendTitle(titleStr) {
-		var div = document.createElement("div");
-		var title = document.createElement("h3");
+    function appendTitle(titleStr) {
+        var bbcLogo = document.createElement("img");
+        var title = document.createElement("h1");
+        bbcLogo.src = gmi.gameDir + "bbc-blocks-dark.png";
+        bbcLogo.className = "bbc-logo";
+        bbcLogo.alt = "BBC Logo";
+        wrapper.appendChild(bbcLogo);
 		title.innerHTML = titleStr;
-		title.style.font = "25px normal arial, sans-serif";
-		title.style.margin = "5px 0";
-		title.style.padding = "5px 0";
-		div.appendChild(title);
-		container.appendChild(div);
+		wrapper.appendChild(title);
+	}
+
+	function appendSubtitle(titleStr) {
+		var title = document.createElement("h2");
+		title.innerHTML = titleStr;
+		inner.appendChild(title);
 	}
 
 	function appendParagraph(text) {
 		var paragraph = document.createElement("p");
-		paragraph.innerHTML = text;
-		paragraph.style.padding = "5px 0";
-		container.appendChild(paragraph);
+		paragraph.innerHTML = text || '';
+		inner.appendChild(paragraph);
+        return paragraph;
 	}
 
-    function appendSpan(text) {
+    function appendSpan(text, div) {
 		var span = document.createElement("span");
 		span.innerHTML = text;
-		container.appendChild(span);
+        if (div) {
+            div.appendChild(span);
+        }
+        else {
+            inner.appendChild(span);
+        }
 	}
 
-	function appendLink(linkText, link) {
+	function appendLink(linkText, link, div) {
 		var a = document.createElement('a');
 		a.innerHTML = linkText;
 		a.href = link;
-		a.style.color = "#aaf9ff";
-		container.appendChild(a);
+        if (div) {
+            div.appendChild(a);
+        }
+        else {
+            inner.appendChild(a);
+        }
 	}
 
 	function appendBtn(label, onClick) {
 		var btn = document.createElement("button");
 		btn.innerHTML = label;
 		btn.onclick = onClick;
-		btn.style.appearance = "button";
-		btn.style.display = "inline-block";
-		btn.style.font = "14px bold arial, sans-serif";
-		btn.style.margin = "10px 10px 10px 0";
-		btn.style.padding = "10px";
-		container.appendChild(btn);
+		inner.appendChild(btn);
 	}
+
+    function inputOnlick(event) {
+        var inputEle = event.target;
+        if (inputEle.value === 'Enter a message here') {
+            inputEle.value = '';
+            inputEle.className = 'strong-text';
+        }
+    }
+
+    function inputOnBlur(event) {
+        var inputEle = event.target;
+        if (inputEle.value === '') {
+            inputEle.value = 'Enter a message here';
+            inputEle.className = '';
+        }
+    }
 
     function appendTextInput(elementID) {
         var input = document.createElement("input");
         input.type = "text";
         input.id = elementID;
-		input.style.font = "14px bold arial, sans-serif";
-		input.style.padding = "10px";
-        container.appendChild(input);
+        input.value = 'Enter a message here';
+        input.onclick = inputOnlick;
+        input.onblur = inputOnBlur;
+        inner.appendChild(input);
     }
 
 	function createMuteLabel() {
 		var muteLabel = document.createElement("span");
 	    muteLabel.innerHTML = gmi.getAllSettings().muted;
-	    muteLabel.style.font = "22px normal arial, sans-serif";
-		muteLabel.style.color = "#aaf9ff";
 		muteLabel.id = "mute-label";
 		return muteLabel;
 	}
