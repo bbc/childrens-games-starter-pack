@@ -8,7 +8,9 @@ To test your game in a mobile app you will need to to do the following:
    of your .gdz file, your .gdz should be hosted on our servers. You should find
    the location [here](../README.md#important-links).
 
-   Alternatively you can package the .gdz manually and host it yourself for local debugging:
+   Alternatively you can package the .gdz manually and host it yourself for local debugging.
+   You will first need to build (and ideally minify) the game using the same process
+   as in your build.sh file. Then run the following command to create a .gdz:
 
    ````
    zip -r starterpack.gdz -Z store . --exclude=*.sh* --exclude=*.svn* --exclude=*.git* --exclude=*.DS_Store*
