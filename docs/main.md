@@ -19,3 +19,5 @@ Find the `<div>` to contain the game, and inject the canvas and other required g
 ```
 var container = document.getElementById(gmi.gameContainerId);
 ```
+
+Your main.js will be executed by the app or the web environment respectively, which should result in the game being run without the need for anything external to make a call to get things started.
