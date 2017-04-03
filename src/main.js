@@ -21,7 +21,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
     // --------- Debug Mode Example ---------
 
-    appendTitle("Is Debug Mode Enabled?");
+    appendSubtitle("Is Debug Mode Enabled?");
     gmi.isDebugMode ? appendSpan("True") : appendSpan("False");
     appendHorizontalRule();
 
@@ -92,7 +92,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
     // --------- Call Settings Function --------------
 
-    appendTitle("Show Settings");
+    appendSubtitle("Show Settings");
     var settingsLabel = document.createElement("span");
     settingsLabel.innerHTML = "";
     settingsLabel.id = "settings-label";
