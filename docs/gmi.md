@@ -18,10 +18,10 @@ var requireGmi = require("./src/gmi-platform");
 var gmi = requireGmi.getGMI();
 ````
 
-When you call getGMI(), it will do a check for any existing window.gmi instance
-and return that. This mechanism allows gmi-mobile to be injected in an app
-environment and any mock gmi to be injected in tests or development environments
-if necessary.
+When you call getGMI(), it will do a check for any existing window.getGMI
+function and call that. This mechanism allows gmi-mobile to be injected in an
+app environment and any mock gmi to be injected in tests or development
+environments if necessary.
 
 _Note: Only one instance of the GMI should be created - if multiple instances
 are created then a warning will be written to the console which will fail game
