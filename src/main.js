@@ -1,5 +1,5 @@
 define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim) {
-	"use strict";
+    "use strict";
 
     // create a gmi object using getGMI. If window.getGMI has already been defined i.e we have already got the gmi
     // library from the server, then this will be used over the local one
@@ -10,7 +10,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
     // ----- Set up container for the example --------
 
-	var container = document.getElementById(gmi.gameContainerId);
+    var container = document.getElementById(gmi.gameContainerId);
     var wrapper = document.createElement("div");
     var inner = document.createElement("div");
     wrapper.className = "wrapper";
@@ -25,39 +25,39 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     gmi.isDebugMode ? appendSpan("True") : appendSpan("False");
     appendHorizontalRule();
 
-	// --------- Allow Debugging ---------
+    // --------- Allow Debugging ---------
 
-	window.gameSettings = { debugEnabled: true };
+    window.gameSettings = { debugEnabled: true };
 
     // --------- Brim Usage Example ---------
 
     brim.create(gmi.gameContainerId, "This text will be displayed when Brim appears");
 
-	// ---------- GMI Stats Example----------
+    // ---------- GMI Stats Example----------
 
     appendSubtitle("GMI Stats Example");
     var gmiStatsParagraph = appendParagraph();
 
     appendSpan("Open ", gmiStatsParagraph);
-	appendLink("iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga", gmiStatsParagraph);
-	appendSpan(" or see network calls prefixed with 'sa.bbc.co.uk' and" + " click the button to fire a stat.", gmiStatsParagraph);
-	appendSpacer();
-	appendBtn("Log Action Event (Button Clicked)", function(event) {
+    appendLink("iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga", gmiStatsParagraph);
+    appendSpan(" or see network calls prefixed with 'sa.bbc.co.uk' and" + " click the button to fire a stat.", gmiStatsParagraph);
+    appendSpacer();
+    appendBtn("Log Action Event (Button Clicked)", function(event) {
         numberOfStatsButtonClicks++;
         gmi.sendStatsEvent("button_click", event.target.innerHTML, {"num_btn_clicks": numberOfStatsButtonClicks});
     });
-	appendHorizontalRule();
+    appendHorizontalRule();
 
 
-	// ---------- GMI Storage Example----------
+    // ---------- GMI Storage Example----------
 
-	appendSubtitle("GMI Storage Example");
+    appendSubtitle("GMI Storage Example");
     var outputText = document.createElement("pre");
     outputText.id = "save-load-text";
-	inner.appendChild(outputText);
+    inner.appendChild(outputText);
     appendSpacer();
     appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); });
-	appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
+    appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
     appendHorizontalRule();
 
 
@@ -68,8 +68,8 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
     appendSpan("Game muted value: ", muteParagraph);
     muteParagraph.appendChild(createMuteLabel());
-	appendSpacer();
-	appendBtn("Toggle mute", function() {
+    appendSpacer();
+    appendBtn("Toggle mute", function() {
         gmi.setMuted(!gmi.getAllSettings().muted);
         document.getElementById("mute-label").innerHTML = gmi.getAllSettings().muted;
     });
@@ -86,7 +86,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     appendSubtitle("GMI Debug Example");
     appendParagraph("The message input in the box below will be sent to gmi.debug when the submit button is hit.");
     appendTextInput("debug-input");
-	appendSpacer();
+    appendSpacer();
     appendBtn("Submit", function() { gmi.debug(document.getElementById("debug-input").value); });
     appendHorizontalRule();
 
@@ -104,13 +104,13 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     appendHorizontalRule();
 
 
-	// ---------- Notify App That Game Has Loaded And Send Stats ----------
+    // ---------- Notify App That Game Has Loaded And Send Stats ----------
 
-	gmi.gameLoaded();
-	gmi.sendStatsEvent('game_loaded', true, {});
+    gmi.gameLoaded();
+    gmi.sendStatsEvent('game_loaded', true, {});
 
 
-	// ---------- Helper Functions ----------
+    // ---------- Helper Functions ----------
 
     function addStylesheet() {
         var link  = document.createElement('link');
@@ -121,15 +121,15 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         document.getElementsByTagName('head')[0].appendChild(link);
     }
 
-	function appendHorizontalRule() {
-		var hr = document.createElement("hr");
-		inner.appendChild(hr);
-	}
+    function appendHorizontalRule() {
+        var hr = document.createElement("hr");
+        inner.appendChild(hr);
+    }
 
-	function appendSpacer() {
-		var div = document.createElement("div");
-		inner.appendChild(div);
-	}
+    function appendSpacer() {
+        var div = document.createElement("div");
+        inner.appendChild(div);
+    }
 
     function appendTitle(titleStr) {
         var bbcLogo = document.createElement("img");
@@ -138,52 +138,52 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         bbcLogo.className = "bbc-logo";
         bbcLogo.alt = "BBC Logo";
         wrapper.appendChild(bbcLogo);
-		title.innerHTML = titleStr;
-		wrapper.appendChild(title);
-	}
+        title.innerHTML = titleStr;
+        wrapper.appendChild(title);
+    }
 
-	function appendSubtitle(titleStr) {
-		var title = document.createElement("h2");
-		title.innerHTML = titleStr;
-		inner.appendChild(title);
-	}
+    function appendSubtitle(titleStr) {
+        var title = document.createElement("h2");
+        title.innerHTML = titleStr;
+        inner.appendChild(title);
+    }
 
-	function appendParagraph(text) {
-		var paragraph = document.createElement("p");
-		paragraph.innerHTML = text || '';
-		inner.appendChild(paragraph);
+    function appendParagraph(text) {
+        var paragraph = document.createElement("p");
+        paragraph.innerHTML = text || '';
+        inner.appendChild(paragraph);
         return paragraph;
-	}
+    }
 
     function appendSpan(text, div) {
-		var span = document.createElement("span");
-		span.innerHTML = text;
+        var span = document.createElement("span");
+        span.innerHTML = text;
         if (div) {
             div.appendChild(span);
         }
         else {
             inner.appendChild(span);
         }
-	}
+    }
 
-	function appendLink(linkText, link, div) {
-		var a = document.createElement('a');
-		a.innerHTML = linkText;
-		a.href = link;
+    function appendLink(linkText, link, div) {
+        var a = document.createElement('a');
+        a.innerHTML = linkText;
+        a.href = link;
         if (div) {
             div.appendChild(a);
         }
         else {
             inner.appendChild(a);
         }
-	}
+    }
 
-	function appendBtn(label, onClick) {
-		var btn = document.createElement("button");
-		btn.innerHTML = label;
-		btn.onclick = onClick;
-		inner.appendChild(btn);
-	}
+    function appendBtn(label, onClick) {
+        var btn = document.createElement("button");
+        btn.innerHTML = label;
+        btn.onclick = onClick;
+        inner.appendChild(btn);
+    }
 
     function inputOnlick(event) {
         var inputEle = event.target;
@@ -211,11 +211,11 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         inner.appendChild(input);
     }
 
-	function createMuteLabel() {
-		var muteLabel = document.createElement("span");
-	    muteLabel.innerHTML = gmi.getAllSettings().muted;
-		muteLabel.id = "mute-label";
-		return muteLabel;
-	}
+    function createMuteLabel() {
+        var muteLabel = document.createElement("span");
+        muteLabel.innerHTML = gmi.getAllSettings().muted;
+        muteLabel.id = "mute-label";
+        return muteLabel;
+    }
 
 });
