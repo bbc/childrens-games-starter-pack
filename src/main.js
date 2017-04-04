@@ -97,10 +97,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     settingsLabel.innerHTML = "";
     settingsLabel.id = "settings-label";
     container.appendChild(settingsLabel);
-    appendBtn("Settings", function() {
-      gmi.showSettings();
-      document.getElementById("settings-label").innerHTML = "Show Settings Function Called";
-    });
+    appendBtn("Settings", onClickSettingsButton);
     appendHorizontalRule();
 
 
@@ -216,6 +213,52 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         muteLabel.innerHTML = gmi.getAllSettings().muted;
         muteLabel.id = "mute-label";
         return muteLabel;
+    }
+
+    function onClickSettingsButton() {
+        var settingsConfig = {
+            pages: [
+                {
+                    settings: [
+                        {
+                            key: "audio",
+                            type: "toggle",
+                            title: "Audio",
+                            description: "Turn off/on sound and music"
+                        },
+                        {
+                            key: "hard",
+                            type: "toggle",
+                            title: "Hard mode",
+                            description: "More baddies and less health"
+                        },
+                    ]
+                }
+            ]
+        };
+
+        var settingsShowing = gmi.showSettings(settingsConfig, onSettingsClosed);
+        if (!settingsShowing) {
+            showMySettingsScreen();
+        }
+    }
+
+    function onSettingsClosed(changedSettings) {
+        if (changedSettings.hasOwnProperty("audio")) {
+            document.getElementById("mute-label").innerHTML = !changedSettings.audio;
+        }
+        if (changedSettings.hasOwnProperty("hard")) {
+            if (changedSettings.hard) {
+                //setHardMode
+            }
+            else {
+                //setEasyMode
+            }
+        }
+    }
+
+    function showMySettingsScreen() {
+        window.alert("Settings screen not implemented by the GMI. Internal one goes here.");
     }
 
 });
