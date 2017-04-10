@@ -14,14 +14,14 @@ To initialize the GMI, you should bundle gmi-platform.js with your game and
 require it, you can then create an instance by calling getGMI():
 
 ````
-var requireGmi = require("./src/gmi-platform");
-var gmi = requireGmi.getGMI();
+var GmiModule = require("./src/gmi-platform");
+var gmi = GmiModule.getGMI(options);
 ````
 
 When you call getGMI(), it will do a check for any existing window.getGMI
-function and call that. This mechanism allows gmi-mobile to be injected in an
-app environment and any mock gmi to be injected in tests or development
-environments if necessary.
+function and call that, if found. This mechanism allows gmi-mobile to be
+injected in an app environment and any mock gmi to be injected in tests or
+development environments if necessary.
 
 _Note: Only one instance of the GMI should be created - if multiple instances
 are created then a warning will be written to the console which will fail game
@@ -119,12 +119,12 @@ e.g. console.log.
 ## Settings Screen
 
 ````
-gmi.showSettings(settingsConfig, onSettingsClosed)
+gmi.showSettings(onSettingChanged, onSettingsClosed)
 ````
 
 Requests that the "host" (i.e. app or web page) show its built-in settings
-screen and notify the game when finished by calling the provided
-onSettingsClosed callback.
+screen and notify the game when settings are changed or the screen is closed by
+calling the provided callbacks.
 
 ### Return Value
 
@@ -136,10 +136,42 @@ onSettingsClosed callback.
 developed for the new settings system before it is implemented in all hosts.
 If the function returns *false* the game must show its own settings screen.
 
-### settingsConfig parameter
+### onSettingChanged parameter
 
-Allows the game to specify what settings to show. It should be a JavaScript
-object with the following form:
+A function provided by the game that is called immediately each time the player
+changes a setting.
+
+```
+function onSettingChanged(key, value) { ... }
+```
+
+* The *key* parameter corresponds to a key defined in the *settingsConfig* (see
+  below).
+* The *value* parameter is the new value of the setting. Currently this will be
+  either *true* or *false*.
+
+### onSettingsClosed parameter
+
+A function provided by the game that is called when the settings screen is
+dismissed.
+
+```
+function onSettingsClosed() { ... }
+```
+
+The *changedSettings* parameter is a JavaScript object with keys corresponding
+to those specified in the settings definitions, and boolean values set to the
+new value of the setting. It only includes settings that have just been changed.
+
+## Settings Configuration
+
+Customization of the available settings is done via the initial *getGMI* call.
+
+    GmiModule.getGMI({
+        settingsConfig: mySettingsConfig
+    });
+
+*settingsConfig* should be a JavaScript object with the following form:
 
     {
         pages: [
@@ -165,12 +197,12 @@ Each setting definition has the following form:
     }
 
 The only supported *type* for now is "toggle". More types may be added in
-future. 
+future.
 
 The ordering of pages and settings in the lists defines the order they appear in
 the settings screen.
 
-#### Standard Settings
+### Standard Settings
 
 The standard settings keys are:
 
@@ -182,24 +214,10 @@ When the GMI implements the settings screen, it will persist the updated values
 for these keys: The game does not need to call *setMuted*, *setMotion* or
 *setSubtitles* in this case.
 
-Note the discrepancy between "audio" and "muted" -- The previous use of "muted"
-has already caused confusion due to its negative nature. "Audio" matches the UI
-and is more intuitive when used in code. We plan to transition to using *audio*,
-and deprecate *muted*.
-
-### onSettingsClosed parameter
-
-* A function provided by the game that is called when the settings screen is
-  dismissed.
-* Receives a parameter indicating which settings changed.
-
-```
-function onSettingsClosed(changedSettings) { ... }
-```
-
-The *changedSettings* parameter is a JavaScript object with keys corresponding
-to those specified in the settings definitions, and boolean values set to the
-new value of the setting. It only includes settings that have just been changed.
+> Note the discrepancy between "audio" and "muted" -- The previous use of
+"muted" has already caused confusion due to its negative nature. "Audio" matches
+the UI and is more intuitive when used in code. We plan to transition to using
+*audio*, and deprecate *muted*.
 
 ## Exiting the game
 

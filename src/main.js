@@ -1,9 +1,10 @@
 define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim) {
     "use strict";
 
-    // create a gmi object using getGMI. If window.getGMI has already been defined i.e we have already got the gmi
-    // library from the server, then this will be used over the local one
-    var gmi = gmi_platform.getGMI();
+    // Create a gmi object using getGMI. If window.getGMI is defined i.e we have
+    // already got the gmi library from the server, then this will be used over
+    // the local one.
+    var gmi = gmi_platform.getGMI({settingsConfig: settingsConfig});
     var numberOfStatsButtonClicks = 0;
 
     addStylesheet();
@@ -215,40 +216,42 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         return muteLabel;
     }
 
-    function onClickSettingsButton() {
-        var settingsConfig = {
-            pages: [
-                {
-                    settings: [
-                        {
-                            key: "audio",
-                            type: "toggle",
-                            title: "Audio",
-                            description: "Turn off/on sound and music"
-                        },
-                        {
-                            key: "hard",
-                            type: "toggle",
-                            title: "Hard mode",
-                            description: "More baddies and less health"
-                        },
-                    ]
-                }
-            ]
-        };
+    // --------- Settings ---------
 
-        var settingsShowing = gmi.showSettings(settingsConfig, onSettingsClosed);
+    var settingsConfig = {
+        pages: [
+            {
+                settings: [
+                    {
+                        key: "audio",
+                        type: "toggle",
+                        title: "Audio",
+                        description: "Turn off/on sound and music"
+                    },
+                    {
+                        key: "hard",
+                        type: "toggle",
+                        title: "Hard mode",
+                        description: "More baddies and less health"
+                    },
+                ]
+            }
+        ]
+    };
+
+    function onClickSettingsButton() {
+        var settingsShowing = gmi.showSettings(onSettingChanged, onSettingsClosed);
         if (!settingsShowing) {
             showMySettingsScreen();
         }
     }
 
-    function onSettingsClosed(changedSettings) {
-        if (changedSettings.hasOwnProperty("audio")) {
-            document.getElementById("mute-label").innerHTML = !changedSettings.audio;
+    function onSettingChanged(key, value) {
+        if (key === "audio") {
+            document.getElementById("mute-label").innerHTML = !value;
         }
-        if (changedSettings.hasOwnProperty("hard")) {
-            if (changedSettings.hard) {
+        if (key === "hard") {
+            if (value) {
                 //setHardMode
             }
             else {
@@ -257,8 +260,11 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         }
     }
 
+    function onSettingsClosed() {
+    }
+
     function showMySettingsScreen() {
-        window.alert("Settings screen not implemented by the GMI. Internal one goes here.");
+        window.alert("Settings screen not provided by this host. Internal one goes here.");
     }
 
 });

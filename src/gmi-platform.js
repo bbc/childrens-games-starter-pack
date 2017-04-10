@@ -210,7 +210,7 @@ define(function(require) {
                 saveGlobalSettings();
             };
 
-            GMI.prototype.showSettings = function(settingsConfig, onSettingsClosed) {
+            GMI.prototype.showSettings = function(onSettingChanged, onSettingsClosed) {
               return false;
             };
 
