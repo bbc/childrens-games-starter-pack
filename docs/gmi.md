@@ -159,10 +159,6 @@ dismissed.
 function onSettingsClosed() { ... }
 ```
 
-The *changedSettings* parameter is a JavaScript object with keys corresponding
-to those specified in the settings definitions, and boolean values set to the
-new value of the setting. It only includes settings that have just been changed.
-
 ## Settings Configuration
 
 Customization of the available settings is done via the initial *getGMI* call.
