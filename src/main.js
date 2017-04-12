@@ -251,6 +251,8 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
             document.getElementById("mute-label").innerHTML = !value;
         }
         if (key === "hard") {
+            // The chosen value will already have been persisted, and 
+            // will available as gmi.getAllSettings().gameData.hard
             if (value) {
                 //setHardMode
             }

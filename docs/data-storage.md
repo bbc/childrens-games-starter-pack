@@ -27,13 +27,13 @@ gmi.setGameData(key, value);
 
 function. This stores a JSON key-value pair that can then be pulled out as described in the next section.
 
-The exceptions to this are the global settings: muted, subtitles, and motion. These
+The exceptions to this are the global settings: audio, subtitles, and motion. These
 settings persist between games, and as such have their own setters:
 
 ````
-gmi.setMuted(true/false);
-gmi.setSubtitles(true/false);
-gmi.setMotion(true/false);
+gmi.setAudio(true/false)
+gmi.setSubtitles(true/false)
+gmi.setMotion(true/false)
 ````
 
 
@@ -52,14 +52,14 @@ function. This gives access to all data stored- both global and game data. To ge
 global settings out, use:
 
 ````
-gmi.getAllSettings().muted;
-gmi.getAllSettings().subtitles;
-gmi.getAllSettings().motion;
+gmi.getAllSettings().audio
+gmi.getAllSettings().subtitles
+gmi.getAllSettings().motion
 ````
 
 To pull out the custom game data, use:
 ````
-gmi.getAllSettings().gameData;
+gmi.getAllSettings().gameData
 ````
 
 This object will contain all of the properties that have previously been set for this game.
