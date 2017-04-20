@@ -210,10 +210,14 @@ define(function(require) {
                 saveGlobalSettings();
             };
 
-            GMI.prototype.showSettings = function(onSettingChanged, onSettingsClosed) {
+            GMI.prototype.showPrompt = function (resumeGame) {
+                resumeGame();
+                return false;
+            }
+
+            GMI.prototype.showSettings = function(settingsConfig, onSettingsClosed) {
               return false;
             };
-
 
             GMI.prototype.sendStatsEvent = function (name, type, params) {
                 this.stats.userActionEvent(type, name, params || {});
