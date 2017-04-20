@@ -194,6 +194,7 @@ Customization of the available settings is done via the initial *getGMI* call.
 Each page definition is an object with the following form:
 
     {
+        title: <title string>,
         settings: [
             a list of setting definitions -- see below
         ]

@@ -36,8 +36,6 @@ define(function(require) {
         return echo;
     }
 
-
-
     var getGMI = function (options) {
         var GMI = function () {
             var embedVars = window.og.embedVars;
@@ -108,7 +106,6 @@ define(function(require) {
             var GMI_LOCAL_STORAGE_KEY = "bbc_childrens_gmi_data";
             var GMI_GAME_STORAGE_KEY = GMI_LOCAL_STORAGE_KEY + "_" + gameId;
 
-
             var globalSettings = {
                 muted: false,
                 subtitles: false,
@@ -119,21 +116,18 @@ define(function(require) {
 
             this.stats = createEchoStats(appName, counterName, options);
 
-
             function areCookiesAllowed() {
                 var bbccookies = window.bbccookies;
                 return !bbccookies || bbccookies.isAllowed("ckps_whatever");
             }
 
             function parseLocalStorage(key) {
-                var data = window.localStorage.getItem(key);
                 try {
-                    return JSON.parse(data);
+                    return JSON.parse(window.localStorage.getItem(key));
                 }
                 catch(e) {}
                 return undefined;
             }
-
 
             function loadLocalData() {
                 function getDefaultSettings() {
@@ -160,7 +154,6 @@ define(function(require) {
                 }
             }
 
-
             function saveGlobalSettings() {
                 if (areCookiesAllowed()) {
                     try {
@@ -169,18 +162,14 @@ define(function(require) {
                 }
             }
 
-
             GMI.prototype.getAllSettings = function () {
+                var settings = JSON.parse(JSON.stringify(globalSettings)); //Prevents reference assignment
+                settings.audio = !settings.muted;
                 if (areCookiesAllowed()) {
-                    var settings = JSON.parse(JSON.stringify(globalSettings)); //Prevents reference assignment
                     settings.gameData = gameSettings;
-                    return settings;
                 }
-                else {
-                    return globalSettings;
-                }
+                return settings;
             };
-
 
             GMI.prototype.setGameData = function (key, value) {
                 if (areCookiesAllowed()) {
@@ -193,12 +182,16 @@ define(function(require) {
                 }
             };
 
-
-            GMI.prototype.setMuted = function (state) {
+            //Provides backwards compatibility for deprecated setMuted
+            GMI.prototype.setMuted = function(state) {
                 globalSettings.muted = !!state;
                 saveGlobalSettings();
-            };
+            }
 
+            GMI.prototype.setAudio = function (state) {
+                globalSettings.muted = !state;
+                saveGlobalSettings();
+            };
 
             GMI.prototype.setSubtitles = function (state) {
                 globalSettings.subtitles = !!state;
@@ -213,22 +206,20 @@ define(function(require) {
             GMI.prototype.showPrompt = function (resumeGame) {
                 resumeGame();
                 return false;
-            }
-
-            GMI.prototype.showSettings = function(settingsConfig, onSettingsClosed) {
-              return false;
+            };
+          
+            GMI.prototype.showSettings = function(onSettingChanged, onSettingsClosed) {
+                return false;
             };
 
             GMI.prototype.sendStatsEvent = function (name, type, params) {
                 this.stats.userActionEvent(type, name, params || {});
             };
 
-
             GMI.prototype.exit = function () {
                 var url = window.og.exitGameUrl;
                 window.open(url, "_top");
             };
-
 
             GMI.prototype.debug = function (message) {
                 console.log(message);
@@ -238,11 +229,9 @@ define(function(require) {
                 
             };
 
-
             loadLocalData();
             GMI.prototype = Object.create(GMI.prototype);
         };
-
 
         var newGMI = new GMI();
 
