@@ -112,17 +112,39 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     appendSubtitle("Show Settings");
 
     appendBtn("Show Settings", function() {
-      gmi.showSettings();
-      appendSpan("Show Settings Function Called. ", settingsParagraph);
+      var showSettings = gmi.showSettings(onSettingChanged, onSettingsClosed);
+      appendSpan("Settings screen requested...", settingsParagraph);
+      if (!showSettings) {
+        appendSpan("settings screen not provided by this host. Trigger internal one here. ", settingsParagraph);
+      }
     });
     var settingsParagraph = appendParagraph();
   
     appendHorizontalRule();
-  
-    appendBtn("Settings", onClickSettingsButton);
 
-    appendHorizontalRule();
+    function onSettingsClosed() {
+      appendSpan("onSettingsClosed has been called", settingsParagraph);
+    }
 
+    function onSettingChanged(key, value) {
+        if (key === "audio") {
+            gmi.setAudio(!gmi.getAllSettings().audio);
+            document.getElementById("audio-label").innerHTML = gmi.getAllSettings().audio;
+            // Toggle in game audio
+            appendSpan("Audio setting toggled. ", settingsParagraph);
+        }
+        if (key === "hard") {
+            // The chosen value will already have been persisted, and 
+            // will available as gmi.getAllSettings().gameData.hard
+            appendSpan("Difficulty has been set to...", settingsParagraph);
+            if (value) {
+                appendSpan("Hard. ", settingsParagraph); //setHardMode
+            }
+            else {
+                appendSpan("Easy. ", settingsParagraph); //setEasyMode
+            }
+        }
+    }
 
     // ---------- Notify App That Game Has Loaded And Send Stats ----------
 
@@ -262,35 +284,4 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
             }
         ]
     };
-
-    function onClickSettingsButton() {
-        var settingsShowing = gmi.showSettings(onSettingChanged, onSettingsClosed);
-        if (!settingsShowing) {
-            showMySettingsScreen();
-        }
-    }
-
-    function onSettingChanged(key, value) {
-        if (key === "audio") {
-            document.getElementById("audio-label").innerHTML = !value;
-        }
-        if (key === "hard") {
-            // The chosen value will already have been persisted, and 
-            // will available as gmi.getAllSettings().gameData.hard
-            if (value) {
-                //setHardMode
-            }
-            else {
-                //setEasyMode
-            }
-        }
-    }
-
-    function onSettingsClosed() {
-    }
-
-    function showMySettingsScreen() {
-        window.alert("Settings screen not provided by this host. Internal one goes here.");
-    }
-
 });
