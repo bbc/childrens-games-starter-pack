@@ -121,7 +121,7 @@ This allows the debug message to be displayed regardless of platform, unlike
 e.g. console.log.
 
 
-#### Display app prompt
+## Display app prompt
 
 ````
 gmi.showPrompt(resumeGame)
@@ -129,7 +129,7 @@ gmi.showPrompt(resumeGame)
 
 Inform the app that it should display its prompt/interstitial screen. Takes a resumeGame callback. Currently a stub implementation which always returns false.
 
-#### Settings Screen
+## Settings Screen
 
 ````
 gmi.showSettings(onSettingChanged, onSettingsClosed)
