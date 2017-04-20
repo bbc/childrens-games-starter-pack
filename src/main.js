@@ -30,6 +30,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
     window.gameSettings = { debugEnabled: true };
 
+
     // --------- Brim Usage Example ---------
 
     brim.create(gmi.gameContainerId, "This text will be displayed when Brim appears");
@@ -91,6 +92,20 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     appendBtn("Submit", function() { gmi.debug(document.getElementById("debug-input").value); });
     appendHorizontalRule();
 
+
+    // --------- Prompt Button --------------
+
+    appendTitle("Pause/Prompt Button");
+    var pauseLabel = document.createElement("span");
+    pauseLabel.innerHTML = "";
+    pauseLabel.id = "pause-label";
+    container.appendChild(pauseLabel);
+    appendBtn("Pause", function() {
+      gmi.showPrompt(function(){});
+      document.getElementById("pause-label").innerHTML = "Prompt Function Called ";
+    });
+    appendHorizontalRule();
+
     // --------- Call Settings Function --------------
 
     appendSubtitle("Show Settings");
@@ -98,7 +113,16 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     settingsLabel.innerHTML = "";
     settingsLabel.id = "settings-label";
     container.appendChild(settingsLabel);
+
+    appendBtn("Settings", function() {
+      gmi.showSettings();
+      document.getElementById("settings-label").innerHTML = "Show Settings Function Called ";
+    });
+  
+    appendHorizontalRule();
+  
     appendBtn("Settings", onClickSettingsButton);
+
     appendHorizontalRule();
 
 

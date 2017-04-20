@@ -29,6 +29,10 @@ zip -r starterpack.gdz -Z store . --exclude=*.sh* --exclude=*.svn* --exclude=*.g
 
 This command can also be run locally to manually generate a .gdz file for local development.
 
+We also request that you provide a method of building the .gdz with either minified
+or un-minified code to assist with any debugging process, and provide some
+documentation on how to do this.
+
 See [Testing your game in a mobile app](testing-in-a-mobile-app.md#testing-in-a-mobile-app)
 page to see how to test your game in an app.
 
