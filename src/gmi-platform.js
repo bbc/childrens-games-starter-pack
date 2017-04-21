@@ -186,7 +186,7 @@ define(function(require) {
             GMI.prototype.setMuted = function(state) {
                 globalSettings.muted = !!state;
                 saveGlobalSettings();
-            }
+            };
 
             GMI.prototype.setAudio = function (state) {
                 globalSettings.muted = !state;
