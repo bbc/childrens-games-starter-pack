@@ -284,9 +284,8 @@ Note: Hardcoded to true for the mobile app and false to web platform.
 
 ### gmi.shouldShowExitButton
 The game should use this flag to decide whether to show the exit button (and
-potentially other full-screen-related functionality) rather than detecting full
-screen status itself. This flag will be false if the game is currently embedded
-in an iframe or true if running in an app, or full-screen on desktop.
+potentially other full-screen-related functionality). Where applicable the exit 
+button returns the user to a previous screen such as a web page or an app hub menu.
 
 ### gmi.isDebugMode
 A boolean that indicates if the game should be in debug mode or not. If true,
