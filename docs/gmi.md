@@ -18,14 +18,14 @@ var GmiModule = require("./src/gmi-platform");
 var gmi = GmiModule.getGMI(options);
 ````
 
-When you call getGMI(), it will do a check for any existing window.getGMI
-function and call that, if found. This mechanism allows gmi-mobile to be
-injected in an app environment and any mock gmi to be injected in tests or
-development environments if necessary.
+When you call getGMI(), it will check for any existing window.getGMI function
+and call that, if found. This mechanism allows gmi-mobile to be injected in an
+app environment and any mock gmi to be injected in tests or development
+environments if necessary.
 
-_Note: Only one instance of the GMI should be created - if multiple instances
+> Note: Only one instance of the GMI should be created - if multiple instances
 are created then a warning will be written to the console which will fail game
-certification._
+certification.
 
 ### Echo Dependency
 
@@ -59,7 +59,7 @@ The GMI provides the following functions:
 BBC mobile apps will display their own native loading screen on initial boot up
 of any games, this will generally overlay your initial in-game loading screen.
 This function tells the app that your game has finished loading and the native
-loading screem can be hidden. You should call this method on initial start up of
+loading screen can be hidden. You should call this method on initial start up of
 your game after the initial load has completed and your loading screen is no
 longer visible.
 
@@ -82,16 +82,20 @@ See here for more information on [sending stats](stats.md#stats).
 Saving and loading global settings should use the gmi functions:
 
 ````
-gmi.setMuted(true/false);
+gmi.setAudio(true/false);
 gmi.setSubtitles(true/false);
 gmi.setMotion(true/false);
 
-gmi.getAllSettings().muted;
+gmi.getAllSettings().audio;
 gmi.getAllSettings().subtitles;
 gmi.getAllSettings().motion;
 ````
 
 See here for more information on [data storage](data-storage.md#saving-data).
+
+> GMI also exposes *setMuted()* and *getAllSettings().muted*. These are
+available for backwards compatibility and are simply the inverse of *setAudio()*
+and *getAllSettings().audio*. Use the "audio" versions for new code.
 
 ## Saving and Loading data
 
@@ -117,7 +121,7 @@ This allows the debug message to be displayed regardless of platform, unlike
 e.g. console.log.
 
 
-#### Display app prompt
+## Display app prompt
 
 ````
 gmi.showPrompt(resumeGame)
@@ -125,7 +129,7 @@ gmi.showPrompt(resumeGame)
 
 Inform the app that it should display its prompt/interstitial screen. Takes a resumeGame callback. Currently a stub implementation which always returns false.
 
-#### Settings Screen
+## Settings Screen
 
 ````
 gmi.showSettings(onSettingChanged, onSettingsClosed)
@@ -158,6 +162,9 @@ function onSettingChanged(key, value) { ... }
   below).
 * The *value* parameter is the new value of the setting. Currently this will be
   either *true* or *false*.
+* Before this function is called, the new value will have been persisted
+    * as *gmi.getAllSettings().audio*, etc., for standard keys.
+    * as *gmi.getAllSettings().gameData[key]* for game-defined keys.
 
 ### onSettingsClosed parameter
 
@@ -187,6 +194,7 @@ Customization of the available settings is done via the initial *getGMI* call.
 Each page definition is an object with the following form:
 
     {
+        title: <title string>,
         settings: [
             a list of setting definitions -- see below
         ]
@@ -207,6 +215,11 @@ future.
 The ordering of pages and settings in the lists defines the order they appear in
 the settings screen.
 
+Any game-defined keys will correspond to the *key* parameter in
+*gmi.setGameData(key, value)* and *gmi.getAllSettings().gameData[key]*.
+*gmi.setGameData* can be used to set default values. If the value is undefined,
+the settings screen will default these settings to *false*.
+
 ### Standard Settings
 
 The standard settings keys are:
@@ -216,13 +229,11 @@ The standard settings keys are:
 * subtitles
 
 When the GMI implements the settings screen, it will persist the updated values
-for these keys: The game does not need to call *setMuted*, *setMotion* or
+for these keys: The game does not need to call *setAudio*, *setMotion* or
 *setSubtitles* in this case.
 
-> Note the discrepancy between "audio" and "muted" -- The previous use of
-"muted" has already caused confusion due to its negative nature. "Audio" matches
-the UI and is more intuitive when used in code. We plan to transition to using
-*audio*, and deprecate *muted*.
+> Note that "audio" replaces "muted" in the new version of the GMI. The "muted"
+> API remains available for backwards compatibility only.
 
 ## Exiting the game
 
@@ -273,15 +284,11 @@ Note: Hardcoded to true for the mobile app and false to web platform.
 
 ### gmi.shouldShowExitButton
 The game should use this flag to decide whether to show the exit button (and
-potentially other full-screen-related functionality) rather than detecting full
-screen status itself. This flag will be false if the game is currently embedded
-in an iframe or true if the page has been redirected to the Playpen.
+potentially other full-screen-related functionality). Where applicable the exit 
+button returns the user to a previous screen such as a web page or an app hub menu.
 
 ### gmi.isDebugMode
 A boolean that indicates if the game should be in debug mode or not. If true,
 all levels should be unlocked for testing purposes.
-
-Note: Hardcoded to true for the mobile app, and the web platform on mobile
-devices - and false on desktop.
 
 [Home](../README.md)

@@ -63,17 +63,18 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     appendHorizontalRule();
 
 
-    // --------- GMI Set Mute Example ---------
+    // --------- GMI Set Audio Example ---------
 
-    appendSubtitle("GMI Mute Example");
-    var muteParagraph = appendParagraph();
+    appendSubtitle("GMI Audio Example");
+    var audioParagraph = appendParagraph();
 
-    appendSpan("Game muted value: ", muteParagraph);
-    muteParagraph.appendChild(createMuteLabel());
+    appendSpan("Game audio value: ", audioParagraph);
+    audioParagraph.appendChild(createAudioLabel());
+        
     appendSpacer();
-    appendBtn("Toggle mute", function() {
-        gmi.setMuted(!gmi.getAllSettings().muted);
-        document.getElementById("mute-label").innerHTML = gmi.getAllSettings().muted;
+    appendBtn("Toggle audio", function() {
+        gmi.setAudio(!gmi.getAllSettings().audio);
+        document.getElementById("audio-label").innerHTML = gmi.getAllSettings().audio;
     });
     appendHorizontalRule();
 
@@ -95,36 +96,55 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
     // --------- Prompt Button --------------
 
-    appendTitle("Pause/Prompt Button");
-    var pauseLabel = document.createElement("span");
-    pauseLabel.innerHTML = "";
-    pauseLabel.id = "pause-label";
-    container.appendChild(pauseLabel);
-    appendBtn("Pause", function() {
-      gmi.showPrompt(function(){});
-      document.getElementById("pause-label").innerHTML = "Prompt Function Called ";
+    appendSubtitle("Prompt Button");
+    appendBtn("Trigger Prompt", function() {
+      gmi.showPrompt(resumeGame);
     });
+    var promptParagraph = appendParagraph();
     appendHorizontalRule();
+
+    function resumeGame() {
+      appendSpan("There are no prompts for this platform, resuming game... ", promptParagraph);
+    }
 
     // --------- Call Settings Function --------------
 
     appendSubtitle("Show Settings");
-    var settingsLabel = document.createElement("span");
-    settingsLabel.innerHTML = "";
-    settingsLabel.id = "settings-label";
-    container.appendChild(settingsLabel);
 
-    appendBtn("Settings", function() {
-      gmi.showSettings();
-      document.getElementById("settings-label").innerHTML = "Show Settings Function Called ";
+    appendBtn("Show Settings", function() {
+      var showSettings = gmi.showSettings(onSettingChanged, onSettingsClosed);
+      appendSpan("Settings screen requested...", settingsParagraph);
+      if (!showSettings) {
+        appendSpan("settings screen not provided by this host. Trigger internal one here. ", settingsParagraph);
+      }
     });
+    var settingsParagraph = appendParagraph();
   
     appendHorizontalRule();
-  
-    appendBtn("Settings", onClickSettingsButton);
 
-    appendHorizontalRule();
+    function onSettingsClosed() {
+      appendSpan("onSettingsClosed has been called", settingsParagraph);
+    }
 
+    function onSettingChanged(key, value) {
+        if (key === "audio") {
+            gmi.setAudio(!gmi.getAllSettings().audio);
+            document.getElementById("audio-label").innerHTML = gmi.getAllSettings().audio;
+            // Toggle in game audio
+            appendSpan("Audio setting toggled. ", settingsParagraph);
+        }
+        if (key === "hard") {
+            // The chosen value will already have been persisted, and 
+            // will available as gmi.getAllSettings().gameData.hard
+            appendSpan("Difficulty has been set to...", settingsParagraph);
+            if (value) {
+                appendSpan("Hard. ", settingsParagraph); //setHardMode
+            }
+            else {
+                appendSpan("Easy. ", settingsParagraph); //setEasyMode
+            }
+        }
+    }
 
     // ---------- Notify App That Game Has Loaded And Send Stats ----------
 
@@ -233,18 +253,20 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         inner.appendChild(input);
     }
 
-    function createMuteLabel() {
-        var muteLabel = document.createElement("span");
-        muteLabel.innerHTML = gmi.getAllSettings().muted;
-        muteLabel.id = "mute-label";
-        return muteLabel;
+    function createAudioLabel() {
+        var audioLabel = document.createElement("span");
+        audioLabel.innerHTML = gmi.getAllSettings().audio;
+        audioLabel.id = "audio-label";
+        return audioLabel;
     }
+    
 
     // --------- Settings ---------
 
     var settingsConfig = {
         pages: [
             {
+                title: "Global Settings",
                 settings: [
                     {
                         key: "audio",
@@ -262,33 +284,4 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
             }
         ]
     };
-
-    function onClickSettingsButton() {
-        var settingsShowing = gmi.showSettings(onSettingChanged, onSettingsClosed);
-        if (!settingsShowing) {
-            showMySettingsScreen();
-        }
-    }
-
-    function onSettingChanged(key, value) {
-        if (key === "audio") {
-            document.getElementById("mute-label").innerHTML = !value;
-        }
-        if (key === "hard") {
-            if (value) {
-                //setHardMode
-            }
-            else {
-                //setEasyMode
-            }
-        }
-    }
-
-    function onSettingsClosed() {
-    }
-
-    function showMySettingsScreen() {
-        window.alert("Settings screen not provided by this host. Internal one goes here.");
-    }
-
 });
