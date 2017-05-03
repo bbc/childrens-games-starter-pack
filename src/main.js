@@ -1,5 +1,28 @@
 define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim) {
     "use strict";
+    
+    // --------- Settings ---------
+    var settingsConfig = {
+        pages: [
+            {
+                title: "Global Settings",
+                settings: [
+                    {
+                        key: "audio",
+                        type: "toggle",
+                        title: "Audio",
+                        description: "Turn off/on sound and music"
+                    },
+                    {
+                        key: "hard",
+                        type: "toggle",
+                        title: "Hard mode",
+                        description: "More baddies and less health"
+                    },
+                ]
+            }
+        ]
+    };
 
     // Create a gmi object using getGMI. If window.getGMI is defined i.e we have
     // already got the gmi library from the server, then this will be used over
@@ -259,29 +282,4 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         audioLabel.id = "audio-label";
         return audioLabel;
     }
-    
-
-    // --------- Settings ---------
-
-    var settingsConfig = {
-        pages: [
-            {
-                title: "Global Settings",
-                settings: [
-                    {
-                        key: "audio",
-                        type: "toggle",
-                        title: "Audio",
-                        description: "Turn off/on sound and music"
-                    },
-                    {
-                        key: "hard",
-                        type: "toggle",
-                        title: "Hard mode",
-                        description: "More baddies and less health"
-                    },
-                ]
-            }
-        ]
-    };
 });
