@@ -206,7 +206,8 @@ Each setting definition has the following form:
         key: <unique id string>,
         type: "toggle",
         title: <title string>,
-        description: <description string>
+        description: <description string>,
+        defaultValue: true/false
     }
 
 The only supported *type* for now is "toggle". More types may be added in
@@ -217,8 +218,9 @@ the settings screen.
 
 Any game-defined keys will correspond to the *key* parameter in
 *gmi.setGameData(key, value)* and *gmi.getAllSettings().gameData[key]*.
-*gmi.setGameData* can be used to set default values. If the value is undefined,
-the settings screen will default these settings to *false*.
+
+*defaultValue* is used to initialise values if they don't already exist. Note: 
+this only effects game-specific settings and not global settings.
 
 ### Standard Settings
 
