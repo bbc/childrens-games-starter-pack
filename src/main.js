@@ -158,7 +158,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         }
         if (key === "hard") {
             // The chosen value will already have been persisted, and 
-            // will available as gmi.getAllSettings().gameData.hard
+            // will be available as gmi.getAllSettings().gameData.hard
             appendSpan("Difficulty has been set to...", settingsParagraph);
             if (value) {
                 appendSpan("Hard. ", settingsParagraph); //setHardMode
