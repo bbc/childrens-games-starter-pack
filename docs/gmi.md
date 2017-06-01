@@ -31,12 +31,12 @@ certification.
 
 GMI has a dependency on the BBC's stats service Echo. On BBC environments Echo
 is already available but to run it locally you either have to mock it out,
-provide it locally or pull it from a URL:
+provide it locally or pull it from a URL (*THIS SHOULD NOT BE PRESENT IN PRODUCTION CODE*):
 
 ````
 var require = {
     paths: {
-        "echo": "http://static.bbci.co.uk/nkdata/echoclient/2.0.0/sharedmodules/echo"
+        "echo": "https://static.bbci.co.uk/nkdata/echoclient/2.0.0/sharedmodules/echo"
     }
 };
 ````
