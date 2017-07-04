@@ -64,7 +64,7 @@ button:hover {
     background-color: #121212;
 }
 
-#og-game-holder {
+#local-game-holder {
     position:relative;
     width:80%;
     height:calc(88%);

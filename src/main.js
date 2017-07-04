@@ -1,4 +1,4 @@
-define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim) {
+define(['storage', 'brim'], function(storage, brim) {
     "use strict";
     
     // --------- Settings ---------
@@ -27,7 +27,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     // Create a gmi object using getGMI. If window.getGMI is defined i.e we have
     // already got the gmi library from the server, then this will be used over
     // the local one.
-    var gmi = gmi_platform.getGMI({settingsConfig: settingsConfig});
+    var gmi = window.getGMI({settingsConfig: settingsConfig});
     var numberOfStatsButtonClicks = 0;
 
     addStylesheet();
