@@ -24,9 +24,7 @@ define(['storage', 'brim'], function(storage, brim) {
         ]
     };
 
-    // Create a gmi object using getGMI. If window.getGMI is defined i.e we have
-    // already got the gmi library from the server, then this will be used over
-    // the local one.
+    // Create a gmi object using getGMI.
     var gmi = window.getGMI({settingsConfig: settingsConfig});
     var numberOfStatsButtonClicks = 0;
 
