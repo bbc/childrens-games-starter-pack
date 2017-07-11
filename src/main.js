@@ -200,9 +200,9 @@ define(['storage', 'brim'], function(storage, brim) {
         bbcLogo.src = gmi.gameDir + "bbc-blocks-dark.png";
         bbcLogo.className = "bbc-logo";
         bbcLogo.alt = "BBC Logo";
-        wrapper.appendChild(bbcLogo);
+        inner.appendChild(bbcLogo);
         title.innerHTML = titleStr;
-        wrapper.appendChild(title);
+        inner.appendChild(title);
     }
 
     function appendSubtitle(titleStr) {
@@ -248,7 +248,7 @@ define(['storage', 'brim'], function(storage, brim) {
         inner.appendChild(btn);
     }
 
-    function inputOnlick(event) {
+    function inputOnClick(event) {
         var inputEle = event.target;
         if (inputEle.value === 'Enter a message here') {
             inputEle.value = '';
@@ -269,7 +269,7 @@ define(['storage', 'brim'], function(storage, brim) {
         input.type = "text";
         input.id = elementID;
         input.value = 'Enter a message here';
-        input.onclick = inputOnlick;
+        input.onclick = inputOnClick;
         input.onblur = inputOnBlur;
         inner.appendChild(input);
     }

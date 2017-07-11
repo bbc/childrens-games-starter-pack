@@ -1,22 +1,28 @@
-* { overflow:hidden; }
-html, body { height:100%; }
+@import url("brim.css");
 
-body {
+.wrapper {
     color:#404040;
-    background-color:#dcdcdc;
     font:16px normal helvetica, arial, sans-serif;
+    position:relative;
+    height: 100%;
+    background-color:#fff;
+    overflow:auto;
 }
 
-h1 {
+.inner {
+    padding:2rem;
+}
+
+.wrapper h1 {
     margin:0.5rem 0;
-    padding:0.5rem 2rem 1.5rem;
+    padding:0.5rem 0 1.5rem;
     line-height: 2.25rem;
     font-size:44px;
     font-weight:bold;
     border-bottom:1px solid #ccc;
 }
 
-h2 {
+.wrapper h2 {
     margin:0.5rem 0;
     padding:0.5rem 0;
     line-height: 2.25rem;
@@ -24,17 +30,17 @@ h2 {
     font-weight:bold;
 }
 
-p { padding: 0 0 0.5rem; }
-a { color:#404040; }
+.wrapper p { padding: 0 0 0.5rem; }
+.wrapper a { color:#404040; }
 
-hr {
+.wrapper hr {
     margin: 2rem 0 1rem;
     height:0; line-height:0;
     border:0;
     border-top:1px solid #ccc;
 }
 
-button {
+.wrapper button {
     display: inline-block;
     position: relative;
     font-size: 0.875rem;
@@ -59,33 +65,9 @@ button {
     font-weight:bold;
 }
 
-button:hover {
+.wrapper button:hover {
     text-decoration: underline;
     background-color: #121212;
-}
-
-#local-game-holder {
-    position:relative;
-    width:80%;
-    height:calc(88%);
-    margin:1rem auto 0;
-    overflow:hidden;
-}
-
-.bbc-logo {
-    padding:0 2rem;
-}
-
-.wrapper {
-    position:relative;
-    height:calc(100% - 4rem);
-    padding:2em 0;
-    background-color:#fff;
-    overflow:auto;
-}
-
-.inner {
-    padding:0 2rem 2rem;
 }
 
 #save-load-text {
