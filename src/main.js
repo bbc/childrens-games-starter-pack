@@ -102,7 +102,12 @@ define(['storage', 'brim'], function(storage, brim) {
 
     // ---------- GMI Exit Example -----------
     appendSubtitle("GMI Exit Example");
-    appendBtn("Exit game", function() { gmi.exit(); });
+    if (gmi.shouldShowExitButton) {
+        appendBtn("Exit game", function() { gmi.exit(); });
+    }
+    else {
+        appendParagraph("Exit button not shown<br>gmi.shouldShowExitButton is false.");
+    }
     appendHorizontalRule();
 
     // ---------- GMI Debug Example ----------
