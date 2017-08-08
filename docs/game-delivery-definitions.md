@@ -14,7 +14,7 @@ to the tested Deliverable.
 
 >Pre-production is a phase focused on proving out the main features and / or risks of the particular game. The deliverables for this phase will be agreed between the BBC and the agency.
 
-### Prototype delivery of the Software for the Deliverables
+### Pre-production delivery of the Software for the Deliverables
 
 Deliverables are dependent on agreed Pre-Production plan, but could include include key features such as:
   * Clickable wireframes
