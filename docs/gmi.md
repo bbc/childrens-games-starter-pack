@@ -1,54 +1,31 @@
 # GMI
 
 The GMI (game messaging interface) is a class that abstracts shared
-functionality from the web and mobile apps so that one code base can run on both
-platforms.
-
-The BBC provides two versions of GMI: platform (web) and mobile (apps). You will
-find the latest version of [gmi-platform](../src/gmi-platform.js) in this
-Starter Pack, gmi-mobile will be part of the app environment.
+functionality from the web and mobile apps so that one code base can 
+communicate with both platforms with a common API.
 
 ## Loading the GMI
 
-To initialize the GMI, you should bundle gmi-platform.js with your game and
-require it, you can then create an instance by calling getGMI():
-
 ````
-var GmiModule = require("./src/gmi-platform");
-var gmi = GmiModule.getGMI(options);
+var gmi = window.getGMI(options);
 ````
-
-When you call getGMI(), it will check for any existing window.getGMI function
-and call that, if found. This mechanism allows gmi-mobile to be injected in an
-app environment and any mock gmi to be injected in tests or development
-environments if necessary.
 
 > Note: Only one instance of the GMI should be created - if multiple instances
 are created then a warning will be written to the console which will fail game
 certification.
 
-### Echo Dependency
-
-GMI has a dependency on the BBC's stats service Echo. On BBC environments Echo
-is already available but to run it locally you either have to mock it out,
-provide it locally or pull it from a URL (*THIS SHOULD NOT BE PRESENT IN PRODUCTION CODE*):
-
-````
-var require = {
-    paths: {
-        "echo": "https://static.bbci.co.uk/nkdata/echoclient/2.0.0/sharedmodules/echo"
-    }
-};
-````
-
 ## Demo
 We've included [demo GMI usage](../src/main.js) with this Starter Pack, you can
-view this code in action by opening the included index.html in your browser. The
-index.html also contains examples of how you can mock out or include
-dependencies when working locally.
+view this code in action by opening the included index.html in your browser. 
 
 You can also see our hosted [GMI Test
 App](http://play.test.bbc.co.uk/play/pen/g1m3pm1mt4).
+
+## Non-BBC platforms
+The included index.html uses a mock GMI that you can also use for your own local development.
+It's important to note that this mock should not be bundled with your game
+so in the event the game is not on a BBC platform or your local machine it should
+stop working.
 
 # GMI API Reference
 

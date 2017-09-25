@@ -1,4 +1,4 @@
-define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim) {
+define(['storage'], function(storage) {
     "use strict";
     
     // --------- Settings ---------
@@ -24,10 +24,8 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         ]
     };
 
-    // Create a gmi object using getGMI. If window.getGMI is defined i.e we have
-    // already got the gmi library from the server, then this will be used over
-    // the local one.
-    var gmi = gmi_platform.getGMI({settingsConfig: settingsConfig});
+    // Create a gmi object using getGMI.
+    var gmi = window.getGMI({settingsConfig: settingsConfig});
     var numberOfStatsButtonClicks = 0;
 
     addStylesheet();
@@ -52,11 +50,6 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
     // --------- Allow Debugging ---------
 
     window.gameSettings = { debugEnabled: true };
-
-
-    // --------- Brim Usage Example ---------
-
-    brim.create(gmi.gameContainerId, "This text will be displayed when Brim appears");
 
     // ---------- GMI Stats Example----------
 
@@ -104,7 +97,12 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
 
     // ---------- GMI Exit Example -----------
     appendSubtitle("GMI Exit Example");
-    appendBtn("Exit game", function() { gmi.exit(); });
+    if (gmi.shouldShowExitButton) {
+        appendBtn("Exit game", function() { gmi.exit(); });
+    }
+    else {
+        appendParagraph("Exit button not shown<br>gmi.shouldShowExitButton is false.");
+    }
     appendHorizontalRule();
 
     // ---------- GMI Debug Example ----------
@@ -202,9 +200,9 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         bbcLogo.src = gmi.gameDir + "bbc-blocks-dark.png";
         bbcLogo.className = "bbc-logo";
         bbcLogo.alt = "BBC Logo";
-        wrapper.appendChild(bbcLogo);
+        inner.appendChild(bbcLogo);
         title.innerHTML = titleStr;
-        wrapper.appendChild(title);
+        inner.appendChild(title);
     }
 
     function appendSubtitle(titleStr) {
@@ -250,7 +248,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         inner.appendChild(btn);
     }
 
-    function inputOnlick(event) {
+    function inputOnClick(event) {
         var inputEle = event.target;
         if (inputEle.value === 'Enter a message here') {
             inputEle.value = '';
@@ -271,7 +269,7 @@ define(['gmi-platform', 'storage', 'brim'], function(gmi_platform, storage, brim
         input.type = "text";
         input.id = elementID;
         input.value = 'Enter a message here';
-        input.onclick = inputOnlick;
+        input.onclick = inputOnClick;
         input.onblur = inputOnBlur;
         inner.appendChild(input);
     }
