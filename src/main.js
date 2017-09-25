@@ -1,4 +1,4 @@
-define(['storage', 'brim'], function(storage, brim) {
+define(['storage'], function(storage) {
     "use strict";
     
     // --------- Settings ---------
@@ -50,11 +50,6 @@ define(['storage', 'brim'], function(storage, brim) {
     // --------- Allow Debugging ---------
 
     window.gameSettings = { debugEnabled: true };
-
-
-    // --------- Brim Usage Example ---------
-
-    brim.create(gmi.gameContainerId, "This text will be displayed when Brim appears");
 
     // ---------- GMI Stats Example----------
 
