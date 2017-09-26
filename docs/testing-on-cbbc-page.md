@@ -1,16 +1,21 @@
 # Testing your game in the Live environment
 
 While we provide a Game Embed Page as an area to test games in a fullscreen context, 
-we recommend that you test your game when embedded on a CBBC/CBeebies webpage at the
-earliest opportunity to verify behaviour in-situ.
+we recommend that you test your game in-situ on a CBBC/CBeebies webpage at the
+earliest opportunity.
 
-To help facilitate this, we have created a bookmarklet, to be used on this
-[live game testing page](https://www.bbc.co.uk/cbbc/games/embed-test-v1). It essentially replaces the source of the current
-(non-existent) game with your own:
+If you are are updating an existing game you can simply visit the existing page and 
+append a querystring to see the latest build:
+
+`https://www.bbc.co.uk/cbbc/games/embed-test-v1?versionOverride=latest`
+
+If it's a brand new game and doesn't have a page, you can use the technique described below.
+
+We have created a bookmarklet, to be used on this [live game testing page](https://www.bbc.co.uk/cbbc/games/embed-test-v1). It essentially replaces the source of the current game with your own:
 
 ```javascript
 javascript:(function () {
-    var game = "https://www.bbc.co.uk/cbeebies/embed/game/<gid>";
+    var game = "https://www.bbc.co.uk/cbbc/embed/game/<gid>";
     var frameHolder = document.getElementsByClassName("game-wrapper")[0];
     var iframe = frameHolder.getElementsByTagName("iframe");
     if (iframe.length === 0) {
