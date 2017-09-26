@@ -8,7 +8,7 @@ Children's BBC.
 
 | Context | URL | Description |
 |---------|-----|-------------|
-| Game Embed Page | [CAGE](test.bbc.co.uk/cbeebies/embed/game/*gid*) | Pipeline automatically pushes new builds to this location |
+| Embed Page | [CAGE](https://www.bbc.co.uk/cbbc/embed/game/*gid*) | Pipeline automatically pushes new builds to this location |
 | GDZ location | Link to .gdz location | Pipeline automatically pushes new .gdz build to this location (app games-only) |
 | Version Info | Link to version.txt on Test | See what version of your game is currently on Test |
 | Jira ticket | [Gamestream](https://jira.dev.bbc.co.uk/browse/GAMESSTREAM-xxxx) | For BBC use |
