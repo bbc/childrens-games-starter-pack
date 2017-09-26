@@ -8,13 +8,13 @@ game to full screen.
 
 ## BBC's example
  
-Included in the Starter Pack is a version of Brim developed by the BBC Games 
+Included in the Starter Pack is a [version of Brim](../src/brim.js) developed by the BBC Games 
 Team. It is a streamlined version of the typical industry implementation and 
 designed to minimise dependencies and simplify functionality/use. You may adopt 
 this approach if you want a quick and easy solution. 
 
 Brim hasn't been featured in our demo but in order to use it you need to require
-the brim.js and brim.css files found in the source directory.
+the [brim.js](../src/brim.js) and [brim.css](../src/brim.css) files found in the src directory.
 
 This implementation only works with devices that match the current iOS screen 
 sizes (320x480, 320x568, 375x667, 414x736) and will have no effect on other sizes.
