@@ -8,7 +8,7 @@ Children's BBC.
 
 | Context | URL | Description |
 |---------|-----|-------------|
-| Embed Page | [CAGE](https://www.bbc.co.uk/cbbc/embed/game/*gid*) | Pipeline automatically pushes new builds to this location |
+| CAGE Page | [CAGE](https://www.bbc.co.uk/cbbc/embed/game/*gid*) | Pipeline automatically pushes new builds to this location |
 | GDZ location | https://www.bbc.co.uk/childrens/assets/games/childrens-games-starter-pack/latest/starterpack.gdz | Pipeline automatically pushes new .gdz build to this location (app games-only) |
 | Version Info | https://www.bbc.co.uk/childrens/assets/games/childrens-games-starter-pack/latest/version.txt | See what version of your game is currently on Test |
 | Jira ticket | [Gamestream](https://jira.dev.bbc.co.uk/browse/GAMESSTREAM-xxxx) | For BBC use |
