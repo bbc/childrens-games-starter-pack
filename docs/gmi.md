@@ -224,7 +224,7 @@ gmi.exit();
 
 should be used. This will return the user to the appropriate place.
 
-### Back Button Handling (Android)
+### Back Button Handling (Android)
 
 When the back button is pressed, the default behavior is to pop the current experience. If there are no previous expereince to load, the API will call exit instead.
 This functionallity can be overriden by calling:
