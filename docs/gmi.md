@@ -226,14 +226,14 @@ should be used. This will return the user to the appropriate place.
 
 ### Back Button Handling (Android)
 
-When the back button is pressed, the default behavior is to pop the current experience. If there are no previous expereince to load, the API will call exit instead.
+When the back button is pressed, the default behavior is to pop the current experience. If there is no previous experience to load, the API will call exit instead.
 This functionallity can be overriden by calling:
 ````
 gmi.setOnBackPressed(f)
 ````
-Where f is the new function that will be called when a user presses the back button. When a new expereince is loaded the onBackPressed is resetted to the default behavior, so each expereince that wants a non-default behavior needs to call setOnBackPressed.
+Where f is the new function that will be called when a user presses the back button. When a new experience is loaded the onBackPressed is reset to the default behavior, so each expereince that wants a non-default behavior needs to call setOnBackPressed.
 It is also posible to reset to the standard behavior by calling setOnBackPressed with null/undefined as argument.
-As back button only exists on Android devices, calling setOnBackPressed on an iOS device will have no effect.
+As this back button behaviour only exists on Android devices, calling setOnBackPressed on an iOS device will have no effect.
 
 ## Data fields
 
