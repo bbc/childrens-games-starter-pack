@@ -38,6 +38,7 @@ ___
   * [Stats](docs/stats.md#stats)
   * [Using Local Storage/Cookies](docs/data-storage.md#using-local-storagecookies)
   * [Brim](docs/brim.md#brim)
+  * [Known Issues](docs/known-issues.md)
 
 ### Testing
   * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
