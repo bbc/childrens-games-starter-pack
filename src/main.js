@@ -149,7 +149,7 @@ define(['storage'], function(storage) {
 
     function onSettingChanged(key, value) {
         if (key === "audio") {
-            gmi.setAudio(!gmi.getAllSettings().audio);
+            gmi.setAudio(gmi.getAllSettings().audio);
             document.getElementById("audio-label").innerHTML = gmi.getAllSettings().audio;
             // Toggle in game audio
             appendSpan("Audio setting toggled. ", settingsParagraph);
