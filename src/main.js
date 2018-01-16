@@ -14,11 +14,46 @@ define(['storage'], function(storage) {
                         description: "Turn off/on sound and music"
                     },
                     {
+                        key: "motion",
+                        type: "toggle",
+                        title: "Motion",
+                        description: "Turn off/on motion"
+                    },
+                    {
+                        key: "subtitles",
+                        type: "toggle",
+                        title: "Subtitles",
+                        description: "Turn off/on subtitles"
+                    }
+                ]
+            },
+            {
+                title: "Custom Settings",
+                settings: [
+                    {
+                        key: "custom",
+                        type: "toggle",
+                        title: "Custom setting",
+                        description: "You can define what you want this setting to be"
+                    },
+                    {
+                        key: "colourblind",
+                        type: "toggle",
+                        title: "Colour blind mode",
+                        description: "Turn on contrast for colour blind mode"
+                    },
+                    {
+                        key: "easy",
+                        type: "toggle",
+                        title: "Easy mode",
+                        description: "Less baddies and more health"
+                    },
+                    {
                         key: "hard",
                         type: "toggle",
                         title: "Hard mode",
                         description: "More baddies and less health"
-                    },
+                    }
                 ]
             }
         ]
