@@ -57,7 +57,7 @@ function onSettingChanged(key, value) {
 
 ##onSettingsClosed
 
-`onSettingChanged` is called when a toggle is switched from the settings screen. This may be used to handle any game state changes that may need to take place once settings screen is closed.
+`onSettingsClosed` is called when the settings close button is clicked/actioned. This callback function may be used to handle any game state changes that may need to take place once settings screen is closed.
 
 ```js
 function onSettingsClosed() {
