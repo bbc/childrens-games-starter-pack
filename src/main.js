@@ -170,8 +170,10 @@ define(['storage'], function(storage) {
     appendBtn("Show Settings", function() {
       var showSettings = gmi.showSettings(onSettingChanged, onSettingsClosed);
       appendSpan("Settings screen requested...", settingsParagraph);
-      if (!showSettings) {
-        appendSpan("settings screen not provided by this host. Trigger internal one here. ", settingsParagraph);
+      if (showSettings) {
+          applySettingsBackgroundOverlay();
+      } else {
+          appendSpan("settings screen not provided by this host. Trigger internal one here. ", settingsParagraph);
       }
     });
     var settingsParagraph = appendParagraph();
@@ -314,5 +316,13 @@ define(['storage'], function(storage) {
         audioLabel.innerHTML = gmi.getAllSettings().audio;
         audioLabel.id = "audio-label";
         return audioLabel;
+    }
+
+    function applySettingsBackgroundOverlay() {
+        var settingsWrapper = document.getElementsByClassName("settings__wrapper")[0];
+
+        if (settingsWrapper) {
+            settingsWrapper.setAttribute("style", "background: rgb(156, 218, 255);");
+        }
     }
 });
