@@ -97,3 +97,7 @@
     font-weight:bold;
     color:#404040;
 }
+
+.settings__wrapper {
+    background: rgb(156, 218, 255);
+}
