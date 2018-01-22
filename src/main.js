@@ -5,7 +5,7 @@ define(['storage'], function(storage) {
     var settingsConfig = {
         pages: [
             {
-                title: "Global Settings",
+                title: "General",
                 settings: [
                     {
                         key: "audio",
@@ -28,14 +28,8 @@ define(['storage'], function(storage) {
                 ]
             },
             {
-                title: "Custom Settings",
+                title: "Game Specific Settings",
                 settings: [
-                    {
-                        key: "custom",
-                        type: "toggle",
-                        title: "Custom setting",
-                        description: "You can define what you want this setting to be"
-                    },
                     {
                         key: "colourblind",
                         type: "toggle",
