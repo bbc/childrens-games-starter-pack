@@ -37,16 +37,16 @@ define(['storage'], function(storage) {
                         description: "Turn on contrast for colour blind mode"
                     },
                     {
-                        key: "easy",
-                        type: "toggle",
-                        title: "Easy mode",
-                        description: "Less baddies and more health"
-                    },
-                    {
                         key: "hard",
                         type: "toggle",
                         title: "Hard mode",
                         description: "More baddies and less health"
+                    },
+                    {
+                        key: "shadows",
+                        type: "toggle",
+                        title: "Shadows",
+                        description: "Turn off shadows in game"
                     }
                 ]
             }
@@ -167,31 +167,46 @@ define(['storage'], function(storage) {
       if (!showSettings) {
         appendSpan("settings screen not provided by this host. Trigger internal one here. ", settingsParagraph);
       }
-    });
+  }, "settings-button");
     var settingsParagraph = appendParagraph();
   
     appendHorizontalRule();
 
     function onSettingsClosed() {
-      appendSpan("onSettingsClosed has been called", settingsParagraph);
+        appendSpan("onSettingsClosed has been called", settingsParagraph);
+        document.getElementsByClassName("settings-button")[0].focus();
     }
 
     function onSettingChanged(key, value) {
         if (key === "audio") {
             gmi.setAudio(gmi.getAllSettings().audio);
             document.getElementById("audio-label").innerHTML = gmi.getAllSettings().audio;
-            // Toggle in game audio
             appendSpan("Audio setting toggled. ", settingsParagraph);
         }
-        if (key === "hard") {
+        else if (key === "motion") {
+            gmi.setMotion(gmi.getAllSettings().motion);
+            document.getElementById("motion-label").innerHTML = gmi.getAllSettings().motion;
+            appendSpan("Motion setting toggled. ", settingsParagraph);
+        }
+        else if (key === "subtitles") {
+            gmi.setSubtitles(gmi.getAllSettings().subtitles);
+            document.getElementById("subtitles-label").innerHTML = gmi.getAllSettings().subtitles;
+            appendSpan("Subtitles setting toggled. ", settingsParagraph);
+        }
+        else if (key === "shadows") {
+            // The chosen value will already have been persisted, and 
+            // will be available as gmi.getAllSettings().gameData.shadows
+            appendSpan("Shadows toggled.", settingsParagraph);
+        }
+        else if (key === "hard") {
             // The chosen value will already have been persisted, and 
             // will be available as gmi.getAllSettings().gameData.hard
-            appendSpan("Difficulty has been set to...", settingsParagraph);
+            appendSpan("Difficulty has been set to ", settingsParagraph);
             if (value) {
-                appendSpan("Hard. ", settingsParagraph); //setHardMode
+                appendSpan("Hard. ", settingsParagraph);
             }
             else {
-                appendSpan("Easy. ", settingsParagraph); //setEasyMode
+                appendSpan("Normal. ", settingsParagraph);
             }
         }
     }
@@ -270,8 +285,9 @@ define(['storage'], function(storage) {
         }
     }
 
-    function appendBtn(label, onClick) {
+    function appendBtn(label, onClick, id) {
         var btn = document.createElement("button");
+        btn.class = "game-button" || id;
         btn.innerHTML = label;
         btn.onclick = onClick;
         inner.appendChild(btn);
