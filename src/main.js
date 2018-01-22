@@ -162,12 +162,12 @@ define(['storage'], function(storage) {
     appendSubtitle("Show Settings");
 
     appendBtn("Show Settings", function() {
-      var showSettings = gmi.showSettings(onSettingChanged, onSettingsClosed);
-      appendSpan("Settings screen requested...", settingsParagraph);
-      if (!showSettings) {
-        appendSpan("settings screen not provided by this host. Trigger internal one here. ", settingsParagraph);
-      }
-  }, "settings-button");
+        var showSettings = gmi.showSettings(onSettingChanged, onSettingsClosed);
+        appendSpan("Settings screen requested...", settingsParagraph);
+        if (!showSettings) {
+            appendSpan("settings screen not provided by this host. Trigger internal one here. ", settingsParagraph);
+        }
+    }, "settings-button");
     var settingsParagraph = appendParagraph();
   
     appendHorizontalRule();
@@ -185,18 +185,16 @@ define(['storage'], function(storage) {
         }
         else if (key === "motion") {
             gmi.setMotion(gmi.getAllSettings().motion);
-            document.getElementById("motion-label").innerHTML = gmi.getAllSettings().motion;
             appendSpan("Motion setting toggled. ", settingsParagraph);
         }
         else if (key === "subtitles") {
             gmi.setSubtitles(gmi.getAllSettings().subtitles);
-            document.getElementById("subtitles-label").innerHTML = gmi.getAllSettings().subtitles;
             appendSpan("Subtitles setting toggled. ", settingsParagraph);
         }
-        else if (key === "shadows") {
+        else if (key === "colourblind") {
             // The chosen value will already have been persisted, and 
-            // will be available as gmi.getAllSettings().gameData.shadows
-            appendSpan("Shadows toggled.", settingsParagraph);
+            // will be available as gmi.getAllSettings().gameData.colourblind
+            appendSpan("Colour blind mode toggled.", settingsParagraph);
         }
         else if (key === "hard") {
             // The chosen value will already have been persisted, and 
@@ -208,6 +206,11 @@ define(['storage'], function(storage) {
             else {
                 appendSpan("Normal. ", settingsParagraph);
             }
+        }
+        else if (key === "shadows") {
+            // The chosen value will already have been persisted, and 
+            // will be available as gmi.getAllSettings().gameData.shadows
+            appendSpan("Shadows toggled.", settingsParagraph);
         }
     }
 
@@ -285,9 +288,9 @@ define(['storage'], function(storage) {
         }
     }
 
-    function appendBtn(label, onClick, id) {
+    function appendBtn(label, onClick, className) {
         var btn = document.createElement("button");
-        btn.class = "game-button" || id;
+        btn.className = "game-button" || className;
         btn.innerHTML = label;
         btn.onclick = onClick;
         inner.appendChild(btn);
