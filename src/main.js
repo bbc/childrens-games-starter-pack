@@ -290,7 +290,7 @@ define(['storage'], function(storage) {
 
     function appendBtn(label, onClick, className) {
         var btn = document.createElement("button");
-        btn.className = "game-button" || className;
+        btn.className = className || "game-button";
         btn.innerHTML = label;
         btn.onclick = onClick;
         inner.appendChild(btn);
