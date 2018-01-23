@@ -25,7 +25,7 @@ const settingsConfig = {
                     description: "More baddies and less health"
                 },
             ]
-        }
+        }˜
     ]
 };
 
@@ -59,8 +59,13 @@ function onSettingChanged(key, value) {
 
 `onSettingsClosed` is called when the settings close button is clicked/actioned. This callback function may be used to handle any game state changes that may need to take place once settings screen is closed.
 
+This callback should also return focus to the element that initialised the settings screen for accessibility compliance.
+
 ```js
 function onSettingsClosed() {
     // Any necessary code to handle game state after settings is closed.
+    
+    // Return focus to for accessibility
+    document.getElementsByClassName("settings-button")[0].focus();
 }
 ```
