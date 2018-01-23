@@ -1,6 +1,6 @@
-#Settings
+# Settings
 
-##Setup
+## Setup
 
 A settings config object should be passed in to the `getGMI` function containing the various configurable options available to the player.
 
@@ -41,7 +41,7 @@ gmi.showSettings(onSettingChanged, onSettingsClosed);
 
 where `onSettingChanged` and `onSettingsClosed` are callback functions.
 
-##onSettingChanged
+## onSettingChanged
 
 `onSettingChanged` is called when a toggle is switched from the settings screen. It takes two arguments: `key` and `value`.
 
@@ -55,7 +55,7 @@ function onSettingChanged(key, value) {
 }
 ```
 
-##onSettingsClosed
+## onSettingsClosed
 
 `onSettingsClosed` is called when the settings close button is clicked/actioned. This callback function may be used to handle any game state changes that may need to take place once settings screen is closed.
 
