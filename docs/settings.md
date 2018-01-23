@@ -65,7 +65,7 @@ This callback should also return focus to the element that initialised the setti
 function onSettingsClosed() {
     // Any necessary code to handle game state after settings is closed.
     
-    // Return focus to for accessibility
+    // Return focus for accessibility
     document.getElementsByClassName("settings-button")[0].focus();
 }
 ```
