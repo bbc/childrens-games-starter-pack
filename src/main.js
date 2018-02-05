@@ -338,7 +338,7 @@ define(['storage'], function(storage) {
     }
     
     function disableAllButtonsAndLinks(disable) {
-        var gameHolder = document.getElementsByTagName("button");        
+        var gameHolder = document.getElementById("game-holder");        
         
         gameHolder.getElementsByTagName("button").forEach(function(button) {
             if (disable) {
@@ -354,6 +354,14 @@ define(['storage'], function(storage) {
             }
             else {
                 link.removeAttribute("tabIndex");
+            }
+        });
+        gameHolder.getElementsByTagName("input").forEach(function(input) {
+            if (disable) {
+                input.setAttribute("tabIndex", "-1");
+            }
+            else {
+                input.removeAttribute("tabIndex");
             }
         });
     }
