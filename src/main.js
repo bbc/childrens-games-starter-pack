@@ -164,6 +164,17 @@ define(['storage'], function(storage) {
     appendBtn("Show Settings", function() {
         var showSettings = gmi.showSettings(onSettingChanged, onSettingsClosed);
         appendSpan("Settings screen requested...", settingsParagraph);
+        
+        //disable all buttons and links in the background so they cannot be tabbed to while settings modal is open
+        var gameHolder = document.getElementsByTagName("button");
+        gameHolder.getElementsByTagName("button").forEach(function(button) {
+            button.setAttribute("tabIndex", "-1");
+        });
+        gameHolder.getElementsByTagName("a").forEach(function(link) {
+            link.setAttribute("tabIndex", "-1");
+        });
+
+        // handle fallback - for when centralised settings modal cannot be found
         if (!showSettings) {
             appendSpan("settings screen not provided by this host. Trigger internal one here. ", settingsParagraph);
         }
