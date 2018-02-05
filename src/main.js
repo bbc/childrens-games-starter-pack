@@ -164,9 +164,12 @@ define(['storage'], function(storage) {
     appendBtn("Show Settings", function() {
         var showSettings = gmi.showSettings(onSettingChanged, onSettingsClosed);
         appendSpan("Settings screen requested...", settingsParagraph);
+        // handle fallback - for when centralised settings modal cannot be found
         if (!showSettings) {
             appendSpan("settings screen not provided by this host. Trigger internal one here. ", settingsParagraph);
         }
+        //disable all buttons and links in the background so they cannot be tabbed to while settings modal is open
+        disableBackgroundElements(true);
     }, "settings-button");
     var settingsParagraph = appendParagraph();
   
@@ -174,6 +177,9 @@ define(['storage'], function(storage) {
 
     function onSettingsClosed() {
         appendSpan("onSettingsClosed has been called", settingsParagraph);
+        //re-enable all buttons and links so they can be tabbed again
+        disableBackgroundElements(false);
+        //focus back to the element that opened the settings for accessibility purposes
         document.getElementsByClassName("settings-button")[0].focus();
     }
 
@@ -328,4 +334,22 @@ define(['storage'], function(storage) {
         audioLabel.id = "audio-label";
         return audioLabel;
     }
+    
+    function disableBackgroundElements(disable) {
+        var gameHolder = document.getElementById("game-holder");   
+        var buttons = gameHolder.getElementsByTagName("button");
+        var links = gameHolder.getElementsByTagName("a"); 
+        var inputs = gameHolder.getElementsByTagName("input");
+        var elements = Array.from(buttons).concat(Array.from(links).concat(Array.from(inputs)));
+
+        elements.forEach(function(element) {
+            if (disable) {
+                element.setAttribute("tabIndex", "-1");
+            }
+            else {
+                element.removeAttribute("tabIndex");
+            }
+        });
+    }
+
 });
