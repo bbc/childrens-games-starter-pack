@@ -55,6 +55,7 @@ define(['storage'], function(storage) {
 
     // Create a gmi object using getGMI.
     var gmi = window.getGMI({settingsConfig: settingsConfig});
+    console.log("gmi", gmi);
     var numberOfStatsButtonClicks = 0;
 
     addStylesheet();
@@ -164,14 +165,12 @@ define(['storage'], function(storage) {
     appendBtn("Show Settings", function() {
         var showSettings = gmi.showSettings(onSettingChanged, onSettingsClosed);
         appendSpan("Settings screen requested...", settingsParagraph);
-        
-        //disable all buttons and links in the background so they cannot be tabbed to while settings modal is open
-        disableBackgroundElements(true);
-
         // handle fallback - for when centralised settings modal cannot be found
         if (!showSettings) {
             appendSpan("settings screen not provided by this host. Trigger internal one here. ", settingsParagraph);
         }
+        //disable all buttons and links in the background so they cannot be tabbed to while settings modal is open
+        disableBackgroundElements(true);
     }, "settings-button");
     var settingsParagraph = appendParagraph();
   
