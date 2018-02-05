@@ -166,13 +166,7 @@ define(['storage'], function(storage) {
         appendSpan("Settings screen requested...", settingsParagraph);
         
         //disable all buttons and links in the background so they cannot be tabbed to while settings modal is open
-        var gameHolder = document.getElementsByTagName("button");
-        gameHolder.getElementsByTagName("button").forEach(function(button) {
-            button.setAttribute("tabIndex", "-1");
-        });
-        gameHolder.getElementsByTagName("a").forEach(function(link) {
-            link.setAttribute("tabIndex", "-1");
-        });
+        disableAllButtonsAndLinks(true);
 
         // handle fallback - for when centralised settings modal cannot be found
         if (!showSettings) {
@@ -185,6 +179,9 @@ define(['storage'], function(storage) {
 
     function onSettingsClosed() {
         appendSpan("onSettingsClosed has been called", settingsParagraph);
+        //re-enable all buttons and links so they can be tabbed again
+        disableAllButtonsAndLinks(false);
+        //focus back to the element that opened the settings for accessibility purposes
         document.getElementsByClassName("settings-button")[0].focus();
     }
 
@@ -339,4 +336,26 @@ define(['storage'], function(storage) {
         audioLabel.id = "audio-label";
         return audioLabel;
     }
+    
+    function disableAllButtonsAndLinks(disable) {
+        var gameHolder = document.getElementsByTagName("button");        
+        
+        gameHolder.getElementsByTagName("button").forEach(function(button) {
+            if (disable) {
+                button.setAttribute("tabIndex", "-1");
+            }
+            else {
+                button.removeAttribute("tabIndex");
+            }
+        });
+        gameHolder.getElementsByTagName("a").forEach(function(link) {
+            if (disable) {
+                link.setAttribute("tabIndex", "-1");
+            }
+            else {
+                link.removeAttribute("tabIndex");
+            }
+        });
+    }
+
 });
