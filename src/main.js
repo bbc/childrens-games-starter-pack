@@ -166,7 +166,7 @@ define(['storage'], function(storage) {
         appendSpan("Settings screen requested...", settingsParagraph);
         
         //disable all buttons and links in the background so they cannot be tabbed to while settings modal is open
-        disableAllButtonsAndLinks(true);
+        disableBackgroundElements(true);
 
         // handle fallback - for when centralised settings modal cannot be found
         if (!showSettings) {
@@ -180,7 +180,7 @@ define(['storage'], function(storage) {
     function onSettingsClosed() {
         appendSpan("onSettingsClosed has been called", settingsParagraph);
         //re-enable all buttons and links so they can be tabbed again
-        disableAllButtonsAndLinks(false);
+        disableBackgroundElements(false);
         //focus back to the element that opened the settings for accessibility purposes
         document.getElementsByClassName("settings-button")[0].focus();
     }
@@ -337,31 +337,19 @@ define(['storage'], function(storage) {
         return audioLabel;
     }
     
-    function disableAllButtonsAndLinks(disable) {
-        var gameHolder = document.getElementById("game-holder");        
-        
-        gameHolder.getElementsByTagName("button").forEach(function(button) {
+    function disableBackgroundElements(disable) {
+        var gameHolder = document.getElementById("game-holder");   
+        var buttons = gameHolder.getElementsByTagName("button");
+        var links = gameHolder.getElementsByTagName("a"); 
+        var inputs = gameHolder.getElementsByTagName("input");
+        var elements = Array.from(buttons).concat(Array.from(links).concat(Array.from(inputs)));
+
+        elements.forEach(function(element) {
             if (disable) {
-                button.setAttribute("tabIndex", "-1");
+                element.setAttribute("tabIndex", "-1");
             }
             else {
-                button.removeAttribute("tabIndex");
-            }
-        });
-        gameHolder.getElementsByTagName("a").forEach(function(link) {
-            if (disable) {
-                link.setAttribute("tabIndex", "-1");
-            }
-            else {
-                link.removeAttribute("tabIndex");
-            }
-        });
-        gameHolder.getElementsByTagName("input").forEach(function(input) {
-            if (disable) {
-                input.setAttribute("tabIndex", "-1");
-            }
-            else {
-                input.removeAttribute("tabIndex");
+                element.removeAttribute("tabIndex");
             }
         });
     }
