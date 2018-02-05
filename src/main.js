@@ -163,6 +163,8 @@ define(['storage'], function(storage) {
     appendSubtitle("Show Settings");
 
     appendBtn("Show Settings", function() {
+        console.log("show settings", gmi.showSettings);
+        console.log("show settings", gmi.showSettings(onSettingChanged, onSettingsClosed));
         var showSettings = gmi.showSettings(onSettingChanged, onSettingsClosed);
         appendSpan("Settings screen requested...", settingsParagraph);
         // handle fallback - for when centralised settings modal cannot be found
