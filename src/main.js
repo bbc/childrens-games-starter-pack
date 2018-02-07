@@ -340,6 +340,7 @@ define(['storage'], function(storage) {
         var buttons = gameHolder.getElementsByTagName("button");
         var links = gameHolder.getElementsByTagName("a"); 
         var inputs = gameHolder.getElementsByTagName("input");
+        // join the lists of elements and converts them to an array as getElementsByTagName returns an array-like object rather than an actual Array.
         var elements = [].concat.apply([], [[].slice.call(buttons), [].slice.call(links), [].slice.call(inputs)]);
 
         elements.forEach(function(element) {
