@@ -344,9 +344,11 @@ define(['storage'], function(storage) {
 
         elements.forEach(function(element) {
             if (disable) {
+                element.setAttribute("disabled");
                 element.setAttribute("tabIndex", "-1");
             }
             else {
+                element.removeAttribute("disabled");
                 element.removeAttribute("tabIndex");
             }
         });
