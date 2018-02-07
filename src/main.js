@@ -345,11 +345,13 @@ define(['storage'], function(storage) {
         elements.forEach(function(element) {
             if (disable) {
                 element.setAttribute("disabled", "true");
-                element.setAttribute("tabIndex", "-1");
+                element.setAttribute("tabindex", "-1");
+                element.setAttribute("aria-hidden", "true");
             }
             else {
                 element.removeAttribute("disabled");
-                element.removeAttribute("tabIndex");
+                element.removeAttribute("tabindex");
+                element.removeAttribute("aria-hidden");
             }
         });
     }
