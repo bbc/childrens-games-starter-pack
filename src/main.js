@@ -341,8 +341,6 @@ define(['storage'], function(storage) {
         var links = gameHolder.getElementsByTagName("a"); 
         var inputs = gameHolder.getElementsByTagName("input");
         var elements = [].concat.apply([], [[].slice.call(buttons), [].slice.call(links), [].slice.call(inputs)]);
-        
-        Array.from(buttons).concat(Array.from(links).concat(Array.from(inputs)));
 
         elements.forEach(function(element) {
             if (disable) {
