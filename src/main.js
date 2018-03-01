@@ -65,6 +65,7 @@ define(['storage'], function(storage) {
     var wrapper = document.createElement("div");
     var inner = document.createElement("div");
     wrapper.className = "wrapper";
+    wrapper.tabIndex = -1;
     inner.className = "inner";
     appendTitle("Games Messaging Interface Examples");
     container.appendChild(wrapper);
