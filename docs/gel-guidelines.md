@@ -3,8 +3,7 @@
 GEL (Global Experience Language) helps the BBC provide a consistent 
 experience across all content and devices.
 
-To access the [GEL Guidelines for Games], you will need to sign in to, or 
-create, a [Box] account. 
+Access the [GEL Guidelines for Games here].
 
 ## Guidelines
 
@@ -32,7 +31,6 @@ changes for the agency to respond to.
 
 **Personas** are to be used as part of the evaluation process.
 
-[GEL Guidelines for Games]: https://myshare.app.box.com/s/50s30ol589xf4lmd9xomucjxwrnu54e3
-[Box]: https://www.box.com/en_GB
+[GEL Guidelines for Games here]: https://www.dropbox.com/s/5xnl0krw3w5z7v1/gamesGEL_2.7.pdf?dl=0
 
 [Home](../README.md)
