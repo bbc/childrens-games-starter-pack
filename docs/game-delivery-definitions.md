@@ -63,8 +63,8 @@ NB - This phase will also require the production of a schedule for the full game
   * Final game balancing underway
   * All final assets SHOULD BE in place
   * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, etc (to be discussed and agreed with BBC)
-  * If the game is being packaged into a Pick n Mix app, agency supplied app specific graphics (e.g. splash screen, loading page) as described here: https://myshare.box.com/s/urmavwev77q063s5fzussov3fg7eexhc 
-  * If the game is being launched in Playtime Island, agency supplied draft assets for the Playtime Island menu, as specified here: https://myshare.box.com/s/8mh7xp2u1qnmtw6u4ra7xyjtprkdxfn3
+  * If the game is being packaged into a Pick n Mix app, agency supplied app specific graphics (e.g. splash screen, loading page) as described here: https://www.dropbox.com/sh/avc2sun9fxv7ac5/AADtRfA7ThngA0aNyraI_BaZa?dl=0
+  * If the game is being launched in Playtime Island, agency supplied draft assets for the Playtime Island menu, as specified here: https://www.dropbox.com/sh/nyj1edxexpjhguw/AADOpJz3yWX6EJ_imwTqaX-Ua?dl=0
   * Initial game download size MUST BE under 15MB
   * Total uncompressed game GDZ file size MUST BE under 45MB (with prior BBC agreement, occasional exceptions can be made)
   * Agency evidence of game fully tested against primary, secondary and tertiary devices/browsers and in App Test harness  (Playtime Island for CBeebies, Pick n Mix for CBBC) via Hockey app (iOS, Android Crosswalk and Webview)
@@ -92,8 +92,8 @@ NB - This phase will also require the production of a schedule for the full game
   * Gameplay and core functionality complete, with full end-to-end play
   * All final assets in place 
   * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, etc (to be discussed and agreed with BBC)
-  * If the game is being wrapped into an app, agency supplied final graphics for submission to app stores as described here: https://myshare.box.com/s/urmavwev77q063s5fzussov3fg7eexhc 
-  * If the game is being added to Playtime Island, final graphics for the menu as described here: https://myshare.box.com/s/8mh7xp2u1qnmtw6u4ra7xyjtprkdxfn3
+  * If the game is being wrapped into an app, agency supplied final graphics for submission to app stores as described here: https://www.dropbox.com/sh/avc2sun9fxv7ac5/AADtRfA7ThngA0aNyraI_BaZa?dl=0 
+  * If the game is being added to Playtime Island, final graphics for the menu as described here: https://www.dropbox.com/sh/nyj1edxexpjhguw/AADOpJz3yWX6EJ_imwTqaX-Ua?dl=0
   * Initial game download size MUST BE under 15MB
   * Total uncompressed game GDZ file size MUST BE under 45MB (with prior BBC agreement, occasional exceptions can be made)
   * Implementation of the BBC Games Messaging Interface
