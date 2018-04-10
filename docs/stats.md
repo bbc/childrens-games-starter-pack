@@ -114,6 +114,42 @@ These should be sent with every event:
 | game_level_type | whackamole, selecttoprogress, dressup, catchingtargets, paintreveal, null | *mandatory for IVORs only* |
 | settings_status | audio-true-motion-true-subtitles-false-difficulty-auto | As documented here. We have encountered errors when using : and , delimiters on web due to old version of echo so have switched these to - for now.|
 
+## Common Events and Labels
+
+The following events are common to most games. In addition to the mandatory labels outlined above, they may have other specific labels.
+
+| Description | Action Name | Action Type | Additional Labels (in addition to Mandatory, see below) | Available Values (in addition to Mandatory, see below) |
+| ------------- |:-----:|:-----:|:-----:|:-----:|
+| Fires when a level is selected from the menu | game_level | selected |
+| Fires when a level has loaded and gameplay can commence | game_level | started |
+| Fires when a level is completed | game_level | complete | game_score,  game_level_time. stars_awarded, game_level_result |
+| Fires when continue button is clicked having completed a level | game_level | continue |
+| Fires when play again is clicked having completed a level | game_level | playagain |
+| Fires when an interactive element (incidental) is interacted with | game_click | interaction | game_interaction | *interaction name* |
+
+## Custom Events & Labels
+These events may be used in a game, where relevant. Examples shown have been used previously. Additional bespoke custom events may need to be created for some games, in which case they should follow the format of the existing events.
+
+*Note - There will be label variations in games developed before common labels were standardised. The relevant DAx_Stats_Integration file (saved in the game's Dropbox folder) should be consulted to confirm a specific game's stats, or failing that, [iStats plug-in](https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga).*
+
+| Description | Action Name | Action Type | Additional Labels | Lebel Values | Notes |
+| ------------- |:-----:|:-----:|:-----:|:-----:|:-----:|
+| Fires with each event | |  | game_play_count | number of times game attempted | To enable reports to be sliced by number of plays e.g. what do players typically do on their 2nd play? |
+| Fires when an item is selected e.g. customisation | game_click | selected | item_name | descriptive values |  |
+| Fires when character customisation is complete | game_click | customised | game_customisation (or more specific details: e.g. face_type, hair_colour etc) | descriptive values | Pass through labels to describe how a character has been customised - which variants have been selected |
+| Fires when an item is bought from a shop | game_click | purchased | game_purchase (or more specific details: e.g. item_name, item_cost) | descriptive value | Pass through labels to describe what has been bought |
+| Fires when an achievement is awarded | game_level | achievement | achievement | descriptive value, daily_reward |  |
+| Fires when a sub-menu is viewed | game_click | viewed | submenu | descriptive name e.g. achievements |  
+| Fires when an achievement is awarded | game_level | achievement | achievement | descriptive value, daily_reward | 
+| Fires when a player "dies" | game_level | gameover | x_coordinate, y_coordinate | x_coordinate, y_coordinate | Record coordinates of the position in the game where the player "dies" |
+| Fires when a player has to make a decision | game_level | decision | game_decision, game_decision_result | decision name, true,  false, *custom* | Records points at which players are asked to make a decision and the outcomes. Name is optional, used when multiple decisions may be made with similar outcomes. |
+
+## iStats Chrome plug-in
+
+This extension logs calls to iStats to help find out what information is being sent to this service. It features white and blacklisting, as well as label filtering, so tracking down the label in the stat you're looking for is easier.
+
+You can download it from the Chrome store here - [iStats plug-in](https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga).
+
 ## Example
 You can see an example of using stats in our [code demo](../src/main.js). 
 Open the accompanying index.html to see it in action.
