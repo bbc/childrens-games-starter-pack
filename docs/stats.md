@@ -89,8 +89,30 @@ The below labels are sent through with *every* event, the values should be appro
 |        |  |
 | ------------- |:-----:|
 | name| *product*.games.*game name*.page |
-| app_name| cbbc | cbeebies |
-| app_type| responsive | app |
+| app_name| cbbc, cbeebies |
+| app_type| responsive, app |
+
+### Mandatory to every game
+
+These should feature in every game:
+
+| Mandatory Event Description | Action Name | Action Type | Additional Labels (in addition to Mandatory, see below) | Available Values (in addition to Mandatory, see below) | Notes |
+| ------------- |:-----:|:-----:|:-----:|:-----:|:-----:|
+| Fires when users make their first choice from the homescreen | game_first_click | e.g. play, settings, how_to_play, pause, restart, menu|
+| Fires when users make a choice from the gel menu | game_click | e.g. play, settings, how_to_play | game_screen, settings_changed | home, menu, level name, paused | The action_type should reflect what the user clicks on. May not all be applicable to every game. To understand which game screen the gel button is accessed from. When a user exits the settings menu, we should send a list of key value pairs of the settings items that have changed, or send a value of 'none' if no settings have been changed. We will only send changed items, not all settings values. |
+| Fires when the game has finished loading | game_loaded | true, false |
+| Fires every 15 seconds that the user is in the game | timer | heartbeat, game_screen | 15 - home, menu, level name, paused | To understand how long browsers are spending within the game and to allow this to be broken down by screen/level. |
+
+### Mandatory Labels
+
+These should be sent with every event:
+
+| Mandatory Additional Labels | Available Values | Notes |
+| ------------- |:-----:|:-----:|
+| game_template | gcountdown (IVOR), make_a_picture, jigsaw | where applicable|
+| game_level_name | level name, null | |
+| game_level_type | whackamole, selecttoprogress, dressup, catchingtargets, paintreveal, null | *mandatory for IVORs only* |
+| settings_status | audio-true-motion-true-subtitles-false-difficulty-auto | As documented here. We have encountered errors when using : and , delimiters on web due to old version of echo so have switched these to - for now.|
 
 ## Example
 You can see an example of using stats in our [code demo](../src/main.js). 
