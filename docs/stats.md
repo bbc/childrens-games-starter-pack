@@ -66,6 +66,31 @@ Go Jetters Jigsaw - cbeebies.games.go_jetters_jigsaw.page
 | Platform split |  |
 | Previous/next pages |  |
 
+## Basics
+
+Games tracking consists of action names, action types and labels.
+
+| Action_name        | Description |
+| ------------- |:-----:|
+| game_click| relates to any subsequent click action taken by the user |
+| game_first_click      | relates only to the first click action taken by the user |
+| game_level    | relates to level activity e.g. starting, completing, replaying, achievements |
+| game_loaded | fires when the game has loaded |
+| Timer     | relates to the heartbeat timer |
+
+## Mandatory events and labels
+
+There are some events that are common across ALL games. The below names should be used to ensure consistency for reporting. These are all 'hidden events' so do not contribute to page view stats.
+
+### Mandatory to every event
+
+The below labels are sent through with *every* event, the values should be appropriate to the product:
+
+|        |  |
+| ------------- |:-----:|
+| name| *product*.games.*game name*.page |
+| app_name| cbbc | cbeebies |
+| app_type| responsive | app |
 
 ## Example
 You can see an example of using stats in our [code demo](../src/main.js). 
