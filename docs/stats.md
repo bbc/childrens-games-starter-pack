@@ -112,7 +112,7 @@ These should be sent with every event:
 | game_template | gcountdown (IVOR), make_a_picture, jigsaw | where applicable|
 | game_level_name | level name, null | |
 | game_level_type | whackamole, selecttoprogress, dressup, catchingtargets, paintreveal, null | *mandatory for IVORs only* |
-| settings_status | audio-true-motion-true-subtitles-false-difficulty-auto | As documented here. We have encountered errors when using : and , delimiters on web due to old version of echo so have switched these to - for now.|
+| settings_status | audio-true-motion-true-subtitles-false-difficulty-auto | On any hidden event sent from the game, we should send an additional label that specifies the full list of current settings options. Ideally, would be in the format audio:false,motion:true,subtitles:false,difficulty:hard but we have encountered errors when using : and , delimiters on web due to old version of echo so have switched these to - for now.|
 
 ## Common Events and Labels
 
