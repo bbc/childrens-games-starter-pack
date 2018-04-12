@@ -20,6 +20,8 @@ gmi.sendStatsEvent(actionName, actionType, additionalLabels);
 where ````actionName```` is the key, ````actionType```` is the value and
 ````additionalLabels```` are any other key-value pairs to send.
 
+An event is by default considered a page view, unless a specific label signifying a hidden event is present in the measurement call. 'Hidden events' are measurement calls that contain the label *ns_type=hidden* and must be present on all hidden event measurement calls. These are used to capture actions within a page (e.g. click of a button, interaction with a photo gallery, etc.)
+
 ## Counternames
 
 Ensure the in-game counter name follow the following format;
