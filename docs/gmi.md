@@ -19,7 +19,7 @@ We've included [demo GMI usage](../src/main.js) with this Starter Pack, you can
 view this code in action by opening the included index.html in your browser. 
 
 You can also see our hosted [GMI Test
-App](http://play.test.bbc.co.uk/play/pen/g1m3pm1mt4).
+App](https://www.bbc.co.uk/cbeebies/embed/game/childrens-games-starter-pack).
 
 ## Non-BBC platforms
 The included index.html uses a mock GMI that you can also use for your own local development.
