@@ -1,9 +1,9 @@
-# GEL Guidelines, Accessibility and Icon Assets
+# GEL Games Framework Guidelines, Accessibility and Icon Assets
 
 GEL (Global Experience Language) helps the BBC provide a consistent 
 experience across all content and devices.
 
-Access the [GEL Guidelines for Games here].
+[Access the GEL Games Framework Guidelines here.](http://www.bbc.co.uk/gel/guidelines/games-framework)
 
 ## Guidelines
 
