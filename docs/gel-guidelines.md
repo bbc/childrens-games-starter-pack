@@ -10,7 +10,7 @@ experience across all content and devices.
 The guidelines, to which the game **must** adhere, consist of the 
 following documents:
 
-**GamesGEL** details the game screens, how they should be linked and the 
+**GEL Games Framework** details the game screens, how they should be linked and the 
 elements they should contain.
 
 **Accessibility** specifies what is required and what is recommended to make 
