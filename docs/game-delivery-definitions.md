@@ -89,7 +89,7 @@ This phase will also require;
   * Localisation functionality integrated and tested (if required)
   * Deployed on CBBC or CBeebies platform using BBC GitHub build process
   * Agreed User Testing outcomes and Stakeholder feedback from Alpha addressed
-  * **No known P1 issues**
+  * [**No known P1 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation)
   * [**Limited P2 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) identified
   * [**Limited P3 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) identified
 
@@ -126,7 +126,7 @@ This phase will also require;
   * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack)
   * Agreed user testing outcomes and stakeholder feedback from Beta addressed
   * If required - a 'vanilla version' of the game, free from any BBC provided code. It is expected to be free from any libraries, including GMI and stats tracking. The game should have all BBC branding and references to the BBC removed from the source code and associated documentation.
-  * **No known P1 issues**
+  * [**No known P1 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation)
   * [**No or limited P2 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) with an agreed fix schedule
   * [**No or limited P3 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) with an agreed fix schedule
 
