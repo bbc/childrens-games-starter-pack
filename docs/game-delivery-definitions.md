@@ -42,7 +42,7 @@ This phase will also require;
   * Core functionality for gameplay in place
   * Early game balancing in place
   * Graphics may contain placeholders
-  * Documented release notes including [P1/P2/P3](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) known issues identified, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
+  * Documented release notes including [P1/P2/P3](#issue-prioritization) known issues identified, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
   * **Initial** game download size **MUST BE** under 15MB
   * **CBeebies** games **total** uncompressed game GDZ file size **MUST** BE under 45MB
   * **CBBC** games **total** uncompressed game GDZ file size **MUST BE** as close to 45MB as possible with an absolute upper limit of 100MB
@@ -67,7 +67,7 @@ This phase will also require;
   * Gameplay and core functionality complete, with full end-to-end play 
   * Final game balancing underway
   * All final assets **SHOULD BE** in place
-  * Documented release notes including [P2/P3](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) known issues identified, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
+  * Documented release notes including [P2/P3](#issue-prioritization) known issues identified, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
   * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, etc (compromises to be discussed and agreed with BBC)
   * **CBeebies** games (that are on the Playtime Island roadmap) - agency supplied draft assets for the Playtime Island menu - [as specified here](https://www.dropbox.com/sh/nyj1edxexpjhguw/AADOpJz3yWX6EJ_imwTqaX-Ua?dl=0)
   * **CBBC** games (that are on the Pick N Mix roadmap) - agency supplied app specific graphics (e.g. splash screen, loading page) - [as described here](https://www.dropbox.com/sh/avc2sun9fxv7ac5/AADtRfA7ThngA0aNyraI_BaZa?dl=0)
@@ -89,9 +89,9 @@ This phase will also require;
   * Localisation functionality integrated and tested (if required)
   * Deployed on CBBC or CBeebies platform using BBC GitHub build process
   * Agreed User Testing outcomes and Stakeholder feedback from Alpha addressed
-  * [**No known P1 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation)
-  * [**Limited P2 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) identified
-  * [**Limited P3 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) identified
+  * [**No known P1 issues**](#issue-prioritization)
+  * [**Limited P2 issues**](#issue-prioritization) identified
+  * [**Limited P3 issues**](#issue-prioritization) identified
 
 
 ## Release Candidate
@@ -103,7 +103,7 @@ This phase will also require;
   * Game meets the detailed specification set out in Schedule 1 in the contract
   * Gameplay and core functionality complete, with full end-to-end play
   * All final assets in place 
-  * Documented release notes including [P2/P3](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) known issues identified and accepted by BBC, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
+  * Documented release notes including [P2/P3](#issue-prioritization) known issues identified and accepted by BBC, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
   * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, etc (compromises to be discussed and agreed with BBC)
   * **CBeebies** games (that are on the Playtime Island roadmap) - agency supplied draft assets for the Playtime Island menu  - [as specified here](https://www.dropbox.com/sh/nyj1edxexpjhguw/AADOpJz3yWX6EJ_imwTqaX-Ua?dl=0)
   * **CBBC** games (that are on the Pick N Mix roadmap) - agency supplied app specific graphics (e.g. splash screen, loading page) - [as described here](https://www.dropbox.com/sh/avc2sun9fxv7ac5/AADtRfA7ThngA0aNyraI_BaZa?dl=0)
@@ -126,8 +126,8 @@ This phase will also require;
   * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack)
   * Agreed user testing outcomes and stakeholder feedback from Beta addressed
   * If required - a 'vanilla version' of the game, free from any BBC provided code. It is expected to be free from any libraries, including GMI and stats tracking. The game should have all BBC branding and references to the BBC removed from the source code and associated documentation.
-  * [**No known P1 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation)
-  * [**No or limited P2 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) with an agreed fix schedule
+  * [**No known P1 issues**](#issue-prioritization)
+  * [**No or limited P2 issues**](#issue-prioritization) with an agreed fix schedule
   * [**No or limited P3 issues**](#issue-prioritization) with an agreed fix schedule
 
 
