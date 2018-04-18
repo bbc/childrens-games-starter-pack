@@ -128,7 +128,7 @@ This phase will also require;
   * If required - a 'vanilla version' of the game, free from any BBC provided code. It is expected to be free from any libraries, including GMI and stats tracking. The game should have all BBC branding and references to the BBC removed from the source code and associated documentation.
   * [**No known P1 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation)
   * [**No or limited P2 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) with an agreed fix schedule
-  * [**No or limited P3 issues**](https://confluence.dev.bbc.co.uk/display/children/Game+Delivery%3A+Issue+Prioritisation) with an agreed fix schedule
+  * [**No or limited P3 issues**](#issue-prioritization) with an agreed fix schedule
 
 
 ##  Project Closedown
@@ -145,7 +145,7 @@ This should include, but not limited to:
   * Post Project Review notes
 
 
-### Issue Prioritization
+### #Issue Prioritization
 
 To enable us to provide the agreed quality gates between releases, please use
  the following guidelines for identifying issue priorities:
