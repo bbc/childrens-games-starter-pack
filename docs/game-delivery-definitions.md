@@ -54,7 +54,7 @@ This phase will also require;
   * [GMI Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#settings-screen) implemented
   * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
   * [Mandatory BBC supplied standardised game stats](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) events implemented: *game_loaded, game_first_click, game_click, timer*
-  * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack)
+  * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
   * Agreed User Testing and Stakeholder feedback from Pre-production phase addressed
 
 
@@ -87,7 +87,7 @@ This phase will also require;
   * [Mandatory BBC supplied standardised game stats](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) events implemented: *game_loaded, game_first_click, game_click, timer*
   * [BBC supplied game-specific statistics](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) from Alpha review integrated
   * Localisation functionality integrated and tested (if required)
-  * Deployed on CBBC or CBeebies platform using BBC GitHub build process
+  * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
   * Agreed User Testing outcomes and Stakeholder feedback from Alpha addressed
   * [**No known P1 issues**](#issue-prioritization)
   * [**Limited P2 issues**](#issue-prioritization) identified
@@ -123,7 +123,7 @@ This phase will also require;
   * [Mandatory BBC supplied standardised game stats](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) events implemented: *game_loaded, game_first_click, game_click, timer*
   * [BBC supplied game-specific statistics](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) from Beta review integrated
   * Localisation functionality integrated and tested (if required)
-  * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack)
+  * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
   * Agreed user testing outcomes and stakeholder feedback from Beta addressed
   * If required - a 'vanilla version' of the game, free from any BBC provided code. It is expected to be free from any libraries, including GMI and stats tracking. The game should have all BBC branding and references to the BBC removed from the source code and associated documentation.
   * [**No known P1 issues**](#issue-prioritization)
@@ -141,7 +141,7 @@ This should include, but not limited to:
   * Build notes
   * Asset source files (e.g PSDs, AIs, animations, sound files, fonts etc)
   * Any licenses associated with assets for use by the BBC across all media
-  * [Deliverable and Code Review](https://confluence.dev.bbc.co.uk/display/children/Deliverable+Review) pass
+  * [Deliverable and Code Review](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/deliverable-review.md#deliverable-review) pass
   * Post Project Review notes
 
 
