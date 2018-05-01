@@ -68,6 +68,10 @@
     background-color: #121212;
 }
 
+.wrapper button:disabled {
+    background-color: #eeeeee;
+}
+
 #save-load-text {
     margin:0.5rem 0;
     padding:1.1rem;
@@ -83,7 +87,7 @@
     text-transform:capitalize;
 }
 
-#debug-input {
+#debug-input, #websocket-input {
     width: 300px;
     margin-bottom:1.1rem;
     padding:0.5rem;
@@ -96,4 +100,13 @@
 #debug-input.strong-text {
     font-weight:bold;
     color:#404040;
+}
+
+#ws-terminal {
+    border:1px solid #dcdcdc;
+    margin-bottom:1.1rem;
+    font-size:1.1rem;
+    color:#848484;
+    font-weight:normal;
+    overflow-y: scroll;
 }

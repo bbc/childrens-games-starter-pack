@@ -1,4 +1,4 @@
-define(['storage'], function(storage) {
+define(['storage','websockets'], function(storage, ws) {
     "use strict";
     
     // --------- Settings ---------
@@ -226,8 +226,45 @@ define(['storage'], function(storage) {
     gmi.gameLoaded();
     gmi.sendStatsEvent('game_loaded', true, {});
 
+    // ---------- Web Sockets Example ----------
+
+    appendSubtitle("Web Sockets Test");
+    appendParagraph("This input box lets us send a message to the websocket.org test servers. If successful we'll receive a response with the same message.");
+    appendTextInput("websocket-input");
+    appendSpacer();
+
+    appendTextArea("ws-terminal");
+    appendSpacer();
+
+    appendBtn("Connect", function() { 
+        ws.connect(setConnectionStateOnButtons);
+    },"ws-connect");
+
+    appendBtn("Disconnect", function() { 
+        ws.disconnect();
+    },"ws-disconnect");
+    
+    appendBtn("Send String", function() {
+        ws.sendString(document.getElementById("websocket-input").value);
+    },"ws-sendString");
+
+    appendBtn("Send ArrayBuffer", function() {
+        ws.sendArrayBuffer(document.getElementById("websocket-input").value);
+    },"ws-sendArrayBuffer");
+
+    setConnectionStateOnButtons(false);
+
+    appendHorizontalRule();
+
 
     // ---------- Helper Functions ----------
+
+    function setConnectionStateOnButtons(connectionState) {
+        document.getElementsByClassName("ws-connect")[0].disabled = connectionState;
+        document.getElementsByClassName("ws-disconnect")[0].disabled = !connectionState;
+        document.getElementsByClassName("ws-sendString")[0].disabled = !connectionState;
+        document.getElementsByClassName("ws-sendArrayBuffer")[0].disabled = !connectionState;
+    }
 
     function addStylesheet() {
         var link  = document.createElement('link');
@@ -327,6 +364,16 @@ define(['storage'], function(storage) {
         input.onclick = inputOnClick;
         input.onblur = inputOnBlur;
         inner.appendChild(input);
+    }
+
+    function appendTextArea(elementID) {
+        var textarea = document.createElement("textarea");
+        textarea.rows = 8;
+        textarea.cols = 40;
+        textarea.id = elementID;
+        textarea.value = "Websocket updates will appear here..."
+        inner.appendChild(textarea);
+        return textarea;
     }
 
     function createAudioLabel() {
