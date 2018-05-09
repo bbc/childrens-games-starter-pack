@@ -41,7 +41,10 @@ define(function (require){
                 [320, 480, 2, "iPhone 4"],
                 [320, 568, 2, "iPhone 5 or 5s"],
                 [375, 667, 2, "iPhone 6"],
-                [414, 736, 3, "iPhone 6 plus"]
+                [414, 736, 3, "iPhone 6 plus"],
+                [375, 667, 2, "iPhone 7 and 8"],
+                [414, 736, 3, "iPhone 7 plus and 8 plus"],
+                [375, 812, 3, "iPhone X"]
             ];
 
             for (var t = 0; t < devices.length; t++) {
