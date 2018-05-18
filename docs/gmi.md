@@ -44,6 +44,27 @@ longer visible.
 gmi.gameLoaded();
 ````
 
+## Game Exiting
+
+When exiting the game, the function
+
+````
+gmi.exit();
+````
+
+should be used. This will return the user to the appropriate place.
+## Debug messages
+
+When writing debug messages, the following should be used:
+
+````
+gmi.debug(message);
+````
+
+This allows the debug message to be displayed regardless of platform, unlike
+e.g. console.log.
+
+
 ## Stats
 
 The sending of stats is now handled by GMI. A simple call can be used:
@@ -53,6 +74,28 @@ gmi.sendStatsEvent(actionName, actionType, additionalLabels);
 ````
 
 See here for more information on [sending stats](stats.md#stats).
+
+
+## Display app prompt
+
+````
+gmi.showPrompt(resumeGame)
+````
+
+Inform the app that it should display its prompt/interstitial screen. Takes a resumeGame callback. Currently a stub implementation which always returns false.
+
+
+## Saving and Loading data
+
+Saving and loading data should use the gmi functions:
+
+````
+gmi.setGameData(key, value);
+gmi.getAllSettings().gameData;
+````
+
+See here for more information on [data storage](data-storage.md#saving-data).
+
 
 ## Global game settings
 
@@ -70,51 +113,24 @@ gmi.getAllSettings().motion;
 
 See here for more information on [data storage](data-storage.md#saving-data).
 
+
 > GMI also exposes *setMuted()* and *getAllSettings().muted*. These are
 available for backwards compatibility and are simply the inverse of *setAudio()*
-and *getAllSettings().audio*. Use the "audio" versions for new code.
+and *getAllSettings().audio*. 
 
-## Saving and Loading data
-
-Saving and loading data should use the gmi functions:
-
-````
-gmi.setGameData(key, value);
-gmi.getAllSettings().gameData;
-````
-
-See here for more information on [data storage](data-storage.md#saving-data).
+>For new code, refrain from using *setMuted()* or *getAllSettings.muted(). 
+Instead use the "audio" versions.
 
 
-## Debug messages
+## Built-In Settings Screen
 
-When writing debug messages, the following should be used:
-
-````
-gmi.debug(message);
-````
-
-This allows the debug message to be displayed regardless of platform, unlike
-e.g. console.log.
-
-
-## Display app prompt
-
-````
-gmi.showPrompt(resumeGame)
-````
-
-Inform the app that it should display its prompt/interstitial screen. Takes a resumeGame callback. Currently a stub implementation which always returns false.
-
-## Settings Screen
+Requests that the "host" (i.e. app or web page) show its built-in settings
+screen and notifies the game when settings are changed or the screen is closed by
+calling the provided callbacks.
 
 ````
 gmi.showSettings(onSettingChanged, onSettingsClosed)
 ````
-
-Requests that the "host" (i.e. app or web page) show its built-in settings
-screen and notify the game when settings are changed or the screen is closed by
-calling the provided callbacks.
 
 ### Return Value
 
@@ -152,7 +168,7 @@ dismissed.
 function onSettingsClosed() { ... }
 ```
 
-## Settings Configuration
+### Settings Configuration
 
 Customization of the available settings is done via the initial *getGMI* call.
 
@@ -199,30 +215,23 @@ Any game-defined keys will correspond to the *key* parameter in
 *defaultValue* is used to initialise values if they don't already exist. Note: 
 this only effects game-specific settings and not global settings.
 
-### Standard Settings
+### Built-In Settings Screen & Global settings 
 
-The standard settings keys are:
+The global settings keys are:
 
 * audio
 * motion
 * subtitles
 
 When the GMI implements the settings screen, it will persist the updated values
-for these keys: The game does not need to call *setAudio*, *setMotion* or
+for these keys. The game does not need to call *setAudio*, *setMotion* or
 *setSubtitles* in this case.
+
+NOTE: If you want to access a global settings key outside the GMI-handled Native settings screen, i.e. have a 
+sound on/off switch, you can still use *setAudio*.
 
 > Note that "audio" replaces "muted" in the new version of the GMI. The "muted"
 > API remains available for backwards compatibility only.
-
-## Exiting the game
-
-When exiting the game, the function
-
-````
-gmi.exit();
-````
-
-should be used. This will return the user to the appropriate place.
 
 ## Data fields
 
