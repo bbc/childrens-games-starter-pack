@@ -5,14 +5,13 @@ The GMI (game messaging interface) allows games to communicate with BBC platform
 ### GMI Compliance
 To be considered GMI compliant your game must adhere to the following:
 
-* Must save/retrieve data via the GMI
-* Must send analytics data via the GMI
+* Must save/retrieve data via the GMI only
+* Must send analytics data via the GMI only
 * Must use gmi.shouldShowExitButton property to determine exit button visibility
 * Must call gmi.exit() when user clicks exit button
 * Must call gmi.gameLoaded() when initial loading screen is no longer visible.
 * Must implement [centralised settings](settings.md)
 * Must embed the game in gmi.gameContainerId element
-* Must implement a long press for settings button as described in [GEL](gel-guidelines.md) if gmi.shouldLongPressForSettings is true
 * Must use gmi.shouldDisplayMuteButton property to determine exit button visibility
 
 ### Developing with GMI
