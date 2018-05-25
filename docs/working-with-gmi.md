@@ -13,7 +13,7 @@ To be considered GMI compliant your game must adhere to the following:
 * Must implement [centralised settings](settings.md)
 * Must embed the game in gmi.gameContainerId element
 * Must implement a long press for settings button as described in [GEL](gel-guidelines.md) if gmi.shouldLongPressForSettings is true
-* Must use gmi.shouldDisplayMuteButton property to determine exit button visibility
+* Must use gmi.shouldDisplayMuteButton property to determine mute button visibility
 
 ### Developing with GMI
 The included index.html uses a mock GMI that you can also use for your own 
