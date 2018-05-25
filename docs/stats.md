@@ -157,3 +157,8 @@ You can see an example of using stats in our [code demo](../src/main.js).
 Open the accompanying index.html to see it in action.
 
 [Home](../README.md)
+    * [Working with GMI](working-with-gmi.md)
+    * [API Reference](gmi.md)
+    * [Settings](settings.md)
+    * [Stats](stats.md#stats)
+    * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)

@@ -151,3 +151,8 @@ A boolean that indicates if the game should be in debug mode or not. If true,
 all levels should be unlocked for testing purposes.
 
 [Home](../README.md)
+    * [Working with GMI](working-with-gmi.md)
+    * [API Reference](gmi.md)
+    * [Settings](settings.md)
+    * [Stats](stats.md#stats)
+    * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)

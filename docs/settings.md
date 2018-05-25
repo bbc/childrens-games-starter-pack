@@ -78,3 +78,10 @@ Settings are automatically persisted as key/value pairs and can be accessed as p
 These values can also be changed outside the settings screen context with `gmi.setGameData(key, value)`.
 
 Global Settings are exceptions, see [global settings](gmi.md#global-game-settings).
+
+[Home](../README.md)
+    * [Working with GMI](working-with-gmi.md)
+    * [API Reference](gmi.md)
+    * [Settings](settings.md)
+    * [Stats](stats.md#stats)
+    * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)

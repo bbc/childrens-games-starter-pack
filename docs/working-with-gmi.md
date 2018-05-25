@@ -40,3 +40,8 @@ To be considered GMI compliant your game must adhere to the following:
 
 
 [Home](../README.md)
+    * [Working with GMI](working-with-gmi.md)
+    * [API Reference](gmi.md)
+    * [Settings](settings.md)
+    * [Stats](stats.md#stats)
+    * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)

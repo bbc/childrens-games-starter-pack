@@ -73,3 +73,8 @@ Edit your index.html so that gmi.areCookiesAllowed() returns true/false to obser
 [Manage Cookie Settings (LIVE)]: http://www.bbc.co.uk/privacy/cookies/managing/cookie-settings
 
 [Home](../README.md)
+    * [Working with GMI](working-with-gmi.md)
+    * [API Reference](gmi.md)
+    * [Settings](settings.md)
+    * [Stats](stats.md#stats)
+    * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)
