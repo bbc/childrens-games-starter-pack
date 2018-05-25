@@ -2,10 +2,18 @@
 
 The GMI (game messaging interface) allows games to communicate with BBC platforms using a shared API.
 
-### Demo
-[Code Example](../src/main.js) - open [index.html](../src/index.html) in your browser to see this in action.
+### GMI Compliance
+To be considered GMI compliant your game must adhere to the following:
 
-This is also available to see in [CAGE](https://www.bbc.co.uk/cbeebies/embed/game/childrens-games-starter-pack).
+* Must save/retrieve data via the GMI
+* Must send analytics data via the GMI
+* Must use gmi.shouldShowExitButton property to determine exit button visibility
+* Must call gmi.exit() when user clicks exit button
+* Must call gmi.gameLoaded() when initial loading screen is no longer visible.
+* Must implement [centralised settings](settings.md)
+* Must embed the game in gmi.gameContainerId element
+* Must implement a long press for settings button as described in [GEL](gel-guidelines.md) if gmi.shouldLongPressForSettings is true
+* Must use gmi.shouldDisplayMuteButton property to determine exit button visibility
 
 ### Developing with GMI
 The included index.html uses a mock GMI that you can also use for your own 
@@ -25,19 +33,10 @@ certification.
 The options parameter passed into getGMI() is mainly for [settingsConfig](settings.md#config) 
 currently but there is also support for statsLabels where appropriate. 
 
-### GMI Compliance
-To be considered GMI compliant your game must adhere to the following:
+### Demo
+[Code Example](../src/main.js) - open [index.html](../src/index.html) in your browser to see this in action.
 
-* Must save/retrieve data via the GMI
-* Must send analytics data via the GMI
-* Must use gmi.shouldShowExitButton property to determine exit button visibility
-* Must call gmi.exit() when user clicks exit button
-* Must call gmi.gameLoaded() when initial loading screen is no longer visible.
-* Must implement [centralised settings](settings.md)
-* Must embed the game in gmi.gameContainerId element
-* Must implement a long press for settings button as described in [GEL](gel-guidelines.md) if gmi.shouldLongPressForSettings is true
-* Must use gmi.shouldDisplayMuteButton property to determine exit button visibility
-
+This is also available to see in [CAGE](https://www.bbc.co.uk/cbeebies/embed/game/childrens-games-starter-pack).
 
 * [Home](../README.md)
     * [Working with GMI](working-with-gmi.md)
