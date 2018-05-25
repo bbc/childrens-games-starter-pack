@@ -150,7 +150,7 @@ button returns the user to a previous screen such as a web page or an app hub me
 A boolean that indicates if the game should be in debug mode or not. If true,
 all levels should be unlocked for testing purposes.
 
-[Home](../README.md)
+* [Home](../README.md)
     * [Working with GMI](working-with-gmi.md)
     * [API Reference](gmi.md)
     * [Settings](settings.md)

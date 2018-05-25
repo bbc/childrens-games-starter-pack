@@ -79,7 +79,7 @@ These values can also be changed outside the settings screen context with `gmi.s
 
 Global Settings are exceptions, see [global settings](gmi.md#global-game-settings).
 
-[Home](../README.md)
+* [Home](../README.md)
     * [Working with GMI](working-with-gmi.md)
     * [API Reference](gmi.md)
     * [Settings](settings.md)

@@ -39,7 +39,7 @@ To be considered GMI compliant your game must adhere to the following:
 * Must use gmi.shouldDisplayMuteButton property to determine exit button visibility
 
 
-[Home](../README.md)
+* [Home](../README.md)
     * [Working with GMI](working-with-gmi.md)
     * [API Reference](gmi.md)
     * [Settings](settings.md)
