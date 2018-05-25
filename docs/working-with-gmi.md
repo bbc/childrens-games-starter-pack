@@ -12,7 +12,7 @@ To be considered GMI compliant your game must adhere to the following:
 * Must call gmi.gameLoaded() when initial loading screen is no longer visible.
 * Must implement [centralised settings](settings.md)
 * Must embed the game in gmi.gameContainerId element
-* Must use gmi.shouldDisplayMuteButton property to determine exit button visibility
+* Must use gmi.shouldDisplayMuteButton property to determine mute button visibility
 
 ### Developing with GMI
 The included index.html uses a mock GMI that you can also use for your own 
