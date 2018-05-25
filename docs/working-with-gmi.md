@@ -1,6 +1,7 @@
 # GMI
 
-The GMI (game messaging interface) allows games to communicate with BBC platforms using a shared API.
+The GMI (game messaging interface) allows games to communicate with BBC platforms using a shared API. 
+All BBC games need to be GMI compliant to work correctly on our platforms.
 
 ### GMI Compliance
 To be considered GMI compliant your game must adhere to the following:
