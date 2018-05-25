@@ -1,10 +1,6 @@
-# GMI
+# GMI API Reference
 
-The GMI (game messaging interface) is a class that abstracts shared
-functionality from the web and mobile apps so that one code base can 
-communicate with both platforms with a common API.
-
-## Loading the GMI
+### Loading the GMI
 
 ````
 var gmi = window.getGMI(options);
@@ -14,24 +10,7 @@ var gmi = window.getGMI(options);
 are created then a warning will be written to the console which will fail game
 certification.
 
-## Demo
-We've included [demo GMI usage](../src/main.js) with this Starter Pack, you can
-view this code in action by opening the included index.html in your browser. 
-
-You can also see our hosted [GMI Test
-App](https://www.bbc.co.uk/cbeebies/embed/game/childrens-games-starter-pack).
-
-## Non-BBC platforms
-The included index.html uses a mock GMI that you can also use for your own local development.
-It's important to note that this mock should not be bundled with your game
-so in the event the game is not on a BBC platform or your local machine it should
-stop working.
-
-# GMI API Reference
-
-The GMI provides the following functions:
-
-##  Game Loaded
+###  Game Loaded
 
 BBC mobile apps will display their own native loading screen on initial boot up
 of any games, this will generally overlay your initial in-game loading screen.
@@ -46,13 +25,14 @@ gmi.gameLoaded();
 
 ## Game Exiting
 
-When exiting the game, the function
+When a user clicks the exit button, the function
 
 ````
 gmi.exit();
 ````
 
 should be used. This will return the user to the appropriate place.
+
 ## Debug messages
 
 When writing debug messages, the following should be used:
@@ -82,12 +62,12 @@ See here for more information on [sending stats](stats.md#stats).
 gmi.showPrompt(resumeGame)
 ````
 
-Inform the app that it should display its prompt/interstitial screen. Takes a resumeGame callback. Currently a stub implementation which always returns false.
+Inform the app that it should display its prompt/interstitial screen. Takes a resumeGame callback.
 
 
 ## Saving and Loading data
 
-Saving and loading data should use the gmi functions:
+Saving and loading data must use the gmi functions:
 
 ````
 gmi.setGameData(key, value);
@@ -96,10 +76,13 @@ gmi.getAllSettings().gameData;
 
 See here for more information on [data storage](data-storage.md#saving-data).
 
+## Global Game Settings
 
-## Global game settings
+GMI has the concept of Global Settings - these are settings that persist 
+across all BBC games i.e. disabling motion disables it for all games.
 
-Saving and loading global settings should use the gmi functions:
+Our Global Settings are: Audio, Subtitles and Motion.
+
 
 ````
 gmi.setAudio(true/false);
@@ -111,127 +94,15 @@ gmi.getAllSettings().subtitles;
 gmi.getAllSettings().motion;
 ````
 
-See here for more information on [data storage](data-storage.md#saving-data).
+## Centralised Settings Screens
 
-
-> GMI also exposes *setMuted()* and *getAllSettings().muted*. These are
-available for backwards compatibility and are simply the inverse of *setAudio()*
-and *getAllSettings().audio*. 
-
->For new code, refrain from using *setMuted()* or *getAllSettings.muted(). 
-Instead use the "audio" versions.
-
-
-## Built-In Settings Screen
-
-Requests that the "host" (i.e. app or web page) show its built-in settings
-screen and notifies the game when settings are changed or the screen is closed by
-calling the provided callbacks.
+BBC platforms provide centralised settings screens. 
 
 ````
 gmi.showSettings(onSettingChanged, onSettingsClosed)
 ````
 
-### Return Value
-
-* *true* if the host has shown the settings screen.
-* *false* if the host is unable to show the settings screen (in which case the
-  game must provide its own).
-
-> The *false* case is intended as a temporary measure to allow games to be
-developed for the new settings system before it is implemented in all hosts.
-If the function returns *false* the game must show its own settings screen.
-
-### onSettingChanged parameter
-
-A function provided by the game that is called immediately each time the player
-changes a setting.
-
-```
-function onSettingChanged(key, value) { ... }
-```
-
-* The *key* parameter corresponds to a key defined in the *settingsConfig* (see
-  below).
-* The *value* parameter is the new value of the setting. Currently this will be
-  either *true* or *false*.
-* Before this function is called, the new value will have been persisted
-    * as *gmi.getAllSettings().audio*, etc., for standard keys.
-    * as *gmi.getAllSettings().gameData[key]* for game-defined keys.
-
-### onSettingsClosed parameter
-
-A function provided by the game that is called when the settings screen is
-dismissed.
-
-```
-function onSettingsClosed() { ... }
-```
-
-### Settings Configuration
-
-Customization of the available settings is done via the initial *getGMI* call.
-
-    GmiModule.getGMI({
-        settingsConfig: mySettingsConfig
-    });
-
-*settingsConfig* should be a JavaScript object with the following form:
-
-    {
-        pages: [
-            a list of page definitions -- see below
-        ]
-    }
-
-Each page definition is an object with the following form:
-
-    {
-        title: <title string>,
-        settings: [
-            a list of setting definitions -- see below
-        ]
-    }
-
-Each setting definition has the following form:
-
-    {
-        key: <unique id string>,
-        type: "toggle",
-        title: <title string>,
-        description: <description string>,
-        defaultValue: true/false
-    }
-
-The only supported *type* for now is "toggle". More types may be added in
-future.
-
-The ordering of pages and settings in the lists defines the order they appear in
-the settings screen.
-
-Any game-defined keys will correspond to the *key* parameter in
-*gmi.setGameData(key, value)* and *gmi.getAllSettings().gameData[key]*.
-
-*defaultValue* is used to initialise values if they don't already exist. Note: 
-this only effects game-specific settings and not global settings.
-
-### Built-In Settings Screen & Global settings 
-
-The global settings keys are:
-
-* audio
-* motion
-* subtitles
-
-When the GMI implements the settings screen, it will persist the updated values
-for these keys. The game does not need to call *setAudio*, *setMotion* or
-*setSubtitles* in this case.
-
-NOTE: If you want to access a global settings key outside the GMI-handled Native settings screen, i.e. have a 
-sound on/off switch, you can still use *setAudio*.
-
-> Note that "audio" replaces "muted" in the new version of the GMI. The "muted"
-> API remains available for backwards compatibility only.
+See here for more information on [centralised settings](settings.md).
 
 ## Data fields
 
@@ -242,7 +113,7 @@ This exposes any custom settings you want to save in our CMS and expose via GMI
 i.e.
 
 ````
-gmi.embedVars.customSetting
+gmi.embedVars.language
 ````
 
 ### gmi.environment
