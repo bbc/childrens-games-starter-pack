@@ -31,12 +31,12 @@ ___
     * [Building your game](docs/build-pipeline.md#building-your-game)
     * [Building for apps](docs/build-pipeline.md#building-for-apps)
   * [GEL Guidelines, Toolkit, Accessibility and Icon Assets](docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets)
-  * [GMI](docs/gmi.md#gmi)
-    * [Loading the GMI](docs/gmi.md#loading-the-gmi)
-    * [GMI API Reference](docs/gmi.md#gmi-api-reference)
-    * [Demo](docs/gmi.md#demo)
-  * [Stats](docs/stats.md#stats)
-  * [Using Local Storage/Cookies](docs/data-storage.md#using-local-storagecookies)
+  * GMI
+    * [Working with GMI](docs/working-with-gmi.md)
+    * [API Reference](docs/gmi.md)
+    * [Settings](docs/settings.md)
+    * [Stats](docs/stats.md#stats)
+    * [Using Local Storage/Cookies](docs/data-storage.md#using-local-storagecookies)
   * [Brim](docs/brim.md#brim)
   * [Known Issues](docs/known-issues.md)
 

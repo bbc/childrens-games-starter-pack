@@ -1,6 +1,6 @@
 # Settings
 
-## Setup
+## Config
 
 A settings config object should be passed in to the `getGMI` function containing the various configurable options available to the player.
 
@@ -10,7 +10,7 @@ For example:
 const settingsConfig = {
     pages: [
         {
-            title: "Global Settings",
+            title: "Settings",
             settings: [
                 {
                     key: "audio",
@@ -22,7 +22,8 @@ const settingsConfig = {
                     key: "hard",
                     type: "toggle",
                     title: "Hard mode",
-                    description: "More baddies and less health"
+                    description: "More baddies and less health",
+                    defaultValue: true/false
                 },
             ]
         }˜
@@ -50,7 +51,7 @@ For example, changing the game audio could be handled in the following way:
 ```js
 function onSettingChanged(key, value) {
     if (key === "audio") {
-        gmi.setAudio(value);
+        game.audio(value);
     }
 }
 ```
@@ -69,3 +70,18 @@ function onSettingsClosed() {
     document.getElementsByClassName("settings-button")[0].focus();
 }
 ```
+
+## Persisting Settings
+
+Settings are automatically persisted as key/value pairs and can be accessed as part of gameData: `gmi.getAllSettings().gameData[key]`.
+
+These values can also be changed outside the settings screen context with `gmi.setGameData(key, value)`.
+
+Global Settings are exceptions, see [global settings](gmi.md#global-game-settings).
+
+* [Home](../README.md)
+    * [Working with GMI](working-with-gmi.md)
+    * [API Reference](gmi.md)
+    * [Settings](settings.md)
+    * [Stats](stats.md#stats)
+    * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)
