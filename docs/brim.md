@@ -8,4 +8,7 @@ game to full screen.
 
 ## BBC implementation
  
-The BBC now implements a platform-wide Brim solution, which lives on our CAGE environment. As a result, this starter pack no longer includes any code or examples relating to Brim. When your game is uploaded to the BBC environment Brim will automatically be applied on relevant devices.
+The BBC now implements a platform-wide Brim solution, which lives on our CAGE 
+environment. As a result, this starter pack no longer includes any code or 
+examples relating to Brim. When your game is uploaded to the BBC environment 
+Brim will automatically be applied on relevant devices.
