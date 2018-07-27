@@ -104,6 +104,25 @@ gmi.showSettings(onSettingChanged, onSettingsClosed)
 
 See here for more information on [centralised settings](settings.md).
 
+## Display Parental Gate
+
+Parental gate display can be triggered through GMI methods by calling "showParentalGate" method. 
+This method is expecting to receive two parameters:
+- first parameter is a function which is handling the success case by entering the correct code
+- second parameter is a function which is handling closing dialog case 
+
+````
+    gmi.showParentalGate(onSuccessHandled, onCloseHandler)
+
+    function onSuccessHandled() {
+      // On succeess handler
+    }
+
+    function onCloseHandler() {
+       // On close parental gate dialog handler
+    }
+````
+
 ## Data fields
 
 GMI exposes several read-only properties.
