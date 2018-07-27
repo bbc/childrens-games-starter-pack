@@ -104,35 +104,6 @@ gmi.showSettings(onSettingChanged, onSettingsClosed)
 
 See here for more information on [centralised settings](settings.md).
 
-## Display Parental Gate
-
-Parental gate display can be triggered through GMI methods by calling "showParentalGate" method. 
-This method is expecting to receive two parameters:
-- first parameter is a function which is handling the success case by entering the correct code
-- second parameter is a function which is handling closing dialog case 
-
-````
-    gmi.showParentalGate(onSuccessHandled, onCloseHandler)
-
-    function onSuccessHandled() {
-      // On succeess handler
-    }
-
-    function onCloseHandler() {
-       // On close parental gate dialog handler
-    }
-````
-
-## Show\Close loading screen
-
-Loading screen display can be triggered through GMI methods by calling "gmi.showLoadingScreen()" method. Also GMI provides a method for closing the loading screen which is "closeLoadingScreen()". In this way will be presented only one centralised native loading screen which can be triggered from game side or natively.
-
-````
-    gmi.showLoadingScreen()
-
-    gmi.closeLoadingScreen()
-````
-
 ## Data fields
 
 GMI exposes several read-only properties.
