@@ -64,11 +64,9 @@ define(['storage','websockets'], function(storage, ws) {
     var container = document.getElementById(gmi.gameContainerId);
     var wrapper = document.createElement("div");
     var inner = document.createElement("div");
-    var inner2 = document.createElement("div");
     wrapper.className = "wrapper";
     wrapper.tabIndex = -1;
     inner.className = "inner";
-    inner2.className = "inner2";
     appendTitle("Games Messaging Interface Examples");
     container.appendChild(wrapper);
     wrapper.appendChild(inner);
