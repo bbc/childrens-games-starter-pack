@@ -96,7 +96,7 @@
                 var GMI_GAME_STORAGE_KEY = GMI_LOCAL_STORAGE_KEY + "_" + gameId;
 
                 var globalSettings = {
-                    muted: false,
+                    audio: true,
                     subtitles: false,
                     motion: true
                 };
@@ -119,14 +119,14 @@
                 function loadLocalData() {
                     function getDefaultSettings() {
                         var defaults = {};
-                        defaults.muted = false;
+                        defaults.audio = true;
                         defaults.subtitles = false;
                         defaults.motion = true;
                         return defaults;
                     }
 
                     function ensureGlobalSettingsAreBools() {
-                        globalSettings.muted = !!globalSettings.muted;
+                        globalSettings.audio = !!globalSettings.audio;
                         globalSettings.subtitles = !!globalSettings.subtitles;
                         globalSettings.motion = !globalSettings.hasOwnProperty("motion") || globalSettings.motion;
                     }
@@ -151,7 +151,7 @@
 
                 GMI.prototype.getAllSettings = function () {
                     var settings = JSON.parse(JSON.stringify(globalSettings)); //Prevents reference assignment
-                    settings.audio = !settings.muted;
+                    settings.muted = !settings.audio;
                     if (areCookiesAllowed()) {
                         settings.gameData = gameSettings;
                         
@@ -171,13 +171,13 @@
                     }
                 };
 
-                GMI.prototype.setMuted = function (state) {
-                    globalSettings.muted = !!state;
+                GMI.prototype.setMuted = function(state) {
+                    globalSettings.audio = !state;
                     saveGlobalSettings();
                 };
 
-                GMI.prototype.setAudio = function (state) {
-                    globalSettings.muted = !state;
+                GMI.prototype.setAudio = function(state) {
+                    globalSettings.audio = !!state;
                     saveGlobalSettings();
                 };
 
