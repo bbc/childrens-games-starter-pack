@@ -64,9 +64,11 @@ define(['storage','websockets'], function(storage, ws) {
     var container = document.getElementById(gmi.gameContainerId);
     var wrapper = document.createElement("div");
     var inner = document.createElement("div");
+    var inner2 = document.createElement("div");
     wrapper.className = "wrapper";
     wrapper.tabIndex = -1;
     inner.className = "inner";
+    inner2.className = "inner2";
     appendTitle("Games Messaging Interface Examples");
     container.appendChild(wrapper);
     wrapper.appendChild(inner);
@@ -108,6 +110,13 @@ define(['storage','websockets'], function(storage, ws) {
     appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
     appendHorizontalRule();
 
+    // ---------- GMI Account Example----------
+
+    appendSubtitle("GMI Account Example");
+    var accountText = appendParagraph("");
+    appendSpacer();
+    appendBtn("Retrieve", function() {accountText.innerHTML = "Account: " + (JSON.stringify(gmi.account))});
+    appendHorizontalRule();
 
     // --------- GMI Set Audio Example ---------
 
