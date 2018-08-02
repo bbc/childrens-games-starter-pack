@@ -25,7 +25,7 @@
 <body>
     <div id="local-game-holder"></div>
 
-    <script src="http://static.bbc.co.uk/playpen/1.2.8/script/require/require.js"></script>
+    <script src="https://static.bbci.co.uk/frameworks/requirejs/lib.js"></script>
     <script>
 
         (function(){
@@ -43,6 +43,11 @@
                 var url = "";
                 var dir = "";
                 var env = "test";
+                var account = {};
+
+                Object.defineProperty(GMI.prototype, 'account', {
+                    get: function() { return account; }
+                });
 
                 Object.defineProperty(GMI.prototype, 'embedVars', {
                     get: function () {
@@ -96,7 +101,7 @@
                 var GMI_GAME_STORAGE_KEY = GMI_LOCAL_STORAGE_KEY + "_" + gameId;
 
                 var globalSettings = {
-                    muted: false,
+                    audio: true,
                     subtitles: false,
                     motion: true
                 };
@@ -119,14 +124,14 @@
                 function loadLocalData() {
                     function getDefaultSettings() {
                         var defaults = {};
-                        defaults.muted = false;
+                        defaults.audio = true;
                         defaults.subtitles = false;
                         defaults.motion = true;
                         return defaults;
                     }
 
                     function ensureGlobalSettingsAreBools() {
-                        globalSettings.muted = !!globalSettings.muted;
+                        globalSettings.audio = !!globalSettings.audio;
                         globalSettings.subtitles = !!globalSettings.subtitles;
                         globalSettings.motion = !globalSettings.hasOwnProperty("motion") || globalSettings.motion;
                     }
@@ -151,7 +156,7 @@
 
                 GMI.prototype.getAllSettings = function () {
                     var settings = JSON.parse(JSON.stringify(globalSettings)); //Prevents reference assignment
-                    settings.audio = !settings.muted;
+                    settings.muted = !settings.audio;
                     if (areCookiesAllowed()) {
                         settings.gameData = gameSettings;
                         
@@ -159,6 +164,11 @@
                     return settings;
                 };
 
+                GMI.prototype.account = function () {
+                    var account = {};
+
+                    return account;
+                };
 
                 GMI.prototype.setGameData = function (key, value) {
                     if (areCookiesAllowed()) {
@@ -171,13 +181,13 @@
                     }
                 };
 
-                GMI.prototype.setMuted = function (state) {
-                    globalSettings.muted = !!state;
+                GMI.prototype.setMuted = function(state) {
+                    globalSettings.audio = !state;
                     saveGlobalSettings();
                 };
 
-                GMI.prototype.setAudio = function (state) {
-                    globalSettings.muted = !state;
+                GMI.prototype.setAudio = function(state) {
+                    globalSettings.audio = !!state;
                     saveGlobalSettings();
                 };
 

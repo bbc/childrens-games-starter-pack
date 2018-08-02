@@ -108,6 +108,13 @@ define(['storage','websockets'], function(storage, ws) {
     appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
     appendHorizontalRule();
 
+    // ---------- GMI Account Example----------
+
+    appendSubtitle("GMI Account Example");
+    var accountText = appendParagraph("");
+    appendSpacer();
+    appendBtn("Retrieve", function() {accountText.innerHTML = "Account: " + (JSON.stringify(gmi.account))});
+    appendHorizontalRule();
 
     // --------- GMI Set Audio Example ---------
 
