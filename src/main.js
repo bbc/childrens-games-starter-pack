@@ -108,12 +108,50 @@ define(['storage','websockets'], function(storage, ws) {
     appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
     appendHorizontalRule();
 
-    // ---------- GMI Account Example----------
+    // ---------- GMI Account Operations ----------
+    
+    // All operations on the Account object are Promise-based, so we allow
+    // a short time to elapse before grabbing the response.
+    const makeAccountButton = (label, accountFunction, element) => {
+        appendBtn(label, function() {
+            let response;
 
-    appendSubtitle("GMI Account Example");
-    var accountText = appendParagraph("");
+            accountFunction().then((res) => {
+                response = res;
+            });
+
+            setTimeout(() => {
+                element.innerHTML = `${label}: ${response}`;
+            }, 125);
+        });
+    };
+
+    // ---------- GMI Account Status Example----------
+    appendSubtitle("GMI Account Status Example");
+    var statusResult = appendParagraph("");
+    makeAccountButton("Status", gmi.account.status, statusResult);
     appendSpacer();
-    appendBtn("Retrieve", function() {accountText.innerHTML = "Account: " + (JSON.stringify(gmi.account))});
+    appendHorizontalRule();
+
+    // ---------- GMI Account Sign-in Example----------
+    appendSubtitle("GMI Account Sign-in Example");
+    var signInResult = appendParagraph("");
+    makeAccountButton("Sign-in", gmi.account.signIn, signInResult);
+    appendSpacer();
+    appendHorizontalRule();
+        
+    // ---------- GMI Account Sign-out Example----------
+    appendSubtitle("GMI Account Sign-out Example");
+    var signOutResult = appendParagraph("");
+    makeAccountButton("Sign-out", gmi.account.signOut, signOutResult);
+    appendSpacer();
+    appendHorizontalRule();
+
+    // ---------- GMI Account Register Example----------
+    appendSubtitle("GMI Account Register Example");
+    var registerResult = appendParagraph("");
+    makeAccountButton("Register", gmi.account.register, registerResult);
+    appendSpacer();
     appendHorizontalRule();
 
     // --------- GMI Set Audio Example ---------
