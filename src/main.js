@@ -147,6 +147,11 @@ define(['storage','websockets'], function(storage, ws) {
     appendSpacer();
     appendHorizontalRule();
 
+    var policyCheckResult = appendParagraph("");
+    makeAccountButton("Policy check", gmi.account.policyCheck, policyCheckResult);
+    appendSpacer();
+    appendHorizontalRule();
+
     // --------- GMI Set Audio Example ---------
 
     appendSubtitle("GMI Audio Example");

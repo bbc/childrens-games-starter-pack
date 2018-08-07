@@ -30,17 +30,21 @@
 </script><script type="text/javascript">
 
     var account = (function() {
+        var self = this;
+
+        const checkStatus = () => {
+            return new Promise(resolve => {
+                const cookie = document.cookie.match(/^(.*;)?\s*ckns_id\s*=\s*[^;]+(.*)?$/);
+                if (cookie) {
+                    resolve(true);
+                } else {
+                    resolve(false);
+                }
+            });
+        };
+
         return {
-            status() {
-                return new Promise(resolve => {
-                    const cookie = document.cookie.match(/^(.*;)?\s*ckns_id\s*=\s*[^;]+(.*)?$/);
-                    if (cookie) {
-                        resolve(true);
-                    } else {
-                        resolve(false);
-                    }
-                });
-            },
+            status: checkStatus,
 
             signIn() {
                 return new Promise(resolve => {
@@ -59,6 +63,14 @@
             register() {
                 return new Promise(resolve => {
                   resolve(true);
+                });
+            },
+
+            policyCheck() {
+                return checkStatus().then(st => {
+                    return new Promise(resolve => {
+                        resolve(st);
+                    });
                 });
             },
         }})();
