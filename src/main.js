@@ -108,7 +108,8 @@ define(['storage','websockets'], function(storage, ws) {
     appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
     appendHorizontalRule();
 
-    // ---------- GMI Account Operations ----------
+    // ---------- GMI Account Examples ---------
+    appendSubtitle("GMI Account Examples");
     
     // All operations on the Account object are Promise-based, so we allow
     // a short time to elapse before grabbing the response.
@@ -126,29 +127,21 @@ define(['storage','websockets'], function(storage, ws) {
         });
     };
 
-    // ---------- GMI Account Status Example----------
-    appendSubtitle("GMI Account Status Example");
     var statusResult = appendParagraph("");
     makeAccountButton("Status", gmi.account.status, statusResult);
     appendSpacer();
     appendHorizontalRule();
 
-    // ---------- GMI Account Sign-in Example----------
-    appendSubtitle("GMI Account Sign-in Example");
     var signInResult = appendParagraph("");
     makeAccountButton("Sign-in", gmi.account.signIn, signInResult);
     appendSpacer();
     appendHorizontalRule();
         
-    // ---------- GMI Account Sign-out Example----------
-    appendSubtitle("GMI Account Sign-out Example");
     var signOutResult = appendParagraph("");
     makeAccountButton("Sign-out", gmi.account.signOut, signOutResult);
     appendSpacer();
     appendHorizontalRule();
 
-    // ---------- GMI Account Register Example----------
-    appendSubtitle("GMI Account Register Example");
     var registerResult = appendParagraph("");
     makeAccountButton("Register", gmi.account.register, registerResult);
     appendSpacer();
