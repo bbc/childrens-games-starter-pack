@@ -113,9 +113,14 @@ define(['storage','websockets'], function(storage, ws) {
     
     // All operations on the Account object are Promise-based, so we allow
     // a short time to elapse before grabbing the response.
-    const makeAccountButton = (label, accountFunction, element) => {
+    const makeAccountButton = (label, accountFunction, element, inputElementName) => {
         appendBtn(label, function() {
             let response;
+
+            if(inputElementName){
+                window.testAccount.input = document.getElementById(inputElementName).value;
+                console.log(window.testAccount.input);
+            }
 
             accountFunction()
                 .then((res) => {
@@ -137,7 +142,8 @@ define(['storage','websockets'], function(storage, ws) {
     appendHorizontalRule();
 
     var signInResult = appendParagraph("");
-    makeAccountButton("Sign-in", gmi.account.signIn, signInResult);
+    appendTextInput("display-name-input");
+    makeAccountButton("Sign-in", gmi.account.signIn, signInResult, "display-name-input");
     appendSpacer();
     appendHorizontalRule();
         
@@ -398,7 +404,7 @@ define(['storage','websockets'], function(storage, ws) {
     function inputOnBlur(event) {
         var inputEle = event.target;
         if (inputEle.value === '') {
-            inputEle.value = 'Enter a message here';
+            inputEle.value = '';
             inputEle.className = '';
         }
     }
@@ -407,7 +413,7 @@ define(['storage','websockets'], function(storage, ws) {
         var input = document.createElement("input");
         input.type = "text";
         input.id = elementID;
-        input.value = 'Enter a message here';
+        input.value = 'Enter input here';
         input.onclick = inputOnClick;
         input.onblur = inputOnBlur;
         inner.appendChild(input);
