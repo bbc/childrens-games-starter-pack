@@ -117,9 +117,13 @@ define(['storage','websockets'], function(storage, ws) {
         appendBtn(label, function() {
             let response;
 
-            accountFunction().then((res) => {
-                response = res;
-            });
+            accountFunction()
+                .then((res) => {
+                    response = res;
+                })
+                .catch((res) => {
+                    response = res;
+                });
 
             setTimeout(() => {
                 element.innerHTML = `${label}: ${response}`;

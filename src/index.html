@@ -68,8 +68,16 @@
 
             policyCheck() {
                 return checkStatus().then(st => {
-                    return new Promise(resolve => {
-                        resolve(st);
+                    return new Promise((resolve, reject) => {
+                        if(st) {
+                            if (document.cookie) {
+                                resolve(document.cookie);
+                            } else {
+                                reject("Policy not satisfied");
+                            }
+                        } else {
+                            reject("Not signed-in");
+                        }
                     });
                 });
             },
