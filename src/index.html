@@ -28,64 +28,75 @@
     </div>
     <script src="https://static.bbci.co.uk/frameworks/requirejs/lib.js" type="text/javascript">
 </script><script type="text/javascript">
-
-    window.testAccount = {
-        input: ""
-    };
-
-    var account = (function() {
-        var self = this;
-
-        const checkStatus = () => {
-            return new Promise(resolve => {
-                const cookie = document.cookie.match(/^(.*;)?\s*ckns_id\s*=\s*[^;]+(.*)?$/);
-                if (cookie) {
-                    resolve(true);
-                } else {
-                    resolve(false);
-                }
-            });
+        var StubData = {
+            moderatedDisplayName: "MODERATED DISPLAY NAME",
         };
 
-        return {
-            status: checkStatus,
+        var IDCTA = (function() {
+            return {
+                hasCookie: () => {
+                    if (document.cookie.match(/^(.*;)?\s*ckns_id\s*=\s*[^;]+(.*)?$/)) {
+                        return true;
+                    }
 
-            signIn() {
-                return new Promise(resolve => {
-                  document.cookie = "ckns_id={dn: '" + window.testAccount.input + "'}";
-                  resolve(true);
-                });
-            },
+                    return false;
+                },
 
-            signOut() {
-                return new Promise(resolve => {
-                  document.cookie = "ckns_id=";
-                  resolve(true);
-                });
-            },
+                policyCheck: () => {
+                    const hasModeratedDisplayName = document.cookie.indexOf(`ckns_id={"dn": "${StubData.moderatedDisplayName}"}`) !== -1;
+                    return hasModeratedDisplayName;
+                },
+            }
+        })();
 
-            register() {
-                return new Promise(resolve => {
-                  resolve(true);
-                });
-            },
+        var account = (function() {
+            let displayName;
 
-            policyCheck() {
-                return checkStatus().then(st => {
+            return {
+                status() {
+                    return new Promise(resolve => {
+                        resolve(IDCTA.hasCookie());
+                    });
+                },
+
+                signIn() {
+                    return new Promise(resolve => {
+                        document.cookie = `ckns_id={"dn": "${displayName}"}`;
+                        resolve(true);
+                    });
+                },
+
+                signOut() {
+                    return new Promise(resolve => {
+                        document.cookie = "ckns_id=";
+                        displayName = "";
+                        resolve(true);
+                    });
+                },
+
+                register() {
+                    return new Promise(resolve => {
+                        displayName = StubData.moderatedDisplayName;
+                        document.cookie = `ckns_id={"dn": "${displayName}"}`;
+                        resolve(true);
+                    });
+                },
+
+                policyCheck(policy) {
                     return new Promise((resolve, reject) => {
-                        if(st) {
-                            if (document.cookie.indexOf("dn: '" + window.testAccount.input + "'") !== -1 && !(document.cookie.indexOf("dn: ''") !== -1)) {
-                                resolve("Social game policy satisfied");
-                            } else {
-                                reject("Social game policy not satisfied");
-                            }
-                        } else {
+                        if(!IDCTA.hasCookie()) {
                             reject("Not signed-in");
+                        } else {
+                            if (!IDCTA.policyCheck()) {
+                                reject(`Policy '${policy}' not satisfied`);
+                            } else {
+                                resolve(`Policy '${policy}' satisfied`);
+                            }
                         }
                     });
-                });
-            },
-        }})();
+                },
+            }
+        })();
 
         (function(){
             var GMI = function (options) {

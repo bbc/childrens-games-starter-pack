@@ -113,14 +113,9 @@ define(['storage','websockets'], function(storage, ws) {
     
     // All operations on the Account object are Promise-based, so we allow
     // a short time to elapse before grabbing the response.
-    const makeAccountButton = (label, accountFunction, element, inputElementName) => {
+    const makeAccountButton = (label, accountFunction, element) => {
         appendBtn(label, function() {
             let response;
-
-            if(inputElementName){
-                window.testAccount.input = document.getElementById(inputElementName).value;
-                console.log(window.testAccount.input);
-            }
 
             accountFunction()
                 .then((res) => {
@@ -142,8 +137,7 @@ define(['storage','websockets'], function(storage, ws) {
     appendHorizontalRule();
 
     var signInResult = appendParagraph("");
-    appendTextInput("display-name-input");
-    makeAccountButton("Sign-in", gmi.account.signIn, signInResult, "display-name-input");
+    makeAccountButton("Sign-in", gmi.account.signIn, signInResult);
     appendSpacer();
     appendHorizontalRule();
         
