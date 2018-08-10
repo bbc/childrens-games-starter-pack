@@ -32,6 +32,14 @@
             moderatedDisplayName: "MODERATED DISPLAY NAME",
         };
 
+        var Redirect = (function() {
+            return {
+                redirect: (url) => {
+                    window.location.replace(url);
+                },
+            }
+        })();
+
         var IDCTA = (function() {
             return {
                 hasCookie: () => {
@@ -60,18 +68,11 @@
                 },
 
                 signIn() {
-                    return new Promise(resolve => {
-                        document.cookie = `ckns_id={"dn": "${displayName}"}`;
-                        resolve(true);
-                    });
+                    Redirect.redirect("https://account.bbc.com/signin?ptrt=https://bbc.co.uk");                    
                 },
 
                 signOut() {
-                    return new Promise(resolve => {
-                        document.cookie = "ckns_id=";
-                        displayName = "";
-                        resolve(true);
-                    });
+                    Redirect.redirect("https://account.bbc.com/signout?ptrt=https://bbc.co.uk");     
                 },
 
                 register() {
