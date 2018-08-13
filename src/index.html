@@ -68,17 +68,18 @@
                 },
 
                 signIn() {
-                    Redirect.redirect("https://account.bbc.com/signin?ptrt=https://bbc.co.uk");                    
+                    Redirect.redirect("https://account.bbc.com/signin?ptrt=https://bbc.co.uk");
                 },
 
                 signOut() {
-                    Redirect.redirect("https://account.bbc.com/signout?ptrt=https://bbc.co.uk");     
+                    Redirect.redirect("https://account.bbc.com/signout?ptrt=https://bbc.co.uk");
                 },
 
                 register() {
+                    Redirect.redirect("https://account.bbc.com/register?ptrt=https://bbc.co.uk");
+
                     return new Promise(resolve => {
-                        displayName = StubData.moderatedDisplayName;
-                        document.cookie = `ckns_id={"dn": "${displayName}"}`;
+                        document.cookie = `ckns_id={"dn": "${StubData.moderatedDisplayName}"}`;
                         resolve(true);
                     });
                 },
@@ -94,6 +95,13 @@
                                 resolve(`Policy '${policy}' satisfied`);
                             }
                         }
+                    });
+                },
+
+                policyUplift() {
+                    return new Promise(resolve => {
+                        document.cookie = `ckns_id={"dn": "${StubData.moderatedDisplayName}"}`;
+                        resolve(true);
                     });
                 },
             }

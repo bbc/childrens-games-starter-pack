@@ -113,16 +113,16 @@ define(['storage','websockets'], function(storage, ws) {
     
     // All operations on the Account object are Promise-based, so we allow
     // a short time to elapse before grabbing the response.
-    const makeAccountButton = (label, accountFunction, element) => {
+    const makeAccountButton = (label, accountFunction, element, ...args) => {
         appendBtn(label, function() {
             let response;
 
-            accountFunction()
+            accountFunction(args)
                 .then((res) => {
                     response = res;
                 })
-                .catch((res) => {
-                    response = res;
+                .catch((err) => {
+                    response = err;
                 });
 
             setTimeout(() => {
@@ -152,7 +152,12 @@ define(['storage','websockets'], function(storage, ws) {
     appendHorizontalRule();
 
     var policyCheckResult = appendParagraph("");
-    makeAccountButton("Policy check", gmi.account.policyCheck, policyCheckResult);
+    makeAccountButton("Policy check", gmi.account.policyCheck, policyCheckResult, "social-game");
+    appendSpacer();
+    appendHorizontalRule();
+
+    var policyUpliftResult = appendParagraph("");
+    makeAccountButton("Policy uplift", gmi.account.policyUplift, policyUpliftResult);
     appendSpacer();
     appendHorizontalRule();
 
