@@ -26,147 +26,23 @@
 <body>
     <div id="local-game-holder">
     </div>
-    <script src="https://static.bbci.co.uk/frameworks/requirejs/lib.js" type="text/javascript">
-</script><script type="text/javascript">
-        var StubData = (function() {
-            let cookie = "";
+    <script src="https://static.bbci.co.uk/frameworks/requirejs/lib.js" type="text/javascript"></script>
+    <script type="text/javascript">
 
-            return {
-                moderatedDisplayName: "MODERATED DISPLAY NAME",
-                isIdAvailable: () => {
-                    return true;
-                },
-                getCookie: () => {
-                    return cookie;
-                },
-                setCookie: (value) => {
-                    cookie = value;
-                },
-            }
-        })();
+        var account = {};
 
-        var Redirect = (function() {
-            return {
-                redirect: (url) => {
-                    window.location.replace(url);
-                },
-            }
-        })();
-
-        var idAvailability = (function() {
-            return {
-                isAvailable: () => {
-                    return StubData.isIdAvailable();
-                },
-            }
-        })();
-
-        var IDCTA = (function() {
-            return {
-                hasCookie: () => {
-                    if (StubData.getCookie().match(/^(.*;)?\s*ckns_id\s*=\s*[^;]+(.*)?$/)) {
-                        return true;
-                    }
-
-                    return false;
-                },
-
-                policyCheck: () => {
-                    const hasModeratedDisplayName = StubData.getCookie().indexOf(`ckns_id={"dn": "${StubData.moderatedDisplayName}"}`) !== -1;
-                    return hasModeratedDisplayName;
-                },
-
-                initiateTokenRefresh: () => {
-                    return true;
+        (function() {
+            requirejs.config({
+                paths: {
+                    "IdctaFactory": "idcta-factory",
+                    "IdctaClient": "idcta-client",
+                    "IdctaError": "idcta-error",
                 }
-            }
-        })();
+            });
 
-        var account = (function() {
-            return {
-                status() {
-                    return new Promise(resolve => {
-                        resolve(IDCTA.hasCookie());
-                    });
-                },
-
-                signIn() {
-                    return new Promise((resolve, reject) => {
-                        if (!idAvailability.isAvailable()) {
-                            return reject(false);
-                        }
-
-                        // Simulated effect of signing-in without a moderated display name.
-                        StubData.setCookie(`ckns_id={"dn": ""}`);
-                        Redirect.redirect("https://account.bbc.com/signin?ptrt=https://bbc.co.uk");
-
-                        resolve(true);
-                    });
-                },
-
-                signOut() {
-                    return new Promise((resolve, reject) => {
-                        if (!idAvailability.isAvailable()) {
-                            return reject(false);
-                        }
-
-                        // Simulated effect of signing-out.
-                        StubData.setCookie("");
-                        Redirect.redirect("https://account.bbc.com/signout?ptrt=https://bbc.co.uk");
-
-                        resolve(true);
-                    });
-                },
-
-                register() {
-                    return new Promise((resolve, reject) => {
-                        if (!idAvailability.isAvailable()) {
-                            return reject(false);
-                        }
-
-                        // Simulated effect of registering with a moderated display name.
-                        StubData.setCookie(`ckns_id={"dn": "${StubData.moderatedDisplayName}"}`);
-                        Redirect.redirect("https://account.bbc.com/register?ptrt=https://bbc.co.uk");
-
-                        resolve(true);
-                    });
-                },
-
-                policyCheck(policy) {
-                    return new Promise((resolve, reject) => {
-                        if (!idAvailability.isAvailable()) {
-                            return reject(false);
-                        }
-
-                        if(!IDCTA.hasCookie()) {
-                            reject("Not signed-in");
-                        } else {
-                            if (!IDCTA.policyCheck()) {
-                                reject(`Policy '${policy}' not satisfied`);
-                            } else {
-                                resolve(`Policy '${policy}' satisfied`);
-                            }
-                        }
-                    });
-                },
-
-                policyUplift() {
-                    return new Promise((resolve, reject) => {
-                        if (!idAvailability.isAvailable()) {
-                            return reject(false);
-                        }
-
-                        if(!IDCTA.hasCookie()) {
-                            reject("Not signed-in");
-                        } else {
-                            // Simulated effect of uplifting to include a moderated display name.
-                            StubData.setCookie(`ckns_id={"dn": "${StubData.moderatedDisplayName}"}`);
-                            Redirect.redirect("https://account.bbc.com/register?ptrt=https://bbc.co.uk");
-                            resolve(true);
-                        }
-                    });
-                },
-            }
+            require(["idcta-factory"], function(IdctaFactory) {
+                IdctaFactory.inject(document.head);
+            });
         })();
 
         (function(){
@@ -375,8 +251,8 @@
                     "Game": "main"
                 }
             });
-            require(["Game"], function() {});
 
+            require(["Game"], function() {});
         })();
     </script>
 </body>
