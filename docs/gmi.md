@@ -53,13 +53,6 @@ The sending of stats is now handled by GMI. A simple call can be used:
 gmi.sendStatsEvent(actionName, actionType, additionalLabels);
 ````
 
-The current screen name can also be changed which causes all further stat events to fire under this screen name. Setting the screen name will itself fire a view event stat. To unset the screen name use an empty string value for screenName
-
-````
-gmi.setStatsScreen(screenName, additionalLabels);
-````
-
-
 ## Display app prompt
 
 ````
