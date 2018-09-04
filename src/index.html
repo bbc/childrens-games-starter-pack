@@ -28,7 +28,7 @@
     </div>
     <script src="https://static.bbci.co.uk/frameworks/requirejs/lib.js" type="text/javascript"></script>
     <script type="text/javascript">
-        var accountConstructor;
+        var account;
 
         (function() {
             requirejs.config({
@@ -46,7 +46,6 @@
 
             require(["morph-props", "idcta-factory", "account"], function(Props, IdctaFactory, Account) {
                 IdctaFactory.inject(document.head);
-                accountConstructor = Account;
 
                 (function(){
                     var GMI = function (options) {
@@ -65,7 +64,9 @@
                         var env = "test";
 
                         Object.defineProperty(GMI.prototype, 'account', {
-                            get: function() { return accountConstructor(Props.idAvailabilityData.body) }
+                            // This implementation differs slightly to the "real" GMI because we need to be able to
+                            // toggle the ID system availability from the test page.
+                            get: function() { return Account(Props.get().idAvailabilityData.body); }
                         });
 
                         Object.defineProperty(GMI.prototype, 'embedVars', {

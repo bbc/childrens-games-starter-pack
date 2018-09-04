@@ -1,4 +1,4 @@
-define(['storage','websockets'], function(storage, ws) {
+define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
     "use strict";
     
     // --------- Settings ---------
@@ -133,51 +133,59 @@ define(['storage','websockets'], function(storage, ws) {
 
     function createIdSystemAvailabilityLabel() {
         var idSystemAvailabilityLabel = document.createElement("span");
-        idSystemAvailabilityLabel.innerHTML = gmi.getAllSettings().audio;
+        idSystemAvailabilityLabel.innerHTML = Props.get().idAvailabilityData.body.isAvailable;
         idSystemAvailabilityLabel.id = "id-system-availability-label";
         return idSystemAvailabilityLabel;
     }
 
-    var idSystemAvailability = {
-        isAvailable: false
-    };
-
     var idSystemAvailabilityParagraph = appendParagraph();
     appendSpan("ID system availability: ", idSystemAvailabilityParagraph);
     idSystemAvailabilityParagraph.appendChild(createIdSystemAvailabilityLabel());
-        
-    appendSpacer();
     appendBtn("Toggle ID system availability", function() {
+        var currentAvailability = Props.get().idAvailabilityData.body.isAvailable;
+
+        // This is required to simulate the passing of Morph props to the Account object.
+        Props.set({
+            idAvailabilityData: {
+                body: {
+                    isAvailable: !currentAvailability,
+                },
+            },
+        });
+
+        document.getElementById("id-system-availability-label").innerHTML = Props.get().idAvailabilityData.body.isAvailable;
     });
-    appendHorizontalRule();
-    
-    var statusResult = appendParagraph("");
-    makeAccountButton("Status", gmi.account.status, statusResult);
     appendSpacer();
     appendHorizontalRule();
 
+    var statusResult = appendParagraph("");
+    makeAccountButton("Status", () => { return gmi.account.status(); }, statusResult);
+    appendSpacer();
+    appendHorizontalRule();
+
+
     var signInResult = appendParagraph("");
-    makeAccountButton("Sign-in", gmi.account.signIn, signInResult);
+    makeAccountButton("Sign-in", () => { return gmi.account.signIn(); }, signInResult);
     appendSpacer();
     appendHorizontalRule();
         
     var signOutResult = appendParagraph("");
-    makeAccountButton("Sign-out", gmi.account.signOut, signOutResult);
+    makeAccountButton("Sign-out", () => { return gmi.account.signOut(); }, signOutResult);
     appendSpacer();
     appendHorizontalRule();
 
     var registerResult = appendParagraph("");
-    makeAccountButton("Register", gmi.account.register, registerResult);
+    makeAccountButton("Register", () => { return gmi.account.register(); }, registerResult);
     appendSpacer();
     appendHorizontalRule();
 
     var policyCheckResult = appendParagraph("");
-    makeAccountButton("Policy check", gmi.account.policyCheck, policyCheckResult, "social-game");
+    makeAccountButton("Policy check", () => { return gmi.account.policyCheck(); }, policyCheckResult, "social-game");
     appendSpacer();
     appendHorizontalRule();
 
     var policyUpliftResult = appendParagraph("");
-    makeAccountButton("Policy uplift", gmi.account.policyUplift, policyUpliftResult);
+    makeAccountButton("Policy uplift", () => { return gmi.account.policyUplift(); }, policyUpliftResult);
     appendSpacer();
     appendHorizontalRule();
 
