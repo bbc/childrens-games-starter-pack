@@ -131,6 +131,26 @@ define(['storage','websockets'], function(storage, ws) {
         });
     };
 
+    function createIdSystemAvailabilityLabel() {
+        var idSystemAvailabilityLabel = document.createElement("span");
+        idSystemAvailabilityLabel.innerHTML = gmi.getAllSettings().audio;
+        idSystemAvailabilityLabel.id = "id-system-availability-label";
+        return idSystemAvailabilityLabel;
+    }
+
+    var idSystemAvailability = {
+        isAvailable: false
+    };
+
+    var idSystemAvailabilityParagraph = appendParagraph();
+    appendSpan("ID system availability: ", idSystemAvailabilityParagraph);
+    idSystemAvailabilityParagraph.appendChild(createIdSystemAvailabilityLabel());
+        
+    appendSpacer();
+    appendBtn("Toggle ID system availability", function() {
+    });
+    appendHorizontalRule();
+    
     var statusResult = appendParagraph("");
     makeAccountButton("Status", gmi.account.status, statusResult);
     appendSpacer();
