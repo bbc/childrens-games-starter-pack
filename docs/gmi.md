@@ -144,8 +144,63 @@ potentially other full-screen-related functionality). Where applicable the exit
 button returns the user to a previous screen such as a web page or an app hub menu.
 
 ### gmi.isDebugMode
-A boolean that indicates if the game should be in debug mode or not. If true,
+a boolean that indicates if the game should be in debug mode or not. if true,
 all levels should be unlocked for testing purposes.
+
+## User accounts
+The GMI exposes an Account object which can be used to invoke user registration, sign-in/out, and related functionality.
+````
+gmi.account
+````
+
+All operations provided by the Account object return Promises that can either 1) 'Resolve', with some useful context; Or, 2) 'Reject' with an appropriate Error object.
+
+### Handling errors
+The following errors are used by Account operations that reject Promises: -
+
+````
+Error("The ID system is unavailable.");
+````
+
+This error signifies that the ID system is currently not available. The ID system is critical to operations provided by the Account object, therefore subsequent Account operations should be expected to reject until the system is back online.
+
+### Account status
+The status of the current user (whether they are signed-in or not signed-in) can be determined by invoking: -
+
+````
+gmi.account.status
+````
+
+If the user is signed-in, the Promise will resolve with the boolean value 'true'. If the user is not signed-in, it will resolve with the boolean value 'false'.
+
+Note: This is useful when deciding which sign-in options should be enabled; E.g., if the user is signed-in, then the 'Sign-out' option could be enabled and the 'Sign-in' option disabled.
+
+### Registration
+For users that haven't yet registered for an account it is necessary to re-direct them to the account registration page. This can be achieved by invoking: -
+
+````
+gmi.account.register
+````
+
+This will perform a full-page re-direct to a registration form. Once the user has completed registration they will be returned to the page from which they left to complete the registration form.
+
+### Sign-in
+When a user is ready to sign-in it is necessary to re-direct them to the sign-in page. This can be achieved by invoking: -
+
+````
+gmi.account.signIn
+````
+
+This will perform a full-page re-direct to a sign-in form. Once the user has completed sign-in they will be returned to the page from which they left to complete the sign-in form.
+
+### Sign-out
+When a user is ready to sign-out it is necessary to re-direct them to the sign-out page. This can be achieved by invoking: -
+
+````
+gmi.account.signOut
+````
+
+The user will be signed-out and a full-page re-direct performed. The user will be taken to a page advising them that they are no longer signed-in.
 
 * [Home](../README.md)
     * [Working with GMI](working-with-gmi.md)
