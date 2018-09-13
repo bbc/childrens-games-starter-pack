@@ -16,7 +16,7 @@ define([], function() {
 
     return {
         set: (newProps) => {
-            props = Object.assign({}, defaultProps, newProps);
+            props = Object.assign({}, props, newProps);
         },
 
         get: () => {
