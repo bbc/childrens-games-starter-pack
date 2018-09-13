@@ -1,4 +1,4 @@
-define(['storage','websockets'], function(storage, ws) {
+define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
     "use strict";
     
     // --------- Settings ---------
@@ -108,12 +108,74 @@ define(['storage','websockets'], function(storage, ws) {
     appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
     appendHorizontalRule();
 
-    // ---------- GMI Account Example----------
+    // ---------- GMI Account Examples ---------
+    appendSubtitle("GMI Account Examples");
+    
+    // All operations on the Account object are Promise-based, so we allow
+    // a short time to elapse before grabbing the response.
+    const makeAccountButton = (label, accountFunction, element, ...args) => {
+        appendBtn(label, function() {
+            let response;
 
-    appendSubtitle("GMI Account Example");
-    var accountText = appendParagraph("");
+            accountFunction(args)
+                .then((res) => {
+                    response = res;
+                })
+                .catch((err) => {
+                    response = err;
+                });
+
+            setTimeout(() => {
+                element.innerHTML = `${label}: ${response}`;
+            }, 125);
+        });
+    };
+
+    function createIdSystemAvailabilityLabel() {
+        var idSystemAvailabilityLabel = document.createElement("span");
+        idSystemAvailabilityLabel.innerHTML = Props.get().idAvailabilityData.body.isAvailable;
+        idSystemAvailabilityLabel.id = "id-system-availability-label";
+        return idSystemAvailabilityLabel;
+    }
+
+    var idSystemAvailabilityParagraph = appendParagraph();
+    appendSpan("ID system availability: ", idSystemAvailabilityParagraph);
+    idSystemAvailabilityParagraph.appendChild(createIdSystemAvailabilityLabel());
+    appendBtn("Toggle ID system availability", function() {
+        var currentAvailability = Props.get().idAvailabilityData.body.isAvailable;
+
+        // This is required to simulate the passing of Morph props to the Account object.
+        Props.set({
+            idAvailabilityData: {
+                body: {
+                    isAvailable: !currentAvailability,
+                },
+            },
+        });
+
+        document.getElementById("id-system-availability-label").innerHTML = Props.get().idAvailabilityData.body.isAvailable;
+    });
     appendSpacer();
-    appendBtn("Retrieve", function() {accountText.innerHTML = "Account: " + (JSON.stringify(gmi.account))});
+    appendHorizontalRule();
+
+    var statusResult = appendParagraph("");
+    makeAccountButton("Status", () => { return gmi.account.status(); }, statusResult);
+    appendSpacer();
+    appendHorizontalRule();
+
+    var registerResult = appendParagraph("");
+    makeAccountButton("Register", () => { return gmi.account.register(); }, registerResult);
+    appendSpacer();
+    appendHorizontalRule();
+
+    var signInResult = appendParagraph("");
+    makeAccountButton("Sign-in", () => { return gmi.account.signIn(); }, signInResult);
+    appendSpacer();
+    appendHorizontalRule();
+        
+    var signOutResult = appendParagraph("");
+    makeAccountButton("Sign-out", () => { return gmi.account.signOut(); }, signOutResult);
+    appendSpacer();
     appendHorizontalRule();
 
     // --------- GMI Set Audio Example ---------
@@ -358,7 +420,7 @@ define(['storage','websockets'], function(storage, ws) {
     function inputOnBlur(event) {
         var inputEle = event.target;
         if (inputEle.value === '') {
-            inputEle.value = 'Enter a message here';
+            inputEle.value = '';
             inputEle.className = '';
         }
     }
@@ -367,7 +429,7 @@ define(['storage','websockets'], function(storage, ws) {
         var input = document.createElement("input");
         input.type = "text";
         input.id = elementID;
-        input.value = 'Enter a message here';
+        input.value = 'Enter input here';
         input.onclick = inputOnClick;
         input.onblur = inputOnBlur;
         inner.appendChild(input);
