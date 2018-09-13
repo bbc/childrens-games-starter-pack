@@ -2,7 +2,7 @@ define([], function() {
     var props = defaultProps = {
         idAvailabilityData: {
             body: {
-                isAvailable: false,
+                isAvailable: true,
             },
         },
         idConfigData: { 
