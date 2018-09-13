@@ -3,7 +3,7 @@ define(["idcta-factory", "idcta-fallback", "id-availability-error", "browser-red
             FallbackIdcta,
             IdAvailabilityError,
             Redirect) {
-    return (idAvailability) => {
+    return idAvailability => {
         let IDCTA = FallbackIdcta;
 
         IdctaFactory.require().then(idcta => {
@@ -40,35 +40,6 @@ define(["idcta-factory", "idcta-fallback", "id-availability-error", "browser-red
                 }
                 Redirect.openUrlAtWindowTop(window, "https://account.bbc.com/register?ptrt=https://bbc.co.uk");
                 resolve();
-            }),
-
-            policyCheck: policy => new Promise((resolve, reject) => {
-                if (!idAvailability.isAvailable) {
-                    return reject();
-                }
-
-                if(!IDCTA.hasCookie()) {
-                    reject("Not signed-in");
-                } else {
-                    if (!IDCTA.policyCheck()) {
-                        reject(`Policy '${policy}' not satisfied`);
-                    } else {
-                        resolve(`Policy '${policy}' satisfied`);
-                    }
-                }
-            }),
-
-            policyUplift: () => new Promise((resolve, reject) => {
-                if (!idAvailability.isAvailable) {
-                    return reject();
-                }
-
-                if(!IDCTA.hasCookie()) {
-                    reject("Not signed-in");
-                } else {
-                    Redirect.openUrlAtWindowTop(window, "https://account.bbc.com/register?ptrt=https://bbc.co.uk");
-                    resolve();
-                }
             }),
         };
     };

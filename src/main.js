@@ -163,6 +163,10 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
     appendSpacer();
     appendHorizontalRule();
 
+    var registerResult = appendParagraph("");
+    makeAccountButton("Register", () => { return gmi.account.register(); }, registerResult);
+    appendSpacer();
+    appendHorizontalRule();
 
     var signInResult = appendParagraph("");
     makeAccountButton("Sign-in", () => { return gmi.account.signIn(); }, signInResult);
@@ -171,21 +175,6 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
         
     var signOutResult = appendParagraph("");
     makeAccountButton("Sign-out", () => { return gmi.account.signOut(); }, signOutResult);
-    appendSpacer();
-    appendHorizontalRule();
-
-    var registerResult = appendParagraph("");
-    makeAccountButton("Register", () => { return gmi.account.register(); }, registerResult);
-    appendSpacer();
-    appendHorizontalRule();
-
-    var policyCheckResult = appendParagraph("");
-    makeAccountButton("Policy check", () => { return gmi.account.policyCheck(); }, policyCheckResult, "social-game");
-    appendSpacer();
-    appendHorizontalRule();
-
-    var policyUpliftResult = appendParagraph("");
-    makeAccountButton("Policy uplift", () => { return gmi.account.policyUplift(); }, policyUpliftResult);
     appendSpacer();
     appendHorizontalRule();
 
