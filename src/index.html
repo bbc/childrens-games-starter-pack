@@ -62,7 +62,16 @@
                         var env = "test";
 
                         Object.defineProperty(GMI.prototype, 'account', {
-                            get: function() { return Account(Props.get().idAvailabilityData.body); }
+                            get: function() {
+                                const props = Props.get();
+                                const idAvailability = props.idAvailabilityData.body;
+                                const idConfig = props.idConfigData.body;
+                                const windowObject = {
+                                    cage: {
+                                        exitGameUrl: window.location,
+                                    },
+                                };
+                                return Account(idAvailability, idConfig, windowObject); }
                         });
 
                         Object.defineProperty(GMI.prototype, 'embedVars', {

@@ -3,7 +3,7 @@ define(["idcta-factory", "idcta-fallback", "id-availability-error", "browser-red
             FallbackIdcta,
             IdAvailabilityError,
             Redirect) {
-    return idAvailability => {
+    return (idAvailability, idConfig, windowObj) => {
         let IDCTA = FallbackIdcta;
 
         IdctaFactory.require().then(idcta => {
@@ -22,7 +22,7 @@ define(["idcta-factory", "idcta-fallback", "id-availability-error", "browser-red
                 if (!idAvailability.isAvailable) {
                     return reject(IdAvailabilityError.systemUnavailable);
                 }
-                Redirect.openUrlAtWindowTop(window, "https://account.bbc.com/signin?ptrt=https://bbc.co.uk");
+                Redirect.openUrlAtWindowTop(window, idConfig.signin_url + "?ptrt=" + windowObj.cage.exitGameUrl);
                 resolve();
             }),
 
@@ -30,7 +30,7 @@ define(["idcta-factory", "idcta-fallback", "id-availability-error", "browser-red
                 if (!idAvailability.isAvailable) {
                     return reject(IdAvailabilityError.systemUnavailable);
                 }
-                Redirect.openUrlAtWindowTop(window, "https://account.bbc.com/signout?ptrt=https://bbc.co.uk");
+                Redirect.openUrlAtWindowTop(window, idConfig.signout_url + "?ptrt=" + windowObj.cage.exitGameUrl);
                 resolve();
             }),
 
@@ -38,8 +38,37 @@ define(["idcta-factory", "idcta-fallback", "id-availability-error", "browser-red
                 if (!idAvailability.isAvailable) {
                     return reject(IdAvailabilityError.systemUnavailable);
                 }
-                Redirect.openUrlAtWindowTop(window, "https://account.bbc.com/register?ptrt=https://bbc.co.uk");
+                Redirect.openUrlAtWindowTop(window, idConfig.register_url + "?ptrt=" + windowObj.cage.exitGameUrl);
                 resolve();
+            }),
+
+            policyCheck: policy => new Promise((resolve, reject) => {
+                if (!idAvailability.isAvailable) {
+                    return reject();
+                }
+
+                if(!IDCTA.hasCookie()) {
+                    reject("Not signed-in");
+                } else {
+                    if (!IDCTA.policyCheck()) {
+                        reject(`Policy '${policy}' not satisfied`);
+                    } else {
+                        resolve(`Policy '${policy}' satisfied`);
+                    }
+                }
+            }),
+
+            policyUplift: () => new Promise((resolve, reject) => {
+                if (!idAvailability.isAvailable) {
+                    return reject();
+                }
+
+                if(!IDCTA.hasCookie()) {
+                    reject("Not signed-in");
+                } else {
+                    Redirect.openUrlAtWindowTop(window, "https://account.bbc.com/register?ptrt=https://bbc.co.uk");
+                    resolve();
+                }
             }),
         };
     };

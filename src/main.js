@@ -96,7 +96,6 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
     });
     appendHorizontalRule();
 
-
     // ---------- GMI Storage Example----------
 
     appendSubtitle("GMI Storage Example");
@@ -142,9 +141,8 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
     appendSpan("ID system availability: ", idSystemAvailabilityParagraph);
     idSystemAvailabilityParagraph.appendChild(createIdSystemAvailabilityLabel());
     appendBtn("Toggle ID system availability", function() {
-        var currentAvailability = Props.get().idAvailabilityData.body.isAvailable;
-
         // This is required to simulate the passing of Morph props to the Account object.
+        var currentAvailability = Props.get().idAvailabilityData.body.isAvailable;
         Props.set({
             idAvailabilityData: {
                 body: {
@@ -152,7 +150,6 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
                 },
             },
         });
-
         document.getElementById("id-system-availability-label").innerHTML = Props.get().idAvailabilityData.body.isAvailable;
     });
     appendSpacer();
