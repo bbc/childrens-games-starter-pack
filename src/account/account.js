@@ -1,4 +1,4 @@
-define(["idcta-factory", "idcta-fallback", "id-availability-error", "browser-redirect"], function(
+define(["account/idcta-factory", "account/idcta-fallback", "account/id-availability-error", "browser-redirect"], function(
             IdctaFactory,
             FallbackIdcta,
             IdAvailabilityError,

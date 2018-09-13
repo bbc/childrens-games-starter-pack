@@ -31,18 +31,18 @@
         (function() {
             requirejs.config({
                 paths: {
-                    "IdctaFactory": "idcta-factory",
-                    "IdctaClient": "idcta-client",
-                    "IdctaError": "idcta-error",
-                    "Account": "account",
-                    "IdctaFallback": "fallback-idcta",
-                    "IdAvailabilityError": "id-availability-error",
+                    "IdctaFactory": "account/idcta-factory",
+                    "IdctaClient": "account/idcta-client",
+                    "IdctaError": "account/idcta-error",
+                    "Account": "account/account",
+                    "IdctaFallback": "account/fallback-idcta",
+                    "IdAvailabilityError": "account/id-availability-error",
                     "Redirect": "browser-redirect",
                     "Props": "morph-props"
                 }
             });
 
-            require(["morph-props", "idcta-factory", "account"], function(Props, IdctaFactory, Account) {
+            require(["morph-props", "account/idcta-factory", "account/account"], function(Props, IdctaFactory, Account) {
                 IdctaFactory.inject(document.head);
 
                 (function(){
