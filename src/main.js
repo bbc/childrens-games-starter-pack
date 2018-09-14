@@ -96,7 +96,6 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
     });
     appendHorizontalRule();
 
-
     // ---------- GMI Storage Example----------
 
     appendSubtitle("GMI Storage Example");
@@ -130,33 +129,6 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
             }, 125);
         });
     };
-
-    function createIdSystemAvailabilityLabel() {
-        var idSystemAvailabilityLabel = document.createElement("span");
-        idSystemAvailabilityLabel.innerHTML = Props.get().idAvailabilityData.body.isAvailable;
-        idSystemAvailabilityLabel.id = "id-system-availability-label";
-        return idSystemAvailabilityLabel;
-    }
-
-    var idSystemAvailabilityParagraph = appendParagraph();
-    appendSpan("ID system availability: ", idSystemAvailabilityParagraph);
-    idSystemAvailabilityParagraph.appendChild(createIdSystemAvailabilityLabel());
-    appendBtn("Toggle ID system availability", function() {
-        var currentAvailability = Props.get().idAvailabilityData.body.isAvailable;
-
-        // This is required to simulate the passing of Morph props to the Account object.
-        Props.set({
-            idAvailabilityData: {
-                body: {
-                    isAvailable: !currentAvailability,
-                },
-            },
-        });
-
-        document.getElementById("id-system-availability-label").innerHTML = Props.get().idAvailabilityData.body.isAvailable;
-    });
-    appendSpacer();
-    appendHorizontalRule();
 
     var statusResult = appendParagraph("");
     makeAccountButton("Status", () => { return gmi.account.status(); }, statusResult);

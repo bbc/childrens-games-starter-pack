@@ -3,9 +3,5 @@ define([], function() {
         hasCookie() {
             return false;
         },
-
-        policyCheck() {
-            return false;
-        },
     };
 });

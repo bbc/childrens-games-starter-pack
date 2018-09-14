@@ -1,4 +1,4 @@
-define(["idcta-client"], function(IdctaClient) {
+define(["account/idcta-client"], function(IdctaClient) {
     const adaptResponse = response => {
         const extractFunctionFromScriptBlock = scriptBlock =>
             scriptBlock.replace(/<script[^>]*>/gi, "").replace(/<\/script>/gi, "");

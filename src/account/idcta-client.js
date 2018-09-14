@@ -1,4 +1,4 @@
-define(["idcta-error"], function(IdctaError) {
+define(["account/idcta-error"], function(IdctaError) {
     return {
         init: (timeout = 2000) => new Promise((resolve, reject) => {
             setTimeout(reject, timeout, IdctaError.timeOut);
