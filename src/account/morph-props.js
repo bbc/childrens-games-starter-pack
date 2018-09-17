@@ -1,17 +1,23 @@
 define([], function() {
-    var props = defaultProps = {
+    let props = {
+        data: {
+            body: {
+                id: "game-id"
+            }
+        },
         idAvailabilityData: {
             body: {
                 isAvailable: true,
             },
         },
-        idConfigData: { 
+        idConfigData: {
             body: {
                 register_url: "https://account.bbc.com/register",
                 signin_url: "https://account.bbc.com/signin",
                 signout_url: "https://account.bbc.com/signout",
             },
         },
+        exitGameUrl: "http://www.bbc.co.uk/cbbc"
     };
 
     return {

@@ -37,12 +37,12 @@
                     "Account": "account/account",
                     "IdctaFallback": "account/fallback-idcta",
                     "IdAvailabilityError": "account/id-availability-error",
-                    "Redirect": "browser-redirect",
-                    "Props": "morph-props"
+                    "Redirect": "account/browser-redirect",
+                    "Props": "account/morph-props"
                 }
             });
 
-            require(["morph-props", "account/idcta-factory", "account/account"], function(Props, IdctaFactory, Account) {
+            require(["account/morph-props", "account/idcta-factory", "account/account"], function(Props, IdctaFactory, Account) {
                 IdctaFactory.inject(document.head);
 
                 (function(){
@@ -71,7 +71,7 @@
                                         exitGameUrl: window.location,
                                     },
                                 };
-                                return Account(idAvailability, idConfig, windowObject); }
+                                return Account(props); }
                         });
 
                         Object.defineProperty(GMI.prototype, 'embedVars', {
@@ -184,7 +184,7 @@
                             settings.muted = !settings.audio;
                             if (areCookiesAllowed()) {
                                 settings.gameData = gameSettings;
-                                
+
                             }
                             return settings;
                         };
