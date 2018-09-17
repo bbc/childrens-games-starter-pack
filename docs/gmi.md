@@ -210,8 +210,6 @@ The authorise method is a Promise that passes a session token to the ID service 
 gmi.account.authorise(sessionId)
 ````
 
-The user will be signed-out and a full-page re-direct performed. The user will be taken to a page advising them that they are no longer signed-in.
-
 * [Home](../README.md)
     * [Working with GMI](working-with-gmi.md)
     * [API Reference](gmi.md)
