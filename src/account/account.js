@@ -80,10 +80,7 @@ define(["account/idcta-factory", "account/idcta-fallback", "account/id-availabil
                 }
                 const authorisationUrl = buildAuthorisationUrl(sessionId);
                 fetch(authorisationUrl).then(response => {
-                    if (response.status !== 200) {
-                        reject(IdAvailabilityError.authorisationSystemUnavailableError);
-                    }
-                    resolve();
+                    return response.status === 200 ? resolve() : reject(IdAvailabilityError.authorisationSystemUnavailableError);
                 })
                 .catch(() => {
                     reject(IdAvailabilityError.authorisationSystemUnavailableError);
