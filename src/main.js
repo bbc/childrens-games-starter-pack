@@ -1,6 +1,6 @@
-define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
+define(["storage", "websockets", "account/morph-props"], function(storage, ws, Props) {
     "use strict";
-    
+
     // --------- Settings ---------
     var settingsConfig = {
         pages: [
@@ -109,7 +109,7 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
 
     // ---------- GMI Account Examples ---------
     appendSubtitle("GMI Account Examples");
-    
+
     // All operations on the Account object are Promise-based, so we allow
     // a short time to elapse before grabbing the response.
     const makeAccountButton = (label, accountFunction, element, ...args) => {
@@ -144,9 +144,14 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
     makeAccountButton("Sign-in", () => { return gmi.account.signIn(); }, signInResult);
     appendSpacer();
     appendHorizontalRule();
-        
+
     var signOutResult = appendParagraph("");
     makeAccountButton("Sign-out", () => { return gmi.account.signOut(); }, signOutResult);
+    appendSpacer();
+    appendHorizontalRule();
+
+    var authoriseResult = appendParagraph("");
+    makeAccountButton("Authorise", () => { return gmi.account.authorise(); }, authoriseResult);
     appendSpacer();
     appendHorizontalRule();
 
@@ -157,7 +162,7 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
 
     appendSpan("Game audio value: ", audioParagraph);
     audioParagraph.appendChild(createAudioLabel());
-        
+
     appendSpacer();
     appendBtn("Toggle audio", function() {
         gmi.setAudio(!gmi.getAllSettings().audio);
@@ -214,7 +219,7 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
         disableBackgroundElements(true);
     }, "settings-button");
     var settingsParagraph = appendParagraph();
-  
+
     appendHorizontalRule();
 
     function onSettingsClosed() {
@@ -240,12 +245,12 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
             appendSpan("Subtitles setting toggled. ", settingsParagraph);
         }
         else if (key === "colourblind") {
-            // The chosen value will already have been persisted, and 
+            // The chosen value will already have been persisted, and
             // will be available as gmi.getAllSettings().gameData.colourblind
             appendSpan("Colour blind mode toggled.", settingsParagraph);
         }
         else if (key === "hard") {
-            // The chosen value will already have been persisted, and 
+            // The chosen value will already have been persisted, and
             // will be available as gmi.getAllSettings().gameData.hard
             appendSpan("Difficulty has been set to ", settingsParagraph);
             if (value) {
@@ -256,7 +261,7 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
             }
         }
         else if (key === "shadows") {
-            // The chosen value will already have been persisted, and 
+            // The chosen value will already have been persisted, and
             // will be available as gmi.getAllSettings().gameData.shadows
             appendSpan("Shadows toggled.", settingsParagraph);
         }
@@ -277,14 +282,14 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
     appendTextArea("ws-terminal");
     appendSpacer();
 
-    appendBtn("Connect", function() { 
+    appendBtn("Connect", function() {
         ws.connect(setConnectionStateOnButtons);
     },"ws-connect");
 
-    appendBtn("Disconnect", function() { 
+    appendBtn("Disconnect", function() {
         ws.disconnect();
     },"ws-disconnect");
-    
+
     appendBtn("Send String", function() {
         ws.sendString(document.getElementById("websocket-input").value);
     },"ws-sendString");
@@ -423,11 +428,11 @@ define(["storage", "websockets", "morph-props"], function(storage, ws, Props) {
         audioLabel.id = "audio-label";
         return audioLabel;
     }
-    
+
     function disableBackgroundElements(disable) {
-        var gameHolder = document.getElementById("game-holder");   
+        var gameHolder = document.getElementById("game-holder");
         var buttons = gameHolder.getElementsByTagName("button");
-        var links = gameHolder.getElementsByTagName("a"); 
+        var links = gameHolder.getElementsByTagName("a");
         var inputs = gameHolder.getElementsByTagName("input");
         // join the lists of elements and converts them to an array as getElementsByTagName returns an array-like object rather than an actual Array.
         var elements = [].concat.apply([], [[].slice.call(buttons), [].slice.call(links), [].slice.call(inputs)]);

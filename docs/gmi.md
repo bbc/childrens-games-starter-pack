@@ -75,7 +75,7 @@ See here for more information on [data storage](data-storage.md#saving-data).
 
 ## Global Game Settings
 
-GMI has the concept of Global Settings - these are settings that persist 
+GMI has the concept of Global Settings - these are settings that persist
 across all BBC games i.e. disabling motion disables it for all games.
 
 Our Global Settings are: Audio, Subtitles and Motion.
@@ -93,7 +93,7 @@ gmi.getAllSettings().motion;
 
 ## Centralised Settings Screens
 
-BBC platforms provide centralised settings screens. 
+BBC platforms provide centralised settings screens.
 
 ````
 gmi.showSettings(onSettingChanged, onSettingsClosed)
@@ -140,7 +140,7 @@ Note: Hardcoded to true for the mobile app and false to web platform.
 
 ### gmi.shouldShowExitButton
 The game should use this flag to decide whether to show the exit button (and
-potentially other full-screen-related functionality). Where applicable the exit 
+potentially other full-screen-related functionality). Where applicable the exit
 button returns the user to a previous screen such as a web page or an app hub menu.
 
 ### gmi.isDebugMode
@@ -201,6 +201,14 @@ gmi.account.signOut
 ````
 
 The user will be signed-out and a full-page re-direct performed. The user will be taken to a page advising them that they are no longer signed-in.
+
+### Authorise
+
+The authorise method is a Promise that passes a session token to the ID service to authorise. You can use `.then()` to provide code to execute after it has resolved.
+
+````
+gmi.account.authorise(sessionId)
+````
 
 * [Home](../README.md)
     * [Working with GMI](working-with-gmi.md)
