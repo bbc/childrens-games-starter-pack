@@ -204,10 +204,13 @@ The user will be signed-out and a full-page re-direct performed. The user will b
 
 ### Authorise
 
-The authorise method is a Promise that passes a session token to the ID service to authorise. You can use `.then()` to provide code to execute after it has resolved.
+The authorise method is a Promise that passes a session token to the ID service to authorise. You can use `.then()` to provide code to execute after it has resolved. You should also catch any errors by using `.catch()`.
 
 ````
 gmi.account.authorise(sessionId)
+    .catch(error => {
+        console.log(error);
+    });
 ````
 
 * [Home](../README.md)
