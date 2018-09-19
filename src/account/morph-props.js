@@ -11,11 +11,11 @@ define([], function() {
             },
         },
         idConfigData: {
-            body: {
+            body: JSON.stringify({
                 register_url: "https://account.bbc.com/register",
                 signin_url: "https://account.bbc.com/signin",
                 signout_url: "https://account.bbc.com/signout",
-            },
+            }),
         },
         exitGameUrl: "http://www.bbc.co.uk/cbbc"
     };

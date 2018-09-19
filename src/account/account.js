@@ -4,26 +4,30 @@ define(["account/idcta-factory", "account/idcta-fallback", "account/id-availabil
             IdAvailabilityError,
             Redirect) {
     return (props) => {
-        console.log(props);
-        const idAvailability = props.idAvailabilityData.body;
-        const idConfig = props.idConfigData.body;
-        const pageToReturnTo = props.exitGameUrl;
+        const idIsAvailable = props.idAvailabilityData.body.isAvailable;
+        const idConfig = props.idConfigData.body ? JSON.parse(props.idConfigData.body) : {};
+        const pageToReturnTo = "ptrt=" + encodeURIComponent(props.exitGameUrl);
 
         const buildAuthorisationUrl = (sessionId) => {
             const gameId = props.data.body.id;
             const reponseType = "id_token";
             const service = "AccountSignInService";
             const redirectUri = encodeURIComponent("https://www.bbc.co.uk"); //This will need to come from iSite eventually
-            return `https://account.bbc.com/oidc/v1/user/authorize?clientId=${gameId}&response_type=${reponseType}&service=${service}&redirect_uri=${redirectUri}&state=${sessionId}&ptrt=${pageToReturnTo}`;
+            return `https://account.bbc.com/oidc/v1/user/authorize?clientId=${gameId}&response_type=${reponseType}&service=${service}&redirect_uri=${redirectUri}&state=${sessionId}&${pageToReturnTo}`;
         };
 
         const redirect = (url) => {
             return new Promise((resolve, reject) => {
-                if (!idAvailability.isAvailable) {
-                    return reject(IdAvailabilityError.systemUnavailable);
+                if (!idIsAvailable) {
+                    console.log("id not available");
+                    reject(IdAvailabilityError.systemUnavailable);
                 }
-                Redirect.openUrlAtWindowTop(window, url + "?ptrt=" + pageToReturnTo);
-                resolve();
+                else {
+                    url += "?" + pageToReturnTo;
+                    console.log("redirect", url);
+                    Redirect.openUrlAtWindowTop(window, url);
+                    resolve();
+                }
             });
         };
 
@@ -46,7 +50,7 @@ define(["account/idcta-factory", "account/idcta-fallback", "account/id-availabil
             register: () => redirect(idConfig.register_url),
 
             policyCheck: policy => new Promise((resolve, reject) => {
-                if (!idAvailability.isAvailable) {
+                if (!idIsAvailable) {
                     return reject();
                 }
 
@@ -62,20 +66,20 @@ define(["account/idcta-factory", "account/idcta-fallback", "account/id-availabil
             }),
 
             policyUplift: () => new Promise((resolve, reject) => {
-                if (!idAvailability.isAvailable) {
+                if (!idIsAvailable) {
                     return reject();
                 }
 
                 if(!IDCTA.hasCookie()) {
                     reject(IdAvailabilityError.notSignedIn);
                 } else {
-                    Redirect.openUrlAtWindowTop(window, "https://account.bbc.com/register?ptrt=https://bbc.co.uk");
+                    Redirect.openUrlAtWindowTop(window, "https://account.bbc.com/register?" + pageToReturnTo);
                     resolve();
                 }
             }),
 
             authorise: sessionId => new Promise((resolve, reject) => {
-                if (!idAvailability.isAvailable) {
+                if (!idIsAvailable) {
                     return reject(IdAvailabilityError.systemUnavailable);
                 }
                 const authorisationUrl = buildAuthorisationUrl(sessionId);
