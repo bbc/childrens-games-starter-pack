@@ -12,19 +12,18 @@ define(["account/idcta-factory", "account/idcta-fallback", "account/id-availabil
             const gameId = props.data.body.id;
             const reponseType = "id_token";
             const service = "AccountSignInService";
+            const ptrt = pageToReturnTo ? "&" + pageToReturnTo : "";
             const redirectUri = encodeURIComponent("https://www.bbc.co.uk"); //This will need to come from iSite eventually
-            return `https://account.bbc.com/oidc/v1/user/authorize?clientId=${gameId}&response_type=${reponseType}&service=${service}&redirect_uri=${redirectUri}&state=${sessionId}&${pageToReturnTo}`;
+            return `https://account.bbc.com/oidc/v1/user/authorize?clientId=${gameId}&response_type=${reponseType}&service=${service}&redirect_uri=${redirectUri}&state=${sessionId}${ptrt}`;
         };
 
         const redirect = (url) => {
             return new Promise((resolve, reject) => {
                 if (!idIsAvailable) {
-                    console.log("id not available");
                     reject(IdAvailabilityError.systemUnavailable);
                 }
                 else {
                     url += "?" + pageToReturnTo;
-                    console.log("redirect", url);
                     Redirect.openUrlAtWindowTop(window, url);
                     resolve();
                 }
