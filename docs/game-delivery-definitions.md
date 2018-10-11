@@ -48,7 +48,6 @@ This phase will also require;
   * **CBBC** games **total** uncompressed game GDZ file size **MUST BE** as close to 45MB as possible with an absolute upper limit of 75MB
   * Test plan - a living document, describing what, how and when to test
   * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
-  * **CBBC** games (that are on the Pick N Mix roadmap) - Agency evidence of game smoke tested in [Pick N Mix Test App](https://github.com/bbc/childrens-picknmix-docs-and-demos/wiki/Introduction-to-Pick-n-Mix) (iOS, Android Crosswalk and Webview)
   * UI layout and full end-to-end screen flow implemented, as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework) across two breakpoints
   * Consideration has been given to **‘Eight Requirements for Inclusive Design’** as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
   * [GMI Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#settings-screen) implemented
@@ -77,7 +76,6 @@ This phase will also require;
   * Agency evidence of testing of a set of representative devices from each manufacturer (Apple, Android, Amazon 2015 5th Gen) and browsers
   * Test cases - documentation describing the exact steps of a test case or script
   * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
-  * **CBBC** games (that are on the Pick N Mix roadmap) - Agency evidence of game smoke tested in [Pick N Mix Test App](https://github.com/bbc/childrens-picknmix-docs-and-demos/wiki/Introduction-to-Pick-n-Mix) (iOS, Android Crosswalk and Webview)
   * Game-specific visual design is applied to GEL UI
   * **Fully** complies with [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
   * All **‘Eight Requirements for Inclusive Design’** have been implemented as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
@@ -113,7 +111,6 @@ This phase will also require;
   * Agency evidence of game fully tested against all supported devices and browsers 
   * Test cases - documentation describing the exact steps of a test case or script
   * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
-  * **CBBC** games (that are on the Pick N Mix roadmap) - Agency evidence of game smoke tested in [Pick N Mix Test App](https://github.com/bbc/childrens-picknmix-docs-and-demos/wiki/Introduction-to-Pick-n-Mix) (iOS, Android Crosswalk and Webview)
   * Game-specific visual design is applied to GEL UI
   * **Fully** complies with [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
   * All **‘Eight Requirements for Inclusive Design’** have been implemented as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
