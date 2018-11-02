@@ -68,7 +68,6 @@ This phase will also require;
   * Documented release notes including [P2/P3](#issue-prioritization) known issues identified, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
   * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, etc (compromises to be discussed and agreed with BBC)
   * **CBeebies** games (that are on the Playtime Island roadmap) - agency supplied draft assets for the Playtime Island menu - [as specified here](https://www.dropbox.com/sh/nyj1edxexpjhguw/AADOpJz3yWX6EJ_imwTqaX-Ua?dl=0)
-  * **CBBC** games (that are on the Pick N Mix roadmap) - agency supplied app specific graphics (e.g. splash screen, loading page) - [as described here](https://www.dropbox.com/sh/avc2sun9fxv7ac5/AADtRfA7ThngA0aNyraI_BaZa?dl=0)
   * **Initial** game download size **MUST BE** under 15MB
   * **CBeebies** games **total** uncompressed game GDZ file size **MUST BE** under 45MB
   * Agency evidence of testing of a set of representative devices from each manufacturer (Apple, Android, Amazon 2015 5th Gen) and browsers
@@ -102,7 +101,6 @@ This phase will also require;
   * Documented release notes including [P2/P3](#issue-prioritization) known issues identified and accepted by BBC, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
   * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, etc (compromises to be discussed and agreed with BBC)
   * **CBeebies** games (that are on the Playtime Island roadmap) - agency supplied draft assets for the Playtime Island menu  - [as specified here](https://www.dropbox.com/sh/nyj1edxexpjhguw/AADOpJz3yWX6EJ_imwTqaX-Ua?dl=0)
-  * **CBBC** games (that are on the Pick N Mix roadmap) - agency supplied app specific graphics (e.g. splash screen, loading page) - [as described here](https://www.dropbox.com/sh/avc2sun9fxv7ac5/AADtRfA7ThngA0aNyraI_BaZa?dl=0)
   * **Initial** game download size **MUST BE** under 15MB
   * **CBeebies** games **total** uncompressed game GDZ file size **MUST BE** under 45MB
   * Agency evidence of game fully tested against all supported devices and browsers 
