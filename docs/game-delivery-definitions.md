@@ -45,7 +45,6 @@ This phase will also require;
   * Documented release notes including [P1/P2/P3](#issue-prioritization) known issues identified, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
   * **Initial** game download size **MUST BE** under 15MB
   * **CBeebies** games **total** uncompressed game GDZ file size **MUST** BE under 45MB
-  * **CBBC** games **total** uncompressed game GDZ file size **MUST BE** as close to 45MB as possible with an absolute upper limit of 75MB
   * Test plan - a living document, describing what, how and when to test
   * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
   * UI layout and full end-to-end screen flow implemented, as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework) across two breakpoints
@@ -72,7 +71,6 @@ This phase will also require;
   * **CBBC** games (that are on the Pick N Mix roadmap) - agency supplied app specific graphics (e.g. splash screen, loading page) - [as described here](https://www.dropbox.com/sh/avc2sun9fxv7ac5/AADtRfA7ThngA0aNyraI_BaZa?dl=0)
   * **Initial** game download size **MUST BE** under 15MB
   * **CBeebies** games **total** uncompressed game GDZ file size **MUST BE** under 45MB
-  * **CBBC** games **total** uncompressed game GDZ file size **MUST BE** as close to 45MB as possible with an absolute upper limit of 75MB
   * Agency evidence of testing of a set of representative devices from each manufacturer (Apple, Android, Amazon 2015 5th Gen) and browsers
   * Test cases - documentation describing the exact steps of a test case or script
   * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
@@ -107,7 +105,6 @@ This phase will also require;
   * **CBBC** games (that are on the Pick N Mix roadmap) - agency supplied app specific graphics (e.g. splash screen, loading page) - [as described here](https://www.dropbox.com/sh/avc2sun9fxv7ac5/AADtRfA7ThngA0aNyraI_BaZa?dl=0)
   * **Initial** game download size **MUST BE** under 15MB
   * **CBeebies** games **total** uncompressed game GDZ file size **MUST BE** under 45MB
-  * **CBBC** games **total** uncompressed game GDZ file size **MUST BE** as close to 45MB as possible with an absolute upper limit of 75MB
   * Agency evidence of game fully tested against all supported devices and browsers 
   * Test cases - documentation describing the exact steps of a test case or script
   * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
