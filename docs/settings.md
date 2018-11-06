@@ -13,20 +13,37 @@ const settingsConfig = {
             title: "Settings",
             settings: [
                 {
-                    key: "audio",
-                    type: "toggle",
-                    title: "Audio",
-                    description: "Turn off/on sound and music"
+                    key: "muted",
+                    title: "Muted",
+                    description: "Muted description",
                 },
                 {
-                    key: "hard",
-                    type: "toggle",
-                    title: "Hard mode",
-                    description: "More baddies and less health",
-                    defaultValue: true/false
+                    key: "audio",
+                    title: "Audio",
+                    description: "Audio description",
                 },
-            ]
-        }˜
+                {
+                    key: "subtitles",
+                    title: "Subtitles",
+                    description: "Subtitles description",
+                },
+                {
+                    key: "motion",
+                    title: "Motion",
+                    description: "Motion description",
+                },
+            ],
+        },
+        {
+            title: "Custom Settings",
+            settings: [
+                {
+                    key: "custom",
+                    title: "Custom setting",
+                    description: "Custom description",
+                },
+            ],
+        },
     ]
 };
 
