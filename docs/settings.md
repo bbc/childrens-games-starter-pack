@@ -2,7 +2,7 @@
 
 ## Config
 
-A settings config object should be passed in to the `getGMI` function containing the various configurable options available to the player. Please note that General Settings (common across all BBC games) should be listed in a separate section to custom settings for the game.
+A settings config object should be passed in to the `getGMI` function containing the various configurable options available to the player. Please note that General Settings (common across all BBC games) should be listed first in a separate section to custom settings for the game. This should contain only audio, subtitles, and motion settings. The "title" values can be changed, and multiple "pages" objects can be listed in the array if required.
 
 For example:
 
