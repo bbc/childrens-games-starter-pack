@@ -2,7 +2,7 @@
 
 ## Config
 
-A settings config object should be passed in to the `getGMI` function containing the various configurable options available to the player.
+A settings config object should be passed in to the `getGMI` function containing the various configurable options available to the player. Please note that General Settings (common across all BBC games) should be listed in a separate section to custom settings for the game.
 
 For example:
 
@@ -10,7 +10,7 @@ For example:
 const settingsConfig = {
     pages: [
         {
-            title: "Settings",
+            title: "General Settings",
             settings: [
                 {
                     key: "audio",
@@ -30,7 +30,7 @@ const settingsConfig = {
             ],
         },
         {
-            title: "Custom Settings",
+            title: "Game Settings",
             settings: [
                 {
                     key: "easy",
