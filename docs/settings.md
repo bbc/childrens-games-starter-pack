@@ -9,6 +9,7 @@ For example:
 ```js
 const settingsConfig = {
     pages: [
+        // BBC General Settings
         {
             title: "General Settings",
             settings: [
@@ -29,6 +30,7 @@ const settingsConfig = {
                 },
             ],
         },
+        // Custom settings
         {
             title: "Game Settings",
             settings: [
