@@ -13,24 +13,19 @@ const settingsConfig = {
             title: "Settings",
             settings: [
                 {
-                    key: "muted",
-                    title: "Muted",
-                    description: "Muted description",
-                },
-                {
                     key: "audio",
                     title: "Audio",
-                    description: "Audio description",
+                    description: "Turn off/on all Sound FX and Music",
                 },
                 {
                     key: "subtitles",
                     title: "Subtitles",
-                    description: "Subtitles description",
+                    description: "Turn off/on Subtitles",
                 },
                 {
                     key: "motion",
-                    title: "Motion",
-                    description: "Motion description",
+                    title: "Motion and Animation",
+                    description: "Turn off/on all Animation and Motion Effects",
                 },
             ],
         },
@@ -38,9 +33,9 @@ const settingsConfig = {
             title: "Custom Settings",
             settings: [
                 {
-                    key: "custom",
-                    title: "Custom setting",
-                    description: "Custom description",
+                    key: "easy",
+                    title: "Easy Mode",
+                    description: "Turn easy mode on/off",
                 },
             ],
         },
