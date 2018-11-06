@@ -15,17 +15,17 @@ const settingsConfig = {
                 {
                     key: "audio",
                     title: "Audio",
-                    description: "Turn off/on all Sound FX and Music",
+                    description: "Turn off/on all sound effects and music",
                 },
                 {
                     key: "subtitles",
                     title: "Subtitles",
-                    description: "Turn off/on Subtitles",
+                    description: "Turn off/on subtitles",
                 },
                 {
                     key: "motion",
                     title: "Motion and Animation",
-                    description: "Turn off/on all Animation and Motion Effects",
+                    description: "Turn off/on background animation",
                 },
             ],
         },
