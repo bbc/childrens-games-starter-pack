@@ -48,6 +48,8 @@ const settingsConfig = {
 const gmi = window.getGMI({settingsConfig: settingsConfig});
 ```
 
+Another example settings config object may be found [here](https://github.com/bbc/childrens-games-starter-pack/blob/master/src/main.js#L5).
+
 Once the GMI object has been initialized with the settings config, the settings pop up is triggered via the following call:
 
 ```js
