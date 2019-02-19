@@ -29,7 +29,7 @@ Deliverables are dependent on agreed Pre-Production plan, but could include incl
   * Example artwork style
 
 This phase will also require;
-  * Agreed with the BBC which of the [‘Inclusive Gameplay’](https://www.dropbox.com/s/6ip54zx76n99e4z/BBC-Childrens-Game-Accessibility-v2.1.pdf?dl=0) features for agreed Accessibility Pillar(s) will be implemented and at which stage of delivery
+  * Agreed with the BBC which of the [‘Inclusive Gameplay’](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games) features for agreed Accessibility Pillar(s) will be implemented and at which stage of delivery
   * Production of a schedule for the full game development
 
 
@@ -76,7 +76,7 @@ This phase will also require;
   * Game-specific visual design is applied to GEL UI
   * **Fully** complies with [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
   * All **‘Eight Requirements for Inclusive Design’** have been implemented as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
-  * [‘Inclusive Gameplay’](https://www.dropbox.com/s/6ip54zx76n99e4z/BBC-Childrens-Game-Accessibility-v2.1.pdf?dl=0) features for agreed Accessibility Pillar(s) are in place
+  * [‘Inclusive Gameplay’](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games) features for agreed Accessibility Pillar(s) are in place
   * [GMI Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#settings-screen) implemented
   * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
   * [Mandatory BBC supplied standardised game stats](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) events implemented: *game_loaded, game_first_click, game_click, timer*
@@ -109,7 +109,7 @@ This phase will also require;
   * Game-specific visual design is applied to GEL UI
   * **Fully** complies with [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
   * All **‘Eight Requirements for Inclusive Design’** have been implemented as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
-  * [‘Inclusive Gameplay’](https://www.dropbox.com/s/6ip54zx76n99e4z/BBC-Childrens-Game-Accessibility-v2.1.pdf?dl=0) features for agreed Accessibility Pillar(s) are in place
+  * [‘Inclusive Gameplay’](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games) features for agreed Accessibility Pillar(s) are in place
   * [GMI Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#settings-screen) implemented
   * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
   * [Mandatory BBC supplied standardised game stats](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) events implemented: *game_loaded, game_first_click, game_click, timer*
