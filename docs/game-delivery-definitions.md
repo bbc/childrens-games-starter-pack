@@ -91,7 +91,7 @@ This phase will also require;
 
 ## Release Candidate
 
-> A working Release Candidate game delivery is fully complete and ready for Certification and Technical Testing. When this is delivered to the BBC, the game team have a week in which to do a final review before submitting it for Certification, which takes two to three weeks typically.
+> A working Release Candidate game delivery that is fully tested, content complete and ready for Certification and Technical Testing, meeting the below listed Definitions. This will be delivered to the BBC one week before Certification testing is scheduled to be begin. When this is delivered, the game team have a week (Team Acceptance week) in which to do a final review to ensure it meets both the technical and editorial standards before submitting it for Certification (which takes three weeks typically). This review may result in some minor changes being required. This week is NOT to be seen as an additional week for development.
 
 ### Release Candidate version of the Software for the Deliverables (including Source Code and Object Code)
 
