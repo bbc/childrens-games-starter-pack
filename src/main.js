@@ -81,19 +81,31 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
 
     window.gameSettings = { debugEnabled: true };
 
-    // ---------- GMI Stats Example----------
 
-    appendSubtitle("GMI Stats Example");
+
+    // ---------- GMI Stats Examples----------
+    appendSubtitle("GMI Stats Examples");
+
     var gmiStatsParagraph = appendParagraph();
 
     appendSpan("Open ", gmiStatsParagraph);
     appendLink("iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga", gmiStatsParagraph);
-    appendSpan(" or see network calls prefixed with 'sa.bbc.co.uk' and" + " click the button to fire a stat.", gmiStatsParagraph);
+    appendSpan(" to see network calls prefixed with 'sa.bbc.co.uk'");
+    appendParagraph("Stats screen denote the player changing location in the game.", gmiStatsParagraph);
+    appendParagraph(" Click the \"Log setStatsScreen\" button to fire setStatsScreen.");
+    appendParagraph(" Click the \"Log setStatsEvent\" button to fire setStatsEvent.");
     appendSpacer();
-    appendBtn("Log Action Event (Button Clicked)", function(event) {
+
+    appendBtn("Log setStatsScreen", function(event) {
+        gmi.setStatsScreen("cbeebies.games.nameofgame.title.page");
+    });
+
+    appendBtn("Log setStatsEvent (Button Clicked)", function(event) {
         numberOfStatsButtonClicks++;
         gmi.sendStatsEvent("button_click", event.target.innerHTML, {"num_btn_clicks": numberOfStatsButtonClicks});
     });
+
+
     appendHorizontalRule();
 
     // ---------- GMI Storage Example----------
