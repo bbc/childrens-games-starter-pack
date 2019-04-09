@@ -227,6 +227,10 @@
 
                         GMI.prototype.showSettings = function() { return false; };
 
+                        GMI.prototype.setStatsScreen = function (name) {
+                            console.log("setStatScreen fired for name: " + name );
+                        };
+
                         GMI.prototype.sendStatsEvent = function (name, type, params) {
                             console.log("Stat fired - type:" + type + ", name:" + name + ", params:" + JSON.stringify(params));
                         };
