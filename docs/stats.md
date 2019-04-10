@@ -10,23 +10,28 @@ should be called at prescribed moments according to the provided spec.
 This sets a global location context for any subsequent sendStatsEvent calls.
 
 ````
-gmi.setStatsScreen("countername");
+gmi.setStatsScreen("screenName");
 ````
 This method can accept optional custom values if specified as follows:
 
 ````
-gmi.setStatsScreen("countername", {"custom_var_1":value});
+gmi.setStatsScreen("screenName", {"custom_var_1":value});
 ````
 
-### Counternames
-Counternames will be provided as part of the provided spec and will be in the following format:
+### Screennames and Counternames
+The screenName passed to setStatsScreen will be used to generate a countername behind the scenes. 
+
+Counternames take the following format:
 
 ````
-keepalive.<cbbc.|cbeebies.>games.<game name>.page
+keepalive.<productName.>games.<game name>.<screenName>.page
 ````
+
+Using the ATI Tag Inspector you will be able to check that this is generated appropriately. 
+There may also be cases where we expect you to pass through the complete countername yourself as part of eventLabels below.
 
 ## sendStatsEvent
-Stats Events consist of actionNames and actionTypes with accompanying metadata:
+Stats Events consist of actionNames and actionTypes with accompanying eventLabels:
 
 ````
 gmi.sendStatsEvent("actionName", "actionType", eventLabels);
@@ -37,6 +42,14 @@ eventLabels is a JSON object where extra information is passed through according
 gmi.sendStatsEvent("sublevel", "start", {"metadata":"SBL=2~XPL=3~GSI=123456789~LAU=First","source":"Level ID"});
 ````
 
+### Possible eventLabels
+
+| eventLabel | Description | Example |
+|------------|----------------------------------|---------|
+| metadata   | Allows extra data to be provided | SBL=2~XPL=3~GSI=123456789~LAU=First |
+| bucket     | Game type bucket                 | Games-SuperTier-Multiplayer |
+| source     | Resource ID                      | Level One or Baseball Cap |
+| result     | Destination change               | Countername i.e. keepalive.games.gameName.newDestination.page |
 
 ## ATI Tag Inspector Chrome plug-in
 
@@ -58,5 +71,4 @@ Open the accompanying index.html to see it in action.
     * [Working with GMI](working-with-gmi.md)
     * [API Reference](gmi.md)
     * [Settings](settings.md)
-    * [Stats](stats.md#stats)
     * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)
