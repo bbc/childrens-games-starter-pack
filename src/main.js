@@ -92,8 +92,8 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
     appendLink("iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga", gmiStatsParagraph);
     appendSpan(" to see network calls prefixed with 'sa.bbc.co.uk'");
     appendParagraph("Stats screen denote the player changing location in the game.", gmiStatsParagraph);
-    appendParagraph(" Click the \"Log setStatsScreen\" button to fire setStatsScreen.");
-    appendParagraph(" Click the \"Log setStatsEvent\" button to fire setStatsEvent.");
+    appendParagraph(" Click the \"Log setStatsScreen\" button to fire setStatsScreen. (Open console to view output)");
+    appendParagraph(" Click the \"Log setStatsEvent\" button to fire setStatsEvent. (Open console to view output)");
     appendSpacer();
 
     appendBtn("Log setStatsScreen(\"gamename\")", function(event) {
