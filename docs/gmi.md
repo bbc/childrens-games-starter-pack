@@ -47,11 +47,14 @@ e.g. console.log.
 
 ## Stats
 
-The sending of stats is now handled by GMI. A simple call can be used:
+The sending of stats is handled by GMI. 2 calls can are needed:
 
 ````
-gmi.sendStatsEvent(actionName, actionType, additionalLabels);
+gmi.setStatsScreen("screenName", {"custom_var_1":value});
+
+gmi.sendStatsEvent("actionName", "actionType", eventLabels);
 ````
+see the [stats documentation](stats.md) for more information.
 
 ## Display app prompt
 
@@ -126,6 +129,12 @@ The URL of your main game file as entered into the GamesGrid CMS.
 ### gmi.gameDir
 The URL of the directory containing your main game file. This is convenient for
 converting relative asset paths into absolute ones.
+
+### gmi.sendStatsEvent
+See [sendStats docs](stats.md##sendStatsEvent)
+
+### gmi.setStatsScreen
+See [setStatsScreen docs](stats.md##setStatsScreen)
 
 ### gmi.shouldDisplayMuteButton
 A boolean that indicates whether or not the mute button should be displayed.

@@ -96,8 +96,8 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
     appendParagraph(" Click the \"Log setStatsEvent\" button to fire setStatsEvent.");
     appendSpacer();
 
-    appendBtn("Log setStatsScreen", function(event) {
-        gmi.setStatsScreen("cbeebies.games.nameofgame.title.page");
+    appendBtn("Log setStatsScreen(\"gamename\")", function(event) {
+        gmi.setStatsScreen("nameofgame");
     });
 
     appendBtn("Log setStatsEvent (Button Clicked)", function(event) {
