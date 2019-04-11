@@ -47,7 +47,7 @@ e.g. console.log.
 
 ## Stats
 
-The sending of stats is handled by GMI. 2 calls can are needed:
+The sending of stats is handled by the GMI. 2 calls are required:
 
 ````
 gmi.setStatsScreen("screenName", {"custom_var_1":value});
@@ -131,10 +131,10 @@ The URL of the directory containing your main game file. This is convenient for
 converting relative asset paths into absolute ones.
 
 ### gmi.sendStatsEvent
-See [sendStats docs](stats.md##sendStatsEvent)
+See [sendStats docs](stats.md#sendStatsEvent)
 
 ### gmi.setStatsScreen
-See [setStatsScreen docs](stats.md##setStatsScreen)
+See [setStatsScreen docs](stats.md#setStatsScreen)
 
 ### gmi.shouldDisplayMuteButton
 A boolean that indicates whether or not the mute button should be displayed.
