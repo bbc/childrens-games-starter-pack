@@ -28,6 +28,13 @@
     font-weight:bold;
 }
 
+
+.wrapper h3 {
+    margin:0.5rem 0 0 0;
+    font-size:20px;
+    font-weight:bold;
+}
+
 .wrapper p { padding: 0 0 0.5rem; }
 .wrapper a { color:#404040; }
 
@@ -87,7 +94,7 @@
     text-transform:capitalize;
 }
 
-#debug-input, #websocket-input {
+#debug-input, #websocket-input, #stats-input {
     width: 300px;
     margin-bottom:1.1rem;
     padding:0.5rem;
@@ -109,4 +116,8 @@
     color:#848484;
     font-weight:normal;
     overflow-y: scroll;
+}
+
+em {
+    font-style: italic;
 }

@@ -81,28 +81,43 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
 
     window.gameSettings = { debugEnabled: true };
 
-
-
     // ---------- GMI Stats Examples----------
     appendSubtitle("GMI Stats Examples");
+    appendParagraph("Stats are handled by the GMI using a combination of setStatsScreen for screen/location changes and sendStatsEvent for user actions.")
 
     var gmiStatsParagraph = appendParagraph();
 
-    appendSpan("Open ", gmiStatsParagraph);
+    appendSpan("Open the ", gmiStatsParagraph);
     appendLink("iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga", gmiStatsParagraph);
-    appendSpan(" to see network calls prefixed with 'sa.bbc.co.uk'");
-    appendParagraph("Stats screen denote the player changing location in the game.", gmiStatsParagraph);
-    appendParagraph(" Click the \"Log setStatsScreen\" button to fire setStatsScreen. (Open console to view output)");
-    appendParagraph(" Click the \"Log setStatsEvent\" button to fire setStatsEvent. (Open console to view output)");
-    appendSpacer();
+    appendSpan(" to see network calls prefixed with 'sa.bbc.co.uk'", gmiStatsParagraph);
 
-    appendBtn("Log setStatsScreen(\"gamename\")", function(event) {
-        gmi.setStatsScreen("nameofgame");
+
+    // setStatsScreen
+    appendH3("setStatsScreen");
+    appendParagraph("The stats screen denotes the player changing location in the game.", gmiStatsParagraph);
+    appendParagraph(" Click the \"Log setStatsScreen\" button to fire setStatsScreen using the below input for <em>screenName</em> (local builds will log to the browser console)");
+
+    appendTextInput("stats-input");
+    appendSpacer();
+    const setStatsScreenInput = document.getElementById("stats-input");
+
+    setStatsScreenInput.value = "gamename";
+
+    appendBtn("Log setStatsScreen", function(event) {
+        gmi.setStatsScreen(setStatsScreenInput.value);
     });
+
+    appendH3("sendStatsEvent");
+
+    appendParagraph(" Click the \"Log sendStatsEvent\" button to fire sendStatsEvent and send the following data. (local builds will log to the browser console)");
+
+    appendParagraph("<pre>name: \"button_click\", params: {\"metadata\":numberOfStatsButtonClicks}</pre>")
 
     appendBtn("Log setStatsEvent (Button Clicked)", function(event) {
         numberOfStatsButtonClicks++;
-        gmi.sendStatsEvent("button_click", event.target.innerHTML, {"num_btn_clicks": numberOfStatsButtonClicks});
+
+        //new
+        gmi.sendStatsEvent("button_click", event.target.innerHTML, {"metadata":numberOfStatsButtonClicks});
     });
 
 
@@ -356,6 +371,12 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
 
     function appendSubtitle(titleStr) {
         var title = document.createElement("h2");
+        title.innerHTML = titleStr;
+        inner.appendChild(title);
+    }
+
+    function appendH3(titleStr) {
+        var title = document.createElement("h3");
         title.innerHTML = titleStr;
         inner.appendChild(title);
     }
