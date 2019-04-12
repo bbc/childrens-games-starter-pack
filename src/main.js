@@ -107,7 +107,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
     // setstatsEvent
     appendH3("sendStatsEvent");
 
-    appendParagraph(" Click the \"Log sendStatsEvent\" button to fire sendStatsEvent with name set to" +
+    appendParagraph(" Click the \"Log sendStatsEvent\" button to fire sendStatsEvent with name set to " +
         "<em>action_name</em>, type set to <em>action_type</em> and params set to the json below. (local builds will log to the browser console)");
 
     appendTextArea("stats-params", "{\"metadata\":\"SBL=2~XPL=3~GSI=123456789~LAU=First\",\"source\":\"Level ID\"}");
