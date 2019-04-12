@@ -55,7 +55,6 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
 
     // Create a gmi object using getGMI.
     var gmi = window.getGMI({settingsConfig: settingsConfig});
-    var numberOfStatsButtonClicks = 0;
 
     addStylesheet();
 
@@ -88,14 +87,12 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
     var gmiStatsParagraph = appendParagraph();
 
     appendSpan("Open the ", gmiStatsParagraph);
-    appendLink("iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga", gmiStatsParagraph);
-    appendSpan(" to see network calls prefixed with 'sa.bbc.co.uk'", gmiStatsParagraph);
-
+    appendLink("AT Internet Tag Inspector Chrome Extension", "https://chrome.google.com/webstore/detail/at-internet-tag-inspector/epdfbeoiphkaeapcohmilhmpdeilgnok?hl=en", gmiStatsParagraph);
 
     // setStatsScreen
     appendH3("setStatsScreen");
     appendParagraph("The stats screen denotes the player changing location in the game.", gmiStatsParagraph);
-    appendParagraph(" Click the \"Log setStatsScreen\" button to fire setStatsScreen using the below input for <em>screenName</em> (local builds will log to the browser console)");
+    appendParagraph(" Click the \"Log sendStatsScreen\" button to fire setStatsScreen using the below input for <em>screenName</em> (local builds will log to the browser console)");
 
     appendTextInput("stats-input");
     appendSpacer();
@@ -107,17 +104,19 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
         gmi.setStatsScreen(setStatsScreenInput.value);
     });
 
+    // setstatsEvent
     appendH3("sendStatsEvent");
 
-    appendParagraph(" Click the \"Log sendStatsEvent\" button to fire sendStatsEvent and send the following data. (local builds will log to the browser console)");
+    appendParagraph(" Click the \"Log sendStatsEvent\" button to fire sendStatsEvent with name set to" +
+        "<em>action_name</em>, type set to <em>action_type</em> and params set to the json below. (local builds will log to the browser console)");
 
-    appendParagraph("<pre>name: \"button_click\", params: {\"metadata\":numberOfStatsButtonClicks}</pre>")
+    appendTextArea("stats-params", "{\"metadata\":\"SBL=2~XPL=3~GSI=123456789~LAU=First\",\"source\":\"Level ID\"}");
+    appendSpacer();
+    appendBtn("Log sendStatsEvent", function(event) {
 
-    appendBtn("Log setStatsEvent (Button Clicked)", function(event) {
-        numberOfStatsButtonClicks++;
+        var params = JSON.parse(document.getElementById("stats-params").value);
 
-        //new
-        gmi.sendStatsEvent("button_click", event.target.innerHTML, {"metadata":numberOfStatsButtonClicks});
+        gmi.sendStatsEvent("action_name", "action_type", params);
     });
 
 
@@ -306,7 +305,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
     appendTextInput("websocket-input");
     appendSpacer();
 
-    appendTextArea("ws-terminal");
+    appendTextArea("ws-terminal", "Websocket updates will appear here...");
     appendSpacer();
 
     appendBtn("Connect", function() {
@@ -445,12 +444,12 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
         inner.appendChild(input);
     }
 
-    function appendTextArea(elementID) {
+    function appendTextArea(elementID, value) {
         var textarea = document.createElement("textarea");
         textarea.rows = 8;
         textarea.cols = 40;
         textarea.id = elementID;
-        textarea.value = "Websocket updates will appear here..."
+        textarea.value = value;
         inner.appendChild(textarea);
         return textarea;
     }
