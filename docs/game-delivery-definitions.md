@@ -51,7 +51,7 @@ This phase will also require;
   * Consideration has been given to **‘Eight Requirements for Inclusive Design’** as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
   * [GMI Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#settings-screen) implemented
   * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
-  * [Mandatory BBC supplied standardised game stats](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) events implemented: *game_loaded, game_first_click, game_click, timer*
+  * [Mandatory BBC supplied standardised game stats](https://www.dropbox.com/s/109h149g3fahami/Alpha-Tier1-Mandatory-Stats.xlsx?dl=0) events implemented (documentation can be found in the [Starter Pack](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md))
   * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
   * Agreed User Testing and Stakeholder feedback from Pre-production phase addressed
 
@@ -79,7 +79,7 @@ This phase will also require;
   * [‘Inclusive Gameplay’](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games) features for agreed Accessibility Pillar(s) are in place
   * [GMI Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#settings-screen) implemented
   * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
-  * [Mandatory BBC supplied standardised game stats](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) events implemented: *game_loaded, game_first_click, game_click, timer*
+  * [Mandatory BBC supplied standardised game stats](https://www.dropbox.com/s/109h149g3fahami/Alpha-Tier1-Mandatory-Stats.xlsx?dl=0) events implemented (documentation can be found in the [Starter Pack](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md))
   * [BBC supplied game-specific statistics](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) from Alpha review integrated
   * Localisation functionality integrated and tested (if required)
   * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
@@ -112,7 +112,7 @@ This phase will also require;
   * [‘Inclusive Gameplay’](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games) features for agreed Accessibility Pillar(s) are in place
   * [GMI Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#settings-screen) implemented
   * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
-  * [Mandatory BBC supplied standardised game stats](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) events implemented: *game_loaded, game_first_click, game_click, timer*
+  * [Mandatory BBC supplied standardised game stats](https://www.dropbox.com/s/109h149g3fahami/Alpha-Tier1-Mandatory-Stats.xlsx?dl=0) events implemented (documentation can be found in the [Starter Pack](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md))
   * [BBC supplied game-specific statistics](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) from Beta review integrated
   * Localisation functionality integrated and tested (if required)
   * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
