@@ -1,6 +1,6 @@
 # Game Delivery Definitions
 
-Updated - 18/04/2018
+Updated - 01/05/2018
 
 [Tech reviews](tech-review.md) take place at Alpha, Beta and Release Candidate
 stages. Feedback should be acted upon for the next delivery as all checks
