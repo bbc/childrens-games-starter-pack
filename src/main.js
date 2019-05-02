@@ -1,4 +1,4 @@
-define(["storage", "websockets", "account/morph-props"], function(storage, ws, Props) {
+define(["storage", "websockets", "account/morph-props"], function(storage, ws, props) {
     "use strict";
 
     // --------- Settings ---------
@@ -94,11 +94,8 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
     appendParagraph("The stats screen denotes the player changing location in the game.", gmiStatsParagraph);
     appendParagraph(" Click the \"Log sendStatsScreen\" button to fire setStatsScreen using the below input for <em>screenName</em> (local builds will log to the browser console)");
 
-    appendTextInput("stats-input");
+    const setStatsScreenInput = appendTextInput("stats-input", "gamename");
     appendSpacer();
-    const setStatsScreenInput = document.getElementById("stats-input");
-
-    setStatsScreenInput.value = "gamename";
 
     appendBtn("Log setStatsScreen", function(event) {
         gmi.setStatsScreen(setStatsScreenInput.value);
@@ -118,7 +115,6 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
 
         gmi.sendStatsEvent("action_name", "action_type", params);
     });
-
 
     appendHorizontalRule();
 
@@ -177,7 +173,16 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
     appendHorizontalRule();
 
     var authoriseResult = appendParagraph("");
-    makeAccountButton("Authorise", () => { return gmi.account.authorise(); }, authoriseResult);
+
+    const authoriseState = appendTextInput("auth-state", "", "state");
+    appendSpacer();
+
+    makeAccountButton("Authorise",
+        () => {
+            return gmi.account.authorise(authoriseState.value);
+        },
+        authoriseResult
+    );
     appendSpacer();
     appendHorizontalRule();
 
@@ -434,14 +439,29 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, P
         }
     }
 
-    function appendTextInput(elementID) {
+    function appendTextInput(elementID, defaultValue = 'Enter input here', labelText) {
         var input = document.createElement("input");
+        input.className = "dev-input";
         input.type = "text";
         input.id = elementID;
-        input.value = 'Enter input here';
+        input.value = defaultValue;
         input.onclick = inputOnClick;
         input.onblur = inputOnBlur;
-        inner.appendChild(input);
+
+        let childToAppend = input;
+
+        if (labelText) {
+            const label = document.createElement("label")
+            label.innerHTML = labelText;
+            label.appendChild(input);
+            input.classList.add("in-label")
+            childToAppend = label;
+        }
+
+
+        inner.appendChild(childToAppend);
+
+        return input;
     }
 
     function appendTextArea(elementID, value) {
