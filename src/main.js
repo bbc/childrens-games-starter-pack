@@ -97,7 +97,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     const setStatsScreenInput = appendTextInput("stats-input", "gamename");
     appendSpacer();
 
-    appendBtn("Log setStatsScreen", function(event) {
+    appendBtn("Log setStatsScreen", () => {
         gmi.setStatsScreen(setStatsScreenInput.value);
     });
 
@@ -109,7 +109,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
 
     appendTextArea("stats-params", "{\"metadata\":\"SBL=2~XPL=3~GSI=123456789~LAU=First\",\"source\":\"Level ID\"}");
     appendSpacer();
-    appendBtn("Log sendStatsEvent", function(event) {
+    appendBtn("Log sendStatsEvent", () => {
 
         var params = JSON.parse(document.getElementById("stats-params").value);
 
@@ -132,23 +132,15 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     // ---------- GMI Account Examples ---------
     appendSubtitle("GMI Account Examples");
 
-    // All operations on the Account object are Promise-based, so we allow
-    // a short time to elapse before grabbing the response.
     const makeAccountButton = (label, accountFunction, element, ...args) => {
         appendBtn(label, function() {
-            let response;
-
             accountFunction(args)
-                .then((res) => {
-                    response = res;
+                .then(response => {
+                    element.innerHTML = `Response: ${response}`;
                 })
-                .catch((err) => {
-                    response = err;
+                .catch(err => {
+                    element.innerHTML = `Error: ${err}`;
                 });
-
-            setTimeout(() => {
-                element.innerHTML = `${label}: ${response}`;
-            }, 125);
         });
     };
 
