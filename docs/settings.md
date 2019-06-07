@@ -50,13 +50,11 @@ const gmi = window.getGMI({settingsConfig: settingsConfig});
 
 Another example settings config object may be found [here](https://github.com/bbc/childrens-games-starter-pack/blob/master/src/main.js#L5).
 
-Once the GMI object has been initialized with the settings config, the settings pop up is triggered via the following call:
+Once the GMI object has been initialised with the settings config, the settings pop-up is triggered via the following call (where `onSettingChanged` and `onSettingsClosed` are callback functions):
 
 ```js
 gmi.showSettings(onSettingChanged, onSettingsClosed);
 ```
-
-where `onSettingChanged` and `onSettingsClosed` are callback functions.
 
 ## onSettingChanged
 
@@ -81,7 +79,7 @@ This callback should also return focus to the element that initialised the setti
 ```js
 function onSettingsClosed() {
     // Any necessary code to handle game state after settings is closed.
-    
+
     // Return focus for accessibility
     document.getElementsByClassName("settings-button")[0].focus();
 }
