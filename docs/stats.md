@@ -47,10 +47,10 @@ gmi.sendStatsEvent("sublevel", "start", { metadata: "SBL=2~XPL=3~GSI=123456789~L
 
 | eventLabel | Description | Example |
 |------------|----------------------------------|---------|
-| metadata   | Allows extra data to be provided | SBL=2~XPL=3~GSI=123456789~LAU=First |
-| container  | Game type bucket                 | Games-SuperTier-Multiplayer |
-| source     | Resource ID                      | Level One or Baseball Cap |
-| result     | Destination change               | Countername i.e. keepalive.games.gameName.newDestination.page |
+| metadata   | Allows extra data to be provided | `SBL=2~XPL=3~GSI=123456789~LAU=First` |
+| container  | Game type bucket                 | `Games-SuperTier-Multiplayer` |
+| source     | Resource ID                      | `Level One` or `Baseball Cap` |
+| result     | Destination change               | Countername i.e. `keepalive.games.gameName.newDestination.page` |
 
 ## ATI Tag Inspector Chrome plug-in
 
@@ -59,10 +59,7 @@ This extension allows us to load up a website and inspect our implementation of 
 You can download it from the Chrome store here - [AT Internet Tag Inspector](https://chrome.google.com/webstore/detail/at-internet-tag-inspector/epdfbeoiphkaeapcohmilhmpdeilgnok).
 
 The tool needs a BBC domain adding before use:
-Go to Settings > domains and add:
-```
-a1.api.bbc.co.uk
-```
+Go to Settings > domains and add: `a1.api.bbc.co.uk`
 
 ## Example
 You can see an example of using stats in our [code demo](../src/main.js).
