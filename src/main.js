@@ -193,6 +193,27 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     });
     appendHorizontalRule();
 
+    // --------- GMI Play Audio Example ---------
+        
+    var mp3Audio = new Audio(gmi.gameDir + "assets/game_button.mp3");
+    var oggAudio = new Audio(gmi.gameDir + "assets/game_button.ogg");    
+    var mp4Audio = new Audio(gmi.gameDir + "assets/game_button.mp4");
+
+    appendSubtitle("Audio Format Test");
+    var audioParagraph = appendParagraph();
+    appendBtn("Play MP3 audio", function() {
+        mp3Audio.play();
+    });
+
+    appendBtn("Play OGG audio", function() {
+        oggAudio.play();
+    });
+
+    appendBtn("Play MP4 audio", function() {
+        mp4Audio.play();
+    });
+
+    appendHorizontalRule();
 
     // ---------- GMI Exit Example -----------
     appendSubtitle("GMI Exit Example");
@@ -472,6 +493,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
         audioLabel.id = "audio-label";
         return audioLabel;
     }
+
 
     function disableBackgroundElements(disable) {
         var gameHolder = document.getElementById("game-holder");
