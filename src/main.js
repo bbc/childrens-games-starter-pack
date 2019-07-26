@@ -195,9 +195,9 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
 
     // --------- GMI Play Audio Example ---------
         
-    var mp3Audio = new Audio("assets/game_button.mp3");
-    var oggAudio = new Audio("assets/game_button.ogg");    
-    var mp4Audio = new Audio("assets/game_button.mp4");
+    var mp3Audio = new Audio(gmi.gameDir + "assets/game_button.mp3");
+    var oggAudio = new Audio(gmi.gameDir + "assets/game_button.ogg");    
+    var mp4Audio = new Audio(gmi.gameDir + "assets/game_button.mp4");
 
     appendSubtitle("Audio Format Test");
     var audioParagraph = appendParagraph();
