@@ -194,10 +194,10 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     appendHorizontalRule();
 
     // --------- GMI Play Audio Example ---------
-
-    var mp3Audio = appendAudio("mp3-audio", "assets/game_button.mp3");
-    var oggAudio = appendAudio("ogg-audio", "assets/game_button.ogg");
-    var mp4Audio = appendAudio("mp4-audio", "assets/game_button.mp4");
+        
+    var mp3Audio = new Audio("assets/game_button.mp3");
+    var oggAudio = new Audio("assets/game_button.ogg");    
+    var mp4Audio = new Audio("assets/game_button.mp4");
 
     appendSubtitle("Audio Format Test");
     var audioParagraph = appendParagraph();
@@ -494,13 +494,6 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
         return audioLabel;
     }
 
-    function appendAudio(elementID, src) {
-        var audioElement = document.createElement("audio");
-        audioElement.id = elementID;
-        audioElement.src = src;
-        inner.appendChild(audioElement);
-        return audioElement;
-    }
 
     function disableBackgroundElements(disable) {
         var gameHolder = document.getElementById("game-holder");
