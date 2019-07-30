@@ -205,7 +205,8 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     }
 
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
+    console.log(audioCtx);
+    console.log('fishy');
 
     function bufferAudio(file) {
         var source = audioCtx.createBufferSource();
@@ -221,8 +222,9 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
             })
             .then(function(buffer){
                 source.buffer = buffer;
+                
                 source.connect(audioCtx.destination);
-                source.loop = false;
+                source.loop = true;
             });
         return source;
     }
@@ -232,13 +234,14 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     appendBtn("Play MP3 audio", function() {
         var source = bufferAudio('assets/game_button.mp3');
         console.log(source);
-        source.noteOn(0);
+        audioCtx.resume();
+        source.start(0);
     });
 
     appendBtn("Play OGG audio", function() {
         var source = bufferAudio('assets/game_button.ogg');
         console.log(source);
-        source.noteOn(0);
+        source.start(0);
     });
 
     appendBtn("Play MP4 audio", function() {
