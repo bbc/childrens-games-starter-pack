@@ -268,8 +268,8 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     });
 
     appendBtn("Play MP4 audio", function() {
-        var source = bufferAudio('assets/game_button.mp4');
-        var audio = new Audio(gmi.gameDir + 'assets/game_button.mp4')
+        var source = bufferAudio('assets/game_button.mp3');
+        var audio = new Audio(gmi.gameDir + 'assets/game_button.mp3')
         audio.play();
 
     });
