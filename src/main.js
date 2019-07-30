@@ -233,14 +233,16 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
         console.log(source);
         source.start(0);
     });
-
+    
     appendBtn("Play OGG audio", function() {
         var source = bufferAudio('assets/game_button.ogg');
+        console.log(source);
         source.start(0);
     });
 
     appendBtn("Play MP4 audio", function() {
         var source = bufferAudio('assets/game_button.mp4');
+        console.log(source);
         source.start(0);
     });
 
