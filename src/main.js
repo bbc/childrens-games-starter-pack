@@ -235,19 +235,32 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
         var source = bufferAudio('assets/game_button.mp3');
         console.log(source);
         audioCtx.resume();
-        source.start(0);
+        if (source.start){
+            source.start(0);
+        } else {
+            source.noteOn(0);
+        }
+       
     });
 
     appendBtn("Play OGG audio", function() {
         var source = bufferAudio('assets/game_button.ogg');
         console.log(source);
-        source.start(0);
+        if (source.start){
+            source.start(0);
+        } else {
+            source.noteOn(0);
+        }
     });
 
     appendBtn("Play MP4 audio", function() {
         var source = bufferAudio('assets/game_button.mp4');
         console.log(source);
-        source.noteOn(0);
+        if (source.start){
+            source.start(0);
+        } else {
+            source.noteOn(0);
+        }
     });
 
     appendHorizontalRule();
