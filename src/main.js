@@ -230,6 +230,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     var audioParagraph = appendParagraph();
     appendBtn("Play MP3 audio", function() {
         var source = bufferAudio('assets/game_button.mp3');
+        console.log(source);
         source.start(0);
     });
 
