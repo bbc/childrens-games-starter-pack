@@ -206,16 +206,20 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
                 }
             )
             .then(function(buffer){
-                    audioCtx.decodeAudioData(buffer, function(decodedData) {
-                    source.buffer = decodedData;
-                    source.connect(audioCtx.destination);
-                    source.loop = false;
-                },
-                function(e){"Error with decoding audio data" + e.error});
+                    audioCtx.decodeAudioData(buffer, 
+                        function(decodedData) {
+                            source.buffer = decodedData;
+                            source.connect(audioCtx.destination);
+                            source.loop = true;
+                        },
+                    function(e){ 
+                        console.log("Error with decoding audio data" + e.err); 
+                    }
+                );
             })
         return source;
     }
-    
+
     appendSubtitle("Audio Format Test");
     var audioParagraph = appendParagraph();
     appendBtn("Play MP3 audio", function() {
