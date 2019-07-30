@@ -209,10 +209,10 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
 
     function bufferAudio(file) {
         var source = audioCtx.createBufferSource();
-        var bufferAudio
         fetch(gmi.gameDir + file)
             .then(
                 function(data) {
+                    console.log(data);
                     return data.arrayBuffer();
                 }
             )
