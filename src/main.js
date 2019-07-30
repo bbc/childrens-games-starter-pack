@@ -209,7 +209,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 	var globalGain = audioCtx.createGain()
 	//Global Volume control
-	globalGain.connect(context.destination)
+	globalGain.connect(audioCtx.destination)
     globalGain.gain.value = 1
     
 
