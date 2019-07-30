@@ -232,19 +232,19 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     appendBtn("Play MP3 audio", function() {
         var source = bufferAudio('assets/game_button.mp3');
         console.log(source);
-        source.start(0);
+        source.noteOn(0);
     });
 
     appendBtn("Play OGG audio", function() {
         var source = bufferAudio('assets/game_button.ogg');
         console.log(source);
-        source.start(0);
+        source.noteOn(0);
     });
 
     appendBtn("Play MP4 audio", function() {
         var source = bufferAudio('assets/game_button.mp4');
         console.log(source);
-        source.start(0);
+        source.noteOn(0);
     });
 
     appendHorizontalRule();
