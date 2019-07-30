@@ -1,0 +1,26 @@
+{
+  "name": "childrens-games-starter-pack",
+  "version": "1.0.0",
+  "description": "This is the Starter Pack for Children's games which contains some helpful bits and pieces a games developer might need to start building a HTML5 game for Children's BBC.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbc/childrens-games-starter-pack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbc/childrens-games-starter-pack/issues"
+  },
+  "homepage": "https://github.com/bbc/childrens-games-starter-pack#readme",
+  "devDependencies": {
+    "connect": "^3.7.0",
+    "serve-static": "^1.14.1"
+  }
+}
