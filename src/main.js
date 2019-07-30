@@ -195,28 +195,34 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
 
     // --------- GMI Play Audio Example ---------
 
+    if (!window.AudioContext && window.webkitAudioContext) {
+        const oldFunc = webkitAudioContext.prototype.decodeAudioData;
+        webkitAudioContext.prototype.decodeAudioData = function(arraybuffer) {
+            return new Promise((resolve, reject) => {
+            oldFunc.call(this, arraybuffer, resolve, reject);
+            });
+        }
+    }
+
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+
     function bufferAudio(file) {
         var source = audioCtx.createBufferSource();
+        var bufferAudio
         fetch(gmi.gameDir + file)
             .then(
                 function(data) {
-                    console.log(data);
                     return data.arrayBuffer();
                 }
             )
             .then(function(buffer){
-                    audioCtx.decodeAudioData(buffer, 
-                        function(decodedData) {
-                            source.buffer = decodedData;
-                            source.connect(audioCtx.destination);
-                            source.loop = true;
-                        },
-                    function(e){ 
-                        console.log("Error with decoding audio data" + e.err); 
-                    }
-                );
+                return audioCtx.decodeAudioData(buffer)
             })
+            .then(function(buffer){
+                source.buffer = buffer;
+                source.loop = false;
+            });
         return source;
     }
 
