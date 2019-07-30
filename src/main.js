@@ -207,10 +207,10 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     }
 
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-	var globalGain = audioCtx.createGain()
+	var globalGain = audioCtx.createGain();
 	//Global Volume control
-	globalGain.connect(audioCtx.destination)
-    globalGain.gain.value = 1
+	globalGain.connect(audioCtx.destination);
+    globalGain.gain.value = 1;
     
 
     function unlock()
@@ -269,11 +269,9 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
 
     appendBtn("Play MP4 audio", function() {
         var source = bufferAudio('assets/game_button.mp4');
-        if (source.start){
-            source.start(0);
-        } else {
-            source.noteOn(0);
-        }
+        var audio = new Audio(gmi.gameDir + 'assets/game_button.mp4')
+        audio.play();
+
     });
 
     appendHorizontalRule();
