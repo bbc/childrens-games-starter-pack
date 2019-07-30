@@ -207,6 +207,11 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     }
 
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+	var globalGain = audioCtx.createGain()
+	//Global Volume control
+	globalGain.connect(context.destination)
+    globalGain.gain.value = 1
+    
 
     function unlock()
     {
@@ -223,6 +228,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
 
     function bufferAudio(file) {
         var source = audioCtx.createBufferSource();
+
         fetch(gmi.gameDir + file)
             .then(
                 function(data) {
@@ -235,8 +241,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
             })
             .then(function(buffer){
                 source.buffer = buffer;
-                source.gain.value = 1;
-                source.connect(audioCtx.destination);
+			    source.connect(globalGain);
                 source.loop = false;
             });
         return source;
