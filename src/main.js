@@ -235,7 +235,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
             })
             .then(function(buffer){
                 source.buffer = buffer;
-                
+                source.gain.value = 1;
                 source.connect(audioCtx.destination);
                 source.loop = false;
             });
