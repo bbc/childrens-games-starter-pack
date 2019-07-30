@@ -221,6 +221,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
             })
             .then(function(buffer){
                 source.buffer = buffer;
+                source.connect(audioCtx.destination);
                 source.loop = false;
             });
         return source;
@@ -233,7 +234,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
         console.log(source);
         source.start(0);
     });
-    
+
     appendBtn("Play OGG audio", function() {
         var source = bufferAudio('assets/game_button.ogg');
         console.log(source);
