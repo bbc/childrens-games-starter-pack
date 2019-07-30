@@ -194,23 +194,43 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     appendHorizontalRule();
 
     // --------- GMI Play Audio Example ---------
-        
-    var mp3Audio = new Audio(gmi.gameDir + "assets/game_button.mp3");
-    var oggAudio = new Audio(gmi.gameDir + "assets/game_button.ogg");    
-    var mp4Audio = new Audio(gmi.gameDir + "assets/game_button.mp4");
 
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function bufferAudio(file) {
+        var source = audioCtx.createBufferSource();
+        fetch(gmi.gameDir + file)
+            .then(
+                function(data) {
+                    console.log(data);
+                    return data.arrayBuffer();
+                }
+            )
+            .then(function(buffer){
+                    audioCtx.decodeAudioData(buffer, function(decodedData) {
+                    source.buffer = decodedData;
+                    source.connect(audioCtx.destination);
+                    source.loop = false;
+                },
+                function(e){"Error with decoding audio data" + e.error});
+            })
+        return source;
+    }
+    
     appendSubtitle("Audio Format Test");
     var audioParagraph = appendParagraph();
     appendBtn("Play MP3 audio", function() {
-        mp3Audio.play();
+        var source = bufferAudio('assets/game_button.mp3');
+        source.start(0);
     });
 
     appendBtn("Play OGG audio", function() {
-        oggAudio.play();
+        var source = bufferAudio('assets/game_button.ogg');
+        source.start(0);
     });
 
     appendBtn("Play MP4 audio", function() {
-        mp4Audio.play();
+        var source = bufferAudio('assets/game_button.mp4');
+        source.start(0);
     });
 
     appendHorizontalRule();
