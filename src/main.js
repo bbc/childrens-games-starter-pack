@@ -1,6 +1,8 @@
 define(["storage", "websockets", "account/morph-props"], function(storage, ws, props) {
     "use strict";
 
+
+
     // --------- Settings ---------
     var settingsConfig = {
         pages: [
@@ -205,8 +207,19 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     }
 
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    console.log(audioCtx);
-    console.log('fishy');
+
+    function unlock()
+    {
+        audioCtx.resume();
+        document.removeEventListener('touchstart', unlock, true);
+        document.removeEventListener('touchend', unlock, true);
+        document.removeEventListener('click', unlock, true);
+    }
+
+    document.addEventListener('touchstart', unlock, true);
+    document.addEventListener('touchend', unlock, true);
+    document.addEventListener('click', unlock, true);
+
 
     function bufferAudio(file) {
         var source = audioCtx.createBufferSource();
@@ -224,7 +237,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
                 source.buffer = buffer;
                 
                 source.connect(audioCtx.destination);
-                source.loop = true;
+                source.loop = false;
             });
         return source;
     }
@@ -233,19 +246,15 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     var audioParagraph = appendParagraph();
     appendBtn("Play MP3 audio", function() {
         var source = bufferAudio('assets/game_button.mp3');
-        console.log(source);
-        audioCtx.resume();
         if (source.start){
             source.start(0);
         } else {
             source.noteOn(0);
         }
-       
     });
 
     appendBtn("Play OGG audio", function() {
         var source = bufferAudio('assets/game_button.ogg');
-        console.log(source);
         if (source.start){
             source.start(0);
         } else {
@@ -255,7 +264,6 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
 
     appendBtn("Play MP4 audio", function() {
         var source = bufferAudio('assets/game_button.mp4');
-        console.log(source);
         if (source.start){
             source.start(0);
         } else {
