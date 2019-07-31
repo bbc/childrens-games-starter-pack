@@ -1,6 +1,8 @@
 define(["storage", "websockets", "account/morph-props"], function(storage, ws, props) {
     "use strict";
 
+
+
     // --------- Settings ---------
     var settingsConfig = {
         pages: [
@@ -194,23 +196,63 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     appendHorizontalRule();
 
     // --------- GMI Play Audio Example ---------
-        
-    var mp3Audio = new Audio(gmi.gameDir + "assets/game_button.mp3");
-    var oggAudio = new Audio(gmi.gameDir + "assets/game_button.ogg");    
-    var mp4Audio = new Audio(gmi.gameDir + "assets/game_button.mp4");
+
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();    
+    var mp3Buffer;
+    var oggBuffer;
+    var mp4Buffer;
+
+    function requestAudio(url, cbBuffer) {
+        var request = new XMLHttpRequest();
+        request.open("GET", gmi.gameDir + url, true);
+
+        request.responseType = "arraybuffer"; 
+
+        request.onload = function() {
+            audioCtx.decodeAudioData(
+                request.response,
+                function(buffer) {
+                    cbBuffer(buffer);
+                }
+            );
+        };
+        request.send();
+    }
+
+    function createSource(audioBuffer) {
+        var source = audioCtx.createBufferSource();
+        source.connect(audioCtx.destination);
+        source.buffer = audioBuffer;
+        source.loop = false;
+        source.start = (source.start || source.noteOn);
+        return source;
+    }
+    
+    requestAudio('assets/game_button.mp3', function(buffer) {
+        mp3Buffer = buffer;
+    });
+    requestAudio('assets/game_button.ogg', function(buffer) {
+        oggBuffer = buffer;
+    });
+    requestAudio('assets/game_button.mp4', function(buffer) {
+        mp4Buffer = buffer;
+    });
 
     appendSubtitle("Audio Format Test");
     var audioParagraph = appendParagraph();
     appendBtn("Play MP3 audio", function() {
-        mp3Audio.play();
+        var audio = createSource(mp3Buffer);
+        audio.start(0);
     });
 
     appendBtn("Play OGG audio", function() {
-        oggAudio.play();
+        var audio = createSource(oggBuffer);
+        audio.start(0);
     });
 
     appendBtn("Play MP4 audio", function() {
-        mp4Audio.play();
+        var audio = createSource(mp4Buffer);
+        audio.start(0);
     });
 
     appendHorizontalRule();

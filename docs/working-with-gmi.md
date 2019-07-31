@@ -36,6 +36,8 @@ currently but there is also support for statsLabels where appropriate.
 ### Demo
 [Code Example](../src/main.js) - open [index.html](../src/index.html) in your browser to see this in action.
 
+Run `npm i` and `npm start` to see the demo run through a local node server at (http://localhost:8080/src/index.html). This will allow the audio format test to work correctly.
+
 This is also available to see in [CAGE](https://www.bbc.co.uk/cbeebies/embed/game/childrens-games-starter-pack).
 
 * [Home](../README.md)
