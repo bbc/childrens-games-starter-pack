@@ -141,12 +141,6 @@ A boolean that indicates whether or not the mute button should be displayed.
 
 Note: Hardcoded to true for both the mobile app and the web platform.
 
-### gmi.shouldLongPressForSettings
-A boolean that indicates whether or not the user has to press and hold for the
-settings menu.
-
-Note: Hardcoded to true for the mobile app and false to web platform.
-
 ### gmi.shouldShowExitButton
 The game should use this flag to decide whether to show the exit button (and
 potentially other full-screen-related functionality). Where applicable the exit
@@ -226,6 +220,13 @@ gmi.account.authorise(sessionId)
 
 There are several functions in the GMI to support in-game achievements, however these functions are currently disabled and can be ignored until the achievement system is finalised and enabled.
 
+### Deprecated
+
+#### gmi.shouldLongPressForSettings - DEPRECATED
+A boolean that indicates whether or not the user has to press and hold for the
+settings menu.
+
+Note: Hardcoded to true for the mobile app and false to web platform.
 * [Home](../README.md)
     * [Working with GMI](working-with-gmi.md)
     * [API Reference](gmi.md)
