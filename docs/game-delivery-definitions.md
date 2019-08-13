@@ -69,7 +69,7 @@ This phase will also require;
   * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, etc (compromises to be discussed and agreed with BBC)
   * **CBeebies** games (that are on the Playtime Island roadmap) - agency supplied draft assets for the Playtime Island menu - [as specified here](https://www.dropbox.com/sh/nyj1edxexpjhguw/AADOpJz3yWX6EJ_imwTqaX-Ua?dl=0)
   * **Initial** game download size **MUST BE** under 15MB
-  * **CBeebies** games **total** uncompressed game GDZ file size **MUST BE** under 45MB
+  * **CBeebies** games **total** uncompressed game GDZ file size **MUST BE** under 55MB
   * Agency evidence of testing of a set of representative devices from each manufacturer (Apple, Android, Amazon 2015 5th Gen) and browsers
   * Test cases - documentation describing the exact steps of a test case or script
   * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
@@ -102,7 +102,7 @@ This phase will also require;
   * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, etc (compromises to be discussed and agreed with BBC)
   * **CBeebies** games (that are on the Playtime Island roadmap) - agency supplied draft assets for the Playtime Island menu  - [as specified here](https://www.dropbox.com/sh/nyj1edxexpjhguw/AADOpJz3yWX6EJ_imwTqaX-Ua?dl=0)
   * **Initial** game download size **MUST BE** under 15MB
-  * **CBeebies** games **total** uncompressed game GDZ file size **MUST BE** under 45MB
+  * **CBeebies** games **total** uncompressed game GDZ file size **MUST BE** under 55MB
   * Agency evidence of game fully tested against all supported devices and browsers 
   * Test cases - documentation describing the exact steps of a test case or script
   * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
