@@ -1,6 +1,6 @@
 # Game Delivery Definitions
 
-Updated - 01/05/2018
+Updated - 13/08/2019
 
 [Tech reviews](tech-review.md) take place at Alpha, Beta and Release Candidate
 stages. Feedback should be acted upon for the next delivery as all checks
@@ -44,7 +44,7 @@ This phase will also require;
   * Graphics may contain placeholders
   * Documented release notes including [P1/P2/P3](#issue-prioritization) known issues identified, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
   * **Initial** game download size **MUST BE** under 15MB
-  * **CBeebies** games **total** uncompressed game GDZ file size **MUST** BE under 45MB
+  * **CBeebies** games **total** uncompressed game GDZ file size **MUST** BE under 55MB
   * Test plan - a living document, describing what, how and when to test
   * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
   * UI layout and full end-to-end screen flow implemented, as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework) across two breakpoints
