@@ -158,6 +158,16 @@ gmi.account
 
 All operations provided by the Account object return Promises that can either 1) 'Resolve', with some useful context; Or, 2) 'Reject' with an appropriate Error object.
 
+```
+gmi.account.authorise
+```
+
+This call will return JSON if the redirect request (`authUrl` param from embedVars) returns a `HTTP 200 OK` or `HTTP 401 Unauthorized` with a JSON response. 
+
+This JSON is passed directly back from the authorisation server given in the `authUrl`, without interpretation, if a JSON content-type response is given.
+
+In the event of a failure other than `Unauthorized` then the authorisation call will reject with a default error object.
+
 ### Handling errors
 The following errors are used by Account operations that reject Promises: -
 
