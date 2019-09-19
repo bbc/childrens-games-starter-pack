@@ -48,35 +48,6 @@ define(["account/idcta-factory", "account/idcta-fallback", "account/id-availabil
             signOut: () => redirect(idConfig.signout_url),
             register: () => redirect(idConfig.register_url),
 
-            policyCheck: policy => new Promise((resolve, reject) => {
-                if (!idIsAvailable) {
-                    return reject();
-                }
-
-                if(!IDCTA.hasCookie()) {
-                    reject(IdAvailabilityError.notSignedIn);
-                } else {
-                    if (!IDCTA.policyCheck()) {
-                        reject(`Policy '${policy}' not satisfied`);
-                    } else {
-                        resolve(`Policy '${policy}' satisfied`);
-                    }
-                }
-            }),
-
-            policyUplift: () => new Promise((resolve, reject) => {
-                if (!idIsAvailable) {
-                    return reject();
-                }
-
-                if(!IDCTA.hasCookie()) {
-                    reject(IdAvailabilityError.notSignedIn);
-                } else {
-                    Redirect.openUrlAtWindowTop(window, "https://account.bbc.com/register?" + pageToReturnTo);
-                    resolve();
-                }
-            }),
-
             authorise: sessionId => new Promise((resolve, reject) => {
                 if (!idIsAvailable) {
                     return reject(IdAvailabilityError.systemUnavailable);
