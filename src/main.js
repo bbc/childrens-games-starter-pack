@@ -138,7 +138,9 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
         appendBtn(label, function() {
             accountFunction(args)
                 .then(response => {
-                    element.innerHTML = `Response: ${response.stringify()}`;
+                    response.then(responseJson => {
+                        element.innerHTML = `Response: ${responseJson}`;
+                    })
                 })
                 .catch(err => {
                     element.innerHTML = `Error: ${err}`;
