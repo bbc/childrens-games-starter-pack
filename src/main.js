@@ -11,19 +11,16 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
                 settings: [
                     {
                         key: "audio",
-                        type: "toggle",
                         title: "Audio",
                         description: "Turn off/on sound and music"
                     },
                     {
                         key: "motion",
-                        type: "toggle",
                         title: "Motion",
                         description: "Turn off/on motion"
                     },
                     {
                         key: "subtitles",
-                        type: "toggle",
                         title: "Subtitles",
                         description: "Turn off/on subtitles"
                     }
@@ -34,21 +31,23 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
                 settings: [
                     {
                         key: "colourblind",
-                        type: "toggle",
                         title: "Colour blind mode",
                         description: "Turn on contrast for colour blind mode"
                     },
                     {
                         key: "hard",
-                        type: "toggle",
                         title: "Hard mode",
                         description: "More baddies and less health"
                     },
                     {
                         key: "shadows",
-                        type: "toggle",
                         title: "Shadows",
                         description: "Turn off shadows in game"
+                    },
+                    {
+                        key: "onebutton",
+                        title: "One Button Mode",
+                        description: "Turn on single button gameplay mode"
                     }
                 ]
             }
@@ -350,6 +349,11 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
             // The chosen value will already have been persisted, and
             // will be available as gmi.getAllSettings().gameData.shadows
             appendSpan("Shadows toggled.", settingsParagraph);
+        }
+        else if (key === "onebutton") {
+            // The chosen value will already have been persisted, and
+            // will be available as gmi.getAllSettings().gameData.onebutton
+            appendSpan("One Button Mode toggled.", settingsParagraph);
         }
     }
 
