@@ -11,7 +11,7 @@ set -e
 
 # 'build' the src files to output directory. Output files should be concatenated and minified.
 mkdir output
-cp src/* output
+cp -r src/* output
 
 # The following steps for are building a .gdz file for use in mobile apps
 cd output

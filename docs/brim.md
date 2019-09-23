@@ -6,22 +6,9 @@ intruding into the screen during game play. It allows the user to swipe up,
 tap the screen or rotate the device to dismiss the browser UI and return the 
 game to full screen.
 
-## BBC's example
+## BBC implementation
  
-Included in the Starter Pack is a [version of Brim](../src/brim.js) developed by the BBC Games 
-Team. It is a streamlined version of the typical industry implementation and 
-designed to minimise dependencies and simplify functionality/use. You may adopt 
-this approach if you want a quick and easy solution. 
-
-Brim hasn't been featured in our demo but in order to use it you need to require
-the [brim.js](../src/brim.js) and [brim.css](../src/brim.css) files found in the src directory.
-
-This implementation only works with devices that match the current iOS screen 
-sizes (320x480, 320x568, 375x667, 414x736) and will have no effect on other sizes.
-
-## Accessible
-
-The BBC implementation also differs from the standard implementation in that it 
-is accessible for screen readers. Since swipe is not available to VoiceOver users 
-they can get stuck on the Brim screen. As a result we've added the ability to 
-dismiss Brim by tapping on the screen. It is important that any messaging captures this. 
+The BBC now implements a platform-wide Brim solution, which lives on our CAGE 
+environment. As a result, this starter pack no longer includes any code or 
+examples relating to Brim. When your game is uploaded to the BBC environment 
+Brim will automatically be applied on relevant IOS devices.

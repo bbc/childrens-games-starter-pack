@@ -2,31 +2,45 @@
 
 ## Config
 
-A settings config object should be passed in to the `getGMI` function containing the various configurable options available to the player.
+A settings config object should be passed in to the `getGMI` function containing the various configurable options available to the player. Please note that General Settings (common across all BBC games) should be listed first in a separate section to custom settings for the game. This should contain only audio, subtitles, and motion settings. The "title" values can be changed, and multiple "pages" objects can be listed in the array if required.
 
 For example:
 
 ```js
 const settingsConfig = {
     pages: [
+        // BBC General Settings
         {
-            title: "Settings",
+            title: "General Settings",
             settings: [
                 {
                     key: "audio",
-                    type: "toggle",
                     title: "Audio",
-                    description: "Turn off/on sound and music"
+                    description: "Turn off/on all sound effects and music",
                 },
                 {
-                    key: "hard",
-                    type: "toggle",
-                    title: "Hard mode",
-                    description: "More baddies and less health",
-                    defaultValue: true/false
+                    key: "subtitles",
+                    title: "Subtitles",
+                    description: "Turn off/on subtitles",
                 },
-            ]
-        }˜
+                {
+                    key: "motion",
+                    title: "Motion and Animation",
+                    description: "Turn off/on background animation",
+                },
+            ],
+        },
+        // Custom settings
+        {
+            title: "Game Settings",
+            settings: [
+                {
+                    key: "easy",
+                    title: "Easy Mode",
+                    description: "Turn easy mode on/off",
+                },
+            ],
+        },
     ]
 };
 
@@ -34,13 +48,13 @@ const settingsConfig = {
 const gmi = window.getGMI({settingsConfig: settingsConfig});
 ```
 
-Once the GMI object has been initialized with the settings config, the settings pop up is triggered via the following call:
+Another example settings config object may be found [here](https://github.com/bbc/childrens-games-starter-pack/blob/master/src/main.js#L5).
+
+Once the GMI object has been initialised with the settings config, the settings pop-up is triggered via the following call (where `onSettingChanged` and `onSettingsClosed` are callback functions):
 
 ```js
 gmi.showSettings(onSettingChanged, onSettingsClosed);
 ```
-
-where `onSettingChanged` and `onSettingsClosed` are callback functions.
 
 ## onSettingChanged
 
@@ -65,7 +79,7 @@ This callback should also return focus to the element that initialised the setti
 ```js
 function onSettingsClosed() {
     // Any necessary code to handle game state after settings is closed.
-    
+
     // Return focus for accessibility
     document.getElementsByClassName("settings-button")[0].focus();
 }

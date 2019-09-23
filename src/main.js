@@ -1,6 +1,8 @@
-define(['storage','websockets'], function(storage, ws) {
+define(["storage", "websockets", "account/morph-props"], function(storage, ws, props) {
     "use strict";
-    
+
+
+
     // --------- Settings ---------
     var settingsConfig = {
         pages: [
@@ -9,19 +11,16 @@ define(['storage','websockets'], function(storage, ws) {
                 settings: [
                     {
                         key: "audio",
-                        type: "toggle",
                         title: "Audio",
                         description: "Turn off/on sound and music"
                     },
                     {
                         key: "motion",
-                        type: "toggle",
                         title: "Motion",
                         description: "Turn off/on motion"
                     },
                     {
                         key: "subtitles",
-                        type: "toggle",
                         title: "Subtitles",
                         description: "Turn off/on subtitles"
                     }
@@ -32,21 +31,23 @@ define(['storage','websockets'], function(storage, ws) {
                 settings: [
                     {
                         key: "colourblind",
-                        type: "toggle",
                         title: "Colour blind mode",
                         description: "Turn on contrast for colour blind mode"
                     },
                     {
                         key: "hard",
-                        type: "toggle",
                         title: "Hard mode",
                         description: "More baddies and less health"
                     },
                     {
                         key: "shadows",
-                        type: "toggle",
                         title: "Shadows",
                         description: "Turn off shadows in game"
+                    },
+                    {
+                        key: "onebutton",
+                        title: "One Button Mode",
+                        description: "Turn on single button gameplay mode"
                     }
                 ]
             }
@@ -55,7 +56,6 @@ define(['storage','websockets'], function(storage, ws) {
 
     // Create a gmi object using getGMI.
     var gmi = window.getGMI({settingsConfig: settingsConfig});
-    var numberOfStatsButtonClicks = 0;
 
     addStylesheet();
 
@@ -81,21 +81,43 @@ define(['storage','websockets'], function(storage, ws) {
 
     window.gameSettings = { debugEnabled: true };
 
-    // ---------- GMI Stats Example----------
+    // ---------- GMI Stats Examples----------
+    appendSubtitle("GMI Stats Examples");
+    appendParagraph("Stats are handled by the GMI using a combination of setStatsScreen for screen/location changes and sendStatsEvent for user actions.")
 
-    appendSubtitle("GMI Stats Example");
     var gmiStatsParagraph = appendParagraph();
 
-    appendSpan("Open ", gmiStatsParagraph);
-    appendLink("iStats Chrome Extension", "https://chrome.google.com/webstore/detail/dax-istats-log/jgkkagdpkhpdpddcegfcahbakhefbbga", gmiStatsParagraph);
-    appendSpan(" or see network calls prefixed with 'sa.bbc.co.uk' and" + " click the button to fire a stat.", gmiStatsParagraph);
-    appendSpacer();
-    appendBtn("Log Action Event (Button Clicked)", function(event) {
-        numberOfStatsButtonClicks++;
-        gmi.sendStatsEvent("button_click", event.target.innerHTML, {"num_btn_clicks": numberOfStatsButtonClicks});
-    });
-    appendHorizontalRule();
+    appendSpan("Open the ", gmiStatsParagraph);
+    appendLink("AT Internet Tag Inspector Chrome Extension", "https://chrome.google.com/webstore/detail/at-internet-tag-inspector/epdfbeoiphkaeapcohmilhmpdeilgnok?hl=en", gmiStatsParagraph);
 
+    // setStatsScreen
+    appendH3("setStatsScreen");
+    appendParagraph("The stats screen denotes the player changing location in the game.", gmiStatsParagraph);
+    appendParagraph(" Click the \"Log sendStatsScreen\" button to fire setStatsScreen using the below input for <em>screenName</em> (local builds will log to the browser console)");
+
+    const setStatsScreenInput = appendTextInput("stats-input", "gamename");
+    appendSpacer();
+
+    appendBtn("Log setStatsScreen", () => {
+        gmi.setStatsScreen(setStatsScreenInput.value);
+    });
+
+    // setstatsEvent
+    appendH3("sendStatsEvent");
+
+    appendParagraph(" Click the \"Log sendStatsEvent\" button to fire sendStatsEvent with name set to " +
+        "<em>action_name</em>, type set to <em>action_type</em> and params set to the json below. (local builds will log to the browser console)");
+
+    appendTextArea("stats-params", "{\"metadata\":\"SBL=2~XPL=3~GSI=123456789~LAU=First\",\"source\":\"Level ID\"}");
+    appendSpacer();
+    appendBtn("Log sendStatsEvent", () => {
+
+        var params = JSON.parse(document.getElementById("stats-params").value);
+
+        gmi.sendStatsEvent("action_name", "action_type", params);
+    });
+
+    appendHorizontalRule();
 
     // ---------- GMI Storage Example----------
 
@@ -108,6 +130,54 @@ define(['storage','websockets'], function(storage, ws) {
     appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
     appendHorizontalRule();
 
+    // ---------- GMI Account Examples ---------
+    appendSubtitle("GMI Account Examples");
+
+    const makeAccountButton = (label, accountFunction, element, ...args) => {
+        appendBtn(label, function() {
+            accountFunction(args)
+                .then(response => {
+                    element.innerHTML = `Response: ${JSON.stringify(response)}`;
+                })
+                .catch(err => {
+                    element.innerHTML = `Error: ${err}`;
+                });
+        });
+    };
+
+    var statusResult = appendParagraph("");
+    makeAccountButton("Status", () => { return gmi.account.status(); }, statusResult);
+    appendSpacer();
+    appendHorizontalRule();
+
+    var registerResult = appendParagraph("");
+    makeAccountButton("Register", () => { return gmi.account.register(); }, registerResult);
+    appendSpacer();
+    appendHorizontalRule();
+
+    var signInResult = appendParagraph("");
+    makeAccountButton("Sign-in", () => { return gmi.account.signIn(); }, signInResult);
+    appendSpacer();
+    appendHorizontalRule();
+
+    var signOutResult = appendParagraph("");
+    makeAccountButton("Sign-out", () => { return gmi.account.signOut(); }, signOutResult);
+    appendSpacer();
+    appendHorizontalRule();
+
+    var authoriseResult = appendParagraph("");
+
+    const authoriseState = appendTextInput("auth-state", "", "state");
+    appendSpacer();
+
+    makeAccountButton("Authorise",
+        () => {
+            return gmi.account.authorise(authoriseState.value);
+        },
+        authoriseResult
+    );
+    appendSpacer();
+    appendHorizontalRule();
 
     // --------- GMI Set Audio Example ---------
 
@@ -116,7 +186,7 @@ define(['storage','websockets'], function(storage, ws) {
 
     appendSpan("Game audio value: ", audioParagraph);
     audioParagraph.appendChild(createAudioLabel());
-        
+
     appendSpacer();
     appendBtn("Toggle audio", function() {
         gmi.setAudio(!gmi.getAllSettings().audio);
@@ -124,6 +194,67 @@ define(['storage','websockets'], function(storage, ws) {
     });
     appendHorizontalRule();
 
+    // --------- GMI Play Audio Example ---------
+
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();    
+    var mp3Buffer;
+    var oggBuffer;
+    var mp4Buffer;
+
+    function requestAudio(url, cbBuffer) {
+        var request = new XMLHttpRequest();
+        request.open("GET", gmi.gameDir + url, true);
+
+        request.responseType = "arraybuffer"; 
+
+        request.onload = function() {
+            audioCtx.decodeAudioData(
+                request.response,
+                function(buffer) {
+                    cbBuffer(buffer);
+                }
+            );
+        };
+        request.send();
+    }
+
+    function createSource(audioBuffer) {
+        var source = audioCtx.createBufferSource();
+        source.connect(audioCtx.destination);
+        source.buffer = audioBuffer;
+        source.loop = false;
+        source.start = (source.start || source.noteOn);
+        return source;
+    }
+    
+    requestAudio('assets/game_button.mp3', function(buffer) {
+        mp3Buffer = buffer;
+    });
+    requestAudio('assets/game_button.ogg', function(buffer) {
+        oggBuffer = buffer;
+    });
+    requestAudio('assets/game_button.mp4', function(buffer) {
+        mp4Buffer = buffer;
+    });
+
+    appendSubtitle("Audio Format Test");
+    var audioParagraph = appendParagraph();
+    appendBtn("Play MP3 audio", function() {
+        var audio = createSource(mp3Buffer);
+        audio.start(0);
+    });
+
+    appendBtn("Play OGG audio", function() {
+        var audio = createSource(oggBuffer);
+        audio.start(0);
+    });
+
+    appendBtn("Play MP4 audio", function() {
+        var audio = createSource(mp4Buffer);
+        audio.start(0);
+    });
+
+    appendHorizontalRule();
 
     // ---------- GMI Exit Example -----------
     appendSubtitle("GMI Exit Example");
@@ -173,7 +304,7 @@ define(['storage','websockets'], function(storage, ws) {
         disableBackgroundElements(true);
     }, "settings-button");
     var settingsParagraph = appendParagraph();
-  
+
     appendHorizontalRule();
 
     function onSettingsClosed() {
@@ -199,12 +330,12 @@ define(['storage','websockets'], function(storage, ws) {
             appendSpan("Subtitles setting toggled. ", settingsParagraph);
         }
         else if (key === "colourblind") {
-            // The chosen value will already have been persisted, and 
+            // The chosen value will already have been persisted, and
             // will be available as gmi.getAllSettings().gameData.colourblind
             appendSpan("Colour blind mode toggled.", settingsParagraph);
         }
         else if (key === "hard") {
-            // The chosen value will already have been persisted, and 
+            // The chosen value will already have been persisted, and
             // will be available as gmi.getAllSettings().gameData.hard
             appendSpan("Difficulty has been set to ", settingsParagraph);
             if (value) {
@@ -215,9 +346,14 @@ define(['storage','websockets'], function(storage, ws) {
             }
         }
         else if (key === "shadows") {
-            // The chosen value will already have been persisted, and 
+            // The chosen value will already have been persisted, and
             // will be available as gmi.getAllSettings().gameData.shadows
             appendSpan("Shadows toggled.", settingsParagraph);
+        }
+        else if (key === "onebutton") {
+            // The chosen value will already have been persisted, and
+            // will be available as gmi.getAllSettings().gameData.onebutton
+            appendSpan("One Button Mode toggled.", settingsParagraph);
         }
     }
 
@@ -233,17 +369,17 @@ define(['storage','websockets'], function(storage, ws) {
     appendTextInput("websocket-input");
     appendSpacer();
 
-    appendTextArea("ws-terminal");
+    appendTextArea("ws-terminal", "Websocket updates will appear here...");
     appendSpacer();
 
-    appendBtn("Connect", function() { 
+    appendBtn("Connect", function() {
         ws.connect(setConnectionStateOnButtons);
     },"ws-connect");
 
-    appendBtn("Disconnect", function() { 
+    appendBtn("Disconnect", function() {
         ws.disconnect();
     },"ws-disconnect");
-    
+
     appendBtn("Send String", function() {
         ws.sendString(document.getElementById("websocket-input").value);
     },"ws-sendString");
@@ -302,6 +438,12 @@ define(['storage','websockets'], function(storage, ws) {
         inner.appendChild(title);
     }
 
+    function appendH3(titleStr) {
+        var title = document.createElement("h3");
+        title.innerHTML = titleStr;
+        inner.appendChild(title);
+    }
+
     function appendParagraph(text) {
         var paragraph = document.createElement("p");
         paragraph.innerHTML = text || '';
@@ -351,27 +493,42 @@ define(['storage','websockets'], function(storage, ws) {
     function inputOnBlur(event) {
         var inputEle = event.target;
         if (inputEle.value === '') {
-            inputEle.value = 'Enter a message here';
+            inputEle.value = '';
             inputEle.className = '';
         }
     }
 
-    function appendTextInput(elementID) {
+    function appendTextInput(elementID, defaultValue = 'Enter input here', labelText) {
         var input = document.createElement("input");
+        input.className = "dev-input";
         input.type = "text";
         input.id = elementID;
-        input.value = 'Enter a message here';
+        input.value = defaultValue;
         input.onclick = inputOnClick;
         input.onblur = inputOnBlur;
-        inner.appendChild(input);
+
+        let childToAppend = input;
+
+        if (labelText) {
+            const label = document.createElement("label")
+            label.innerHTML = labelText;
+            label.appendChild(input);
+            input.classList.add("in-label")
+            childToAppend = label;
+        }
+
+
+        inner.appendChild(childToAppend);
+
+        return input;
     }
 
-    function appendTextArea(elementID) {
+    function appendTextArea(elementID, value) {
         var textarea = document.createElement("textarea");
         textarea.rows = 8;
         textarea.cols = 40;
         textarea.id = elementID;
-        textarea.value = "Websocket updates will appear here..."
+        textarea.value = value;
         inner.appendChild(textarea);
         return textarea;
     }
@@ -382,11 +539,12 @@ define(['storage','websockets'], function(storage, ws) {
         audioLabel.id = "audio-label";
         return audioLabel;
     }
-    
+
+
     function disableBackgroundElements(disable) {
-        var gameHolder = document.getElementById("game-holder");   
+        var gameHolder = document.getElementById("game-holder");
         var buttons = gameHolder.getElementsByTagName("button");
-        var links = gameHolder.getElementsByTagName("a"); 
+        var links = gameHolder.getElementsByTagName("a");
         var inputs = gameHolder.getElementsByTagName("input");
         // join the lists of elements and converts them to an array as getElementsByTagName returns an array-like object rather than an actual Array.
         var elements = [].concat.apply([], [[].slice.call(buttons), [].slice.call(links), [].slice.call(inputs)]);
