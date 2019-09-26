@@ -1,5 +1,7 @@
 # Tech Review
 
+All games will be checked for adherence to the [Technical Specifications](docs/game-specifications.md).
+
 The tech review is carried out on release files (not source files) at Alpha,
 Beta and Release Candidate stages.
 

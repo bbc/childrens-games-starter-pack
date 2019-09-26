@@ -1,6 +1,6 @@
 # Game Delivery Definitions
 
-Updated - 13/08/2019
+Updated - 26/09/2019
 
 [Tech reviews](tech-review.md) take place at Alpha, Beta and Release Candidate
 stages. Feedback should be acted upon for the next delivery as all checks
@@ -11,6 +11,8 @@ accordance with the Acceptance Tests (to be agreed with the supplier and based
 on the Game Delivery Definitions outlined below) to determine whether
 Acceptance can be given, which may trigger any payment due in relation
 to the tested Deliverable.
+
+All games will be checked for adherence to the [Technical Specifications](docs/game-specifications.md).
 
 ## Pre-production
 

@@ -1,4 +1,4 @@
-# Game Delivery Specifications
+# Game Specifications
 
 List of technical specifications that games must meet to pass certification.
 
@@ -6,12 +6,12 @@ List of technical specifications that games must meet to pass certification.
 |---------------|-------------|
 | Code submitted to Github must be source code | The BBC must be able to edit, build and maintain the game without requiring any seperate proprietary software |
 | Code must include a build script that builds the game from source and runs optimisation steps | Code submitted must be pre-minification and all steps required to produce production builds must be included in the build script and/or documented |
-| A functional GDZ must be output as part of the build steps | GDZ's enable the BBC to run the game on all it's platforms. |
-| CBeebies games only - the GDZ filesize must be less than 45MB | CBeebies games going into Playtime Island must adhere to filesize restrictions |
-| CBeebies games only - the GDZ must load in the Playtime Island Test App  | Link to instructions |
+| A functional GDZ must be output as part of the build steps | GDZ's enable the BBC to run the game on all BBC platforms. |
+| CBeebies games only - the GDZ filesize must be less than 55MB | CBeebies games going into Playtime Island must adhere to filesize restrictions |
+| CBeebies games only - the GDZ must load in the Playtime Island Test App  | [Instructions](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/testing-in-a-mobile-app.md#testing-in-a-mobile-app) |
 | Test Plans must be included | The BBC requires a Test Plan to be delivered with each game  |
-| Must be GMI compliant | Link to GMI compliance  |
-| Must be GEL compliant | Link to GEL compiance |
+| Must be GMI compliant | [GMI compliance](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/working-with-gmi.md)  |
+| Must be GEL compliant | [GEL compiance](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets) |
 
 | Performance | Description |
 |---------------|-------------|
@@ -22,18 +22,16 @@ List of technical specifications that games must meet to pass certification.
 
 | Audio | Description |
 |---------------|-------------|
-| Game must supply 2 audio formats: OGG as default with MP3 fallback | OGG format is used for Android and MP3 for iOS |
-| Audio bitrate for SFX should be 32k maximum | |
-| Audio bitrate for music should be 64k maximum | |
+| Game must supply audio in MP4 format | MP4 audio should work on all supported devices and browsers |
+| Audio bitrate for SFX should be 32k maximum | Audio sound effects to have a lower bitrate than regular audio |
+| Audio bitrate for music should be 64k maximum | Audio to be capped at 64k to reduce filesize |
 
 ## Guidance
 
 ### Loading
-Info on: 
-background loading? 
+We should employ techniques to reduce the amount of idle time a user faces a loading bar. These include: 
+* Background loading - pre-emptively load assets in the background while the user is interacting with loaded content
+* Reduce number of network requests - use image/audio sprites where they make sense
+* Employ optimisation techniques to reduce asset sizes
+* Only load required assets - remove old or unused assets from the loading process
 
-### Optimisation
-Info on:
-Texture compression
-Image optimisation 
-Audio optimisation
