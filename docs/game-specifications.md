@@ -16,7 +16,7 @@ List of technical specifications that games must meet to pass certification.
 | Performance | Description |
 |---------------|-------------|
 | Home screen loads and is interactive within 8 seconds | The play button should be interactive within 8 seconds to reduce idle time for children |
-| No loading bar should apears on screen for longer than 4 seconds | Loading strategies should be employed to minimise in-game load times |
+| No loading bar should appear on screen for longer than 4 seconds | Loading strategies should be employed to minimise in-game load times |
 | Consistent framerate of at least 24fps on supported devices | The game should maintain an acceptable framerate |
 | No single file should be larger than 10MB | Files should be optimised appropriately |
 
