@@ -11,7 +11,7 @@ List of technical specifications that games must meet to pass certification.
 | CBeebies games only - the GDZ must load in the Playtime Island Test App  | [Instructions](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/testing-in-a-mobile-app.md#testing-in-a-mobile-app) |
 | Test Plans must be included | The BBC requires a Test Plan to be delivered with each game  |
 | Must be GMI compliant | [GMI compliance](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/working-with-gmi.md)  |
-| Must be GEL compliant | [GEL compiance](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets) |
+| Must be GEL compliant | [GEL compliance](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets) |
 
 | Performance | Description |
 |---------------|-------------|
