@@ -27,6 +27,7 @@ ___
   * [Deliverable Review](docs/deliverable-review.md#deliverable-review)
 
 ### Development
+  * [Technical Specifications](docs/game-specifications.md)
   * [Build pipeline](docs/build-pipeline.md)
     * [Building your game](docs/build-pipeline.md#building-your-game)
     * [Building for apps](docs/build-pipeline.md#building-for-apps)
@@ -42,6 +43,7 @@ ___
 
 ### Testing
   * [Tech Review Tool](docs/tech-review-tool.md#tech-review-tool)
+  * [Testing on a BBC environment](docs/testing-on-bbc.md)
   * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
   * [Testing your game in a mobile app](docs/testing-in-a-mobile-app.md#testing-in-a-mobile-app)
 

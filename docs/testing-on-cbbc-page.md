@@ -1,4 +1,4 @@
-# Testing your game in the Live environment
+# Testing your game in-situ on the Children's Websites
 
 While we provide a Game Embed Page as an area to test games in a fullscreen context, 
 we recommend that you test your game in-situ on a CBBC/CBeebies webpage at the

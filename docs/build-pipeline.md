@@ -7,6 +7,8 @@ testing and delivery. This covers both game code and .gdz files for use with mob
 
 ### Building your game
 
+Our build servers make nvm and npm available to games. 
+
 Our automated build pipeline automatically runs the [build.sh](../build-scripts/build.sh) file
 every time you push changes to the Git repo. You should place all your necessary
 compilation steps in here.
