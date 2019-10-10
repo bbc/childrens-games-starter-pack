@@ -123,9 +123,6 @@ Returns the environment name that the game is being served from. This will be
 ### gmi.gameContainerId
 Specifies the ID of the HTML div that will house your game.
 
-### gmi.gameUrl
-The URL of your main game file as entered into the GamesGrid CMS.
-
 ### gmi.gameDir
 The URL of the directory containing your main game file. This is convenient for
 converting relative asset paths into absolute ones.
@@ -235,6 +232,9 @@ There are several functions in the GMI to support in-game achievements, however 
 #### gmi.shouldLongPressForSettings - DEPRECATED
 A boolean that indicates whether or not the user has to press and hold for the
 settings menu.
+
+### gmi.gameUrl
+The URL of your main game file as entered into the GamesGrid CMS.
 
 Note: Hardcoded to true for the mobile app and false to web platform.
 * [Home](../README.md)
