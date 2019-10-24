@@ -194,6 +194,10 @@ gmi.account.register
 
 This will perform a full-page re-direct to a registration form. Once the user has completed registration they will be returned to the page from which they left to complete the registration form.
 
+#### Register on Pick'n'Mix
+
+When in Pick'n'mix, `account.register` will open a new window with the BBC ID registration pages. When the user has successfully registered, this will return with a promise. This promise should be handled correctly by the client inside PnM, but can be ignored when on web.
+
 ### Sign-in
 When a user is ready to sign-in it is necessary to re-direct them to the sign-in page. This can be achieved by invoking: -
 
