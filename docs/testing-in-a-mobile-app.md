@@ -41,42 +41,6 @@ you the option of viewing and emailing the logs.
 
 Full details on debugging with Pick ‘n’ Mix apps is available in the [wiki](https://github.com/bbc/childrens-picknmix-docs-and-demos/wiki/Getting-Started#step-4-debugging).
 
-
-## Debugging for Android
-
-To see debugging tools for the app, ensure the phone and host machine are connected
-to the same wi-fi network. Plug the phone into the host machine.
-
-Go to Chrome, and bring up the developer tools (View > Developer > Developer Tools).
-Click the three small dots at the top right of the tools window and go to More Tools >
-Remote Devices.
-
-
-![Remote Devices](images/remote-devices.jpg)
-
-
-Ensure the app is running, then select your device under 'Devices' in the Chrome
-'Remote Devices' panel, select the app (in this case 'Cbeebies Playtime Island')
-and click the 'Inspect' button. Accept any security pop-ups that appear on the device.
-
-
-![Devices](images/devices.jpg)
-
-
-This will bring up Developer Tools for the app. You can now type in the location of the
-.gdz into the app for debugging. Any errors will appear in the 'Console' window of
-the developer tools.
-
-
-![App Developer Tools](images/app-developer-tools.jpg)
-
-If you are having issues loading the .gdz into the app, ensure that your device
-is on the same network as the host machine, and try accessing the .gdz from the
-device's browser to check that it's available.
-
-More information on [Remote Debugging Android Devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/).
-
-
 ## Common Issues
 
 1. *Testing/Debugging in iOS*
