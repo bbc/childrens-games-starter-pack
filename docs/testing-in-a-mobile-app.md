@@ -27,7 +27,7 @@ To test your game in a mobile app you will need to to do the following:
    Alternatively, the [http-server](https://www.npmjs.com/package/http-server) npm package can be used.
 
 
-2. Download the Development App [here](https://rink.hockeyapp.net/manage/dashboard) (You will need to request access via your BBC Technical Project Manager).  If you need to debug on iOS device, then please provide the UDID’s when requesting access.
+2. Download the Development App [here](https://appcenter.ms/orgs/BBC-Media-AT-Organization/apps/CBeebies-Playtime-Island-v3-Development) (You will need to request access via your BBC Technical Project Manager).  If you need to debug on iOS device, then please provide the UDID’s when requesting access.
 
 3. Confirm with your TPM that the game has been added to the BBC CMS, iSite.  This can point either to our hosted build, or at a remotely hosted location via https. 
 
