@@ -27,19 +27,19 @@ To test your game in a mobile app you will need to to do the following:
    Alternatively, the [http-server](https://www.npmjs.com/package/http-server) npm package can be used.
 
 
-2. Download the relevant app in Test Mode here (You will need to request access via
-   your BBC technical project manager):
+2. Download the Development App [here](https://rink.hockeyapp.net/manage/dashboard) (You will need to request access via your BBC Technical Project Manager).  If you need to debug on iOS device, then please provide the UDID’s when requesting access.
 
-   * [Hockeyapp](https://rink.hockeyapp.net/manage/dashboard)
+3. Confirm with your TPM that the game has been added to the BBC CMS, iSite.  This can point either to our hosted build, or at a remotely hosted location via https. 
 
-3. Run the app and click on the 'Add Game' button; enter the url for your .gdz file
-and click download. Once it has finished downloading you can press play to test the .gdz.
+4. Run the app and find the game under the appropriate brand.
 
 To enable debugging (primarily for Apple devices): `window.gameSettings.debugEnabled`
 should be set to true in the game code. When this setting is enabled, it should pass on
 any `console.log()` messages generated in the game code to the native app. To view them,
 go to the app, and there should be a button visible in the top right, which should give
 you the option of viewing and emailing the logs.
+
+Full details on debugging with Pick ‘n’ Mix apps is available in the [wiki](https://github.com/bbc/childrens-picknmix-docs-and-demos/wiki/Getting-Started#step-4-debugging).
 
 
 ## Debugging for Android
