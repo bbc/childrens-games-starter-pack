@@ -27,13 +27,11 @@ To test your game in a mobile app you will need to to do the following:
    Alternatively, the [http-server](https://www.npmjs.com/package/http-server) npm package can be used.
 
 
-2. Download the relevant app in Test Mode here (You will need to request access via
-   your BBC technical project manager):
+2. Download the Development App [here](https://appcenter.ms/orgs/BBC-Media-AT-Organization/apps/CBeebies-Playtime-Island-v3-Development) (You will need to request access via your BBC Technical Project Manager).  If you need to debug on iOS device, then please provide the UDID’s when requesting access.
 
-   * [Hockeyapp](https://rink.hockeyapp.net/manage/dashboard)
+3. Confirm with your TPM that the game has been added to the BBC CMS, iSite.  This can point either to our hosted build, or at a remotely hosted location via https. 
 
-3. Run the app and click on the 'Add Game' button; enter the url for your .gdz file
-and click download. Once it has finished downloading you can press play to test the .gdz.
+4. Run the app and find the game under the appropriate brand.
 
 To enable debugging (primarily for Apple devices): `window.gameSettings.debugEnabled`
 should be set to true in the game code. When this setting is enabled, it should pass on
@@ -41,41 +39,7 @@ any `console.log()` messages generated in the game code to the native app. To vi
 go to the app, and there should be a button visible in the top right, which should give
 you the option of viewing and emailing the logs.
 
-
-## Debugging for Android
-
-To see debugging tools for the app, ensure the phone and host machine are connected
-to the same wi-fi network. Plug the phone into the host machine.
-
-Go to Chrome, and bring up the developer tools (View > Developer > Developer Tools).
-Click the three small dots at the top right of the tools window and go to More Tools >
-Remote Devices.
-
-
-![Remote Devices](images/remote-devices.jpg)
-
-
-Ensure the app is running, then select your device under 'Devices' in the Chrome
-'Remote Devices' panel, select the app (in this case 'Cbeebies Playtime Island')
-and click the 'Inspect' button. Accept any security pop-ups that appear on the device.
-
-
-![Devices](images/devices.jpg)
-
-
-This will bring up Developer Tools for the app. You can now type in the location of the
-.gdz into the app for debugging. Any errors will appear in the 'Console' window of
-the developer tools.
-
-
-![App Developer Tools](images/app-developer-tools.jpg)
-
-If you are having issues loading the .gdz into the app, ensure that your device
-is on the same network as the host machine, and try accessing the .gdz from the
-device's browser to check that it's available.
-
-More information on [Remote Debugging Android Devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/).
-
+Full details on debugging with Pick ‘n’ Mix apps is available in the [wiki](https://github.com/bbc/childrens-picknmix-docs-and-demos/wiki/Getting-Started#step-4-debugging).
 
 ## Common Issues
 
