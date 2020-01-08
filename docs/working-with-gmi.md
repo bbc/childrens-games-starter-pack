@@ -45,4 +45,4 @@ This is also available to see in [CAGE](https://www.bbc.co.uk/cbeebies/embed/gam
     * [API Reference](gmi.md)
     * [Settings](settings.md)
     * [Stats](stats.md#stats)
-    * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)
+    * [Using Local Storage](data-storage.md#using-local-storage)

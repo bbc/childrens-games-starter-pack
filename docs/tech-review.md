@@ -62,11 +62,6 @@ connection with custom 3G emulation. The throttling values should be set to:
 The console should contain no console.log or errors from the game. It should
 also suppress any logs from libraries.
 
-* **Cookies and Local Storage**:
-Ideally, data should not be stored. If it is, data should not be personal and
- should adhere to the cookie policy of the browser. If the game contains sign
-  in, it must respect the privacy settings on the user's account.
-
 ### Tech Review Tool
 
 The automated [Tech Review Tool](tech-review-tool.md) is run against the game

@@ -37,7 +37,7 @@ ___
     * [API Reference](docs/gmi.md)
     * [Settings](docs/settings.md)
     * [Stats](docs/stats.md#stats)
-    * [Using Local Storage/Cookies](docs/data-storage.md#using-local-storagecookies)
+    * [Using Local Storage](docs/data-storage.md#using-local-storage)
   * [Brim](docs/brim.md#brim)
   * [Known Issues](docs/known-issues.md)
 
