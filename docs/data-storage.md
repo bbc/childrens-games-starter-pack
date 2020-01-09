@@ -2,8 +2,6 @@
 
 ## Saving data
 
-Ideally, data should not be stored. If it is stored, data must not be personal. If the game contains sign in, it must respect the privacy settings on the user's account.
-
 Data must be saved through the [GMI](gmi.md). This ensures all data access complies with BBC data policies.
 
 ```javascript
