@@ -2,7 +2,7 @@
 
 ## Saving data
 
-Ideally, data should not be stored. If it is stored, data must not be personal and should adhere to the cookie policy of the browser. If the game contains sign in, it must respect the privacy settings on the user's account.
+Ideally, data should not be stored. If it is stored, data must not be personal. If the game contains sign in, it must respect the privacy settings on the user's account.
 
 Data must be saved through the [GMI](gmi.md). This ensures all data access complies with BBC data policies.
 
@@ -34,5 +34,11 @@ This object will contain all of the properties set by this game using `setGameDa
 gmi.getAllSettings().audio;
 gmi.getAllSettings().motion;
 gmi.getAllSettings().subtitles;
-
 ```
+
+[Home](../README.md)
+[Working with GMI](working-with-gmi.md)
+[API Reference](gmi.md)
+[Settings](settings.md)
+[Stats](stats.md#stats)
+[Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)
