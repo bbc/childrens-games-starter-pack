@@ -69,4 +69,4 @@ Open the accompanying `index.html` to see it in action.
     * [Working with GMI](working-with-gmi.md)
     * [API Reference](gmi.md)
     * [Settings](settings.md)
-    * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)
+    * [Using Local Storage](data-storage.md#using-local-storage)

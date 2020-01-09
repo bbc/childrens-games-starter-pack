@@ -250,4 +250,4 @@ Note: Hardcoded to true for the mobile app and false to web platform.
     * [API Reference](gmi.md)
     * [Settings](settings.md)
     * [Stats](stats.md#stats)
-    * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)
+    * [Using Local Storage](data-storage.md#using-local-storage)

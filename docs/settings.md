@@ -98,4 +98,4 @@ Global Settings are exceptions, see [global settings](gmi.md#global-game-setting
     * [API Reference](gmi.md)
     * [Settings](settings.md)
     * [Stats](stats.md#stats)
-    * [Using Local Storage/Cookies](data-storage.md#using-local-storagecookies)
+    * [Using Local Storage](data-storage.md#using-local-storage)
