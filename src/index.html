@@ -60,8 +60,9 @@
                         var url = "";
                         var dir = "";
                         var env = "test";
+                        var staticAchievementList = [];
 
-                        Object.defineProperty(GMI.prototype, 'account', {
+                        Object.defineProperty(GMI.prototype, 'accounts', {
                             get: function() {
                                 const props = Props.get();
                                 const idAvailability = props.idAvailabilityData.body;
@@ -128,7 +129,55 @@
                         var globalSettings = {
                             audio: true,
                             subtitles: false,
-                            motion: true
+                            motion: true,
+                            achievements: [],
+                        };
+
+                        const isAchieved = (config, stored) => {
+                            const hasProgress = Boolean(config && config.maxProgress);
+                            const fullProgress = Boolean(stored && config && stored.progress >= config.maxProgress);
+                            return (stored && !hasProgress) || (hasProgress && fullProgress);
+                        };
+
+                        var save = function(stored, update) {
+                            if (!stored) {
+                                globalSettings.achievements.push(update);
+                                console.log("CREATE LOCAL DATA:", update);
+                            } else {
+                                Object.assign(stored, update);
+                                console.log("UPDATE LOCAL DATA: ", stored, " -- TO: ", update);
+                            }
+                            GMI.prototype.setGameData("achievements", globalSettings.achievements);
+                        };
+
+                        GMI.prototype.achievements = {};
+
+                        GMI.prototype.achievements.init = function(init, callback) {
+                            staticAchievementList = init;
+                            if(callback !== undefined) {
+                                callback();
+                            }
+                        };
+
+                        GMI.prototype.achievements.set = function(update) {
+                            if(globalSettings.achievements === undefined) {
+                                globalSettings.achievements = []
+
+                                saveGlobalSettings();
+                            }
+                            var config = staticAchievementList.find(function(achievement) { return update.key === achievement.key });
+                            var stored = globalSettings.achievements.find(function(unlocked) { return unlocked.key === update.key });
+                            var alreadyAchieved = isAchieved(config, stored);
+                            var achievedOnUpdate = isAchieved(config, update);
+
+                            if (!config || alreadyAchieved) {
+                                return false;
+                            }
+
+                            save(stored, update);
+
+                            console.log("NOTIFY: ", achievedOnUpdate, update.key);
+                            return achievedOnUpdate;
                         };
 
                         var gameSettings = {};
@@ -211,7 +260,7 @@
                             return false;
                         };
 
-                        GMI.prototype.showSettings = function() { return false; };
+                        GMI.prototype.showSettings = function() { return "what"; };
 
                         GMI.prototype.setStatsScreen = function (name) {
                             console.log("setStatScreen fired for name: " + name + " output:" + "keepalive.games." + name + ".page");

@@ -1,4 +1,4 @@
-define(["storage", "websockets", "account/morph-props"], function(storage, ws, props) {
+define(["achievements", "storage", "websockets", "account/morph-props"], function(achievements, storage, ws, props) {
     "use strict";
 
 
@@ -56,7 +56,7 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
 
     // Create a gmi object using getGMI.
     var gmi = window.getGMI({settingsConfig: settingsConfig});
-
+    console.log(gmi);
     addStylesheet();
 
     // ----- Set up container for the example --------
@@ -128,6 +128,43 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     appendSpacer();
     appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); });
     appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
+    appendHorizontalRule();
+
+    // ---------- GMI Achievements Examples ---------
+    var achievementsData = [
+        {
+            key: "achievement1",
+            name: "Starter pack #1",
+            description: "Completed the first test!",
+            points: 1000,
+        },
+        {
+            key: "achievement2",
+            name: "Starter pack #2",
+            description: "Completed the first test!",
+            points: 1000,
+        },
+        {
+            key: "achievement3",
+            name: "Starter pack #3",
+            description: "Completed the first test!",
+            points: 1000,
+        },
+    ];
+    gmi.achievements.init(achievementsData);
+
+    appendSubtitle("GMI Achievements Example");
+    var achievementEles = [document.createElement("pre"), document.createElement("pre"), document.createElement("pre")];
+    achievementEles.forEach((ele, idx) => {
+        ele.id = "achievement" + idx;
+        inner.appendChild(ele);
+    })
+    appendSpacer();
+    appendBtn("Complete #1", function() { achievements.onCompleteButton(gmi, "achievement1", achievementEles[0]); });
+    appendBtn("Complete #2", function() { achievements.onCompleteButton(gmi, "achievement2", achievementEles[1]); });
+    appendBtn("Complete #3", function() { achievements.onCompleteButton(gmi, "achievement3", achievementEles[2]); });
+
+    appendSpacer();
     appendHorizontalRule();
 
     // ---------- GMI Account Examples ---------
