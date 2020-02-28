@@ -17,9 +17,13 @@
         table{border-collapse:collapse;border-spacing:0}
         html{width:100%;height:100%;overflow:hidden}
         body{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:14px;line-height:1.42857143;width:100%;height:100%;background:#000 no-repeat scroll center center;}
-    </style>
-    <style type="text/css">
     #local-game-holder{width:100%;height:100%;position:absolute}
+    .achievements { position:absolute; top:25%; left:0; right:0; margin:auto; width:40%; height: 40%; padding:5%;
+    z-index:1; text-align:center; background-color:#fff; color:#000; font-size:100%; }
+    .achievements .achievements-container { height: 70%; overflow: auto; text-align: justify; }
+
+    .achievements-container details:nth-child(odd) summary { background-color: aliceblue; }
+    .achievements-container details:nth-child(even) summary { background-color: papayawhip; }
     </style>
 </head>
 
@@ -61,8 +65,10 @@
                         var dir = "";
                         var env = "test";
                         var staticAchievementList = [];
+                        var unseen = false;
 
-                        Object.defineProperty(GMI.prototype, 'accounts', {
+
+                        Object.defineProperty(GMI.prototype, 'account', {
                             get: function() {
                                 const props = Props.get();
                                 const idAvailability = props.idAvailabilityData.body;
@@ -177,8 +183,76 @@
                             save(stored, update);
 
                             console.log("NOTIFY: ", achievedOnUpdate, update.key);
+                            unseen = true;
                             return achievedOnUpdate;
                         };
+                        GMI.prototype.achievements.get = function() {
+                            if(globalSettings.achievements === undefined) {
+                                globalSettings.achievements = []
+
+                                saveGlobalSettings();
+                            }
+                            var output = staticAchievementList.map(function(config) {
+                                var stored = globalSettings.achievements.find(function(unlocked) { return unlocked.key === config.key });
+                                return Object.assign(config, stored, { achieved: isAchieved(config, stored) });
+                            });
+                            console.log(output);
+                            return output;
+                        };
+                        GMI.prototype.achievements.show = function(bool = true) {
+                            unseen = false;
+                            var achievementsDiv = document.getElementsByClassName("achievements");
+                            if (!(achievementsDiv && achievementsDiv[0])) {
+                                GMI.prototype.sendStatsEvent("achievements", "open", {});
+                                var achievementsDiv = document.createElement('div');
+                                achievementsDiv.className = "achievements"
+                                achievementsDiv.innerHTML += "The achievements screen will appear here when the game is hosted on the BBC servers <br />";
+
+                                var achievements = GMI.prototype.achievements.get();
+
+                                var achievementsContainer = document.createElement('div');
+                                achievementsContainer.className = "achievements-container"
+
+                                for(var i = 0; i < achievements.length; i++) {
+                                    var achievementBox = document.createElement("details");
+                                    var achievementName = document.createElement("summary");
+                                    var achievementDesc = document.createElement("p");
+                                    var achievementStatus = document.createElement("p");
+
+                                    achievementName.innerHTML = achievements[i].name;
+                                    achievementDesc.innerHTML = "Description: " + achievements[i].description;
+                                    achievementStatus.innerHTML = "Achieved: " + (achievements[i].achieved ? "&#9989;" : "&#10062;");
+
+                                    achievementBox.appendChild(achievementName);
+                                    achievementBox.appendChild(achievementStatus);
+                                    achievementBox.appendChild(achievementDesc);
+                                    achievementsContainer.appendChild(achievementBox);
+                                }
+
+                                achievementsDiv.appendChild(achievementsContainer);
+
+                                var achievementsCloseButton = document.createElement("input");
+                                achievementsCloseButton.type = "button";
+                                achievementsCloseButton.value = "Click here to close.";
+
+                                achievementsDiv.appendChild(achievementsCloseButton);
+
+                                achievementsCloseButton.addEventListener("click", function() {
+                                document.body.removeChild(achievementsDiv);
+                                });
+                                document.body.appendChild(achievementsDiv);
+                                
+                                return true;
+                            }
+                            
+                            return false;
+                        };
+
+                        Object.defineProperty(GMI.prototype.achievements, 'unseen', {
+                            get: function() {
+                                return unseen;
+                            }
+                        });
 
                         var gameSettings = {};
 

@@ -133,19 +133,20 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     // ---------- GMI Achievements Examples ---------
     var achievementsData = [
         {
-            key: "achievement1",
+            key: "achievement0",
             name: "Starter pack #1",
-            description: "Completed the first test!",
+            description: "Completed the first test! Top position",
+            points: 1000,
+            position: "top",
+        },
+        {
+            key: "achievement1",
+            name: "Starter pack #2",
+            description: "Completed the first test! Bottom position",
             points: 1000,
         },
         {
             key: "achievement2",
-            name: "Starter pack #2",
-            description: "Completed the first test!",
-            points: 1000,
-        },
-        {
-            key: "achievement3",
             name: "Starter pack #3",
             description: "Completed the first test!",
             points: 1000,
@@ -154,16 +155,24 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     gmi.achievements.init(achievementsData);
 
     appendSubtitle("GMI Achievements Example");
-    var achievementEles = [document.createElement("pre"), document.createElement("pre"), document.createElement("pre")];
+    var achievementEles = [0,1,2];
     achievementEles.forEach((ele, idx) => {
-        ele.id = "achievement" + idx;
-        inner.appendChild(ele);
+        var id = "achievement" + idx;
+        var container = document.createElement("div");
+        ele = document.createElement("pre");
+        container.style.display = "inline-block";
+        container.appendChild(ele);
+        ele.id = id;
+        appendBtn("Complete #"+(idx+1), function() { achievements.onCompleteButton(gmi, id, ele); }, id, container);
+        inner.appendChild(container);
     })
     appendSpacer();
-    appendBtn("Complete #1", function() { achievements.onCompleteButton(gmi, "achievement1", achievementEles[0]); });
-    appendBtn("Complete #2", function() { achievements.onCompleteButton(gmi, "achievement2", achievementEles[1]); });
-    appendBtn("Complete #3", function() { achievements.onCompleteButton(gmi, "achievement3", achievementEles[2]); });
+    appendHorizontalRule();
 
+    appendBtn("Achievements", function() { achievements.onShow(gmi); });
+    var achievementUnseen = document.createElement("pre");
+    achievementUnseen.id = "achievement-status";
+    inner.appendChild(achievementUnseen);
     appendSpacer();
     appendHorizontalRule();
 
@@ -511,12 +520,12 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
         }
     }
 
-    function appendBtn(label, onClick, className) {
+    function appendBtn(label, onClick, className, container = inner) {
         var btn = document.createElement("button");
         btn.className = className || "game-button";
         btn.innerHTML = label;
         btn.onclick = onClick;
-        inner.appendChild(btn);
+        container.appendChild(btn);
     }
 
     function inputOnClick(event) {
