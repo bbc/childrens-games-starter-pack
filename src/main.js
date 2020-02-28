@@ -56,7 +56,6 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
 
     // Create a gmi object using getGMI.
     var gmi = window.getGMI({settingsConfig: settingsConfig});
-    console.log(gmi);
     addStylesheet();
 
     // ----- Set up container for the example --------
@@ -155,15 +154,17 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     gmi.achievements.init(achievementsData);
 
     appendSubtitle("GMI Achievements Example");
-    var achievementEles = [0,1,2];
-    achievementEles.forEach((ele, idx) => {
+    var achievementEles = [];
+
+    achievementsData.forEach((ele, idx) => {
+        var outputElement = achievementEles[idx];
         var id = "achievement" + idx;
         var container = document.createElement("div");
-        ele = document.createElement("pre");
+        outputElement = document.createElement("pre");
         container.style.display = "inline-block";
-        container.appendChild(ele);
-        ele.id = id;
-        appendBtn("Complete #"+(idx+1), function() { achievements.onCompleteButton(gmi, id, ele); }, id, container);
+        container.appendChild(outputElement);
+        outputElement.id = id;
+        appendBtn("Complete #"+(idx+1), function() { achievements.onCompleteButton(gmi, id, outputElement); }, id, container);
         inner.appendChild(container);
     })
     appendSpacer();
