@@ -1,0 +1,22 @@
+[
+    {
+        key: "achievement0",
+        name: "Starter pack #0",
+        description: "Completed the first test! Top position",
+        points: 100,
+        position: "top",
+    },
+    {
+        key: "achievement1",
+        name: "Starter pack #1",
+        description: "Achievement with progress! Bottom position",
+        maxProgress: 10,
+        points: 100,
+    },
+    {
+        key: "achievement2",
+        name: "Starter pack #2",
+        description: "Achievement that is already completed!",
+        points: 100,
+    },
+]

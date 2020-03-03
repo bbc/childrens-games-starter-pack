@@ -1,4 +1,4 @@
-define(["storage", "websockets", "account/morph-props"], function(storage, ws, props) {
+define(["achievements", "storage", "websockets", "account/morph-props"], function(achievements, storage, ws, props) {
     "use strict";
 
 
@@ -56,7 +56,6 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
 
     // Create a gmi object using getGMI.
     var gmi = window.getGMI({settingsConfig: settingsConfig});
-
     addStylesheet();
 
     // ----- Set up container for the example --------
@@ -128,6 +127,60 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
     appendSpacer();
     appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); });
     appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
+    appendHorizontalRule();
+
+    // ---------- GMI Achievements Examples ---------
+    var achievementsData = [
+        {
+            key: "achievement0",
+            name: "Starter pack #0",
+            description: "Completed the first test! Top position",
+            points: 100,
+            position: "top",
+        },
+        {
+            key: "achievement1",
+            name: "Starter pack #1",
+            description: "Achievement with progress! Bottom position",
+            maxProgress: 10,
+            points: 100,
+        },
+        {
+            key: "achievement2",
+            name: "Starter pack #2",
+            description: "Achievement that is already completed!",
+            points: 100,
+        },
+    ];
+
+    appendSubtitle("GMI Achievements Example");
+    appendParagraph("Experimental functions for testing achievements (internal use)</br></br>");
+    appendSpacer();
+
+    var achievementEles = [];
+
+    achievements.init(gmi, achievementsData);
+
+    achievementsData.forEach((achievement, idx) => {
+        var outputElement = achievementEles[idx];
+        var id = "achievement" + idx;
+        var container = document.createElement("div");
+        outputElement = document.createElement("pre");
+        container.style.display = "inline-block";
+        container.appendChild(outputElement);
+        outputElement.id = id;
+        achievement.idx = idx;
+        appendBtn("Progress #"+idx, function() { achievements.onAchieveButton(gmi, achievement, outputElement); }, id, container);
+        inner.appendChild(container);
+    })
+    appendSpacer();
+    appendHorizontalRule();
+
+    appendBtn("Achievements", function() { achievements.onShow(gmi); });
+    var achievementUnseen = document.createElement("pre");
+    achievementUnseen.id = "achievement-status";
+    inner.appendChild(achievementUnseen);
+    appendSpacer();
     appendHorizontalRule();
 
     // ---------- GMI Account Examples ---------
@@ -474,12 +527,12 @@ define(["storage", "websockets", "account/morph-props"], function(storage, ws, p
         }
     }
 
-    function appendBtn(label, onClick, className) {
+    function appendBtn(label, onClick, className, container = inner) {
         var btn = document.createElement("button");
         btn.className = className || "game-button";
         btn.innerHTML = label;
         btn.onclick = onClick;
-        inner.appendChild(btn);
+        container.appendChild(btn);
     }
 
     function inputOnClick(event) {
