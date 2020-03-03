@@ -154,6 +154,9 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     ];
 
     appendSubtitle("GMI Achievements Example");
+    appendParagraph("Experimental functions for testing achievements (internal use)</br></br>");
+    appendSpacer();
+
     var achievementEles = [];
 
     achievements.init(gmi, achievementsData);
