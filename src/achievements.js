@@ -28,7 +28,6 @@ define(function(){
 
     function init(gmi, achievementsData) {
         gmi.achievements.init(achievementsData);
-        gmi.achievements.set({key: achievementsData[2].key});
         console.log("achievements initialised:");
         achievementStore = gmi.achievements.get();
     }
