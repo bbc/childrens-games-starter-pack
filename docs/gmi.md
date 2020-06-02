@@ -233,7 +233,7 @@ gmi.account.authorise(sessionId)
 
 ### Achievements
 
-There are several functions in the GMI to support in-game achievements, however these functions are currently disabled and can be ignored until the achievement system is finalised and enabled.
+This is an optional feature that you can include in your game. See the [achievements documentation](achievements.md) for more information.
 
 ### Deprecated
 
