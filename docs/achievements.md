@@ -52,10 +52,10 @@ If the value for progress is more than the value for **maxProgress** set initial
 
 **Note on return value:** the return value of `gmi.achievements.set` is true if this call resulted in something becoming fully achieved. Otherwise it returns false.
 
-All achievements data is automatically stored in local storage.
+All achievements data is automatically stored by the GMI.
 
 ## Retrieving achievements status
-A call to `gmi.achievements.get()` will return an array matching the achievements config with any additional data from local storage ( e.g: achieved status or current progress value)
+A call to `gmi.achievements.get()` will return an array matching the achievements config. It will return any additional data that has been saved ( e.g: achieved status or current progress value)
 
 ## Check whether there are any unseen achievements
 
