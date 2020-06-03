@@ -104,6 +104,12 @@ gmi.showSettings(onSettingChanged, onSettingsClosed)
 
 See here for more information on [centralised settings](settings.md).
 
+### Achievements
+
+BBC platforms provide a centralised achievements system.
+
+See the [achievements documentation](achievements.md) for more information.
+
 ## Data fields
 
 GMI exposes several read-only properties.
@@ -230,10 +236,6 @@ gmi.account.authorise(sessionId)
         console.log(error);
     });
 ````
-
-### Achievements
-
-There are several functions in the GMI to support in-game achievements, however these functions are currently disabled and can be ignored until the achievement system is finalised and enabled.
 
 ### Deprecated
 
