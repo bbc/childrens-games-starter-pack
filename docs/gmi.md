@@ -123,6 +123,7 @@ gmi.embedVars.language
 ````
 
 ### gmi.environment
+**DEPRECATED** will return an empty string
 Returns the environment name that the game is being served from. This will be
 "test" or "live".
 
