@@ -104,7 +104,7 @@ gmi.showSettings(onSettingChanged, onSettingsClosed)
 
 See here for more information on [centralised settings](settings.md).
 
-### Achievements
+## Achievements
 
 BBC platforms provide a centralised achievements system.
 
