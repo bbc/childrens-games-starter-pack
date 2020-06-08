@@ -23,7 +23,7 @@ List of technical specifications that games must meet to pass certification.
 
 | Audio | Description |
 |---------------|-------------|
-| Game must supply audio in AAC in MP4 format | AAC MP4 audio should work on all supported devices and browsers |
+| Game must supply audio in AAC in MP4 format | AAC MP4 audio should work on all supported devices and browsers. If your chosen game framework does not support this format, supply all audio as MP3. |
 | Audio bitrate for SFX should be 32k maximum | Audio sound effects to have a lower bitrate than regular audio |
 | Audio bitrate for music should be 64k maximum | Audio to be capped at 64k to reduce filesize |
 
