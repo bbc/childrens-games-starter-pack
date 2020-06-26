@@ -1,6 +1,6 @@
 # Game Delivery Definitions
 
-Updated - 26/06/2020
+**Updated - 26/06/2020** - All games contracted after this date must adhere to these Delivery Definitions.
 
 [Tech reviews](tech-review.md) take place at Alpha, Beta and Release Candidate
 stages. Feedback should be acted upon for the next delivery as all checks
