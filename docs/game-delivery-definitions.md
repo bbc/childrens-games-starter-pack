@@ -199,7 +199,7 @@ To enable us to provide the agreed quality gates between releases, please use
   * Unacceptable audio performance
   * Embed issues
   * Issues on Primary devices that are INSIDE the scope of BBC / developer control
-  * Games Grid issues
+  * CAGE issues
   * Accessibility issues
   * Editorial issues
   * Major UX issues
