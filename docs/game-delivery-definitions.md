@@ -49,21 +49,21 @@ Game;
  * Scratch VO (if necessary)
 
 Technical;
- * Initial game download size MUST BE under 15MB
- * CBeebies games only - total uncompressed game GDZ file size MUST BE under 55MB
+ * Initial game download size **MUST BE** under 15MB
+ * **CBeebies games only** - total uncompressed game GDZ file size **MUST BE** under 55MB
  * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
  * [GMI Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#settings-screen) implemented
  * Deployed on CBBC, CBeebies or Education platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
 
 UI, UX, accessibility and Games GEL;
  * UI layout and full end-to-end screen flow implemented, as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework) across two breakpoints
- * A plan in in place to for the inclusion of the ‘Eight Requirements for Inclusive Design’ as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
+ * A plan in in place to for the inclusion of the **‘Eight Requirements for Inclusive Design’** as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
 
 Product quality;
  * Agreed User Testing and Stakeholder feedback from Pre-production phase addressed
  * Documented release notes including; evidence of testing on a set of representative devices from each manufacturer (Apple, Android, Amazon 2015 5th Gen) and browsers, [P1/P2/P3 known issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization) identified and the [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc.
  * Test plan - a living document, describing what, how and when to test
- * CBeebies games only - evidence of game smoke tested in Playtime Island App Test App
+ * **CBeebies games only** - evidence of game smoke tested in Playtime Island App Test App
 
 Analytics;
  * Mandatory BBC supplied [standardised game stats events](https://www.dropbox.com/s/109h149g3fahami/Alpha-Tier1-Mandatory-Stats.xlsx?dl=0) implemented (documentation can be found in the [Starter Pack](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md))
@@ -71,69 +71,102 @@ Analytics;
 
 ## Beta
 
-> A working Beta game delivery has full game functionality, structure and assets in place and is ready for Technical and User Testing to aid final gameplay balancing and bug final bug identification and fixing.
+> A working Beta game delivery has full game functionality, structure and assets in place and is ready for Technical and User Performance Testing to aid final gameplay balancing and final defect identification and fixing.
 
 ### Beta version of the Software for the Deliverables (including Source Code and Object Code)
 
-  * Gameplay and core functionality complete, with full end-to-end play 
-  * Final game balancing underway
-  * All final assets **SHOULD BE** in place
-  * Documented release notes including [P2/P3](#issue-prioritization) known issues identified, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
-  * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, etc (compromises to be discussed and agreed with BBC)
-  * **CBeebies** games (that are on the Playtime Island roadmap) - agency supplied draft assets for the Playtime Island menu - [as specified here](https://www.dropbox.com/sh/nyj1edxexpjhguw/AADOpJz3yWX6EJ_imwTqaX-Ua?dl=0)
-  * **Initial** game download size **MUST BE** under 15MB
-  * **CBeebies** games **total** uncompressed game GDZ file size **MUST BE** under 55MB
-  * Agency evidence of testing of a set of representative devices from each manufacturer (Apple, Android, Amazon 2015 5th Gen) and browsers
-  * Test cases - documentation describing the exact steps of a test case or script
-  * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
-  * Game-specific visual design is applied to GEL UI
-  * **Fully** complies with [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
-  * All **‘Eight Requirements for Inclusive Design’** have been implemented as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
-  * [‘Inclusive Gameplay’](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games) features for agreed Accessibility Pillar(s) are in place
-  * [GMI Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#settings-screen) implemented
-  * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
-  * [Mandatory BBC supplied standardised game stats](https://www.dropbox.com/s/109h149g3fahami/Alpha-Tier1-Mandatory-Stats.xlsx?dl=0) events implemented (documentation can be found in the [Starter Pack](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md))
-  * [BBC supplied game-specific statistics](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) from Alpha review integrated
-  * Localisation functionality integrated and tested (if required)
-  * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
-  * Agreed User Testing outcomes and Stakeholder feedback from Alpha addressed
-  * [**No known P1 issues**](#issue-prioritization)
-  * [**Limited P2 issues**](#issue-prioritization) identified
-  * [**Limited P3 issues**](#issue-prioritization) identified
+Game;
+ * Gameplay and core functionality complete, with full end-to-end play
+ * Final game balancing underway
+ * All final graphics and audio (MP4 format) **SHOULD BE** in place
+ * Full VO script in place – this may be with talent or scratch depending on recording dates
+
+Technical;
+ * **Initial** game download size **MUST BE** under 15MB
+ * **CBeebies games only** - total uncompressed game GDZ file size MUST BE under 55MB
+ * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
+ * GMI [Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/settings.md) implemented
+ * Deployed on CBBC, CBeebies or Education platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
+ * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, Canvas fallback, etc (compromises to be discussed and agreed with BBC)
+ * Meets [BBC Children’s and Education Games technical specifications](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-specifications.md), or plan in place to do so by RC
+ * Draft documentation on any required dependencies/plug-ins/third party libraries used in the build (the purpose of this is so that the BBC can replicate the Game’s setup if the BBC wants to rebuild the Game).
+ * Localisation functionality integrated and tested (if required)
+ * **Education games only** - Privacy notice for the Beta version. The Supplier will include a privacy notice (as provided by the BBC) in the game and will implement changes to the privacy notice as directed by the BBC and at no charge to the BBC. 
+
+UI, UX, accessibility and Games GEL;
+ * Game-specific visual design is applied to GEL UI
+ * **Fully** complies with [GEL Games Framework](https://www.bbc.co.uk/gel/guidelines/games-framework)
+ * All **‘Eight Requirements for Inclusive Design’** have been implemented as per [GEL Games Framework](https://www.bbc.co.uk/gel/guidelines/games-framework)
+ * ‘[Inclusive Gameplay](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games)’ features for agreed Accessibility Pillar(s) are in place
+ * **CBeebies games only** - agency supplied draft assets for the Playtime Island Game Cards;
+  * Game logo
+  * Main protagonists of the game as individual character assets - in multiple poses ideally
+  * Any key environments/level backgrounds from the game
+  * Any antagonists key to the game - as individual character assets - in multiple poses ideally
+  * Any key moments from the game referenced - including any iconic objects or props from the game
+
+Product quality;
+ * Agreed user testing outcomes and stakeholder feedback from Alpha addressed
+ * Documented release notes including; evidence of testing on a set of representative devices from each manufacturer (Apple, Android, Amazon 2015 5th Gen) and browsers, P2/P3 known issues identified, device / browser test results, Tech Review Tool results, etc
+ * Test cases - documentation describing the exact steps of a test case or script
+ * **CBeebies games only** - evidence of game smoke tested in Playtime Island App Test App
+ * **No known [P1 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)**
+ * **Limited [P2 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)** identified
+ * **Limited [P3 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)** identified
+
+Analytics;
+ * Mandatory BBC supplied [standardised game stats events](https://www.dropbox.com/s/109h149g3fahami/Alpha-Tier1-Mandatory-Stats.xlsx?dl=0) implemented (documentation can be found in the [Starter Pack](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md)
+ * BBC supplied [game-specific statistics](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) from Alpha review integrated
 
 
 ## Release Candidate
 
-> A working Release Candidate game delivery that is fully tested, content complete and ready for Certification and Technical Testing, meeting the below listed Definitions. This will be delivered to the BBC one week before Certification testing is scheduled to be begin. When this is delivered, the game team have a week (Team Acceptance week) in which to do a final review to ensure it meets both the technical and editorial standards before submitting it for Certification (which takes three weeks typically). This review may result in some minor changes being required. This week is NOT to be seen as an additional week for development.
+> A working Release Candidate game delivery is fully tested, content complete and ready for Certification and Technical Testing, meeting the below listed Deliverables. This will be delivered to the BBC one week before Certification testing is scheduled to be begin. Following delivery of the RC, the BBC project team have a week (Team Acceptance week) in which to do a final review to ensure it meets both the requirements and editorial standards before submitting it for Certification (which takes three weeks typically depending on the complexity of the project). This review may result in some changes being required. This week is NOT to be seen as an additional week for development.
 
 ### Release Candidate version of the Software for the Deliverables (including Source Code and Object Code)
 
-  * Game meets the detailed specification set out in Schedule 1 in the contract
-  * Gameplay and core functionality complete, with full end-to-end play
-  * All final assets in place 
-  * Documented release notes including [P2/P3](#issue-prioritization) known issues identified and accepted by BBC, device / browser test results, [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc
-  * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, etc (compromises to be discussed and agreed with BBC)
-  * **CBeebies** games (that are on the Playtime Island roadmap) - agency supplied draft assets for the Playtime Island menu  - [as specified here](https://www.dropbox.com/sh/nyj1edxexpjhguw/AADOpJz3yWX6EJ_imwTqaX-Ua?dl=0)
-  * **Initial** game download size **MUST BE** under 15MB
-  * **CBeebies** games **total** uncompressed game GDZ file size **MUST BE** under 55MB
-  * Agency evidence of game fully tested against all supported devices and browsers 
-  * Test cases - documentation describing the exact steps of a test case or script
-  * **CBeebies** games - Agency evidence of game smoke tested in Playtime Island App Test App
-  * Game-specific visual design is applied to GEL UI
-  * **Fully** complies with [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
-  * All **‘Eight Requirements for Inclusive Design’** have been implemented as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
-  * [‘Inclusive Gameplay’](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games) features for agreed Accessibility Pillar(s) are in place
-  * [GMI Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#settings-screen) implemented
-  * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
-  * [Mandatory BBC supplied standardised game stats](https://www.dropbox.com/s/109h149g3fahami/Alpha-Tier1-Mandatory-Stats.xlsx?dl=0) events implemented (documentation can be found in the [Starter Pack](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md))
-  * [BBC supplied game-specific statistics](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) from Beta review integrated
-  * Localisation functionality integrated and tested (if required)
-  * Deployed on CBBC or CBeebies platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
-  * Agreed user testing outcomes and stakeholder feedback from Beta addressed
-  * If required - a 'vanilla version' of the game, free from any BBC provided code. It is expected to be free from any libraries, including GMI and stats tracking. The game should have all BBC branding and references to the BBC removed from the source code and associated documentation.
-  * [**No known P1 issues**](#issue-prioritization)
-  * [**No or limited P2 issues**](#issue-prioritization) with an agreed fix schedule
-  * [**No or limited P3 issues**](#issue-prioritization) with an agreed fix schedule
+Game;
+ * Game meets the detailed specification as agreed between the BBC and supplier
+ * Gameplay and core functionality complete, with full end-to-end play
+ * All final graphics and audio, including VO (MP4 format) **MUST BE** in place
+
+Technical;
+ * **Initial** game download size **MUST BE** under 15MB
+ * **CBeebies games only** -  total uncompressed game GDZ file size MUST BE under 55MB
+ * Implementation of the [BBC Games Messaging Interface](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gmi.md#gmi)
+ * GMI [Centralised Settings screen](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/settings.md) implemented
+ * Deployed on CBBC, CBeebies or Education platform using [BBC GitHub build process](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/build-pipeline.md)
+ * Game must gracefully scale to ensure a good user experience on all supported devices, eg. asset resolutions, number of sound files loaded, Canvas fallback, etc (compromises to be discussed and agreed with BBC)
+ * Fully meets [BBC Children’s and Education Games technical specifications](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-specifications.md)
+ * Final documentation on any required dependencies/plug-ins/third party libraries used in the build (the purpose of this is so that the BBC can replicate the Game’s setup if the BBC wants to rebuild the Game).
+ * Localisation functionality integrated and tested (if required)
+ * **Education games onl** - Privacy notice for the Beta version. The Supplier will include a privacy notice (as provided by the BBC) in the game and will implement changes to the privacy notice as directed by the BBC and at no charge to the BBC. 
+ * **If required** - a 'vanilla version' of the game, free from any BBC provided code. It is expected to be free from any libraries, including GMI and stats tracking. The game should have all BBC branding and references to the BBC removed from the source code and associated documentation.
+
+UI, UX, accessibility and Games GEL;
+ * Game-specific visual design is applied to GEL UI
+ * **Fully** complies with [GEL Games Framework](https://www.bbc.co.uk/gel/guidelines/games-framework)
+ * All **‘Eight Requirements for Inclusive Design’** have been implemented as per [GEL Games Framework](https://www.bbc.co.uk/gel/guidelines/games-framework)
+ * ‘[Inclusive Gameplay](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games)’ features for agreed Accessibility Pillar(s) **MUST BE** in place
+ * **CBeebies games only** - agency supplied final assets for the Playtime Island Game Cards;
+  * Game logo
+  * Main protagonists of the game as individual character assets - in multiple poses ideally
+  * Any key environments/level backgrounds from the game
+  * Any antagonists key to the game - as individual character assets - in multiple poses ideally
+  * Any key moments from the game referenced - including any iconic objects or props from the game
+
+Product quality;
+ * Agreed user testing outcomes and stakeholder feedback from Beta addressed
+ * Documented release notes including; evidence of game fully tested against all supported devices and browsers, [P2/P3 known issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization) identified and accepted by BBC, device / browser test results, Tech Review Tool results, etc
+ * Test cases - documentation describing the exact steps of a test case or script
+ * **CBeebies games only** - Agency evidence of game smoke tested in Playtime Island App Test App
+ * **No [P1 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)**
+ * **No or limited [P2 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)** with an agreed fix schedule
+ * **No or limited [P3 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)** with and agreed fix schedule
+
+Analytics;
+ * Mandatory BBC supplied [standardised game stats events](https://www.dropbox.com/s/109h149g3fahami/Alpha-Tier1-Mandatory-Stats.xlsx?dl=0) implemented (documentation can be found in the [Starter Pack](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md))
+ * BBC supplied [game-specific statistics](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) from Beta review integrated
 
 
 ##  Project Closedown
@@ -164,7 +197,6 @@ To enable us to provide the agreed quality gates between releases, please use
   * Major user interaction issues
   * Unacceptable video performance
   * Unacceptable audio performance
-  * GAPI integration issues
   * Embed issues
   * Issues on Primary devices that are INSIDE the scope of BBC / developer control
   * Games Grid issues
