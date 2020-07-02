@@ -2,14 +2,19 @@
 
 ## Initial Setup
 
-Initialise the achievements system with an array of achievement objects.  
-It is recommended to load this data from a JSON file.
+Initialise the achievements system with an array of achievement objects and optional callbacks:
 
-`gmi.achievements.init(achievementsData);`
+`gmi.achievements.init(achievementsData, achievementCallback, achievementsClosedCallback);`
+
+**Parameters:**
+* **achievementsData** [JSON object] A list of possible achievements. It is recommended to load this from a JSON file. More information on this below.
+* **achievementCallback** [optional function] A callback fired after a new achievement notification has been triggered.
+* **achievementsClosedCallback** [optional function] A callback fired after the achievements summary box has been closed.
+
 
 ## Configuration
 
-For each achievement, create an object with a key, name and description.
+For each achievement in `achievementsData`, create an object with a key, name and description.
 
 ```json
 {
@@ -54,6 +59,8 @@ If the value for progress is more than the value for **maxProgress** set initial
 
 All achievements data is automatically stored by the GMI.
 
+After an achievement has been set, the `achievementCallback` will fire.
+
 ## Retrieving achievements status
 A call to `gmi.achievements.get()` will return an array matching the achievements config. It will return any additional data that has been saved ( e.g: achieved status or current progress value)
 
@@ -61,4 +68,4 @@ A call to `gmi.achievements.get()` will return an array matching the achievement
 
 `gmi.achievements.unseen` - this is true if there are new achievements to see, otherwise false.
 
-This is useful for adding a blip indicator on the achievements button, to alert the user that they have completed a new achievement, but have not yet seen it.
+This is useful for adding a blip indicator on the achievements button, to alert the user that they have completed a new achievement, but have not yet seen it. Alternatively, the `achievementsClosedCallback` may be used to remove a blip after the summary box has been closed.
