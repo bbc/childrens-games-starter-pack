@@ -12,7 +12,7 @@ Install the [BBC Digital Children's Games Tech Review Tool](https://chrome.googl
 
 ## Using the Extension
 
-* Visit a game webpage that requires a technical review (such as http://www.bbc.co.uk/cbbc/embed/game/{GID})
+* Visit a game webpage that requires a technical review (such as https://www.bbc.co.uk/games/embed/[ID]?viewNonPublished=true&versionOverride=[n])
 * Open developer tools and click on Tech Review tab
 
 For accurate results:
