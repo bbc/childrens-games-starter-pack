@@ -61,9 +61,9 @@ UI, UX, accessibility and Games GEL;
 
 Product quality;
  * Agreed User Testing and Stakeholder feedback from Pre-production phase addressed
- * Documented release notes including; evidence of testing on a set of representative devices from each manufacturer (Apple, Android, Amazon 2015 5th Gen) and browsers, [P1/P2/P3 known issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization) identified and the [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc.
+ * Documented release notes including; evidence of testing on a set of representative devices from each manufacturer (Apple, Android, Amazon) and browsers, [P1/P2/P3 known issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization) identified and the [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc.
  * Test plan - a living document, describing what, how and when to test
- * **CBeebies games only** - evidence of game smoke tested in Playtime Island App Test App
+ * **CBeebies games only** - evidence of game tested in Playtime Island App Test App
 
 Analytics;
  * Mandatory BBC supplied [standardised game stats events](https://www.dropbox.com/s/109h149g3fahami/Alpha-Tier1-Mandatory-Stats.xlsx?dl=0) implemented (documentation can be found in the [Starter Pack](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md))
@@ -107,9 +107,9 @@ UI, UX, accessibility and Games GEL;
 
 Product quality;
  * Agreed user testing outcomes and stakeholder feedback from Alpha addressed
- * Documented release notes including; evidence of testing on a set of representative devices from each manufacturer (Apple, Android, Amazon 2015 5th Gen) and browsers, P2/P3 known issues identified, device / browser test results, Tech Review Tool results, etc
+ * Documented release notes including; evidence of testing on a set of representative devices from each manufacturer (Apple, Android, Amazon) and browsers, P2/P3 known issues identified, device / browser test results, Tech Review Tool results, etc
  * Test cases - documentation describing the exact steps of a test case or script
- * **CBeebies games only** - evidence of game smoke tested in Playtime Island App Test App
+ * **CBeebies games only** - evidence of game tested in Playtime Island App Test App
  * **No known [P1 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)**
  * **Limited [P2 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)** identified
  * **Limited [P3 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)** identified
@@ -159,7 +159,7 @@ Product quality;
  * Agreed user testing outcomes and stakeholder feedback from Beta addressed
  * Documented release notes including; evidence of game fully tested against all supported devices and browsers, [P2/P3 known issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization) identified and accepted by BBC, device / browser test results, Tech Review Tool results, etc
  * Test cases - documentation describing the exact steps of a test case or script
- * **CBeebies games only** - Agency evidence of game smoke tested in Playtime Island App Test App
+ * **CBeebies games only** - Agency evidence of game tested in Playtime Island App Test App
  * **No [P1 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)**
  * **No or limited [P2 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)** with an agreed fix schedule
  * **No or limited [P3 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)** with and agreed fix schedule
