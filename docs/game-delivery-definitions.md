@@ -12,7 +12,7 @@ on the Game Delivery Definitions outlined below) to determine whether
 Acceptance can be given, which may trigger any payment due in relation
 to the tested Deliverable.
 
-All games will be checked for adherence to the [Technical Specifications](docs/game-specifications.md).
+All games will be checked for adherence to the [Technical Specifications](game-specifications.md).
 
 ## Pre-production
 
@@ -183,7 +183,7 @@ This should include, but not limited to:
   * Post Project Review notes
 
 
-### #Issue Prioritization
+## Issue Prioritization
 
 To enable us to provide the agreed quality gates between releases, please use
  the following guidelines for identifying issue priorities:
