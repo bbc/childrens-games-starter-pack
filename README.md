@@ -47,6 +47,7 @@ ___
   * [Testing on a BBC environment](docs/testing-on-bbc.md)
   * [Testing your game in the Live environment](docs/testing-on-cbbc-page.md#testing-your-game-in-the-live-environment)
   * [Testing your game in a mobile app](docs/testing-in-a-mobile-app.md#testing-in-a-mobile-app)
+  * [Supplier Quality Assurance and Testing](docs/supplier-quality-assurance-and-testing.md#supplier-quality-assurance-and-testing)
 
 ### Other
 * [Updating your pack](docs/updating-starter-pack.md)
