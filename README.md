@@ -18,6 +18,7 @@ ___
 ## Table of Contents
 
 ### Process
+  * [Game Design](docs/game-designs.md#game-design)
   * [Game Delivery Definitions](docs/game-delivery-definitions.md#game-delivery-definitions)
   * [Issue Prioritization](docs/game-delivery-definitions.md#issue-prioritization)
   * [Tech Review](docs/tech-review.md#tech-review)
