@@ -27,6 +27,15 @@ List of technical specifications that games must meet to pass certification.
 | Audio bitrate for SFX should be 32k maximum | Audio sound effects to have a lower bitrate than regular audio |
 | Audio bitrate for music should be 64k maximum | Audio to be capped at 64k to reduce filesize |
 
+| CSS | Description |
+|---------------|-------------|
+| CSS should be namespaced to game specific HTML elements | There should be no CSS applied by the game code to the containing page or any BBC elements |
+
+| WEBGL | Description |
+|---------------|-------------|
+| All games that run in WebGL should enables CORS images | Game should check if the domain of the asset (gmi.gameDir) is the same as the window and if not add "anonymous" crossOrigin attribute on all image requests, ref: https://webglfundamentals.org/webgl/lessons/webgl-cors-permission.html |
+
+
 ## Guidance
 
 ### Pausing the game
