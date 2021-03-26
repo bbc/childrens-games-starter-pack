@@ -6,20 +6,20 @@ List of technical specifications that games must meet to pass certification.
 |---------------|-------------|
 | Code submitted to Github must be source code | The BBC must be able to edit, build and maintain the game without requiring any seperate proprietary software |
 | Code must include a build script that builds the game from source and runs optimisation steps | Code submitted must be pre-minification and all steps required to produce production builds must be included in the build script and/or documented |
+| Dependency Management | All dependencies must be stored in the game repo or hosted in public/open sources such as NPM. Proprietary/privately owned sources are not acceptable including private servers and Github accounts |
 | A functional GDZ must be output as part of the build steps | GDZ's enable the BBC to run the game on all BBC platforms. |
 | CBeebies games only - the GDZ filesize must be less than 55MB | CBeebies games going into Playtime Island must adhere to filesize restrictions |
-| CBeebies games only - the GDZ must load in the Playtime Island Test App  | [Instructions](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/testing-in-a-mobile-app.md#testing-in-a-mobile-app) |
 | Test Plans must be included | The BBC requires a Test Plan to be delivered with each game  |
 | Must be GMI compliant | [GMI compliance](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/working-with-gmi.md)  |
 | Must be GEL compliant | [GEL compliance](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets) |
 
 | Performance/Behaviour | Description |
 |---------------|-------------|
-| Home screen loads and is interactive within 8 seconds | The play button should be interactive within 8 seconds to reduce idle time for children |
-| No loading bar should appear on screen for longer than 4 seconds | Loading strategies should be employed to minimise in-game load times |
+| Must implement the Interactive Home Screen Principle | See [Guidance - Interactive Home Screen](#interactive-home-screen) |
+| Must implement appropriate loading strategies throughout experience | See [Guidance - Loading](#loading) |
 | Consistent framerate of at least 24fps on supported devices | The game should maintain an acceptable framerate |
 | No single file should be larger than 10MB | Files should be optimised appropriately |
-| Game must pause all functionality when it loses visibility | All gameplay, background processes, animations and audio should be paused if game loses visibility/focus ie tab switched or window minimised |
+| Game must pause all functionality when it loses visibility | See [Guidance - Pausing the game](#pausing-the-game) |
 
 | Audio | Description |
 |---------------|-------------|
@@ -39,8 +39,16 @@ List of technical specifications that games must meet to pass certification.
 ## Guidance
 
 ### Pausing the game
+* All gameplay, background processes, animations and audio should be paused if game loses visibility/focus ie tab switched or window minimised
 * The [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API) is recommended for detecting when to pause functionality.
 * Exceptional situations should still take Page Visibility into account and behave accordingly i.e. online games can remain active but audio should not be heard when switching tabs
+
+### Interactive Home Screen
+According to the GEL Guidelines the first thing a user sees should be the Home Screen. Developers should ensure that this initial load is an optimised process:
+* First load should only load assets required to render the Home Screen
+* Assets used to render Home Screen should be kept light and optimised
+* Fire game_loaded stat upon succesful render
+* Employ loading strategies such as thhose described below to load the rest of the game appropriately
 
 ### Loading
 We should employ techniques to reduce the amount of idle time a user faces a loading bar. These include: 
