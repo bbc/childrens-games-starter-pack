@@ -24,6 +24,3 @@ not yet audience facing. If your game is already audience facing it won't
 do much unless there are configuration/metadata changes:
 [https://www.bbc.co.uk/games/embed/childrens-games-starter-pack?viewNonPublished=true](https://www.bbc.co.uk/games/embed/childrens-games-starter-pack?viewNonPublished=true)
 
-### in-situ iframe
-In order to see your work in progress game in-situ in an iframe you can follow
-the instructions on this page: [testing-on-cbbc-page](testing-on-cbbc-page.md).
