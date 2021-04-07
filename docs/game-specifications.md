@@ -45,7 +45,7 @@ List of technical specifications that games must meet to pass certification.
 
 ### Interactive Home Screen
 According to the GEL Guidelines the first thing a user sees should be the Home Screen. Developers should ensure that this initial load is an optimised process:
-* First load should only load assets required to render the Home Screen
+* First load should only load assets required to render the Home Screen (should not exceed 15MB)
 * Assets used to render Home Screen should be kept light and optimised
 * Fire game_loaded stat upon succesful render
 * Employ loading strategies such as thhose described below to load the rest of the game appropriately
