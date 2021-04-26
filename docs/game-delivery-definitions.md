@@ -168,6 +168,29 @@ Analytics;
  * Mandatory BBC supplied [standardised game stats events](https://www.dropbox.com/s/109h149g3fahami/Alpha-Tier1-Mandatory-Stats.xlsx?dl=0) implemented (documentation can be found in the [Starter Pack](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md))
  * BBC supplied [game-specific statistics](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) from Beta review integrated
 
+Asset Delivery;
+ * All layered HD PSD and Illustrator files,
+ * HD PSD / Illustrator files and / or PNGs of the below (where applicable);
+  * All in-game characters - 5x multiple poses,
+  * Logos,
+  * In-game items - collectibles, tools, weapons, clothes, vehicles, etc,
+  * Game world backgrounds,
+  * Character rigs for animating,
+  * Level select UI elements,
+  * GEL UI buttons.
+ * Fonts
+ * Game music (where not provided by the BBC) with copyright details in WAV format
+ * Game sound effect files in WAV format
+ * In-game script and voice over files
+
+Social Media Package - Education games only;
+ * 1x 30 second 'coming soon' trailer for the game in two aspect ratios (9:16 and 1:1)
+ * 1x 30 second 'launch' trailer for the game in two aspect ratios (9:16 and 1:1)
+ * 3x 20 second gameplay videos in two aspect ratios (9:16 and 1:1)
+ * 3 x GIF files of animated moments from within the Full Game
+ * 5x PNG promo images (1:1)
+ * Holding image for the game, layered PSD of AI format
+ * All the above must include brand-specific branding, fonts and subtitles. Clean versions with no subtitles or branding must also be provided to the BBC
 
 ##  Project Closedown
 
