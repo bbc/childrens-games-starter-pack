@@ -171,13 +171,13 @@ Analytics;
 Asset Delivery;
  * All layered HD PSD and Illustrator files,
  * HD PSD / Illustrator files and / or PNGs of the below (where applicable);
-  * All in-game characters - 5x multiple poses,
-  * Logos,
-  * In-game items - collectibles, tools, weapons, clothes, vehicles, etc,
-  * Game world backgrounds,
-  * Character rigs for animating,
-  * Level select UI elements,
-  * GEL UI buttons.
+   * All in-game characters - 5x multiple poses,
+   * Logos,
+   * In-game items - collectibles, tools, weapons, clothes, vehicles, etc,
+   * Game world backgrounds,
+   * Character rigs for animating,
+   * Level select UI elements,
+   * GEL UI buttons.
  * Fonts
  * Game music (where not provided by the BBC) with copyright details in WAV format
  * Game sound effect files in WAV format
