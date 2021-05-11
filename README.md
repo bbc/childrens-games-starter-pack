@@ -40,6 +40,7 @@ ___
     * [Stats](docs/stats.md#stats)
     * [Using Local Storage](docs/data-storage.md#using-local-storage)
   * [Brim](docs/brim.md#brim)
+  * [Device Rotation](docs/device-rotation.md)
   * [Known Issues](docs/known-issues.md)
 
 ### Testing
