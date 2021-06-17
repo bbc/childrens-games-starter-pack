@@ -21,12 +21,14 @@ gmi.setStatsScreen("screenName", { custom_var_1: "value" });
 Please note that pause screens and loading screens do not require a page stat.
 
 ### Screen names and Counter names
-The `screenName` passed to `setStatsScreen` will be used to generate a countername behind the scenes.
+The `screenName` passed to `setStatsScreen` will be appended onto the stats countername set in the BBC's iSite CMS.
 
-Counternames take the following format:
+Counternames usually take the following format:
 
 ````
-keepalive.<product-name.>games.<game-name>.<screen-name>.page
+[keepalive.<product-name>.games.<game-name>].(<screen-name>.page)
+[] = set in CMS
+() = set by frontend
 ````
 
 Using the [ATI Tag Inspector](#ATI-Tag-Inspector-Chrome-plug-in) you will be able to check that this is generated appropriately. There may also be cases where we expect you to pass through the complete countername yourself as part of `eventLabels` below.
