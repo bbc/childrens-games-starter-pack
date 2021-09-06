@@ -213,41 +213,37 @@ To enable us to provide the agreed quality gates between releases, please use
 
 ### P1 Issues:
 
+  * Major performance issues
   * Broken / incomplete user journeys
+  * Major UX issues
+  * Embed issues
   * Stats issues
   * Lack of core functionality
+  * App and / or platform integration issues (where appropriate)
   * Crashes / lock-ups
-  * Major user interaction issues
   * Unacceptable video performance
   * Unacceptable audio performance
   * Embed issues
-  * Issues on Primary devices that are INSIDE the scope of BBC / developer control
-  * CAGE issues
-  * Accessibility issues
+  * Issues on devices that are INSIDE the scope of BBC / developer control
   * Editorial issues
-  * Major UX issues
-  * Excessive load sizes
 
 ### P2 Issues:
 
-  * Issues on Primary devices that are OUTSIDE the scope of BBC / developer control**
+  * Issues on devices that are OUTSIDE the scope of BBC / developer control**
   * Crashes / lock-ups that cannot be reproduced
   * Missing images
   * Missing sounds
   * Minor user interaction issues
-  * Issues on Secondary devices that are INSIDE the scope of BBC / developer control
-  * Issues on Tertiary devices that are INSIDE the scope of BBC / developer control
   * General UX issues
+  * Accessibility issues
 
 ### P3 Issues:
 
-  * Issues on Secondary devices that are OUTSIDE the scope of BBC / developer
-   controls\**
-  * Issues on Tertiary devices that are OUTSIDE the scope of BBC / developer
-  control\**
   * Occasional audio / video glitches
   * Minor UX tweaks
   * Missing version numbers
+  * Spelling mistakes and typos
+
 
 \** Issues outside the scope of BBC / dev control include
 iOS / Android / Browser limitations that are caused by the software vendor and
