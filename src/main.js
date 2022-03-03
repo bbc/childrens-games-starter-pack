@@ -99,7 +99,7 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
 
     appendBtn("Log setStatsScreen", () => {
         gmi.setStatsScreen(setStatsScreenInput.value);
-    });
+    }, "set-stat-button");
 
     // setstatsEvent
     appendH3("sendStatsEvent");
@@ -114,7 +114,7 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
         var params = JSON.parse(document.getElementById("stats-params").value);
 
         gmi.sendStatsEvent("action_name", "action_type", params);
-    });
+    }, "send-stat-button");
 
     appendHorizontalRule();
 
@@ -125,8 +125,8 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     outputText.id = "save-load-text";
     inner.appendChild(outputText);
     appendSpacer();
-    appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); });
-    appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); });
+    appendBtn("Save", function() { storage.onSaveButton(gmi, outputText); }, "save-button");
+    appendBtn("Load", function() { storage.onLoadButton(gmi, outputText); }, "load-button");
     appendHorizontalRule();
 
     // ---------- GMI Achievements Examples ---------
@@ -164,19 +164,20 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     achievementsData.forEach((achievement, idx) => {
         var outputElement = achievementEles[idx];
         var id = "achievement" + idx;
+        var testData = "achievement" + idx
         var container = document.createElement("div");
         outputElement = document.createElement("pre");
         container.style.display = "inline-block";
         container.appendChild(outputElement);
         outputElement.id = id;
         achievement.idx = idx;
-        appendBtn("Progress #"+idx, function() { achievements.onAchieveButton(gmi, achievement, outputElement); }, id, container);
+        appendBtn("Progress #"+idx, function() { achievements.onAchieveButton(gmi, achievement, outputElement); }, testData, id, container);
         inner.appendChild(container);
     })
     appendSpacer();
     appendHorizontalRule();
 
-    appendBtn("Achievements", function() { achievements.onShow(gmi); });
+    appendBtn("Achievements", function() { achievements.onShow(gmi); }, "achievements-button");
     var achievementUnseen = document.createElement("pre");
     achievementUnseen.id = "achievement-status";
     inner.appendChild(achievementUnseen);
@@ -195,7 +196,7 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
                 .catch(err => {
                     element.innerHTML = `Error: ${err}`;
                 });
-        });
+        }, label + "-button");
     };
 
     var statusResult = appendParagraph("");
@@ -244,7 +245,7 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     appendBtn("Toggle audio", function() {
         gmi.setAudio(!gmi.getAllSettings().audio);
         document.getElementById("audio-label").innerHTML = gmi.getAllSettings().audio;
-    });
+    }, "audio-toggle");
     appendHorizontalRule();
 
     // --------- GMI Play Audio Example ---------
@@ -295,24 +296,24 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     appendBtn("Play MP3 audio", function() {
         var audio = createSource(mp3Buffer);
         audio.start(0);
-    });
+    }, "mp3-audio");
 
     appendBtn("Play OGG audio", function() {
         var audio = createSource(oggBuffer);
         audio.start(0);
-    });
+    }, "ogg-audio");
 
     appendBtn("Play MP4 audio", function() {
         var audio = createSource(mp4Buffer);
         audio.start(0);
-    });
+    }, "mp4-audio");
 
     appendHorizontalRule();
 
     // ---------- GMI Exit Example -----------
     appendSubtitle("GMI Exit Example");
     if (gmi.shouldShowExitButton) {
-        appendBtn("Exit game", function() { gmi.exit(); });
+        appendBtn("Exit game", function() { gmi.exit(); }, "exit-game");
     }
     else {
         appendParagraph("Exit button not shown<br>gmi.shouldShowExitButton is false.");
@@ -325,7 +326,7 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     appendParagraph("The message input in the box below will be sent to gmi.debug when the submit button is hit.");
     appendTextInput("debug-input");
     appendSpacer();
-    appendBtn("Submit", function() { gmi.debug(document.getElementById("debug-input").value); });
+    appendBtn("Submit", function() { gmi.debug(document.getElementById("debug-input").value); }, "submit-button");
     appendHorizontalRule();
 
 
@@ -334,7 +335,7 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     appendSubtitle("Prompt Button");
     appendBtn("Trigger Prompt", function() {
       gmi.showPrompt(resumeGame);
-    });
+    }, "trigger-prompt");
     var promptParagraph = appendParagraph();
     appendHorizontalRule();
 
@@ -355,7 +356,7 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
         }
         //disable all buttons and links in the background so they cannot be tabbed to while settings modal is open
         disableBackgroundElements(true);
-    }, "settings-button");
+    }, "settings-button", "settings-button");
     var settingsParagraph = appendParagraph();
 
     appendHorizontalRule();
@@ -427,19 +428,19 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
 
     appendBtn("Connect", function() {
         ws.connect(setConnectionStateOnButtons);
-    },"ws-connect");
+    },"ws-connect", "ws-connect");
 
     appendBtn("Disconnect", function() {
         ws.disconnect();
-    },"ws-disconnect");
+    }, "ws-disconnect", "ws-disconnect");
 
     appendBtn("Send String", function() {
         ws.sendString(document.getElementById("websocket-input").value);
-    },"ws-sendString");
+    }, "ws-sendString", "ws-sendString");
 
     appendBtn("Send ArrayBuffer", function() {
         ws.sendArrayBuffer(document.getElementById("websocket-input").value);
-    },"ws-sendArrayBuffer");
+    }, "ws-sendArrayBuffer", "ws-sendArrayBuffer");
 
     setConnectionStateOnButtons(false);
 
@@ -527,9 +528,11 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
         }
     }
 
-    function appendBtn(label, onClick, className, container = inner) {
+    function appendBtn(label, onClick, testId, className, container = inner) {
         var btn = document.createElement("button");
         btn.className = className || "game-button";
+        var testIdTag = testId || className;
+        btn.setAttribute("data-test-id", testIdTag);
         btn.innerHTML = label;
         btn.onclick = onClick;
         container.appendChild(btn);
