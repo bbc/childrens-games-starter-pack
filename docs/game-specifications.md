@@ -12,6 +12,7 @@ List of technical specifications that games must meet to pass certification.
 | Test Plans must be included | The BBC requires a Test Plan to be delivered with each game  |
 | Must be GMI compliant | [GMI compliance](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/working-with-gmi.md)  |
 | Must be GEL compliant | [GEL compliance](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/gel-guidelines.md#gel-guidelines-accessibility-and-icon-assets) |
+| All requests should be configured for CORS | The crossorigin attribute should be set to 'anonymous'. [Documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin) |
 
 | Performance/Behaviour | Description |
 |---------------|-------------|
