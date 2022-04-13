@@ -329,7 +329,6 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     appendBtn("Submit", function() { gmi.debug(document.getElementById("debug-input").value); }, "submit-button");
     appendHorizontalRule();
 
-
     // --------- Prompt Button --------------
 
     appendSubtitle("Prompt Button");
@@ -446,6 +445,11 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
 
     appendHorizontalRule();
 
+    // ---------- Live Monitoring Testing ----------
+
+    appendSubtitle("Live Monitoring Testing");
+    appendParagraph("The button bellow will forcibly throw an error to the console, sending failure data to our live monitoring service");
+    appendBtn("Throw Error", throwNewError, "throw-error");
 
     // ---------- Helper Functions ----------
 
@@ -617,6 +621,12 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
                 element.removeAttribute("aria-hidden");
             }
         });
+    }
+
+    function throwNewError() {
+        setTimeout(() => {
+            x.method();
+        }, 100);
     }
 
 });
