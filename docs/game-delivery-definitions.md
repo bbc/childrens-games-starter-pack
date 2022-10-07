@@ -1,6 +1,6 @@
 # Game Delivery Definitions
 
-**Updated - 26/06/2020** - All games contracted after this date must adhere to these Delivery Definitions.
+**Updated - 07/10/2022** - All games contracted after this date must adhere to these Delivery Definitions. NB - change pertains to the creation of a build release in GitHub (Product Quality sections).
 
 [Tech reviews](tech-review.md) take place at Alpha, Beta and Release Candidate
 stages. Feedback should be acted upon for the next delivery as all checks
@@ -61,7 +61,7 @@ UI, UX, accessibility and Games GEL;
 
 Product quality;
  * Agreed User Testing and Stakeholder feedback from Pre-production phase addressed
- * Documented release notes including; evidence of testing on a set of representative devices from each manufacturer (Apple, Android, Amazon) and browsers, [P1/P2/P3 known issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization) identified and the [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc.
+ * Alpha build [release created in the GitHub repository](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases), this must be accompanied by documented release notes including; evidence of testing on a set of representative devices from each manufacturer (Apple, Android, Amazon) and browsers, [P1/P2/P3 known issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization) identified and the [Tech Review Tool](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/tech-review-tool.md) results, etc.
  * Test plan - a living document, describing what, how and when to test
  * **CBeebies games only** - evidence of game tested in Playtime Island App Test App
 
@@ -107,7 +107,7 @@ UI, UX, accessibility and Games GEL;
 
 Product quality;
  * Agreed user testing outcomes and stakeholder feedback from Alpha addressed
- * Documented release notes including; evidence of testing on a set of representative devices from each manufacturer (Apple, Android, Amazon) and browsers, P2/P3 known issues identified, device / browser test results, Tech Review Tool results, etc
+ * Beta build [release created in the GitHub repository](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases), this must be accompanied by documented release notes including; evidence of testing on a set of representative devices from each manufacturer (Apple, Android, Amazon) and browsers, P2/P3 known issues identified, device / browser test results, Tech Review Tool results, etc
  * Test cases - documentation describing the exact steps of a test case or script
  * **CBeebies games only** - evidence of game tested in Playtime Island App Test App
  * **No known [P1 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)**
@@ -157,7 +157,7 @@ UI, UX, accessibility and Games GEL;
 
 Product quality;
  * Agreed user testing outcomes and stakeholder feedback from Beta addressed
- * Documented release notes including; evidence of game fully tested against all supported devices and browsers, [P2/P3 known issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization) identified and accepted by BBC, device / browser test results, Tech Review Tool results, etc
+ * Release Candidate build [release created in the GitHub repository](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases), this must be accompanied by documented release notes including; evidence of game fully tested against all supported devices and browsers, [P2/P3 known issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization) identified and accepted by BBC, device / browser test results, Tech Review Tool results, etc
  * Test cases - documentation describing the exact steps of a test case or script
  * **CBeebies games only** - Agency evidence of game tested in Playtime Island App Test App
  * **No [P1 issues](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-delivery-definitions.md#issue-prioritization)**
