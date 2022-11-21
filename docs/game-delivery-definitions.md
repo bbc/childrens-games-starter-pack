@@ -91,7 +91,6 @@ Technical;
  * Meets [BBC Children’s and Education Games technical specifications](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-specifications.md), or plan in place to do so by RC
  * Draft documentation on any required dependencies/plug-ins/third party libraries used in the build (the purpose of this is so that the BBC can replicate the Game’s setup if the BBC wants to rebuild the Game).
  * Localisation functionality integrated and tested (if required)
- * **Education games only** - Privacy notice for the Beta version. The Supplier will include a privacy notice (as provided by the BBC) in the game and will implement changes to the privacy notice as directed by the BBC and at no charge to the BBC. 
 
 UI, UX, accessibility and Games GEL;
  * Game-specific visual design is applied to GEL UI
@@ -140,7 +139,6 @@ Technical;
  * Fully meets [BBC Children’s and Education Games technical specifications](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/game-specifications.md)
  * Final documentation on any required dependencies/plug-ins/third party libraries used in the build (the purpose of this is so that the BBC can replicate the Game’s setup if the BBC wants to rebuild the Game).
  * Localisation functionality integrated and tested (if required)
- * **Education games onl** - Privacy notice for the Beta version. The Supplier will include a privacy notice (as provided by the BBC) in the game and will implement changes to the privacy notice as directed by the BBC and at no charge to the BBC. 
  * **If required** - a 'vanilla version' of the game, free from any BBC provided code. It is expected to be free from any libraries, including GMI and stats tracking. The game should have all BBC branding and references to the BBC removed from the source code and associated documentation.
 
 UI, UX, accessibility and Games GEL;
