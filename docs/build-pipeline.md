@@ -9,12 +9,19 @@ testing and delivery. This covers both game code and .gdz files for use with mob
 
 Our build servers make nvm and npm available to games. 
 
-Our automated build pipeline automatically runs the [build.sh](../build-scripts/build.sh) file
+Our automated build pipeline automatically runs the [build.sh](/build-scripts/build.sh) file
 every time you push changes to the Git repo. You should place all your necessary
 compilation steps in here.
 
 The build script should put all necessary files into a top level 'output' folder for
 uploading to our servers once the script has finished running.
+
+Wherever possible, builds should include an unlinked (hidden) sourcemap. For example, if using webpack, specify `hidden-sourcemap`, e.g:
+
+```javascript
+    devtool: "hidden-source-map"
+```
+Sourcemaps are moved on upload and their location will be messaged in the build log.
 
 Please provide your BBC Technical Contact with any details of special software or
 plugins that are required to build your game in the event our servers don't
@@ -48,7 +55,7 @@ be placed in the root directory and include the following fields:
   * statsAppName: cbeebies/cbbc as appropriate
   * statsCounterName: your TPM can provide you this value
 
-We've included an [example file](../src/configuration.json) for reference.
+We've included an [example file](/src/configuration.json) for reference.
 
 ### Build Complete
 
@@ -56,6 +63,6 @@ You will get email notifications with status reports on success/failure of any a
 builds. In the event of a failure you should get an error report with debug information.
 
 On success your game code should now be on our servers and a .gdz file available for download.
-The locations for these should be recorded in your individual Git repo's [Home README](../README.md)
+The locations for these should be recorded in your individual Git repo's [Home README](/README.md)
 
-[Home](../README.md)
+[Home](/README.md)
