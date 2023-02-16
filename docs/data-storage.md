@@ -41,37 +41,37 @@ gmi.getAllSettings().subtitles;
 Getting a local store instance:
 
 ```javascript
-const localStore = gmi.storage.localKeyValueStore.getStore();
+const store = gmi.storage.localStore.getStore();
 ```
 
 Saving data:
 
 ```javascript
-await localStore.set("key", { some: "data" });
+await store.set("key", { some: "data" });
 ```
 
 Retrieving data:
 
 ```javascript
-const localData = await localStore.get("key");
+const someData = await store.get("key");
 ```
 
 Deleting data:
 
 ```javascript
-await localStore.remove("key");
+await store.remove("key");
 ```
 
 Retrieve list of all keys for data in the store:
 
 ```javascript
-const keys = await localStore.list();
+const keys = await store.list();
 ```
 
 Delete all data in local store:
 
 ```javascript
-await gmi.storage.localKeyValueStore.removeStore();
+await gmi.storage.localStore.removeStore();
 ```
 
 ### Loading Shared Settings Data
