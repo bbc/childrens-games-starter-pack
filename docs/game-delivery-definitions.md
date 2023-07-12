@@ -58,6 +58,7 @@ Technical;
 UI, UX, accessibility and Games GEL;
  * UI layout and full end-to-end screen flow implemented, as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework) across two breakpoints
  * A plan in in place to for the inclusion of the **‘Eight Requirements for Inclusive Design’** as per [GEL Games Framework](http://www.bbc.co.uk/gel/guidelines/games-framework)
+ * **Remove if user testing is being done at Beta - Fully** complies with [Onboarding Design Principles](https://www.bbc.co.uk/gel/features/how-to-design-onboarding-for-games)
 
 Product quality;
  * Agreed User Testing and Stakeholder feedback from Pre-production phase addressed
@@ -97,6 +98,7 @@ UI, UX, accessibility and Games GEL;
  * **Fully** complies with [GEL Games Framework](https://www.bbc.co.uk/gel/guidelines/games-framework)
  * All **‘Eight Requirements for Inclusive Design’** have been implemented as per [GEL Games Framework](https://www.bbc.co.uk/gel/guidelines/games-framework)
  * ‘[Inclusive Gameplay](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games)’ features for agreed Accessibility Pillar(s) are in place
+ * **Remove if user testing is being done at Alpha - Fully** complies with [Onboarding Design Principles](https://www.bbc.co.uk/gel/features/how-to-design-onboarding-for-games)
  * **CBeebies games only** - agency supplied draft assets for the Playtime Island Game Cards;
   * Game logo
   * Main protagonists of the game as individual character assets - in multiple poses ideally
@@ -146,6 +148,7 @@ UI, UX, accessibility and Games GEL;
  * **Fully** complies with [GEL Games Framework](https://www.bbc.co.uk/gel/guidelines/games-framework)
  * All **‘Eight Requirements for Inclusive Design’** have been implemented as per [GEL Games Framework](https://www.bbc.co.uk/gel/guidelines/games-framework)
  * ‘[Inclusive Gameplay](https://www.bbc.co.uk/gel/guidelines/how-to-design-accessible-games)’ features for agreed Accessibility Pillar(s) **MUST BE** in place
+ * **Fully** complies with [Onboarding Design Principles](https://www.bbc.co.uk/gel/features/how-to-design-onboarding-for-games)
  * **CBeebies games only** - agency supplied final assets for the Playtime Island Game Cards;
   * Game logo
   * Main protagonists of the game as individual character assets - in multiple poses ideally
