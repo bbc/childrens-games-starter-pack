@@ -413,7 +413,7 @@ define(["achievements", "storage", "websockets", "account/morph-props"], functio
     // ---------- Notify App That Game Has Loaded And Send Stats ----------
 
     gmi.gameLoaded();
-    gmi.sendStatsEvent('game_loaded', true, {});
+    gmi.sendStatsEvent('gameloaded', true, {});
 
     // ---------- Web Sockets Example ----------
 
