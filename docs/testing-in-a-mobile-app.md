@@ -2,12 +2,14 @@
 
 To test your game on mobile you will need to to do the following:
 
-1. Visit the following URL on the mobile device on the supported device list (check with the BBC PM for the correct brand/url):
+1. Confirm with BBC TPM that the game's CMS pages have been set up on the BBC side.
+
+2. Visit the following URL on the mobile device on the supported device list (check with the BBC TPM for the correct brand/url):
 https://baseplates.uap.int.api.bbci.co.uk/playtime-island/test/index.html?animations=off#/brand/[insert brand here]
 
-2. Select and download the game that needs testing onto the device from the on screen prompts.
+3. Select and download the game that needs testing onto the device from the on screen prompts.
 
-3. Carry out game testing. 
+4. Carry out game testing. 
 
 The test site url is always set to "latest" so when you upload a new build to Github, you will need to delete the build on your device and re-download the "latest" build.
 
