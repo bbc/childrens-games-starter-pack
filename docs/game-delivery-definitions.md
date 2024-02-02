@@ -1,6 +1,6 @@
 # Game Delivery Definitions
 
-**Updated - 07/10/2022** - All games contracted after this date must adhere to these Delivery Definitions. NB - change pertains to the creation of a build release in GitHub (Product Quality sections).
+**Updated - 02/02/2024** - All games contracted after this date must adhere to these Delivery Definitions. NB - change pertain to; Beta - a wording alteration to the VO inclusion to more realistically reflect that VO recording sessions often come post-Beta and, therefore, the Beta build includes placeholder / scratch audio files (Game section) and Release Candidate - addition of Asset Reporting Form requirement (Asset Delivery section)
 
 [Tech reviews](tech-review.md) take place at Alpha, Beta and Release Candidate
 stages. Feedback should be acted upon for the next delivery as all checks
@@ -80,7 +80,7 @@ Game;
  * Gameplay and core functionality complete, with full end-to-end play
  * Final game balancing underway
  * All final graphics and audio (MP4 format) **SHOULD BE** in place
- * Full VO script in place – this may be with talent or scratch depending on recording dates
+ * Full VO script in place – this may be placeholder / scratch audio or with talent - depending on recording dates
 
 Technical;
  * **Initial** game download size **MUST BE** under 15MB
@@ -170,6 +170,7 @@ Analytics;
  * BBC supplied [game-specific statistics](https://github.com/bbc/childrens-games-starter-pack/blob/master/docs/stats.md) from Beta review integrated
 
 Asset Delivery;
+ * Supplier must work with the BBC's Content Producer to complete the Asset Reporting Form. Your BBC Content Producer will request any copyright/clearance information required for assets sourced by Supplier
  * All layered HD PSD and Illustrator files,
  * HD PSD / Illustrator files and / or PNGs of the below (where applicable);
    * All in-game characters - 5x multiple poses,
