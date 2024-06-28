@@ -185,15 +185,6 @@ Asset Delivery;
  * Game sound effect files in WAV format
  * In-game script and voice over files
 
-Social Media Package - Education games only;
- * 1x 30 second 'coming soon' trailer for the game in two aspect ratios (9:16 and 1:1)
- * 1x 30 second 'launch' trailer for the game in two aspect ratios (9:16 and 1:1)
- * 3x 20 second gameplay videos in two aspect ratios (9:16 and 1:1)
- * 3 x GIF files of animated moments from within the Full Game
- * 5x PNG promo images (1:1)
- * Holding image for the game, layered PSD of AI format
- * All the above must include brand-specific branding, fonts and subtitles. Clean versions with no subtitles or branding must also be provided to the BBC
-
 ##  Project Closedown
 
 > Following game release all final game code, assets and documentation should be submitted for the Deliverable Review. This phase also includes any planned game updates, game data analysis, game maintenance and project closedown.
